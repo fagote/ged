@@ -68,4 +68,6 @@ publicar arquivo alterado no git  : git push origin main
 
 ------
 
-encerradoooo
+e
+
+cerradoooo
