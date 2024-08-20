@@ -1,13 +1,9 @@
-alterado 
-# curso de laravel 11111 alterado
-
-# Setup Docker Laravel 11 com PHP 8.3
-[Assine a Academy, e Seja VIP!](https://academy.especializati.com.br)
+### Projeto GED ### 
 
 ### Passo a passo
 Clone Repositório
 ```sh
-git clone -b laravel-11-with-php-8.3 https://github.com/especializati/setup-docker-laravel.git app-laravel
+git clone -b laravel-11-with-php-8.3 https://github.com/fagote/ged.git app-laravel
 ```
 ```sh
 cd app-laravel
@@ -52,4 +48,5 @@ php artisan migrate
 
 Acesse o projeto
 [http://localhost:8000](http://localhost:8000)
-# ged
+
+testar projeto 
