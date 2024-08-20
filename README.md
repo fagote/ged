@@ -67,4 +67,5 @@ comit arquivo alterado : git comit -m " usar msg para se basear na restauraçao 
 publicar arquivo alterado no git  : git push origin main
 
 ------
- oi teste 
+
+encerrado
