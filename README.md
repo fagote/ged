@@ -70,3 +70,5 @@ git comit -m "usar msg para se basear na restauraçao"
 4 ------- publicar arquivo alterado no git  : git push -u origin main
 
 --------
+
+teste alterado
