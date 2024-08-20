@@ -54,20 +54,19 @@ Acesse o projeto
 testar projeto 
 
 
-publicar via console 
+1 ---- publicar via console 
 
 git remote set-url origin https://github.com/fagote/ged.git 
 
--------
+2 ------- publicar o arquivo ou publicar alteraçao do arquivo
 
-comit arquivo alterado : git comit -m " usar msg para se basear na restauraçao "
+git add """o arquivo"""
+obs como seria : git add README.md
 
--------
+3 -------comit arquivo alterado 
 
-publicar arquivo alterado no git  : git push origin main
+git comit -m "usar msg para se basear na restauraçao"
 
-------
+4 ------- publicar arquivo alterado no git  : git push -u origin main
 
-e
-
-cerradoooo
+--------
