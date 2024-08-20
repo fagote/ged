@@ -52,3 +52,18 @@ Acesse o projeto
 [http://localhost:8000](http://localhost:8000)
 
 testar projeto 
+
+
+publicar via console 
+
+git remote set-url origin https://github.com/fagote/ged.git 
+
+-------
+
+comit arquivo alterado : git comit -m " usar msg para se basear na restauraçao "
+
+-------
+
+publicar arquivo alterado no git  : git push origin main
+
+------
