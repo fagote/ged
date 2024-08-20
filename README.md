@@ -1,3 +1,5 @@
+### Antes comprar Ubuntu ou linux , e utilizar o docker e docker compose para rodar projeto 
+
 ### Projeto GED ### 
 
 ### Passo a passo
