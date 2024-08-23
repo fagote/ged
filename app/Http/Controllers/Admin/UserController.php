@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest; // Certifique-se de que essa classe exista.
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth; // Importando o Auth corretamente
 
 class UserController extends Controller
 {
@@ -23,7 +25,7 @@ class UserController extends Controller
 
     public function store(StoreUserRequest $request){
 
-        User::create($request->all());
+        User::create($request->validated());
         return redirect()
         ->route('users.index')
         ->with('success', 'Usuário criado com sucesso');
@@ -31,7 +33,6 @@ class UserController extends Controller
 
     public function edit(string $id){
 
-        //$user = User::Where('id', '=', $id)->first();
 
         if(!$user = User::find($id)){
             return redirect()->route('users.index')->with('message', 'Usuário não encontrado');
@@ -41,20 +42,83 @@ class UserController extends Controller
 
     }
 
-    public function update(Request $request, string $id){
+    public function update(UpdateUserRequest $request, string $id){
          
         if(!$user = User::find($id)){
             return back()->with('message', 'Usuário não encontrado');
         }
 
-        $user->update($request->only([
-            'name',
-            'email',
-        ]));
+        $data = $request->only('name','email');
+        if($request->password){
+            $data['password'] = bcrypt($request->password);
+        }
+
+        
+
+        $user->update($data);
+
 
         return redirect()
             ->route('users.index')
             ->with('success', 'Usuário editado com sucesso');
 
+    }
+
+    public function show(string $id){
+
+        if(!$user = User::find($id)){
+            return redirect()->route('users.index')->with('message', 'Usuário não encontrado');
+        }
+
+        return view('admin.users.show', compact('user'));
+
+    }
+
+    public function destroy(String $id){
+
+        //if(Gate::allows(string))
+
+        if(!$user = User::find($id)){
+            return redirect()->route('users.index')->with('message', 'Usuário não encontrado');
+        }
+
+        if(Auth::user()->id === $user->id){
+            return back()->with('message', 'Você não pode deletar seu próprio perfil');
+        }
+    
+
+        $user->delete();
+
+        return redirect()
+            ->route('users.index')
+            ->with('Success', 'Usuário deletado com sucesso');
+
+    }
+
+    public function upload(Request $request, string $id)
+    {
+        // Validação do arquivo
+        $request->validate([
+            'file' => 'required|file|mimes:jpg,png,pdf|max:2048',
+        ]);
+
+        if(!$user = User::find($id)){
+            return redirect()->route('users.index')->with('message', 'Usuário não encontrado');
+        }
+
+        // Remove o antigo arquivo, se houver
+        if ($user->profile_image) {
+            Storage::disk('public')->delete($user->profile_image);
+        }
+
+        // Armazena o novo arquivo
+        $file = $request->file('file');
+        $path = $file->store('profile_images', 'public');
+        $user->profile_image = $path;
+        $user->save();
+
+        return redirect()
+            ->route('users.show', $user->id)
+            ->with('success', 'Arquivo enviado com sucesso!');
     }
 }
