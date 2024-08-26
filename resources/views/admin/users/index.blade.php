@@ -38,6 +38,7 @@
             @endforelse
         </tbody>
     </table>
+    {{ $users->links() }}
     <br>
 
     <!-- Formulário para upload de arquivo -->
@@ -52,7 +53,7 @@
     </form>
     
 </div>
-    {{ $users->links() }}
+    
 
 @endsection
 

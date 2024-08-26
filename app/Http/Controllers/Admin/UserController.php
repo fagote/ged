@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Gate;
 
 class UserController extends Controller
 {
-    public function index(){
+    public function index()
+    {
 
 
         $users = User::paginate(15); //User::all();
@@ -21,22 +22,25 @@ class UserController extends Controller
 
     }
 
-    public function create(){
+    public function create()
+    {
         return view('admin.users.create');
     }
 
-    public function store(StoreUserRequest $request){
+    public function store(StoreUserRequest $request)
+    {
 
         User::create($request->validated());
         return redirect()
-        ->route('users.index')
-        ->with('success', 'Usuário criado com sucesso');
+            ->route('users.index')
+            ->with('success', 'Usuário criado com sucesso');
     }
 
-    public function edit(string $id){
+    public function edit(string $id)
+    {
 
 
-        if(!$user = User::find($id)){
+        if (!$user = User::find($id)) {
             return redirect()->route('users.index')->with('message', 'Usuário não encontrado');
         }
 
@@ -44,18 +48,19 @@ class UserController extends Controller
 
     }
 
-    public function update(UpdateUserRequest $request, string $id){
-         
-        if(!$user = User::find($id)){
+    public function update(UpdateUserRequest $request, string $id)
+    {
+
+        if (!$user = User::find($id)) {
             return back()->with('message', 'Usuário não encontrado');
         }
 
-        $data = $request->only('name','email');
-        if($request->password){
+        $data = $request->only('name', 'email');
+        if ($request->password) {
             $data['password'] = bcrypt($request->password);
         }
 
-        
+
 
         $user->update($data);
 
@@ -66,9 +71,10 @@ class UserController extends Controller
 
     }
 
-    public function show(string $id){
+    public function show(string $id)
+    {
 
-        if(!$user = User::find($id)){
+        if (!$user = User::find($id)) {
             return redirect()->route('users.index')->with('message', 'Usuário não encontrado');
         }
 
@@ -76,18 +82,19 @@ class UserController extends Controller
 
     }
 
-    public function destroy(String $id){
+    public function destroy(string $id)
+    {
 
         //if(Gate::allows(string))
 
-        if(!$user = User::find($id)){
+        if (!$user = User::find($id)) {
             return redirect()->route('users.index')->with('message', 'Usuário não encontrado');
         }
 
-        if(Auth::user()->id === $user->id){
+        if (Auth::user()->id === $user->id) {
             return back()->with('message', 'Você não pode deletar seu próprio perfil');
         }
-    
+
 
         $user->delete();
 
@@ -95,22 +102,29 @@ class UserController extends Controller
             ->route('users.index')
             ->with('Success', 'Usuário deletado com sucesso');
 
+
     }
 
     public function upload(Request $request, $id)
-{
-    $request->validate([
-        'files.*' => 'required|mimes:pdf,xlsx,ods|max:2048', // Validação para arquivos
-    ]);
+    {
+        $request->validate([
+            'files.*' => 'required|mimes:pdf,xlsx,ods|max:2048', // Validação para arquivos
+        ]);
 
-    $user = User::find($id);
+        $user = User::find($id);
 
-    foreach ($request->file('files') as $file) {
-        $path = $file->store('user_files', 'public'); // Armazena o arquivo na pasta 'user_files' dentro de 'public'
-        $user->files()->create(['file_path' => $path]); // Salva o caminho do arquivo na tabela user_files
+        foreach ($request->file('files') as $file) {
+            $path = $file->store('user_files', 'public'); // Armazena o arquivo na pasta 'user_files' dentro de 'public'
+            $user->files()->create(['file_path' => $path]); // Salva o caminho do arquivo na tabela user_files
+        }
+
+        return back()->with('success', 'Arquivos enviados com sucesso!');
     }
 
-    return back()->with('success', 'Arquivos enviados com sucesso!');
-}
+    public function showDashboard(){
+        $user = Auth::user();
+        return view('dashboard', compact('user'));
+    }
 
 }
+

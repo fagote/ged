@@ -11,7 +11,7 @@
     <div class="py-6">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200">
             Novo Usuário
-        </h2>
+        </h2> 
     </div>
 
     <form action=" {{ route('users.store') }} " method="POST">
