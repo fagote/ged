@@ -38,17 +38,19 @@
             @endforelse
         </tbody>
     </table>
+    <br>
 
     <!-- Formulário para upload de arquivo -->
     <h2>Upar Arquivo</h2>
     <form action="{{ route('users.upload', $user->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div>
-            <label for="file">Escolha um arquivo:</label>
-            <input type="file" id="file" name="file" required>
+            <label for="files">Escolha arquivos:</label>
+            <input type="file" id="files" name="files[]" accept=".pdf,.xlsx,.ods" multiple required>
         </div>
-        <button type="submit">Enviar</button>
+        <button id="button1" type="submit">Enviar</button>
     </form>
+    
 </div>
     {{ $users->links() }}
 
@@ -78,12 +80,12 @@
     }
 
     /* Estilo para h1 */
-    h1 {
+    h1,h2 {
         color: white !important; /* Força a cor do texto como branco */
     }
 
     /* Estilo para links */
-    a {
+    a,#button1 {
         color: white !important; /* Força a cor do texto dos links como branco */
         margin-right: 10px; /* Margem para links */
         text-decoration: none; /* Remove o sublinhado dos links */
@@ -95,11 +97,17 @@
     }
 
     /* Efeito hover para links */
-    a:hover {
+    #button1:hover, a:hover {
         background-color: rgba(255, 255, 255, 0.2); /* Cor de fundo levemente branca no hover */
         color: white; /* Garante que a cor do texto continue branca */
         text-decoration: underline; /* Sublinha o link ao passar o mouse */
     }
+
+    form{
+        color: white
+    }
+
+
 </style>
 
 

@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUserRequest;
-use App\Http\Requests\UpdateUserRequest; // Certifique-se de que essa classe exista.
+use App\Http\Requests\UpdateUserRequest;
+use App\Http\Middleware\CheckIfIsAdmin;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth; // Importando o Auth corretamente
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class UserController extends Controller
 {
@@ -95,30 +97,20 @@ class UserController extends Controller
 
     }
 
-    public function upload(Request $request, string $id)
-    {
-        // Validação do arquivo
-        $request->validate([
-            'file' => 'required|file|mimes:jpg,png,pdf|max:2048',
-        ]);
+    public function upload(Request $request, $id)
+{
+    $request->validate([
+        'files.*' => 'required|mimes:pdf,xlsx,ods|max:2048', // Validação para arquivos
+    ]);
 
-        if(!$user = User::find($id)){
-            return redirect()->route('users.index')->with('message', 'Usuário não encontrado');
-        }
+    $user = User::find($id);
 
-        // Remove o antigo arquivo, se houver
-        if ($user->profile_image) {
-            Storage::disk('public')->delete($user->profile_image);
-        }
-
-        // Armazena o novo arquivo
-        $file = $request->file('file');
-        $path = $file->store('profile_images', 'public');
-        $user->profile_image = $path;
-        $user->save();
-
-        return redirect()
-            ->route('users.show', $user->id)
-            ->with('success', 'Arquivo enviado com sucesso!');
+    foreach ($request->file('files') as $file) {
+        $path = $file->store('user_files', 'public'); // Armazena o arquivo na pasta 'user_files' dentro de 'public'
+        $user->files()->create(['file_path' => $path]); // Salva o caminho do arquivo na tabela user_files
     }
+
+    return back()->with('success', 'Arquivos enviados com sucesso!');
+}
+
 }
