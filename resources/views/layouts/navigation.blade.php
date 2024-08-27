@@ -87,12 +87,12 @@
                         {{__('Usuários')}}
                     </x-responsive-nav-link>
 
-                    <x-responsive-nav-link :href="route('users.index')">
+                    <x-responsive-nav-link :href="route('companies.index')">
                         {{__('Empresas')}}
                     </x-responsive-nav-link>
 
-                    <x-responsive-nav-link :href="route('users.index')">
-                        {{__('Departamentos')}}
+                    <x-responsive-nav-link :href="route('sectors.index')">
+                        {{__('Setores')}}
                     </x-responsive-nav-link>
                 @endcan
 

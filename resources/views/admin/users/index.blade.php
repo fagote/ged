@@ -41,7 +41,9 @@
     {{ $users->links() }}
     <br>
 
+    <!--===================================================-->
     <!-- Formulário para upload de arquivo -->
+    <!--
     <h2>Upar Arquivo</h2>
     <form action="{{ route('users.upload', $user->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -51,6 +53,8 @@
         </div>
         <button id="button1" type="submit">Enviar</button>
     </form>
+    -->
+    <!--===================================================-->
     
 </div>
     
