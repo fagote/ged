@@ -32,10 +32,10 @@ Route::middleware('auth')
 
 Route::get('/companies/create', [CompanyController::class, 'create'])->name('companies.create');
 Route::get('/companies',[CompanyController::class, 'index'])->name('companies.index');
-Route::get('/companies/{company}', [UserController::class, 'show'])->name('companies.show');
-Route::put('/companies/{company}',[UserController::class, 'update'])->name('companies.update');
-Route::get('/companies/{company}/edit', [UserController::class, 'edit'])->name('companies.edit');
-Route::post('/companies',[UserController::class, 'store'])->name('companies.store');
+Route::get('/companies/{company}', [CompanyController::class, 'show'])->name('companies.show');
+Route::put('/companies/{company}',[CompanyController::class, 'update'])->name('companies.update');
+Route::get('/companies/{company}/edit', [CompanyController::class, 'edit'])->name('companies.edit');
+Route::post('/companies',[CompanyController::class, 'store'])->name('companies.store');
 //==============================================================
 
 
@@ -45,6 +45,10 @@ Route::post('/companies',[UserController::class, 'store'])->name('companies.stor
 Route::post('/sectors',[SectorController::class, 'store'])->name('sectors.store');
 Route::get('/sectors/create', [SectorController::class, 'create'])->name('sectors.create');
 Route::get('/sectors',[sectorController::class, 'index'])->name('sectors.index');
+Route::put('/sectors/{sector}',[SectorController::class, 'update'])->name('sectors.update');
+Route::get('/sectors/{sector}', [sectorController::class, 'show'])->name('sectors.show');
+Route::get('/sectors/{sector}/edit', [sectorController::class, 'edit'])->name('sectors.edit');
+
 
 //==============================================================
 

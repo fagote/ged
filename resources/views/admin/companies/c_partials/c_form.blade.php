@@ -1,9 +1,9 @@
-<x-alert></x-alert>
+<!--  <x-alert></x-alert> -->
 
 @csrf() 
 
-<input type="text" name="name" placeholder="Nome" value="{{ $sector->company ?? old('name_company') }}">
-<input type="number" name="id_company" placeholder="ID Company" value="{{ $sector->id_company ?? old('id_company') }}" min="1" step="1">
+<input type="text" name="name" placeholder="Nome da empresa" value="{{ $sector->company ?? old('name_company') }}" required>
+<input type="number" name="id_company" placeholder="ID da empresa" value="{{ $sector->id_company ?? old('id_company') }}" min="1" step="1" required>
 <button type="submit">Enviar</button>
 
 <style>

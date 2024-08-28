@@ -2,7 +2,7 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
         <li class="breadcrumb-item"><a href="{{ route('users.index') }}">Setores</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Cadastrar Novo Setor</li>
+        <!-- <li class="breadcrumb-item active" aria-current="page">Cadastrar Novo Setor</li> -->
     </ol>
 </nav>
 

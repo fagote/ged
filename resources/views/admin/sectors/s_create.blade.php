@@ -4,9 +4,9 @@
 @section('title', 'Criar novo setor')
 @section('content')
 
-    <h1>Novo Setor</h1>
+    
 
-    @include('admin.sectors.partials.s_breadcrumb')
+    @include('admin.sectors.s_partials.s_breadcrumb')
 
     <div class="py-6">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200">
@@ -16,7 +16,7 @@
 
     <form action=" {{ route('sectors.store') }} " method="POST">
         
-        @include('admin.sectors.partials.form')
+        @include('admin.sectors.s_partials.s_form')
     </form>
 
 @endsection

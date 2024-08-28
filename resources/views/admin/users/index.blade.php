@@ -6,11 +6,18 @@
 
 <h1>USUÁRIOS</h1>
 
-<a href="{{ route('users.create') }}">Novo</a>
+<a href="{{ route('users.create') }}">Adicionar Novo Usuário</a>
 
 <br>
 
-    <x-alert></x-alert>
+    <!-- <x-alert></x-alert> -->
+
+    @if (session('success'))
+        <div style="color: white; background-color: green; padding: 10px; border-radius: 5px;">
+            {{ session('success') }}
+        </div>
+    @endif
+
   
 
     <table>

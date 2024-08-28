@@ -2,7 +2,7 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
         <li class="breadcrumb-item"><a href="{{ route('companies.index') }}">Empresas</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Cadastrar Nova Empresa</li>
+       <!--  <li class="breadcrumb-item active" aria-current="page">Cadastrar Nova Empresa</li> -->
     </ol>
 </nav>
 

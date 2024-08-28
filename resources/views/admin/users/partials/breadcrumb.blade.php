@@ -2,7 +2,7 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
         <li class="breadcrumb-item"><a href="{{ route('users.index') }}">Usuários</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Cadastro de novo Usuário</li>
+        <!-- <li class="breadcrumb-item active" aria-current="page">Cadastro de novo Usuário</li> -->
     </ol>
 </nav>
 

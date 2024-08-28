@@ -4,9 +4,11 @@
 @section('title', 'Editar usuário')
 
 @section('content')
-    <h1>Editar o Usuário {{$user->name}}</h1>
+    <h1 style="color: white">Editar o Usuário {{$user->name}}</h1>
+    <br>
 
-    <x-alert/>
+    
+    <x-alert style="color: white"></x-alert>
 
     <form action=" {{ route('users.update', $user->id) }} " method="POST">
 

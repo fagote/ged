@@ -4,7 +4,7 @@
 @section('title', 'Criar novo usuário')
 @section('content')
 
-    <h1>Novo Usuário</h1>
+    <!-- <h1 style= color:white>Novo Usuário</h1> -->
 
     @include('admin.users.partials.breadcrumb')
 
