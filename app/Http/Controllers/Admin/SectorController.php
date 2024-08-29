@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Sector;
 use App\Http\Requests\StoreSectorRequest;
 use App\Http\Requests\UpdateSectorRequest;
+use App\Http\middleware\CheckIfIsAdmin;
 use Illuminate\Http\Request;
 
 
@@ -85,7 +86,7 @@ class SectorController extends Controller
             return redirect()->route('sectors.index')->with('message', 'Setor não encontrado');
         }
 
-        return view('admin.sectors.show', compact('sector'));
+        return view('admin.sectors.s_show', compact('sector'));
 
     }
 

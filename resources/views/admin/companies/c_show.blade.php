@@ -1,12 +1,12 @@
 @extends('admin.layouts.app')
 
-@section('title', "Detalhes do Setor")
+@section('title', "Detalhes da Empresa")
 
 @section('content')
-    <h1>Informações do Setor {{$sector->name_setor}}</h1>
+    <h1>Informações da empresa {{$company->name_empresa}}</h1>
     <ul>
-        <li>ID: {{ $sector->id_setor }}</li>
-        <li>Name: {{ $sector->name_setor }}</li>
+        <li>Id: {{ $company->id_empresa }}</li>
+        <li>Nome: {{ $company->name_empresa }}</li>
     </ul>
 
 
@@ -15,7 +15,7 @@
     @endcan --}}
 
     @can('is-admin')
-        <form action="{{ route('sectors.destroy', $sector->id_setor) }}" method="post">
+        <form action="{{ route('companies.destroy', $company->id_empresa) }}" method="post">
 
             @csrf
             @method('delete')

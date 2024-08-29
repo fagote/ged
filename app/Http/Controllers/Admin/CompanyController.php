@@ -87,7 +87,7 @@ class CompanyController extends Controller
             return redirect()->route('companies.index')->with('message', 'Empresa não encontrada');
         }
 
-        return view('admin.companies.show', compact('company'));
+        return view('admin.companies.c_show', compact('company'));
 
     }
 

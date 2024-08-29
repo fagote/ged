@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\middleware\CheckIfIsAdmin;
 
 
 define('LARAVEL_START', microtime(true));

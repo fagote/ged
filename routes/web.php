@@ -36,6 +36,8 @@ Route::get('/companies/{company}', [CompanyController::class, 'show'])->name('co
 Route::put('/companies/{company}',[CompanyController::class, 'update'])->name('companies.update');
 Route::get('/companies/{company}/edit', [CompanyController::class, 'edit'])->name('companies.edit');
 Route::post('/companies',[CompanyController::class, 'store'])->name('companies.store');
+Route::delete('/companies/{company}/destroy', [CompanyController::class, 'destroy'])->name('companies.destroy')->middleware(CheckIfIsAdmin::class);
+
 //==============================================================
 
 
@@ -48,7 +50,7 @@ Route::get('/sectors',[sectorController::class, 'index'])->name('sectors.index')
 Route::put('/sectors/{sector}',[SectorController::class, 'update'])->name('sectors.update');
 Route::get('/sectors/{sector}', [sectorController::class, 'show'])->name('sectors.show');
 Route::get('/sectors/{sector}/edit', [sectorController::class, 'edit'])->name('sectors.edit');
-
+Route::delete('/sectors/{sector}/destroy', [SectorController::class, 'destroy'])->name('sectors.destroy')->middleware(CheckIfIsAdmin::class);
 
 //==============================================================
 
