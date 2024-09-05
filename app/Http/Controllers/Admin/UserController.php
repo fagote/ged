@@ -39,7 +39,7 @@ class UserController extends Controller
     public function edit(string $id)
     {
 
-
+        //$company = Company::find($id);
         if (!$user = User::find($id)) {
             return redirect()->route('users.index')->with('message', 'Usuário não encontrado');
         }
@@ -93,7 +93,7 @@ class UserController extends Controller
         }
 
         if (Auth::user()->id === $user->id) {
-            return back()->with('message', 'Você não pode deletar seu próprio perfil');
+            return back()->with('message', 'Você não pode excluir seu próprio perfil');
         }
 
 
@@ -101,7 +101,7 @@ class UserController extends Controller
 
         return redirect()
             ->route('users.index')
-            ->with('success', 'Usuário deletado com sucesso');
+            ->with('success', 'Usuário excluído com sucesso');
 
 
     }
@@ -126,6 +126,43 @@ class UserController extends Controller
         $user = Auth::user();
         return view('dashboard', compact('user'));
     }
+
+
+    //=========================================
+    // Função para busca de usuários
+    public function search(Request $request)
+    {
+        $query = User::query();
+
+        if ($search = $request->input('search')) {
+            $query->where('name', 'like', "%{$search}%");
+        }
+
+        $users = $query->paginate(10); // Pagina 10 usuários por página
+
+        return view('admin.users.index', compact('users'));
+    }
+    //=========================================
+
+    //=========================================
+    // Função para escolha da empresa via checkbox
+
+    public function select_company(){
+
+    }
+
+    //=========================================
+
+    //=========================================
+    // Função para escolha do setor via dropdown link
+
+    public function select_sector(){
+        
+    }
+
+    //=========================================
+
+
 
 }
 

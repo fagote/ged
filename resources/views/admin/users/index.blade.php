@@ -6,6 +6,35 @@
 
 <h1>USUÁRIOS</h1>
 
+
+<!--==================================================-->
+<!-- Formulário de Busca -->
+<div class="busca">
+    <form id="form_search" action="{{ route('users.search') }}" method="GET">
+        <input id="input_search" type="text" name="search" placeholder="Buscar usuários..." value="{{ request('search') }}" required>
+        <button id="button_search" type="submit">Buscar</button>
+    </form>
+
+    <!-- Mostrando os Usuários Encontrados -->
+    @if(request('search') && isset($users) && $users->count())
+        <ul>
+            @foreach($users as $user)
+                <!--<li>{{ $user->name }}</li>--> 
+            @endforeach
+        </ul>
+        <!-- Exibindo links de paginação -->
+         <!-- {{ $users->links() }} -->
+    @elseif(request('search'))
+        <!-- <p>Nenhum usuário encontrado.</p> -->
+    @endif
+</div>
+
+<!--==================================================-->
+
+    
+
+
+
 <a id="button1" href="{{ route('users.create') }}">Adicionar Novo Usuário</a>
 
 <br>
@@ -13,9 +42,19 @@
     <!-- <x-alert></x-alert> -->
 
     @if (session('success'))
-        <div style="color: white; background-color: green; padding: 10px; border-radius: 5px;">
+        <div id="success-message" style="color: white; background-color: green; padding: 10px; border-radius: 5px;">
             {{ session('success') }}
         </div>
+
+        <!-- Função para tirar a mensagem de aviso após 4 segundos -->
+        <script>
+            setTimeout(function() {
+                var successMessage = document.getElementById('success-message');
+                if (successMessage) {
+                    successMessage.style.display = 'none';
+                }
+            }, 4000);
+        </script>
     @endif
 
   
@@ -35,7 +74,8 @@
                 <td>{{$user->email}}</td>
                 <td>
                     <a href="{{ route('users.edit', $user->id) }}">Edit</a>
-                    <a href="{{ route('users.show', $user->id) }}">Detalhes</a>
+                    <a href="{{ route('users.show', $user->id) }}">Excluir</a>
+                    <a href="{{ route( 'permissions.index', $user->id) }}">Permissões</a>
                 </td>
             </tr>
             @empty
@@ -64,7 +104,7 @@
     <!--===================================================-->
     
 </div>
-    
+
 
 @endsection
 
@@ -102,7 +142,7 @@
         }
 
         a, #button1 {
-            border: 2px solid white; /* Adiciona uma borda branca aos links */
+            border: 1px solid white; /* Adiciona uma borda branca aos links */
             background-color: transparent; /* Mantém o fundo transparente */
             color: white; /* Garante que a cor do texto seja branca */
         }
@@ -144,6 +184,48 @@
     }
 </style>
 
+
+<!--==================================================-->
+<!-- CSS - CAMPO DE BUSCA -->
+<style>
+    /* Estilos para centralizar o conteúdo */
+    .busca {
+        display: flex;
+        justify-content: center; /* Centraliza horizontalmente */
+       /* align-items: center;  Centraliza verticalmente */
+        height: 10vh; /* Usa toda a altura da tela */
+    }
+
+    #form_search {
+            display: flex;
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Alinha verticalmente */
+            margin: 20px; /* Margem ao redor do formulário */
+        }
+
+        #input_search {
+            padding: 10px;
+            margin-right: 5px; /* Espaço entre o input e o botão */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 300px; /* Largura do campo de texto */
+            color: black;
+        }
+
+        #button_search {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+    #button_search:hover {
+        background-color: #0056b3;
+    }
+</style>
+<!--==================================================-->
 
 
 

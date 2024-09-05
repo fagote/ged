@@ -1,12 +1,12 @@
 @extends('admin.layouts.app')
 
 
-@section('title', 'Listagem das empresas')
+@section('title', 'Permissões')
 @section('content')
 <h1>EMPRESAS</h1>
 
 
-<a href="{{ route('companies.create') }}">Adicionar Nova Empresa</a>
+<a href="{{ route('permissions.create') }}">Adicionar Permissões</a>
 
 <br>
 
@@ -20,29 +20,31 @@
     <table>
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Nome</th>
+                <th>ID_Usuário</th>
+                <th>ID_Empresa</th>
+                <th>ID_Setor</th>
                 <th>Ações</th>
             </tr>
         </thead>
         <tbody>
-            @forelse ($companies as $company)
+            @forelse ($permissions as $permission)
             <tr>
-                <td>{{$company->id_empresa}}</td>
-                <td>{{$company->name_empresa}}</td>
+                <td>{{$permission->id_usuario}}</td>
+                <td>{{$permission->id_empresa}}</td>
+                <td>{{$permission->id_setor}}</td>
                 <td>
-                    <a href="{{ route('companies.edit', $company->id_empresa) }}">Edit</a>
-                    <a href="{{ route('companies.show', $company->id_empresa) }}">Detalhes</a>
+                    <a href="{{ route('permissions.edit', $permission->id) }}">Edit</a>
+                    <a href="{{ route('permissions.show', $permission->id) }}">Detalhes</a>
                 </td>
             </tr>
             @empty
             <tr>
-                <td colspan="3">Nenhuma empresa no banco</td>
+                <td colspan="3">Nenhuma permissão no banco</td>
             </tr>
             @endforelse
         </tbody>
     </table>
-    {{ $companies->links() }}
+    {{ $permissions->links() }}
     <br>
 
    
