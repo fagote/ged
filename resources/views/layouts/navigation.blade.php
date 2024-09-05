@@ -47,6 +47,10 @@
                             <x-dropdown-link :href="route('sectors.index')">
                                 {{__('Setores')}}
                             </x-dropdown-link>
+
+                            <x-dropdown-link :href="route('permissions.index')">
+                                {{__('Permissões')}}
+                            </x-dropdown-link>
                         @endcan
                         
 
@@ -109,6 +113,11 @@
                     <x-responsive-nav-link :href="route('sectors.index')">
                         {{ __('Setores') }}
                     </x-responsive-nav-link>
+
+                    <x-responsive-nav-link :href="route('permissions.index')">
+                        {{ __('Permissões') }}
+                    </x-responsive-nav-link>
+
                 @endcan
                 
 

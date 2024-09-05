@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\CompanyController;
 use App\Http\Controllers\Admin\SectorController;
+use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\CheckIfIsAdmin;
 use Illuminate\Support\Facades\Route;
@@ -14,17 +15,19 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth')
     ->prefix('admin')
     ->group(function(){
+        
+        Route::get('/users/search', [UserController::class, 'search'])->name('users.search');
 
-    Route::delete('/users/{user}/destroy', [UserController::class, 'destroy'])->name('users.destroy')->middleware(CheckIfIsAdmin::class);
-    Route::post('/users/{id}/upload', [UserController::class, 'upload'])->name('users.upload');
-    Route::get('/users/create',[UserController::class, 'create'])->name('users.create');
-    Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
-    Route::put('/users/{user}',[UserController::class, 'update'])->name('users.update');
-    Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
-    Route::post('/users',[UserController::class, 'store'])->name('users.store');
-    Route::get('/users',[UserController::class, 'index'])->name('users.index');
-
-});
+        Route::delete('/users/{user}/destroy', [UserController::class, 'destroy'])->name('users.destroy')->middleware(CheckIfIsAdmin::class);
+        Route::post('/users/{id}/upload', [UserController::class, 'upload'])->name('users.upload');
+        Route::get('/users/create',[UserController::class, 'create'])->name('users.create');
+        Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
+        Route::put('/users/{user}',[UserController::class, 'update'])->name('users.update');
+        Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
+        Route::post('/users',[UserController::class, 'store'])->name('users.store');
+        Route::get('/users',[UserController::class, 'index'])->name('users.index');
+        
+    });
 //==============================================================
 
 //==============================================================
@@ -54,20 +57,32 @@ Route::get('/sectors',[SectorController::class, 'index'])->name('sectors.index')
 
 //==============================================================
 
+
+//==============================================================
+// ROTAS PARA PERMISSÕES 
 /*
-//==============================================================
-// ROTAS PARA SETORES 
-
-Route::post('/sectors',[SectorController::class, 'store'])->name('sectors.store');
-Route::get('/sectors/create', [SectorController::class, 'create'])->name('sectors.create');
-Route::get('/sectors',[sectorController::class, 'index'])->name('sectors.index');
-Route::put('/sectors/{sector}',[SectorController::class, 'update'])->name('sectors.update');
-Route::get('/sectors/{sector}', [sectorController::class, 'show'])->name('sectors.show');
-Route::get('/sectors/{sector}/edit', [sectorController::class, 'edit'])->name('sectors.edit');
-Route::delete('/sectors/{sector}/destroy', [SectorController::class, 'destroy'])->name('sectors.destroy')->middleware(CheckIfIsAdmin::class);
-
-//==============================================================
+Route::put('permissions/{id}', [PermissionController::class, 'update'])->name('permissions.update');
+Route::get('/permissions/{id}/edit', [PermissionController::class, 'edit'])->name('permissions.edit');
+Route::get('/permissions',[PermissionController::class, 'index'])->name('permissions.index');
+//Route::get('/permissions/{permission}/edit', [PermissionController::class, 'edit'])->name('permissions.edit');
 */
+//==============================================================
+
+
+//==============================================================
+// ROTAS PARA PERMISSÕES
+
+Route::delete('/permissions/{permission}/destroy', [PermissionController::class, 'destroy'])->name('permissions.destroy')->middleware(CheckIfIsAdmin::class);
+Route::get('/permissions/create', [PermissionController::class, 'create'])->name('permissions.create');
+Route::get('/permissions/{permission}', [PermissionController::class, 'show'])->name('permissions.show');
+Route::put('/permissions/{permission}',[PermissionController::class, 'update'])->name('permissions.update');
+Route::get('/permissions/{permission}/edit', [PermissionController::class, 'edit'])->name('permissions.edit');
+Route::post('/permissions',[PermissionController::class, 'store'])->name('permissions.store');
+Route::get('/permissions',[PermissionController::class, 'index'])->name('permissions.index');
+
+//==============================================================
+
+
 
 Route::get('/', function () {
     return view('Welcome');

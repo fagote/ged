@@ -1,12 +1,14 @@
 @extends('admin.layouts.app')
 
-@section('title', "Detalhes do Usuário")
+@section('title', "Detalhes da Permissão")
 
 @section('content')
-    <h1>Deseja realmente excluir o usuário {{$user->name}}</h1>
+    <h1>Informações da permissão </h1>
     <ul>
-        <li>Nome: {{ $user->name }}</li>
-        <li>Email: {{ $user->email }}</li>
+        <li>Id Usuário: {{ $permission->id_usuario }}</li>
+        <li>Id Empresa: {{ $permission->id_empresa }}</li>
+        <li>Id Setor: {{ $permission->id_setor }}</li>
+
     </ul>
 
 
@@ -15,14 +17,19 @@
     @endcan --}}
 
     @can('is-admin')
-        <form action="{{ route('users.destroy', $user->id) }}" method="post">
+        <form action="{{ route('permissions.destroy', $permission->id) }}" method="post">
 
             @csrf
             @method('delete')
-            <button type="submit">Excluir</button>
+            <button type="submit">Deletar</button>
 
         </form>
 
+        @if (session('success'))
+        <div style="color: white; background-color: green; padding: 10px; border-radius: 5px;">
+            {{ session('success') }}
+        </div>
+    @endif
 
     @endcan
 
@@ -33,7 +40,7 @@
 
 <style>
 
-    @media(prefers-color-scheme: light){
+@media(prefers-color-scheme: light){
         h1, ul{
             color: black;
         }
