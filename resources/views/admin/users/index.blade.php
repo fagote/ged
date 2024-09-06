@@ -73,9 +73,9 @@
                 <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
                 <td>
-                    <a href="{{ route('users.edit', $user->id) }}">Edit</a>
-                    <a href="{{ route('users.show', $user->id) }}">Excluir</a>
-                    <a href="{{ route( 'permissions.index', $user->id) }}">Permissões</a>
+                    <a id="button1" href="{{ route('users.edit', $user->id) }}">Edit</a>
+                    <a id="button1" href="{{ route('users.show', $user->id) }}">Excluir</a>
+                    <a id="button1" href="{{ route( 'permissions.index', $user->id) }}">Permissões</a>
                 </td>
             </tr>
             @empty
@@ -141,7 +141,7 @@
             background-color: #111827; /* Cor de fundo das linhas da tabela */
         }
 
-        a, #button1 {
+        #button1 {
             border: 1px solid white; /* Adiciona uma borda branca aos links */
             background-color: transparent; /* Mantém o fundo transparente */
             color: white; /* Garante que a cor do texto seja branca */
@@ -167,7 +167,7 @@
             background-color: #e5e7eb; /* Cor de fundo das linhas da tabela */
         }
 
-        a, #button1 {
+        #button1 {
             border: 2px solid black; /* Adiciona uma borda preta aos links */
             background-color: transparent; /* Mantém o fundo transparente */
             color: black; /* Garante que a cor do texto seja preta */
