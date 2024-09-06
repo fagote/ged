@@ -6,7 +6,7 @@
 <h1>EMPRESAS</h1>
 
 
-<a href="{{ route('permissions.create') }}">Adicionar Permissões</a>
+<a id="button1" href="{{ route('permissions.create') }}">Adicionar Permissões</a>
 
 <br>
 
@@ -33,8 +33,8 @@
                 <td>{{$permission->id_empresa}}</td>
                 <td>{{$permission->id_setor}}</td>
                 <td>
-                    <a href="{{ route('permissions.edit', $permission->id) }}">Edit</a>
-                    <a href="{{ route('permissions.show', $permission->id) }}">Detalhes</a>
+                    <a id="button1" href="{{ route('permissions.edit', $permission->id) }}">Edit</a>
+                    <a id="button1" href="{{ route('permissions.show', $permission->id) }}">Detalhes</a>
                 </td>
             </tr>
             @empty
@@ -91,7 +91,7 @@
             background-color: #111827; /* Cor de fundo das linhas da tabela */
         }
 
-        a, #button1 {
+        #button1 {
             border: 2px solid white; /* Adiciona uma borda branca aos links */
             background-color: transparent; /* Mantém o fundo transparente */
             color: white; /* Garante que a cor do texto seja branca */
@@ -117,7 +117,7 @@
             background-color: #e5e7eb; /* Cor de fundo das linhas da tabela */
         }
 
-        a, #button1 {
+        #button1 {
             border: 2px solid black; /* Adiciona uma borda preta aos links */
             background-color: transparent; /* Mantém o fundo transparente */
             color: black; /* Garante que a cor do texto seja preta */

@@ -6,7 +6,7 @@
 <h1>SETORES</h1>
 
 
-<a href="{{ route('sectors.create') }}">Adicionar Novo Setor</a>
+<a id="button1" href="{{ route('sectors.create') }}">Adicionar Novo Setor</a>
 
 <br>
 
@@ -31,8 +31,8 @@
                 <td>{{$sector->id_setor}}</td>
                 <td>{{$sector->name_setor}}</td>
                 <td>
-                    <a href="{{ route('sectors.edit', $sector->id_setor) }}">Edit</a>
-                    <a href="{{ route('sectors.show', $sector->id_setor) }}">Detalhes</a>
+                    <a id="button1" href="{{ route('sectors.edit', $sector->id_setor) }}">Edit</a>
+                    <a id="button1" href="{{ route('sectors.show', $sector->id_setor) }}">Detalhes</a>
                 </td>
             </tr>
             @empty
@@ -67,13 +67,13 @@
         border: 1px solid #ddd; /* Borda simples e suave */
     }
 
-    thead, h1, h2, a, form {
+    thead, h1, h2, a, form, #button1 {
         transition: color 0.3s, background-color 0.3s; /* Transição suave entre temas */
     }
 
     /* Tema Escuro */
     @media (prefers-color-scheme: dark) {
-        th, td, h1, h2, a, form {
+        th, td, h1, h2, a, form, #button1 {
             color: white; /* Define a cor do texto como branco */
         }
 
@@ -85,13 +85,13 @@
             background-color: #111827; /* Cor de fundo das linhas da tabela */
         }
 
-        a {
+        #button1 {
             border: 2px solid white; /* Adiciona uma borda branca aos links */
             background-color: transparent; /* Mantém o fundo transparente */
             color: white !important; /* Garante que a cor do texto seja branca */
         }
 
-        a:hover {
+        a:hover, #button1:hover {
             background-color: rgba(255, 255, 255, 0.2); /* Fundo levemente branco no hover */
             color: white !important; /* Garante que a cor do texto continue branca */
         }
@@ -111,13 +111,13 @@
             background-color: #e5e7eb; /* Cor de fundo das linhas da tabela */
         }
 
-        a {
+        #button1 {
             border: 2px solid black; /* Adiciona uma borda preta aos links */
             background-color: transparent; /* Mantém o fundo transparente */
             color: black !important; /* Garante que a cor do texto seja preta */
         }
 
-        a:hover {
+        a:hover, #button1:hover {
             background-color: rgba(0, 0, 0, 0.1); /* Fundo levemente preto no hover */
             color: black !important; /* Garante que a cor do texto continue preta */
         }

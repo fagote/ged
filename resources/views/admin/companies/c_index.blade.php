@@ -6,7 +6,7 @@
 <h1>EMPRESAS</h1>
 
 
-<a href="{{ route('companies.create') }}">Adicionar Nova Empresa</a>
+<a id="button1" href="{{ route('companies.create') }}">Adicionar Nova Empresa</a>
 
 <br>
 
@@ -31,8 +31,8 @@
                 <td>{{$company->id_empresa}}</td>
                 <td>{{$company->name_empresa}}</td>
                 <td>
-                    <a href="{{ route('companies.edit', $company->id_empresa) }}">Edit</a>
-                    <a href="{{ route('companies.show', $company->id_empresa) }}">Detalhes</a>
+                    <a id="button1" href="{{ route('companies.edit', $company->id_empresa) }}">Edit</a>
+                    <a id="button1" href="{{ route('companies.show', $company->id_empresa) }}">Detalhes</a>
                 </td>
             </tr>
             @empty
@@ -89,7 +89,7 @@
             background-color: #111827; /* Cor de fundo das linhas da tabela */
         }
 
-        a, #button1 {
+        #button1 {
             border: 2px solid white; /* Adiciona uma borda branca aos links */
             background-color: transparent; /* Mantém o fundo transparente */
             color: white; /* Garante que a cor do texto seja branca */
@@ -115,7 +115,7 @@
             background-color: #e5e7eb; /* Cor de fundo das linhas da tabela */
         }
 
-        a, #button1 {
+        #button1 {
             border: 2px solid black; /* Adiciona uma borda preta aos links */
             background-color: transparent; /* Mantém o fundo transparente */
             color: black; /* Garante que a cor do texto seja preta */
