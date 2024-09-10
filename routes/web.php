@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\FileController;
 use App\Http\Controllers\Admin\CompanyController;
+use App\Http\Controllers\Admin\MacroController;
 use App\Http\Controllers\Admin\SectorController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\ProfileController;
@@ -11,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 
 //==============================================================
 // ROTAS PARA USUÁRIOS
+
+//Route::get('/users', [UserController::class, 'showFile'])->name('dashboard');
 
 Route::middleware('auth')
     ->prefix('admin')
@@ -28,6 +32,13 @@ Route::middleware('auth')
         Route::get('/users',[UserController::class, 'index'])->name('users.index');
         
     });
+//==============================================================
+
+//==============================================================
+// ROTAS PARA FILES
+
+Route::post('/files/{id}/upload', [FileController::class, 'upload'])->name('files.upload');
+
 //==============================================================
 
 //==============================================================
@@ -57,15 +68,27 @@ Route::get('/sectors',[SectorController::class, 'index'])->name('sectors.index')
 
 //==============================================================
 
-
 //==============================================================
-// ROTAS PARA PERMISSÕES 
-/*
-Route::put('permissions/{id}', [PermissionController::class, 'update'])->name('permissions.update');
-Route::get('/permissions/{id}/edit', [PermissionController::class, 'edit'])->name('permissions.edit');
-Route::get('/permissions',[PermissionController::class, 'index'])->name('permissions.index');
-//Route::get('/permissions/{permission}/edit', [PermissionController::class, 'edit'])->name('permissions.edit');
-*/
+// ROTAS PARA MACROS
+
+//Route::get('/users', [UserController::class, 'showFile'])->name('dashboard');
+
+Route::middleware('auth')
+    ->prefix('admin')
+    ->group(function(){
+        
+        Route::get('/macros/search', [MacroController::class, 'search'])->name('macros.search');
+
+        Route::delete('/macros/{macro}/destroy', [MacroController::class, 'destroy'])->name('macros.destroy')->middleware(CheckIfIsAdmin::class);
+        Route::post('/macros/{id}/upload', [MacroController::class, 'upload'])->name('macros.upload');
+        Route::get('/macros/create',[MacroController::class, 'create'])->name('macros.create');
+        Route::get('/macros/{macro}', [MacroController::class, 'show'])->name('macros.show');
+        Route::put('/macros/{macro}',[MacroController::class, 'update'])->name('macros.update');
+        Route::get('/macros/{macro}/edit', [MacroController::class, 'edit'])->name('macros.edit');
+        Route::post('/macros',[MacroController::class, 'store'])->name('macros.store');
+        Route::get('/macros',[MacroController::class, 'index'])->name('macros.index');
+        
+    });
 //==============================================================
 
 
