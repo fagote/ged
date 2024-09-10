@@ -7,6 +7,7 @@ use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Middleware\CheckIfIsAdmin;
 use App\Models\User;
+use App\Models\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -18,7 +19,10 @@ class UserController extends Controller
 
 
         $users = User::paginate(15); //User::all();
-        return view('admin.users.index', compact('users'));
+        $files = File::all();
+
+
+        return view('admin.users.index', compact('users', 'files'));
 
     }
 
@@ -106,6 +110,9 @@ class UserController extends Controller
 
     }
 
+    
+    //=========================================
+    //Função Para Upload de Arquivos
     public function upload(Request $request, $id)
     {
         $request->validate([
@@ -121,11 +128,34 @@ class UserController extends Controller
 
         return back()->with('success', 'Arquivos enviados com sucesso!');
     }
+    //=========================================
 
+    //=========================================
+    //Função Para Mostrar Arquivos
+
+    public function showFile(){
+
+        $files = File::all();
+
+        return view('dashboard', compact('files'));
+    }
+    //=========================================
+    
+
+
+    //=========================================
+    // Função Para Mostrar User no Dashboard
+    
     public function showDashboard(){
-        $user = Auth::user();
+        $user = auth()->user();
+        dd($user);
         return view('dashboard', compact('user'));
     }
+    
+    /* OBS:
+    1 - auth() retorna uma instância do usuário autenticado.
+    */
+    //=========================================
 
 
     //=========================================
@@ -161,7 +191,10 @@ class UserController extends Controller
     }
 
     //=========================================
+    //
+    //=========================================
 
+    
 
 
 }

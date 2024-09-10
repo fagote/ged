@@ -48,6 +48,10 @@
                                 {{__('Setores')}}
                             </x-dropdown-link>
 
+                            <x-dropdown-link :href="route('macros.index')">
+                                {{__('Macros')}}
+                            </x-dropdown-link>
+
                             <x-dropdown-link :href="route('permissions.index')">
                                 {{__('Permissões')}}
                             </x-dropdown-link>
@@ -113,6 +117,10 @@
                     <x-responsive-nav-link :href="route('sectors.index')">
                         {{ __('Setores') }}
                     </x-responsive-nav-link>
+
+                    <x-dropdown-link :href="route('macros.index')">
+                        {{__('Macros')}}
+                    </x-dropdown-link>
 
                     <x-responsive-nav-link :href="route('permissions.index')">
                         {{ __('Permissões') }}

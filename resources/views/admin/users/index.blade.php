@@ -22,10 +22,7 @@
                 <!--<li>{{ $user->name }}</li>--> 
             @endforeach
         </ul>
-        <!-- Exibindo links de paginação -->
-         <!-- {{ $users->links() }} -->
-    @elseif(request('search'))
-        <!-- <p>Nenhum usuário encontrado.</p> -->
+        
     @endif
 </div>
 
@@ -88,20 +85,34 @@
     {{ $users->links() }}
     <br>
 
-    <!--===================================================-->
-    <!-- Formulário para upload de arquivo -->
-    <!--
-    <h2>Upar Arquivo</h2>
-    <form action="{{ route('users.upload', $user->id) }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        <div>
-            <label for="files">Escolha arquivos:</label>
-            <input type="file" id="files" name="files[]" accept=".pdf,.xlsx,.ods" multiple required>
-        </div>
-        <button id="button1" type="submit">Enviar</button>
-    </form>
-    -->
-    <!--===================================================-->
+    <h2>Arquivos Enviados:</h2>
+
+@if($files->isEmpty())
+    <p>Nenhum arquivo enviado.</p>
+@else
+    <ul>
+        @foreach($files as $file)
+            <li>
+                @if($file->extension == 'pdf')
+                    <!-- Exibir PDFs -->
+                    <embed src="{{ asset('storage/' . $file->file_path) }}" type="application/pdf" width="600" height="400">
+                @elseif(in_array($file->extension, ['jpg', 'jpeg', 'png', 'gif']))
+                    <!-- Exibir imagens -->
+                    <img src="{{ asset('storage/' . $file->file_path) }}" alt="{{ basename($file->file_path) }}" width="200">
+                @else
+                    <!-- Para outros arquivos, oferecer download -->
+                    <a href="{{ asset('storage/' . $file->file_path) }}" target="_blank">
+                        {{ basename($file->file_path) }} <!-- Nome do arquivo -->
+                    </a>
+                @endif
+            </li>
+        @endforeach
+    </ul>
+@endif
+
+</div>           
+
+    
     
 </div>
 
@@ -130,7 +141,7 @@
     /* Tema Escuro */
     @media (prefers-color-scheme: dark) {
         th, td, h1, h2, a, form {
-            color: white; /* Define a cor do texto como branco */
+            color: white !important; /* Define a cor do texto como branco */
         }
 
         thead {
