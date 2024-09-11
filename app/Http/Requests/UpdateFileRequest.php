@@ -5,9 +5,15 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class UpdateCompanyRequest extends StoreCompanyRequest
+class UpdateFileRequest extends StoreFileRequest
 {
-    
+    /**
+     * Determine if the user is authorized to make this request.
+     */
+    public function authorize(): bool
+    {
+        return false;
+    }
 
     /**
      * Get the validation rules that apply to the request.
@@ -16,16 +22,8 @@ class UpdateCompanyRequest extends StoreCompanyRequest
      */
     public function rules(): array
     {
-
-        $rules = parent::rules();
-
-        /*
-        $rules['password'] = [
-            'nullable',
-            'min:6',
-            'max:20',
-        ];*/
-
-        return $rules;
+        return [
+            //
+        ];
     }
 }

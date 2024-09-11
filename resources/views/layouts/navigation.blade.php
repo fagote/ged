@@ -15,6 +15,32 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    @can('is-admin')
+                        <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
+                            {{ __('Usuários') }}
+                        </x-nav-link>
+
+                        <x-nav-link :href="route('companies.index')" :active="request()->routeIs('companies.index')">
+                            {{ __('Empresas') }}
+                        </x-nav-link>
+
+                        <x-nav-link :href="route('sectors.index')" :active="request()->routeIs('sectors.index')">
+                            {{ __('Setores') }}
+                        </x-nav-link>
+
+                        <x-nav-link :href="route('macros.index')" :active="request()->routeIs('macros.index')">
+                            {{ __('Macros') }}
+                        </x-nav-link>
+
+                        <x-nav-link :href="route('permissions.index')" :active="request()->routeIs('permissions.index')"> 
+                            {{__('Permissões')}}
+                        </x-nav-link>
+
+                        <x-nav-link :href="route('files.index')" :active="request()->routeIs('files.index')"> 
+                            {{__('Arquivos')}}
+                        </x-nav-link>
+                    @endcan
                 </div>
             </div>
 
@@ -55,12 +81,18 @@
                             <x-dropdown-link :href="route('permissions.index')">
                                 {{__('Permissões')}}
                             </x-dropdown-link>
+
+                            <x-dropdown-link :href="route('files.index')" :active="request()->routeIs('files.index')"> 
+                                {{__('Arquivos')}}
+                            </x-dropdown-link>
+
+                            <x-dropdown-link :href="route('profile.edit')">
+                                {{ __('Profile') }}
+                            </x-dropdown-link>
                         @endcan
                         
 
-                        <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
-                        </x-dropdown-link>
+                        
 
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
@@ -126,12 +158,14 @@
                         {{ __('Permissões') }}
                     </x-responsive-nav-link>
 
+                    <x-responsive-nav-link :href="route('profile.edit')">
+                        {{ __('Profile') }}
+                    </x-responsive-nav-link>
+
                 @endcan
                 
 
-                <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
-                </x-responsive-nav-link>
+                
 
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
