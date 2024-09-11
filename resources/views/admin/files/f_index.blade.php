@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 
-@section('title', 'Listagem dos usuários')
+@section('title', 'Listagem dos Arquivos')
 @section('content')
 
 <h1>USUÁRIOS</h1>
@@ -10,16 +10,16 @@
 <!--==================================================-->
 <!-- Formulário de Busca -->
 <div class="busca">
-    <form id="form_search" action="{{ route('users.search') }}" method="GET">
-        <input id="input_search" type="text" name="search" placeholder="Buscar usuários..." value="{{ request('search') }}" required>
+    <form id="form_search" action="{{ route('files.search') }}" method="GET">
+        <input id="input_search" type="text" name="search" placeholder="Buscar arquivo..." value="{{ request('search') }}" required>
         <button id="button_search" type="submit">Buscar</button>
     </form>
 
     <!-- Mostrando os Usuários Encontrados -->
-    @if(request('search') && isset($users) && $users->count())
+    @if(request('search') && isset($files) && $files->count())
         <ul>
-            @foreach($users as $user)
-                <!--<li>{{ $user->name }}</li>--> 
+            @foreach($files as $file)
+                <!--<li>{{ $file->codigo }}</li>--> 
             @endforeach
         </ul>
         
@@ -32,7 +32,7 @@
 
 
 
-<a id="button1" href="{{ route('users.create') }}">Adicionar Novo Usuário</a>
+<a id="button1" href="{{ route('files.create') }}">Adicionar Novo Arquivo</a>
 
 <br>
 
@@ -59,35 +59,45 @@
     <table>
         <thead>
             <tr>
-                <th>Nome</th>
-                <th>E-mail</th>
+                <th>ID User</th>
+                <th>Path</th>
+                <th>Versão</th>
+                <th>Código</th>
+                <th>ID Macro</th>
+                <th>ID Setor</th>
+                <th>ID Empresa</th>
                 <th>Ações</th>
             </tr>
         </thead>
         <tbody>
-            @forelse ($users as $user)
+            @forelse ($files as $file)
             <tr>
-                <td>{{$user->name}}</td>
-                <td>{{$user->email}}</td>
+                <td>{{$file->user_id}}</td>
+                <td>{{$file->file_path}}</td>
+                <td>{{$file->versao}}</td>
+                <td>{{$file->codigo}}</td>
+                <td>{{$file->id_macro}}</td>
+                <td>{{$file->id_setor}}</td>
+                <td>{{$file->id_empresa}}</td>
                 <td>
-                    <a id="button1" href="{{ route('users.edit', $user->id) }}">Edit</a>
-                    <a id="button1" href="{{ route('users.show', $user->id) }}">Excluir</a>
-                    <a id="button1" href="{{ route( 'permissions.index', $user->id) }}">Permissões</a>
+                    <a id="button1" href="{{ route('files.edit', $file->id) }}">Edit</a>
+                    <a id="button1" href="{{ route('files.show', $file->id) }}">Excluir</a>
+                    <a id="button1" href="{{ route('files.view', $file->id) }}" target="_blank">Visualizar</a>
                 </td>
             </tr>
             @empty
             <tr>
-                <td colspan="3">Nenhum usuário no banco</td>
+                <td colspan="3">Nenhum arquivo no banco</td>
             </tr>
             @endforelse
         </tbody>
     </table>
-    {{ $users->links() }}
+    {{ $files->links() }}
     <br>
 
-    <h2>Arquivos Enviados:</h2>
+    {{-- <h2>Arquivos Enviados:</h2>
 
-{{-- @if($files->isEmpty())
+@if($files->isEmpty())
     <p>Nenhum arquivo enviado.</p>
 @else
     <ul>

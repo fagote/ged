@@ -37,7 +37,17 @@ Route::middleware('auth')
 //==============================================================
 // ROTAS PARA FILES
 
-Route::post('/files/{id}/upload', [FileController::class, 'upload'])->name('files.upload');
+//Route::post('/files/{id}/upload', [FileController::class, 'upload'])->name('files.upload');
+
+Route::get('/files/search', [FileController::class, 'search'])->name('files.search');
+
+Route::delete('/files/{file}/destroy', [FileController::class, 'destroy'])->name('files.destroy')->middleware(CheckIfIsAdmin::class);
+Route::get('/files/create', [FileController::class, 'create'])->name('files.create');
+Route::get('/files/{file}', [FileController::class, 'show'])->name('files.show');
+Route::put('/files/{file}',[FileController::class, 'update'])->name('files.update');
+Route::get('/files/{file}/edit', [FileController::class, 'edit'])->name('files.edit');
+Route::post('/files',[FileController::class, 'store'])->name('files.store');
+Route::get('/files',[FileController::class, 'index'])->name('files.index');
 
 //==============================================================
 
