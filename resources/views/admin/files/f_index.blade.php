@@ -4,14 +4,14 @@
 @section('title', 'Listagem dos Arquivos')
 @section('content')
 
-<h1>USUÁRIOS</h1>
+<h1>Arquivos</h1>
 
 
 <!--==================================================-->
 <!-- Formulário de Busca -->
 <div class="busca">
     <form id="form_search" action="{{ route('files.search') }}" method="GET">
-        <input id="input_search" type="text" name="search" placeholder="Buscar arquivo..." value="{{ request('search') }}" required>
+        <input id="input_search" type="text" name="search" placeholder="Buscar arquivo pelo código..." value="{{ request('search') }}" required>
         <button id="button_search" type="submit">Buscar</button>
     </form>
 
@@ -59,10 +59,10 @@
     <table>
         <thead>
             <tr>
-                <th>ID User</th>
+                <th>Código</th>
                 <th>Path</th>
                 <th>Versão</th>
-                <th>Código</th>
+                <th>ID User</th>
                 <th>ID Macro</th>
                 <th>ID Setor</th>
                 <th>ID Empresa</th>
@@ -72,10 +72,10 @@
         <tbody>
             @forelse ($files as $file)
             <tr>
-                <td>{{$file->user_id}}</td>
+                <td>{{$file->codigo}}</td>
                 <td>{{$file->file_path}}</td>
                 <td>{{$file->versao}}</td>
-                <td>{{$file->codigo}}</td>
+                <td>{{$file->user->name}}</td>
                 <td>{{$file->id_macro}}</td>
                 <td>{{$file->id_setor}}</td>
                 <td>{{$file->id_empresa}}</td>

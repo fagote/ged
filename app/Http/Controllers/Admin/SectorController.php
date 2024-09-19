@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller; 
-use App\Models\Sector;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSectorRequest;
 use App\Http\Requests\UpdateSectorRequest;
+use App\Http\Middleware\CheckIfIsAdmin;
+use App\Models\Sector;
+use App\Models\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 
 
@@ -18,6 +22,13 @@ class SectorController extends Controller
 
         $sectors = Sector::paginate(15); 
         return view('admin.sectors.s_index', compact('sectors'));
+
+    }
+
+    public function index3(){
+        
+        $sectors = Sector::all();
+        return view('admin.files.f_partials.f_form', compact('sectors'));
 
     }
 

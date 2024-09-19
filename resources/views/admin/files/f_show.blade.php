@@ -1,12 +1,17 @@
 @extends('admin.layouts.app')
 
-@section('title', "Detalhes do Usuário")
+@section('title', "Detalhes do Arquivo")
 
 @section('content')
-    <h1>Deseja realmente excluir o usuário {{$user->name}}</h1>
+    <h1>Deseja realmente excluir o Arquivo {{$file->codigo}} ?</h1>
     <ul>
-        <li>Nome: {{ $user->name }}</li>
-        <li>Email: {{ $user->email }}</li>
+        <li>ID Usuário: {{$file->user_id}}</li>
+        <li>Path: {{$file->file_path}}</li>
+        <li>Versão: {{$file->versao}}</li>
+        <li>Código: {{$file->codigo}}</li>
+        <li>ID Macro: {{$file->macro}}</li>
+        <li>ID Empresa: {{$file->id_empresa}}</li>
+        <li>ID Setor: {{$file->id_setor}}</li>
     </ul>
 
 
@@ -15,7 +20,7 @@
     @endcan --}}
 
     @can('is-admin')
-        <form action="{{ route('users.destroy', $user->id) }}" method="post">
+        <form action="{{ route('files.destroy', $file->id) }}" method="post">
 
             @csrf
             @method('delete')

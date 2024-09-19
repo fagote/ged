@@ -2,9 +2,9 @@
 
 @csrf() 
 
-<input type="number" name="id_usuario" placeholder="ID do usuário" value="{{ $permission->id_usuario ?? old('id_usuario') }}" required>
-<input type="text" name="id_empresa" placeholder="ID da Empresa" value="{{ $permission->id_empresa ?? old('id_emrpresa') }}" required pattern="^[2-9][0-9]*(,[2-9][0-9]*)*$">
-<input type="number" name="id_usuario" placeholder="ID do Setor" value="{{ $permission->id_setor ?? old('id_setor') }}" required>
+<input type="number" name="id_usuario" placeholder="ID do usuário" value="{{ $permission->id_usuario ?? old('id_usuario') }}" min="1" required>
+<input type="text" name="id_empresa" placeholder="ID da Empresa" value="{{ $permission->id_empresa ?? old('id_emrpresa') }}" required>
+<input type="number" name="id_usuario" placeholder="ID do Setor" value="{{ $permission->id_setor ?? old('id_setor') }}" min="1" required>
 <button type="submit">Enviar</button>
 
 <style>

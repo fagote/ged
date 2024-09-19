@@ -24,7 +24,7 @@ class StorePermissionRequest extends FormRequest
     {
         return [
             'id_usuario' => 'required|integer|min:1',
-            'id_empresa' => 'required|string|regex:/^(\d+)(,\d+)*$/',
+            'id_empresa' => 'required|string|min:1',
             'id_setor' => 'required|integer|min:1',
         ];
     }

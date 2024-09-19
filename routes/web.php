@@ -11,8 +11,7 @@ use App\Http\Middleware\CheckIfIsAdmin;
 use Illuminate\Support\Facades\Route;
 
 
-//==============================================================
-// ROTAS PARA USUÁRIOS
+
 
 //Route::get('/users', [UserController::class, 'showFile'])->name('dashboard');
 
@@ -20,8 +19,11 @@ Route::middleware('auth')
     ->prefix('admin')
     ->group(function(){
         
-        Route::get('/users/search', [UserController::class, 'search'])->name('users.search');
 
+
+        //==============================================================
+        // ROTAS PARA USUÁRIOS  
+        Route::get('/users/search', [UserController::class, 'search'])->name('users.search');
         Route::delete('/users/{user}/destroy', [UserController::class, 'destroy'])->name('users.destroy')->middleware(CheckIfIsAdmin::class);
         Route::post('/users/{id}/upload', [UserController::class, 'upload'])->name('users.upload');
         Route::get('/users/create',[UserController::class, 'create'])->name('users.create');
@@ -30,26 +32,53 @@ Route::middleware('auth')
         Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
         Route::post('/users',[UserController::class, 'store'])->name('users.store');
         Route::get('/users',[UserController::class, 'index'])->name('users.index');
+
+
+
+
+        Route::get('/files/search', [FileController::class, 'search'])->name('files.search');
+        Route::delete('/files/{file}/destroy', [FileController::class, 'destroy'])->name('files.destroy')->middleware(CheckIfIsAdmin::class);
+        Route::post('/files/{id}/upload', [FileController::class, 'upload'])->name('files.upload');
+        Route::get('/files/create',[FileController::class, 'create'])->name('files.create');
+        Route::get('/files/{file}', [FileController::class, 'show'])->name('files.show');
+        Route::put('/files/{file}',[FileController::class, 'update'])->name('files.update');
+        Route::get('/files/{file}/edit', [FileController::class, 'edit'])->name('files.edit');
+        Route::post('/files',[FileController::class, 'store'])->name('files.store');
+        Route::get('/files',[FileController::class, 'index'])->name('files.index');
+        Route::get('/files/view/{id}', [FileController::class, 'view'])->name('files.view');
+
+        //==============================================================
+
+        
         
     });
-//==============================================================
-
+    
 //==============================================================
 // ROTAS PARA FILES
 
-//Route::post('/files/{id}/upload', [FileController::class, 'upload'])->name('files.upload');
 
-Route::get('/files/search', [FileController::class, 'search'])->name('files.search');
 
-Route::delete('/files/{file}/destroy', [FileController::class, 'destroy'])->name('files.destroy')->middleware(CheckIfIsAdmin::class);
-Route::get('/files/create', [FileController::class, 'create'])->name('files.create');
-Route::get('/files/{file}', [FileController::class, 'show'])->name('files.show');
-Route::put('/files/{file}',[FileController::class, 'update'])->name('files.update');
-Route::get('/files/{file}/edit', [FileController::class, 'edit'])->name('files.edit');
-Route::post('/files',[FileController::class, 'store'])->name('files.store');
-Route::get('/files',[FileController::class, 'index'])->name('files.index');
+/*
+route::middleware('auth')
+    ->prefix('admin')
+    ->group(function(){
+        
+        Route::get('/files/search', [FileController::class, 'search'])->name('files.search');
 
+        Route::get('/files/view/{id}', [FileController::class, 'view'])->name('files.view');
+        Route::post('/files/{id}/upload', [FileController::class, 'upload'])->name('files.upload');
+        Route::delete('/files/{file}/destroy', [FileController::class, 'destroy'])->name('files.destroy')->middleware(CheckIfIsAdmin::class);
+        Route::get('/files/create', [FileController::class, 'create'])->name('files.create');
+        Route::get('/files/{file}', [FileController::class, 'show'])->name('files.show');
+        Route::put('/files/{file}',[FileController::class, 'update'])->name('files.update');
+        Route::get('/files/{file}/edit', [FileController::class, 'edit'])->name('files.edit');
+        Route::post('/files',[FileController::class, 'store'])->name('files.store');
+        Route::get('/files',[FileController::class, 'index'])->name('files.index');
+
+});
+*/
 //==============================================================
+
 
 //==============================================================
 // ROTAS PARA EMPRESAS
@@ -140,3 +169,11 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+// HTTP: protocolo de requisição de informações do tipo cliente-servidor.
+/*
+- GET: Método para buscar dados do servidor.
+- POST: Método para enviar dados ao servidor.
+- PUT: Método para atualizar dados do servidor.
+- DELETE: Método para apagar dados do servidor.
+*/
