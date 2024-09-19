@@ -24,6 +24,8 @@ class StoreUserRequest extends FormRequest
     {
         return [
             'name' => 'required|string|min:3|max:255',
+            'id_empresa' => 'required|integer|min:1',
+            'id_setor' => 'required|integer|min:1',
             'email' => [
                 'required',
                 'email',

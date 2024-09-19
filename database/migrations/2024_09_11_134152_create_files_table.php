@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('files', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->string('file_path'); // Para armazenar o caminho do arquivo
+            $table->string('file_path'); 
             $table->unsignedInteger('versao');
             $table->string('codigo');
             

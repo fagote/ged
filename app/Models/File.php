@@ -44,6 +44,7 @@ class File extends Authenticatable
         'id_macro',
         'id_setor',
         'id_empresa',
+        'file_path',
     ];
     
     /**
@@ -52,4 +53,9 @@ class File extends Authenticatable
      * @var bool
      */
     public $timestamps = true;
+
+    public function user() {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+    
 }

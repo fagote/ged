@@ -8,27 +8,36 @@ use App\Http\Requests\UpdateUserRequest;
 use App\Http\Middleware\CheckIfIsAdmin;
 use App\Models\User;
 use App\Models\File;
+use App\Models\Company;
+use App\Models\Sector;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
 class UserController extends Controller
 {
+
+    
+
     public function index()
     {
 
 
         $users = User::paginate(15); //User::all();
-        $files = File::all();
 
-
-        return view('admin.users.index', compact('users', 'files'));
+        return view('admin.users.index', compact('users'));
 
     }
 
+    
     public function create()
     {
-        return view('admin.users.create');
+
+        $sectors = Sector::all();
+        $companies = Company::all();
+        $files = File::all();
+
+        return view('admin.users.create', compact('sectors', 'companies'));
     }
 
     public function store(StoreUserRequest $request)
@@ -43,12 +52,17 @@ class UserController extends Controller
     public function edit(string $id)
     {
 
+
+        $sectors = Sector::all();
+        $companies = Company::all();
+        $files = File::all();
+
         //$company = Company::find($id);
         if (!$user = User::find($id)) {
             return redirect()->route('users.index')->with('message', 'Usuário não encontrado');
         }
 
-        return view('admin.users.edit', compact('user'));
+        return view('admin.users.edit', compact('user','companies', 'sectors'));
 
     }
 
@@ -59,7 +73,7 @@ class UserController extends Controller
             return back()->with('message', 'Usuário não encontrado');
         }
 
-        $data = $request->only('name', 'email');
+        $data = $request->only('name', 'email', 'id_empresa', 'id_setor');
         if ($request->password) {
             $data['password'] = bcrypt($request->password);
         }
@@ -113,6 +127,7 @@ class UserController extends Controller
     
     //=========================================
     //Função Para Upload de Arquivos
+    /*
     public function upload(Request $request, $id)
     {
         $request->validate([
@@ -128,32 +143,6 @@ class UserController extends Controller
 
         return back()->with('success', 'Arquivos enviados com sucesso!');
     }
-    //=========================================
-
-    //=========================================
-    //Função Para Mostrar Arquivos
-
-    public function showFile(){
-
-        $files = File::all();
-
-        return view('dashboard', compact('files'));
-    }
-    //=========================================
-    
-
-
-    //=========================================
-    // Função Para Mostrar User no Dashboard
-    
-    public function showDashboard(){
-        $user = auth()->user();
-        dd($user);
-        return view('dashboard', compact('user'));
-    }
-    
-    /* OBS:
-    1 - auth() retorna uma instância do usuário autenticado.
     */
     //=========================================
 
@@ -176,24 +165,29 @@ class UserController extends Controller
 
     //=========================================
     // Função para escolha da empresa via checkbox
-
+    /*
     public function select_company(){
 
     }
-
+    */
     //=========================================
 
     //=========================================
     // Função para escolha do setor via dropdown link
-
+    /*
     public function select_sector(){
         
     }
-
+    */
     //=========================================
     //
     //=========================================
 
+    /*
+    public function mostrarUsersFormBlade(){
+        $users = User::all();
+        return view('admin.files.f_partials.f_form', compact('users'));
+    }*/
     
 
 

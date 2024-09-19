@@ -41,9 +41,9 @@ class PermissionController extends Controller
         Permission::create($request->validated());
         return redirect()
             ->route('permissions.index')
-            ->with('success', 'Permissão modificada');
+            ->with('success', 'Permissão criada com sucesso');
     }
-
+    
     
     public function edit(string $id)
     {

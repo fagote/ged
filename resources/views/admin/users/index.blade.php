@@ -61,6 +61,8 @@
             <tr>
                 <th>Nome</th>
                 <th>E-mail</th>
+                <th>Empresa</th>
+                <th>Setor</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -69,6 +71,8 @@
             <tr>
                 <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
+                <td>{{$user->id_empresa}}</td>
+                <td>{{$user->id_setor}}</td>
                 <td>
                     <a id="button1" href="{{ route('users.edit', $user->id) }}">Edit</a>
                     <a id="button1" href="{{ route('users.show', $user->id) }}">Excluir</a>
@@ -85,7 +89,7 @@
     {{ $users->links() }}
     <br>
 
-    <h2>Arquivos Enviados:</h2>
+    {{-- <h2>Arquivos Enviados:</h2> --}}
 
 {{-- @if($files->isEmpty())
     <p>Nenhum arquivo enviado.</p>

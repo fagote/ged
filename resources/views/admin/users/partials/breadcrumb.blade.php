@@ -11,7 +11,6 @@
     @media (prefers-color-scheme: dark) {
         a{
             color: white;
-            border: 1px solid #ccc; 
             border-radius: 5px;
         }
 
@@ -23,7 +22,6 @@
     @media (prefers-color-scheme: light) {
         a{
             color: black;
-            border: 1px solid #242424; 
             border-radius: 5px;
         }
 

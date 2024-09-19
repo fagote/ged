@@ -150,9 +150,13 @@
                         {{ __('Setores') }}
                     </x-responsive-nav-link>
 
-                    <x-dropdown-link :href="route('macros.index')">
+                    <x-responsive-nav-link :href="route('macros.index')">
                         {{__('Macros')}}
-                    </x-dropdown-link>
+                    </x-responsive-nav-link>
+
+                    <x-responsive-nav-link :href="route('files.index')">
+                        {{__('Arquivos')}}
+                    </x-responsive-nav-link>
 
                     <x-responsive-nav-link :href="route('permissions.index')">
                         {{ __('Permissões') }}
