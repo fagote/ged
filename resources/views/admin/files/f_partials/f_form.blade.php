@@ -16,7 +16,7 @@
 @csrf() 
 
 <label for="user_id">Selecione o Usuário</label><br>
-<select name="user_id" class="select2">
+<select name="user_id" id="user_id" class="select2"> 
     @foreach ($users as $user)
         <option value="{{ $user->id }}" 
             {{ (isset($file) && $file->user_id == $user->id) || old('user_id') == $user->id ? 'selected' : '' }}>
@@ -27,7 +27,7 @@
 <br>
 <br>
 <label for="id_macro">Selecione a Macro</label><br>
-<select name="id_macro" class="select2">
+<select name="id_macro" id="id_macro" class="select2">
     @foreach ($macros as $macro)
         <option value="{{ $macro->id_macro }}" 
             {{ (isset($file) && $file->id_macro == $macro->id_macro) || old('id_macro') == $macro->id_macro ? 'selected' : '' }}>
@@ -38,7 +38,7 @@
 <br>
 <br>
 <label for="id_setor">Selecione o Setor</label><br>
-<select name="id_setor" class="select2">
+<select name="id_setor" id="id_setor" class="select2">
     @foreach ($sectors as $sector)
         <option value="{{ $sector->id_setor }}" 
             {{ (isset($file) && $file->id_setor == $sector->id_setor) || old('id_setor') == $sector->id_setor ? 'selected' : '' }}>
@@ -49,7 +49,7 @@
 <br>
 <br>
 <label for="id_empresa">Selecione a Empresa</label><br>
-<select name="id_empresa" class="select2">
+<select name="id_empresa" id="id_empresa" class="select2">
     @foreach ($companies as $company)
         <option value="{{ $company->id_empresa }}" 
             {{ (isset($file) && $file->id_empresa == $company->id_empresa) || old('id_empresa') == $company->id_empresa ? 'selected' : '' }}>
@@ -59,10 +59,10 @@
 </select>
  <br>
 <br>
-<input id="input" type="number" name="versao" placeholder="Versão do Documento" value="{{ $file->versao ?? old('versao') }}" min="1" step="1" required>
+<input id="versao" type="number" name="versao" placeholder="Versão do Documento" value="{{ $file->versao ?? old('versao') }}" min="1" step="1" required>
 <br>
-<input id="input" type="text" name="codidgo" placeholder="Código do Documento" value="{{ $file->codigo ?? old ('codigo')}}" required>
-<input id="input" type="text" name="path" placeholder="Path" value="{{ $file->file_path ?? old('file_path') }}" required>
+<input id="codigo" type="text" name="codigo" placeholder="Código do Documento" value="{{ $file->codigo ?? old ('codigo')}}" required>
+<input id="path" type="text" name="path" placeholder="Path" value="{{ $file->file_path ?? old('file_path') }}" required>
 <button type="submit">Enviar</button> 
 
 {{-- <!-- Formulário de upload de arquivos -->
@@ -87,7 +87,7 @@
 
 <style>
     /* Estilo geral para os campos de texto */
-    #input, select {
+    #versao,#codigo,#path, select {
         width: 60%; /* Faz com que os campos preencham toda a largura disponível */
         padding: 10px; /* Espaçamento interno */
         margin-bottom: 15px; /* Espaço entre os campos */
@@ -99,7 +99,7 @@
     }
 
     /* Muda a cor da borda ao focar no campo */
-    #input:focus {
+    #versao:focus,#codigo:focus,#path:focus {
         border-color: #007BFF; /* Cor da borda ao focar */
         outline: none; /* Remove o outline padrão */
     }

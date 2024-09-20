@@ -23,7 +23,7 @@ class UserController extends Controller
     {
 
 
-        $users = User::paginate(15); //User::all();
+        $users = User::with(['company','sector'])->paginate(15); //User::all();
 
         return view('admin.users.index', compact('users'));
 

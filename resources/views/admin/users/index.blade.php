@@ -71,8 +71,8 @@
             <tr>
                 <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
-                <td>{{$user->id_empresa}}</td>
-                <td>{{$user->id_setor}}</td>
+                <td>{{$user->company->name_empresa}}</td>
+                <td>{{$user->sector->name_setor}}</td>
                 <td>
                     <a id="button1" href="{{ route('users.edit', $user->id) }}">Edit</a>
                     <a id="button1" href="{{ route('users.show', $user->id) }}">Excluir</a>

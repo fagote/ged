@@ -58,4 +58,15 @@ class File extends Authenticatable
         return $this->belongsTo(User::class, 'user_id');
     }
     
+    public function company(){
+        return $this->belongsTo(Company::class, 'id_empresa');
+    }
+
+    public function macro(){
+        return $this->belongsTo(Macro::class, 'id_macro');
+    }
+
+    public function sector(){
+        return $this->belongsTo(Sector::class, 'id_setor');
+    }
 }
