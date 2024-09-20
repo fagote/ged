@@ -9,7 +9,7 @@
         <li>Path: {{$file->file_path}}</li>
         <li>Versão: {{$file->versao}}</li>
         <li>Código: {{$file->codigo}}</li>
-        <li>ID Macro: {{$file->macro}}</li>
+        <li>ID Macro: {{$file->id_macro}}</li>
         <li>ID Empresa: {{$file->id_empresa}}</li>
         <li>ID Setor: {{$file->id_setor}}</li>
     </ul>

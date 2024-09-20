@@ -76,9 +76,9 @@
                 <td>{{$file->file_path}}</td>
                 <td>{{$file->versao}}</td>
                 <td>{{$file->user->name}}</td>
-                <td>{{$file->id_macro}}</td>
-                <td>{{$file->id_setor}}</td>
-                <td>{{$file->id_empresa}}</td>
+                <td>{{$file->macro->name_macro}}</td>
+                <td>{{$file->sector->name_setor}}</td>
+                <td>{{$file->company->name_empresa}}</td>
                 <td>
                     <a id="button1" href="{{ route('files.edit', $file->id) }}">Edit</a>
                     <a id="button1" href="{{ route('files.show', $file->id) }}">Excluir</a>

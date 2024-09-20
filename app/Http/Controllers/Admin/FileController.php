@@ -23,7 +23,7 @@ class FileController extends Controller
 
         // Permite o meu banco files acessar o banco usuários para mostrar a 
         // informção
-        $files = File::with('user')->paginate(15);
+        $files = File::with(['user','company','sector','macro'])->paginate(15);
 
         return view('admin.files.f_index', compact('files'));
 

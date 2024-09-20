@@ -15,7 +15,7 @@
     </div>
 
     <form action="{{ route('files.store') }}" method="POST">
-        @include('admin.files.f_partials.f_form');
+        @include('admin.files.f_partials.f_form')
     </form>
 
 @endsection
