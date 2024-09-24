@@ -15,7 +15,10 @@
     </div>
 
     <form action="{{ route('files.store') }}" method="POST">
+
+        @csrf
         @include('admin.files.f_partials.f_form')
+        
     </form>
 
 @endsection
