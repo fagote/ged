@@ -9,62 +9,43 @@
         </h2>
     </x-slot>
 
+    
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-
-                    @can('is-admin')
-
-                        @if (session('success'))
-                            <div id="success-message" style="color: white; background-color: green; padding: 10px; border-radius: 5px;">
-                                {{ session('success') }}
-                            </div>
-                    
-                            <!-- Função para tirar a mensagem de aviso após 4 segundos -->
-                            <script>
-                                setTimeout(function() {
-                                    var successMessage = document.getElementById('success-message');
-                                    if (successMessage) {
-                                        successMessage.style.display = 'none';
-                                    }
-                                }, 4000);
-                            </script>
-                        @endif
-
-                        
-
-
-                    @else   
-                        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                            O seu usuário está logado!
-                        </h2>
-                    @endcan
-
-                    
-
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 text-gray-900 dark:text-gray-100">
                 <div class="uploaded-files">
-                    <h2>Macros:</h2><br>
+                    <h2> Arquivos: </h2><br>
 
-                    <a href="x">
-                        <button class="glow-on-hover" type="button">Qualidade</button>
-                    </a><br>
-                        
-                    <a href="x2">
-                        <button  class="glow-on-hover" type="button">Instrução</button>
-                    </a><br>
-                    <a href="x3">
-                        <button  class="glow-on-hover" type="button">Procedimento</button>
-                    </a><br>
-                   
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Path</th>
+                                <th>Versão</th>
+                                <th>ID User</th>
+                                <th>ID Macro</th>
+                                <th>ID Setor</th>
+                                <th>ID Empresa</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse ($files as $file)
+                            <tr>
+                                <td>{{$file->codigo}}</td>
+                                <td>{{$file->file_path}}</td>
+                                <td>{{$file->versao}}</td>
+                                <td>{{$file->user->name}}</td>
+                                <td>{{$file->macro->name_macro}}</td>
+                                <td>{{$file->sector->name_setor}}</td>
+                                <td>{{$file->company->name_empresa}}</td>
+                                <td>
+                                    <a id="button1" href="{{ route('files.edit', $file->id) }}">Edit</a>
+                                    <a id="button1" href="{{ route('files.show', $file->id) }}">Excluir</a>
+                                    <a id="button1" href="{{ route('files.view', $file->id) }}" target="_blank">Visualizar</a>
+                                </td>
+                            </tr>
 
                         
 
@@ -86,6 +67,7 @@
             </div>
         </div>
     </div>
+</div>
         
 </x-app-layout>
 

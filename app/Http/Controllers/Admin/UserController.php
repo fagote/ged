@@ -29,6 +29,13 @@ class UserController extends Controller
 
     }
 
+    // Página index da "pasta Inusittá"
+    public function indexIN(){
+
+        return view('inusitta');
+    }
+
+
     
     public function create()
     {

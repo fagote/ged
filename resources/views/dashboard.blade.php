@@ -72,19 +72,24 @@
                 <div class="uploaded-files">
                     <h2>Empresas:</h2><br>
 
-                    <a href="x">
-                        <button class="glow-on-hover" type="button">Inusittá</button>
-                    </a>
+                    <button class="glow-on-hover" type="button" onclick="window.location='{{ route('inusitta.index') }}'" >
+                        <img src="images/inusitta.png" alt="Inusitta Logo" style="width: 100px; height: 50px; margin-right: 5px;">
+                    </button> <!--onclick é um evento javascript-->
                         
-                    <a href="x2">
-                        <button  class="glow-on-hover" type="button">Microsoft</button>
-                    </a>
-                    <a href="x3">
-                        <button  class="glow-on-hover" type="button">Apple</button>
-                    </a>
-                    <a href="x4">
-                        <button  class="glow-on-hover" type="button">Intel</button>
-                    </a>
+                    <button  class="glow-on-hover" type="button" onclick="window.location='{{route('users.index')}}'">
+                        <img src="images/microsoft.png" alt="microsoft Logo" style="width: 100px; height: 50px; margin-right: 5px;">
+                    </button>
+                    
+                    <button  class="glow-on-hover" type="button" onclick="window.location='{{route('users.index')}}'">
+                        <img src="images/haos.png" alt="haos Logo" style="width: 120px; height: 50px; margin-right: 5px;">
+                    </button>
+                    <button  class="glow-on-hover" type="button" onclick="window.location='{{ route('users.index') }}'">
+                        <img src="images/apple.png" alt="haos Logo" style="width: 50px; height: 50px; margin-right: 5px;">
+                    </button>
+
+                   
+
+                    
 
                         
 
@@ -115,8 +120,8 @@
 
 <style>
     .glow-on-hover {
-    width: 220px;
-    height: 50px;
+    width: 120px;
+    height: 60px;
     border: none;
     outline: none;
     color: #fff;

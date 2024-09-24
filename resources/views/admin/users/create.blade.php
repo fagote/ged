@@ -17,6 +17,7 @@
     <form action=" {{ route('users.store') }} " method="POST">
         
         @include('admin.users.partials.form')
+        
     </form>
 
 @endsection

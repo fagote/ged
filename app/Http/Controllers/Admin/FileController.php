@@ -43,12 +43,13 @@ class FileController extends Controller
 
 
 
+    /*
     public function upload(StoreFileRequest $request){
         
         $input = $request->validated();
         dd($input);
 
-    }
+    }*/
 
     //=================================================
     /*
@@ -90,12 +91,16 @@ class FileController extends Controller
     // Função Para Colocar Informações no Banco de Dados
     public function store(StoreFileRequest $request)
     {
-        File::create($request->validated());
+        $validated = $request->validated(); // Valida os dados
+        dd($validated); // Exibe os dados validados para ver se estão corretos
+
+        File::create($validated);
 
         return redirect()
             ->route('files.index')
-            ->with('success', 'Arquivo(s) adicionado(s) com sucesso!');
+            ->with('success', 'Arquivo adicionado com sucesso!');
     }
+
     //================================================
 
 
