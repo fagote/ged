@@ -92,7 +92,7 @@ class FileController extends Controller
     public function store(StoreFileRequest $request)
     {
         $validated = $request->validated(); // Valida os dados
-        dd($validated); // Exibe os dados validados para ver se estão corretos
+        //dd($validated); // Exibe os dados validados para ver se estão corretos
 
         File::create($validated);
 
