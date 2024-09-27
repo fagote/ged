@@ -4,6 +4,9 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 
+<!--=======================================================-->
+{{-- Função para adicionar a funcionalidade de pesquisa ao dropdownlink --}}
+
 <script>
     $(document).ready(function() {
         $('.select2').select2({
@@ -13,41 +16,27 @@
     });
 </script>
 
+<!--=======================================================-->
+{{-- Token de validação --}}
+
 @csrf() 
+
+<!--=======================================================-->
 
 <label for="user_id">Selecione o Usuário</label><br>
 <select name="user_id" id="user_id" class="select2"> 
     @foreach ($users as $user)
-        <option value="{{ $user->id }}" 
-            {{ (isset($file) && $file->user_id == $user->id) || old('user_id') == $user->id ? 'selected' : '' }}>
-            {{ $user->name }}
-        </option>
+    <option value="{{ $user->id }}" 
+        {{ (isset($file) && $file->user_id == $user->id) || old('user_id') == $user->id ? 'selected' : '' }}>
+        {{ $user->name }} {{-- Função acima serve para puxar os dados para não começar sempre no início da fila --}}
+    </option>
     @endforeach
 </select>
 <br>
 <br>
-<label for="id_macro">Selecione a Macro</label><br>
-<select name="id_macro" id="id_macro" class="select2">
-    @foreach ($macros as $macro)
-        <option value="{{ $macro->id_macro }}" 
-            {{ (isset($file) && $file->id_macro == $macro->id_macro) || old('id_macro') == $macro->id_macro ? 'selected' : '' }}>
-            {{ $macro->name_macro }}
-        </option>
-    @endforeach
-</select>
-<br>
-<br>
-<label for="id_setor">Selecione o Setor</label><br>
-<select name="id_setor" id="id_setor" class="select2">
-    @foreach ($sectors as $sector)
-        <option value="{{ $sector->id_setor }}" 
-            {{ (isset($file) && $file->id_setor == $sector->id_setor) || old('id_setor') == $sector->id_setor ? 'selected' : '' }}>
-            {{ $sector->name_setor }}
-        </option>
-    @endforeach
-</select>
-<br>
-<br>
+
+<!--=======================================================-->
+
 <label for="id_empresa">Selecione a Empresa</label><br>
 <select name="id_empresa" id="id_empresa" class="select2">
     @foreach ($companies as $company)
@@ -59,10 +48,49 @@
 </select>
  <br>
 <br>
-<input id="versao" type="number" name="versao" placeholder="Versão do Documento" value="{{ $file->versao ?? old('versao') }}" min="1" step="1" required>
+
+<!--=======================================================-->
+
+<label for="id_setor">Selecione o Setor</label><br>
+<select name="id_setor" id="id_setor" class="select2">
+    @foreach ($sectors as $sector)
+        <option value="{{ $sector->id_setor }}" 
+            {{ (isset($file) && $file->id_setor == $sector->id_setor) || old('id_setor') == $sector->id_setor ? 'selected' : '' }}>
+            {{ $sector->name_setor }}
+        </option>
+    @endforeach
+</select>
 <br>
-<input id="codigo" type="text" name="codigo" placeholder="Código do Documento" value="{{ $file->codigo ?? old ('codigo')}}" required>
-<input id="path" type="text" name="path" placeholder="Path" value="{{ $file->file_path ?? old('file_path') }}" required>
+<br>
+
+<!--=======================================================-->
+
+<label for="id_macro">Selecione a Macro</label><br>
+<select name="id_macro" id="id_macro" class="select2">
+    @foreach ($macros as $macro)
+        <option value="{{ $macro->id_macro }}" 
+            {{ (isset($file) && $file->id_macro == $macro->id_macro) || old('id_macro') == $macro->id_macro ? 'selected' : '' }}>
+            {{ $macro->name_macro }}
+        </option>
+    @endforeach
+</select>
+<br>
+<br>
+
+<!--=======================================================-->
+
+<input id="versao" type="number" name="versao" placeholder="Versão do Documento" value="{{ $file->versao ?? old('versao') }}" min="1" step="1" required><br>
+
+<!--=======================================================-->
+
+<input id="codigo" type="text" name="codigo" placeholder="Código do Documento" value="{{ $file->codigo ?? old ('codigo')}}" required><br>
+
+<!--=======================================================-->
+
+<input id="path" type="text" name="file_path" placeholder="Path" value="{{ $file->file_path ?? old('file_path') }}" required><br>
+
+<!--=======================================================-->
+
 <button type="submit">Enviar</button> 
 
 {{-- <!-- Formulário de upload de arquivos -->
