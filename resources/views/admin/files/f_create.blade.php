@@ -14,7 +14,7 @@
         </h2> 
     </div>
 
-    <form action="{{ route('files.store') }}" method="POST">
+    <form action="{{ route('files.store') }}" method="POST" enctype="multipart/form-data">
 
         @csrf
         @include('admin.files.f_partials.f_form')

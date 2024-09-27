@@ -60,12 +60,12 @@
         <thead>
             <tr>
                 <th>Código</th>
-                <th>Path</th>
                 <th>Versão</th>
                 <th>ID User</th>
-                <th>ID Macro</th>
-                <th>ID Setor</th>
                 <th>ID Empresa</th>
+                <th>ID Setor</th>
+                <th>ID Macro</th>
+                <th>Path</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -73,12 +73,12 @@
             @forelse ($files as $file)
             <tr>
                 <td>{{$file->codigo}}</td>
-                <td>{{$file->file_path}}</td>
                 <td>{{$file->versao}}</td>
                 <td>{{$file->user->name}}</td>
-                <td>{{$file->macro->name_macro}}</td>
-                <td>{{$file->sector->name_setor}}</td>
                 <td>{{$file->company->name_empresa}}</td>
+                <td>{{$file->sector->name_setor}}</td>
+                <td>{{$file->macro->name_macro}}</td>
+                <td>{{$file->file_path}}</td>
                 <td>
                     <a id="button1" href="{{ route('files.edit', $file->id) }}">Edit</a>
                     <a id="button1" href="{{ route('files.show', $file->id) }}">Excluir</a>

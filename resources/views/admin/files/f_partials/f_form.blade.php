@@ -87,7 +87,12 @@
 
 <!--=======================================================-->
 
-<input id="path" type="text" name="file_path" placeholder="Path" value="{{ $file->file_path ?? old('file_path') }}" required><br>
+{{-- <input id="path" type="text" name="file_path" placeholder="Path" value="{{ $file->file_path ?? old('file_path') }}" required><br> --}}
+
+<!--=======================================================-->
+
+<label for="arquivo">Selcione o arquivo:   </label><br>
+<input type="file" name="file_path" id="arquivo" required> <br><br>
 
 <!--=======================================================-->
 
@@ -151,7 +156,7 @@
     }
 
     @media(prefers-color-scheme: dark){
-        label, #x, script {
+        label, #x, script, #arquivo {
             color: white;
         }
         

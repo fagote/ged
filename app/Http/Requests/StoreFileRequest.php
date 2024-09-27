@@ -30,9 +30,8 @@ class StoreFileRequest extends FormRequest
             'id_macro' => 'required|integer|min:1',
             'id_setor' => 'required|integer|min:1',
             'id_empresa' => 'required|integer|min:1',
-            'file_path' => 'required|string|min:3|max:255',
+            'file_path' => 'required|file|max:4096',
 
-            //'files.*' => 'required|mimes:pdf, xlsx, ods | max:2048',
         ];
     }
 }
