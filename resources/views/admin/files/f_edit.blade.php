@@ -10,7 +10,7 @@
     
     <x-alert style="color: white"></x-alert>
 
-    <form action=" {{ route('files.update', $file->id) }} " method="POST">
+    <form action=" {{ route('files.update', $file->id) }} " method="POST" enctype="multipart/form-data">
 
         @method('PUT')
         @include('admin.files.f_partials.f_form')

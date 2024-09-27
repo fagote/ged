@@ -91,10 +91,25 @@ class FileController extends Controller
     // Função Para Colocar Informações no Banco de Dados
     public function store(StoreFileRequest $request)
     {
-        $validated = $request->validated(); // Valida os dados
-        //dd($validated); // Exibe os dados validados para ver se estão corretos
+       // Validação dos campos
+    $validatedData = $request->validate([
+        'file_path' => 'required|file|max:4096',  // Validação para o arquivo (máx. 2 MB)
+        'versao' => 'required|integer',
+        'codigo' => 'required|string',
+        'user_id' => 'required|exists:users,id',
+        'id_macro' => 'required|exists:macros,id_macro',
+        'id_setor' => 'required|exists:sectors,id_setor',
+        'id_empresa' => 'required|exists:companies,id_empresa',
+    ]);
 
-        File::create($validated);
+    // Upload do arquivo
+    if ($request->hasFile('file_path')) {
+        $file = $request->file('file_path');
+        $filePath = $file->store('files', 'public');  // Armazena o arquivo na pasta 'storage/app/public/arquivos'
+        $validatedData['file_path'] = $filePath;  // Adiciona o caminho do arquivo no array de dados validados
+    }
+
+    File::create($validatedData);
 
         return redirect()
             ->route('files.index')
@@ -135,17 +150,7 @@ class FileController extends Controller
     // Coleta todos os dados exceto o arquivo
     $data = $request->only('versao', 'codigo', 'id_macro', 'id_setor', 'id_empresa', 'user_id', 'file_path');
 
-    /*
-    // Verifica se um novo arquivo foi enviado
-    if ($request->hasFile('file')) {
-        // Armazena o novo arquivo na pasta 'files' dentro de 'public'
-        $path = $request->file('file')->store('files', 'public');
-
-        // Adiciona o novo caminho do arquivo ao array de dados a serem atualizados
-        $data['file_path'] = $path;
-    }*/
-
-    // Atualiza os dados do arquivo
+    
     $file->update($data);
 
     // Redireciona para a página de índice com uma mensagem de sucesso
@@ -174,10 +179,7 @@ class FileController extends Controller
             return redirect()->route('files.index')->with('message', 'Arquivo não encontrado');
         }
 
-        /*
-        if (Auth::file()->id === $file->id) {
-            return back()->with('message', 'Você não pode excluir seu próprio perfil');
-        }*/
+       
 
 
         $file->delete();
@@ -188,33 +190,11 @@ class FileController extends Controller
 
 
     }
-
-    
-    //=========================================
-    // Função Para Upload de Arquivos
-    /*
-    public function upload(Request $request, $id)
-    {
-        $request->validate([
-            'files.*' => 'required|mimes:pdf,xlsx,ods|max:2048', // Validação para arquivos
-        ]);
-
-        $file = File::find($id);
-
-        foreach ($request->file('files') as $file) {
-            $path = $file->store('files', 'public'); // Armazena o arquivo na pasta 'user_files' dentro de 'public'
-            $file->files()->create(['file_path' => $path]); // Salva o caminho do arquivo na tabela user_files
-        }
-
-        return back()->with('success', 'Arquivos enviados com sucesso!');
-    }*/
-    
-    //=========================================
     
 
     //=========================================
     // Função Para Mostrar Arquivos
-    /*
+    
     public function view($id)
     {
         $file = File::findOrFail($id); // Procura o arquivo pelo ID ou retorna um 404
@@ -227,7 +207,7 @@ class FileController extends Controller
 
         return redirect()->back()->with('error', 'Arquivo não encontrado.');
     }
-    */
+    
     //=========================================
 
 
