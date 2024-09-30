@@ -23,6 +23,7 @@ Route::middleware('auth')
 
         //==============================================================
         // ROTAS PARA USUÁRIOS  
+
         Route::get('/users/search', [UserController::class, 'search'])->name('users.search');
         Route::delete('/users/{user}/destroy', [UserController::class, 'destroy'])->name('users.destroy')->middleware(CheckIfIsAdmin::class);
         Route::post('/users/{id}/upload', [UserController::class, 'upload'])->name('users.upload');
@@ -33,12 +34,7 @@ Route::middleware('auth')
         Route::post('/users',[UserController::class, 'store'])->name('users.store');
         Route::get('/users',[UserController::class, 'index'])->name('users.index');
         Route::get('/users',[UserController::class, 'indexIN'])->name('inusitta.index');
-
-
-
-
         
-
         //==============================================================
 
         
@@ -49,6 +45,7 @@ Route::middleware('auth')
 
 //==============================================================
 // ROTAS PARA FILES
+
 Route::get('/files/search', [FileController::class, 'search'])->name('files.search');
 Route::delete('/files/{file}/destroy', [FileController::class, 'destroy'])->name('files.destroy')->middleware(CheckIfIsAdmin::class);
 Route::post('/files/{id}/upload', [FileController::class, 'upload'])->name('files.upload');
@@ -59,31 +56,7 @@ Route::get('/files/{file}/edit', [FileController::class, 'edit'])->name('files.e
 Route::post('/files',[FileController::class, 'store'])->name('files.store');
 Route::get('/files',[FileController::class, 'index'])->name('files.index');
 Route::get('/files/view/{id}', [FileController::class, 'view'])->name('files.view');
-//==============================================================
 
-
-
-//==============================================================
-// ROTAS PARA FILES
-/*
-route::middleware('auth')
-    ->prefix('admin')
-    ->group(function(){
-        
-        Route::get('/files/search', [FileController::class, 'search'])->name('files.search');
-
-        Route::get('/files/view/{id}', [FileController::class, 'view'])->name('files.view');
-        Route::post('/files/{id}/upload', [FileController::class, 'upload'])->name('files.upload');
-        Route::delete('/files/{file}/destroy', [FileController::class, 'destroy'])->name('files.destroy')->middleware(CheckIfIsAdmin::class);
-        Route::get('/files/create', [FileController::class, 'create'])->name('files.create');
-        Route::get('/files/{file}', [FileController::class, 'show'])->name('files.show');
-        Route::put('/files/{file}',[FileController::class, 'update'])->name('files.update');
-        Route::get('/files/{file}/edit', [FileController::class, 'edit'])->name('files.edit');
-        Route::post('/files',[FileController::class, 'store'])->name('files.store');
-        Route::get('/files',[FileController::class, 'index'])->name('files.index');
-
-});
-*/
 //==============================================================
 
 
@@ -117,8 +90,6 @@ Route::get('/sectors',[SectorController::class, 'index'])->name('sectors.index')
 //==============================================================
 // ROTAS PARA MACROS
 
-//Route::get('/users', [UserController::class, 'showFile'])->name('dashboard');
-
 Route::middleware('auth')
     ->prefix('admin')
     ->group(function(){
@@ -135,6 +106,7 @@ Route::middleware('auth')
         Route::get('/macros',[MacroController::class, 'index'])->name('macros.index');
         
     });
+
 //==============================================================
 
 

@@ -41,57 +41,13 @@ class FileController extends Controller
         return view('admin.files.f_create', compact('users', 'companies', 'sectors', 'macros'));
     }
 
-
-
-    /*
-    public function upload(StoreFileRequest $request){
-        
-        $input = $request->validated();
-        dd($input);
-
-    }*/
-
-    //=================================================
-    /*
-    public function store(StoreFileRequest $request)
-    {
-
-        File::create($request->validated());
-
-        $files = request->file('files');
-
-        $paths = [];
-
-        foreach($files as $file){
-            $path = $file->store('files', 'public');
-            $paths[] = $path;
-        }
-
-        foreach ($paths as $path){
-            File::create([
-                'user_id' => $request->input('user_id'), 
-                'id_macro' => $request->input('id_macro'),
-                'id_setor' => $request->input('id_setor'),
-                'id_empresa' => $request->input('id_empresa'),
-                'versao' => $request->input('versao'),
-                'codigo' => $request->input('codigo'),
-                'file_path' => $path,
-            ]);
-        }
-
-        return redirect()
-            ->route('files.index')
-            ->with('success', 'Arquivo adicionado com sucesso');
-    }*/
-    //================================================
-
-
     
     //================================================
     // Função Para Colocar Informações no Banco de Dados
+
     public function store(StoreFileRequest $request)
     {
-       // Validação dos campos
+    // Validação dos campos
     $validatedData = $request->validate([
         'file_path' => 'required|file|max:4096',  // Validação para o arquivo (máx. 2 MB)
         'versao' => 'required|integer',
@@ -141,23 +97,32 @@ class FileController extends Controller
     }
 
     public function update(UpdateFileRequest $request, string $id)
-{
-    // Busca o arquivo pelo ID
-    if (!$file = File::find($id)) {
-        return back()->with('message', 'Arquivo não encontrado');
+    {
+        // Busca o arquivo pelo ID
+        if (!$file = File::find($id)) {
+            return back()->with('message', 'Arquivo não encontrado');
+        }
+
+        // Coleta todos os dados exceto o arquivo
+        $data = $request->only('versao', 'codigo', 'id_macro', 'id_setor', 'id_empresa', 'user_id');
+
+        // Verifica se um novo arquivo foi enviado
+        if ($request->hasFile('file_path')) {
+            // Armazena o novo arquivo na pasta "files"
+            $fileToUpload = $request->file('file_path');
+            $filePath = $fileToUpload->store('files', 'public'); // Armazena na pasta 'files'
+            $data['file_path'] = $filePath; // Atualiza o caminho do arquivo
+        }
+
+        // Atualiza o registro do arquivo
+        $file->update($data);
+
+        // Redireciona para a página de índice com uma mensagem de sucesso
+        return redirect()
+            ->route('files.index')
+            ->with('success', 'Arquivo editado com sucesso');
     }
 
-    // Coleta todos os dados exceto o arquivo
-    $data = $request->only('versao', 'codigo', 'id_macro', 'id_setor', 'id_empresa', 'user_id', 'file_path');
-
-    
-    $file->update($data);
-
-    // Redireciona para a página de índice com uma mensagem de sucesso
-    return redirect()
-        ->route('files.index')
-        ->with('success', 'Arquivo editado com sucesso');
-}
 
 
     public function show(string $id)
@@ -171,15 +136,16 @@ class FileController extends Controller
 
     }
 
-    
+
+    //=========================================
+    // Função Para Excluir arquivo
+
     public function destroy(string $id)
     {
 
         if (!$file = File::find($id)) {
             return redirect()->route('files.index')->with('message', 'Arquivo não encontrado');
         }
-
-       
 
 
         $file->delete();
@@ -188,8 +154,9 @@ class FileController extends Controller
             ->route('files.index')
             ->with('success', 'Arquivo excluído com sucesso');
 
-
     }
+
+    //=========================================
     
 
     //=========================================
