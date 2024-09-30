@@ -87,36 +87,14 @@
 
 <!--=======================================================-->
 
-{{-- <input id="path" type="text" name="file_path" placeholder="Path" value="{{ $file->file_path ?? old('file_path') }}" required><br> --}}
-
-<!--=======================================================-->
-
 <label for="arquivo">Selcione o arquivo:   </label><br>
-<input type="file" name="file_path" id="arquivo" required> <br><br>
+<input type="file" class="mt-1 block w-full" name="file_path" id="arquivo" value="{{$file->file_path ?? old('file_path')}}" required> <br><br>
 
 <!--=======================================================-->
 
 <button type="submit">Enviar</button> 
 
-{{-- <!-- Formulário de upload de arquivos -->
-<form action="{{ route('files.create') }}" method="POST" enctype="multipart/form-data" > --}}
-    
-    {{-- <label class="block text-gray-700 dark:text-gray-300" for="files">Selecione os arquivos</label>
-    <input id="x" type="file" name="files[]" id="files" multiple class="mt-1 block w-full" accept=".pdf,.xlsx,.ods" required>
-    @error('files.*')
-    <span class="text-red-500 text-sm">{{ $message }}</span>
-    @enderror --}}
-
-{{-- <div class="flex items-center ">
-        <x-primary-button>
-            {{ __('Enviar Arquivos') }}
-        </x-primary-button>
-    </div> --}}
-{{-- </form>  --}}
-
-
-
-
+<!--=======================================================-->
 
 <style>
     /* Estilo geral para os campos de texto */
