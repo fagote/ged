@@ -15,54 +15,21 @@
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 text-gray-900 dark:text-gray-100">
                 <div class="uploaded-files">
-                    <h2> Arquivos: </h2><br>
+                    <h2> MACRO: </h2><br>
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Código</th>
-                                <th>Path</th>
-                                <th>Versão</th>
-                                <th>ID User</th>
-                                <th>ID Macro</th>
-                                <th>ID Setor</th>
-                                <th>ID Empresa</th>
-                                <th>Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @forelse ($files as $file)
-                            <tr>
-                                <td>{{$file->codigo}}</td>
-                                <td>{{$file->file_path}}</td>
-                                <td>{{$file->versao}}</td>
-                                <td>{{$file->user->name}}</td>
-                                <td>{{$file->macro->name_macro}}</td>
-                                <td>{{$file->sector->name_setor}}</td>
-                                <td>{{$file->company->name_empresa}}</td>
-                                <td>
-                                    <a id="button1" href="{{ route('files.edit', $file->id) }}">Edit</a>
-                                    <a id="button1" href="{{ route('files.show', $file->id) }}">Excluir</a>
-                                    <a id="button1" href="{{ route('files.view', $file->id) }}" target="_blank">Visualizar</a>
-                                </td>
-                            </tr>
 
-                        
-
-                        {{-- @if($files->isEmpty())
-                        <p>Nenhum arquivo enviado.</p>
-                    @else
-                        <ul>
-                            @foreach($files as $file)
-                                <li>
-                                    <a href="{{ asset('storage/app/public/user_files' . $file->file_path) }}" target="_blank">
-                                        {{ basename($file->file_path) }} <!-- Mostra o nome do arquivo -->
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    @endif
-                </div>            --}}
+                    <ul class="file-system">
+                        <li class="folder">
+                            <a href="{{route('qualidade.index')}}">Qualidade</a>
+                        </li>
+                        <li class="folder">
+                            <a href="{{route('producao.index')}}">Produção</a>
+                        </li>
+                        <li class="folder">
+                            <a href="{{route('instrucao.index')}}">Instrução</a>
+                        </li><br><br>
+                    </ul>
+                   
 
             </div>
         </div>
@@ -129,6 +96,30 @@
     top: 0;
     border-radius: 10px;
 }
+
+.file-system {
+            list-style: none;
+            padding: 0;
+        }
+
+        .file-system li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc; /* Linha entre pastas e arquivos */
+        }
+
+        .folder {
+
+            @media(prefers-color-scheme: dark){
+                color: white;
+            }
+
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .file {
+            color: #16a085;
+        }
 
 @keyframes glowing {
     0% { background-position: 0 0; }

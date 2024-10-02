@@ -29,11 +29,89 @@ class UserController extends Controller
 
     }
 
+
+    //=========================================
     // Página index da "pasta Inusittá"
+
     public function indexIN(){
 
         return view('inusitta');
     }
+
+    //=========================================
+
+    //=========================================
+    //Função Para Mostrar a pasta do TI
+
+    public function indexTI(){
+        return view('tecnologia_informacao');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Função Para Mostrar os arquivos de qualidade
+
+    public function indexQ(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'Tecnologia da Informação');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'Qualidade');
+        })
+        ->paginate(10);
+
+        return view('admin.macros.qualidade', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // Função Para Mostrar os arquivos de Produção
+
+    public function indexP(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'Tecnologia da Informação');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'Produção');
+        })
+        ->paginate(10);
+
+        return view('admin.macros.qualidade', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // Função Para Mostrar os arquivos de Instrução
+
+    public function indexI(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'Tecnologia da Informação');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'Instrução');
+        })
+        ->paginate(10);
+
+        return view('admin.macros.qualidade', compact('files'));
+    }
+
+    //=========================================
+
 
 
     
@@ -131,27 +209,6 @@ class UserController extends Controller
 
     }
 
-    
-    //=========================================
-    //Função Para Upload de Arquivos
-    /*
-    public function upload(Request $request, $id)
-    {
-        $request->validate([
-            'files.*' => 'required|mimes:pdf,xlsx,ods|max:2048', // Validação para arquivos
-        ]);
-
-        $user = User::find($id);
-
-        foreach ($request->file('files') as $file) {
-            $path = $file->store('user_files', 'public'); // Armazena o arquivo na pasta 'user_files' dentro de 'public'
-            $user->files()->create(['file_path' => $path]); // Salva o caminho do arquivo na tabela user_files
-        }
-
-        return back()->with('success', 'Arquivos enviados com sucesso!');
-    }
-    */
-    //=========================================
 
 
     //=========================================
@@ -171,30 +228,16 @@ class UserController extends Controller
     //=========================================
 
     //=========================================
-    // Função para escolha da empresa via checkbox
-    /*
-    public function select_company(){
-
-    }
-    */
+    //
     //=========================================
 
     //=========================================
-    // Função para escolha do setor via dropdown link
-    /*
-    public function select_sector(){
-        
-    }
-    */
+    //
     //=========================================
     //
     //=========================================
 
-    /*
-    public function mostrarUsersFormBlade(){
-        $users = User::all();
-        return view('admin.files.f_partials.f_form', compact('users'));
-    }*/
+   
     
 
 

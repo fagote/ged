@@ -10,11 +10,6 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\CheckIfIsAdmin;
 use Illuminate\Support\Facades\Route;
 
-
-
-
-//Route::get('/users', [UserController::class, 'showFile'])->name('dashboard');
-
 Route::middleware('auth')
     ->prefix('admin')
     ->group(function(){
@@ -33,8 +28,11 @@ Route::middleware('auth')
         Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
         Route::post('/users',[UserController::class, 'store'])->name('users.store');
         Route::get('/users',[UserController::class, 'index'])->name('users.index');
-        Route::get('/users',[UserController::class, 'indexIN'])->name('inusitta.index');
-        
+        Route::get('/inusitta',[UserController::class, 'indexIN'])->name('inusitta.index');
+        Route::get('/inusitta/ti', [UserController::class, 'indexTI'])->name('ti.index');
+        Route::get('inusitta/ti/qualidade',[UserController::class, 'indexQ'])->name('qualidade.index');
+        Route::get('inusitta/ti/producao', [UserController::class, 'indexP'])->name('producao.index');
+        Route::get('inusitta/ti/instrucao', [UserController::class, 'indexI'])->name('instrucao.index');
         //==============================================================
 
         
