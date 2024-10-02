@@ -88,7 +88,7 @@
 <!--=======================================================-->
 
 <label for="arquivo">Selcione o arquivo:   </label><br>
-<input type="file" class="mt-1 block w-full" name="file_path" id="arquivo" value="{{$file->file_path ?? old('file_path')}}" required> <br><br>
+<input type="file" class="mt-1 block w-full" name="file_path" id="arquivo"> <br><br>
 
 <!--=======================================================-->
 

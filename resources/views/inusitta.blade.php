@@ -15,7 +15,20 @@
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 text-gray-900 dark:text-gray-100">
                 <div class="uploaded-files">
-                    <h2> Setores: </h2><br>
+                    <h2> SETORES: </h2><br>
+
+
+                    <ul class="file-system">
+                        <li class="folder">
+                            <a href="{{ route('ti.index') }}">Tecnologia da Informação</a>
+                        </li>
+                        <li class="folder">
+                            <a href="x">Marketing</a>
+                        </li>
+                        <li class="folder">
+                            <a href="x">Comercial</a>
+                        </li><br><br>
+                    </ul>
 
                         <button class="glow-on-hover" type="button">
                             Tecnologia da Informação
@@ -28,25 +41,6 @@
                         <button  class="glow-on-hover" type="button">
                             Comercial
                         </button>
-                   
-
-                        
-
-                        {{-- @if($files->isEmpty())
-                        <p>Nenhum arquivo enviado.</p>
-                    @else
-                        <ul>
-                            @foreach($files as $file)
-                                <li>
-                                    <a href="{{ asset('storage/app/public/user_files' . $file->file_path) }}" target="_blank">
-                                        {{ basename($file->file_path) }} <!-- Mostra o nome do arquivo -->
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    @endif
-                </div>            --}}
-
             </div>
         </div>
     </div>
@@ -118,4 +112,29 @@
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
+
+.file-system {
+            list-style: none;
+            padding: 0;
+        }
+
+        .file-system li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc; /* Linha entre pastas e arquivos */
+        }
+
+        .folder {
+
+            @media(prefers-color-scheme: dark){
+                color: white;
+            }
+
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .file {
+            color: #16a085;
+        }
+
 </style>
