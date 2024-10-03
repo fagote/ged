@@ -29,10 +29,23 @@ Route::middleware('auth')
         Route::post('/users',[UserController::class, 'store'])->name('users.store');
         Route::get('/users',[UserController::class, 'index'])->name('users.index');
         Route::get('/inusitta',[UserController::class, 'indexIN'])->name('inusitta.index');
-        Route::get('/inusitta/ti', [UserController::class, 'indexTI'])->name('ti.index');
-        Route::get('inusitta/ti/qualidade',[UserController::class, 'indexQ'])->name('qualidade.index');
-        Route::get('inusitta/ti/producao', [UserController::class, 'indexP'])->name('producao.index');
-        Route::get('inusitta/ti/instrucao', [UserController::class, 'indexI'])->name('instrucao.index');
+        
+        Route::get('/inusitta/ti', [UserController::class, 'indexInusittaTI'])->name('ti.index');
+        Route::get('inusitta/ti/qualidade',[UserController::class, 'indexInusittaTiQualidade'])->name('qualidade.index');
+        Route::get('inusitta/ti/producao', [UserController::class, 'indexInusittaTiProducao'])->name('producao.index');
+        Route::get('inusitta/ti/instrucao', [UserController::class, 'indexInusittaTiInstrucao'])->name('instrucao.index');
+        
+        Route::get('inusitta/marketing', [UserController::class, 'indexInusittaMarketing'])->name('marketing.index');
+        Route::get('inusitta/marketing/qualidade', [UserController::class, 'indexInusittaMarketingQualidade'])->name('inusittaMarketingQualidade.index');
+        Route::get('inusitta/marketing/producao', [UserController::class, 'indexInusittaMarketingProducao'])->name('inusittaMarketingProducao.index');
+        Route::get('inusitta/marketing/instrucao',[UserController::class, 'indexInusittaMarketingInstrucao'])->name('inusittaMarketingInstrucao.index');
+
+        Route::get('inusitta/comercial', [UserController::class, 'indexInusittaComercial'])->name('comercial.index');
+        //
+        //
+        //
+
+
         //==============================================================
 
         

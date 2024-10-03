@@ -31,28 +31,46 @@ class UserController extends Controller
 
 
     //=========================================
-    // Página index da "pasta Inusittá"
+    // Página index da a pasta empresa Inusittá
 
     public function indexIN(){
 
-        return view('inusitta');
+        return view('admin.inusitta.inusitta');
     }
 
     //=========================================
 
     //=========================================
-    //Função Para Mostrar a pasta do TI
+    //Função Para Mostrar a pasta do setor TI
 
-    public function indexTI(){
-        return view('tecnologia_informacao');
+    public function indexInusittaTI(){
+        return view('admin.sectors.tecnologia_informacao');
+    }
+    //OBS: a view tecnologia_informacao.blade.php funciona como um curinga para ser chamado nos outros setores.
+    //=========================================
+
+    //=========================================
+    // Função para mostrar a pasta do setor marketing
+
+    public function indexInusittaMarketing(){
+        return view('admin.inusitta.setor');
     }
 
     //=========================================
 
     //=========================================
-    // Função Para Mostrar os arquivos de qualidade
+    // Função para mostrar a pasta do setor comercial
 
-    public function indexQ(){
+    public function indexInusittaComercial(){
+        return view('admin.sectors.tecnologia_informacao');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Função Para Mostrar os arquivos da macro qualidade
+
+    public function indexInusittaTiQualidade(){
 
         $files = File::whereHas('company', function($query) {
             $query->where('name_empresa', 'Inusitta');
@@ -71,9 +89,9 @@ class UserController extends Controller
     //=========================================
 
     //=========================================
-    // Função Para Mostrar os arquivos de Produção
+    // Função Para Mostrar os arquivos da macro Produção
 
-    public function indexP(){
+    public function indexInusittaTiProducao(){
 
         $files = File::whereHas('company', function($query) {
             $query->where('name_empresa', 'Inusitta');
@@ -92,9 +110,9 @@ class UserController extends Controller
     //=========================================
 
     //=========================================
-    // Função Para Mostrar os arquivos de Instrução
+    // Função Para Mostrar os arquivos da macro Instrução
 
-    public function indexI(){
+    public function indexInusittaTiInstrucao(){
 
         $files = File::whereHas('company', function($query) {
             $query->where('name_empresa', 'Inusitta');
@@ -111,6 +129,68 @@ class UserController extends Controller
     }
 
     //=========================================
+
+    //=========================================
+    // Função Para Mostrar os arquivos da macro Instrução
+
+    public function indexInusittaMarketingQualidade(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'Marketing');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'Qualidade');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.macro', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // Função para mostrar os arquivos da macro produção
+
+    public function indexInusittaMarketingProducao(){
+
+        $files = File::whereHas('company', function($query){
+            $query->where('name_empresa','Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor','Marketing');
+        })
+        ->whereHas('macro', function($query){
+            $query->where('name_macro','Produção');
+        }) -> paginate(10);
+
+        return view('admin.inusitta.macro', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // Função para mostrar os arquivos da macro produção
+
+    public function indexInusittaMarketingInstrucao(){
+
+        $files = File::whereHas('company', function($query){
+            $query->where('name_empresa','Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor','Marketing');
+        })
+        ->whereHas('macro', function($query){
+            $query->where('name_macro','Instrução');
+        }) -> paginate(10);
+
+        return view('admin.inusitta.macro', compact('files'));
+    }
+
+    //=========================================
+
 
 
 

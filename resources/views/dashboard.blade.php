@@ -18,22 +18,38 @@
             <div class="p-6 text-gray-900 dark:text-gray-100">
                 <div class="uploaded-files">
                     <h2>Empresas:</h2><br>
-
-                    <button class="glow-on-hover" type="button" onclick="window.location='{{ route('inusitta.index') }}'" >
-                        <img src="images/inusitta.png" alt="Inusitta Logo" style="width: 100px; height: 50px; margin-right: 5px;">
-                    </button> <!--onclick é um evento javascript-->
-                        
-                    <button  class="glow-on-hover" type="button" onclick="window.location='{{route('users.index')}}'">
-                        <img src="images/microsoft.png" alt="microsoft Logo" style="width: 100px; height: 50px; margin-right: 5px;">
-                    </button>
                     
-                    <button  class="glow-on-hover" type="button" onclick="window.location='{{route('users.index')}}'">
-                        <img src="images/haos.png" alt="haos Logo" style="width: 120px; height: 50px; margin-right: 5px;">
-                    </button>
-                    <button  class="glow-on-hover" type="button" onclick="window.location='{{ route('users.index') }}'">
-                        <img src="images/apple.png" alt="haos Logo" style="width: 50px; height: 50px; margin-right: 5px;">
-                    </button>
+                    @can('is-admin')
+                        <button class="glow-on-hover" type="button" onclick="window.location='{{ route('inusitta.index') }}'" >
+                            <img src="images/inusitta.png" alt="Inusitta Logo" style="width: 100px; height: 50px; margin-right: 5px;">
+                        </button> <!--onclick é um evento javascript-->
+                            
+                        <button  class="glow-on-hover" type="button" onclick="window.location='{{route('users.index')}}'">
+                            <img src="images/microsoft.png" alt="microsoft Logo" style="width: 100px; height: 50px; margin-right: 5px;">
+                        </button>
+                        
+                        <button  class="glow-on-hover" type="button" onclick="window.location='{{route('users.index')}}'">
+                            <img src="images/haos.png" alt="haos Logo" style="width: 120px; height: 50px; margin-right: 5px;">
+                        </button>
+                        <button  class="glow-on-hover" type="button" onclick="window.location='{{ route('users.index') }}'">
+                            <img src="images/apple.png" alt="haos Logo" style="width: 50px; height: 50px; margin-right: 5px;">
+                        </button>
+                    @endcan
 
+                        {{-- <button class="glow-on-hover" type="button" onclick="window.location='{{ route('inusitta.index') }}'" >
+                            <img src="images/inusitta.png" alt="Inusitta Logo" style="width: 100px; height: 50px; margin-right: 5px;">
+                        </button> <!--onclick é um evento javascript-->
+
+                        <button  class="glow-on-hover" type="button" onclick="window.location='{{route('users.index')}}'">
+                            <img src="images/microsoft.png" alt="microsoft Logo" style="width: 100px; height: 50px; margin-right: 5px;">
+                        </button>
+                        
+                        <button  class="glow-on-hover" type="button" onclick="window.location='{{route('users.index')}}'">
+                            <img src="images/haos.png" alt="haos Logo" style="width: 120px; height: 50px; margin-right: 5px;">
+                        </button>
+                        <button  class="glow-on-hover" type="button" onclick="window.location='{{ route('users.index') }}'">
+                            <img src="images/apple.png" alt="haos Logo" style="width: 50px; height: 50px; margin-right: 5px;">
+                        </button> --}}
             </div>
         </div>
     </div>
