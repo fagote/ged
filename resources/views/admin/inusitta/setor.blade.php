@@ -15,32 +15,24 @@
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 text-gray-900 dark:text-gray-100">
                 <div class="uploaded-files">
-                    <h2> SETORES: </h2><br>
+                    <h2> MACRO: </h2><br>
 
 
                     <ul class="file-system">
                         <li class="folder">
-                            <a href="{{ route('ti.index') }}">Tecnologia da Informação</a>
+                            <a href="{{route('inusittaMarketingQualidade.index')}}">Qualidade</a>
                         </li>
+                        
                         <li class="folder">
-                            <a href="x">Marketing</a>
+                            <a href="{{route('inusittaMarketingProducao.index')}}">Produção</a>
                         </li>
+
                         <li class="folder">
-                            <a href="x">Comercial</a>
+                            <a href="{{route('inusittaMarketingInstrucao.index')}}">Instrução</a>
                         </li><br><br>
                     </ul>
+                   
 
-                        <button class="glow-on-hover" type="button">
-                            Tecnologia da Informação
-                        </button>
-                        
-                        <button  class="glow-on-hover" type="button">
-                            Marketing
-                        </button>
-
-                        <button  class="glow-on-hover" type="button">
-                            Comercial
-                        </button>
             </div>
         </div>
     </div>
@@ -107,12 +99,6 @@
     border-radius: 10px;
 }
 
-@keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
-}
-
 .file-system {
             list-style: none;
             padding: 0;
@@ -137,4 +123,9 @@
             color: #16a085;
         }
 
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
 </style>
