@@ -19,37 +19,51 @@
                 <div class="uploaded-files">
                     <h2>Empresas:</h2><br>
                     
+
+                    <!-- Condição para limitar o acesso das pessoas nas empresas -->
+                    @if(Auth::check() && Auth::user()->id_empresa == 5)  <!-- Substitua 1 pelo ID correto da empresa Inusitta -->
+                        <button class="glow-on-hover" type="button" onclick="window.location='{{ route('inusitta.index') }}'">
+                            <img src="images/inusitta.png" alt="Inusitta Logo" style="width: 100px; height: 50px; margin-right: 5px;">
+                        </button>
+                    @endif
+                        
+                    @if(Auth::check() && Auth::user()->id_empresa == 22)
+                        <button  class="glow-on-hover" type="button" onclick="window.location='{{route('haos.index')}}'">
+                            <img src="images/haos.png" alt="haos Logo" style="width: 120px; height: 50px; margin-right: 5px;">
+                        </button>
+                    @endif
+                            
+                    @if(Auth::check() && Auth::user()->id_empresa == 1)
+                        <button  class="glow-on-hover" type="button" onclick="window.location='{{route('users.index')}}'">
+                            <img src="images/microsoft.png" alt="microsoft Logo" style="width: 100px; height: 50px; margin-right: 5px;">
+                        </button>
+                    @endif
+
+                    @if(Auth::check() && Auth::user()->id_empresa == 4)
+                        <button  class="glow-on-hover" type="button" onclick="window.location='{{ route('users.index') }}'">
+                            <img src="images/apple.png" alt="haos Logo" style="width: 50px; height: 50px; margin-right: 5px;">
+                        </button>
+                    @endif
+
+
+                    <!-- Botões duplicados para o usuário master ter acesso a todas as empresas-->
                     @can('is-admin')
                         <button class="glow-on-hover" type="button" onclick="window.location='{{ route('inusitta.index') }}'" >
                             <img src="images/inusitta.png" alt="Inusitta Logo" style="width: 100px; height: 50px; margin-right: 5px;">
                         </button> <!--onclick é um evento javascript-->
-                            
-                        <button  class="glow-on-hover" type="button" onclick="window.location='{{route('users.index')}}'">
-                            <img src="images/microsoft.png" alt="microsoft Logo" style="width: 100px; height: 50px; margin-right: 5px;">
-                        </button>
                         
                         <button  class="glow-on-hover" type="button" onclick="window.location='{{route('users.index')}}'">
                             <img src="images/haos.png" alt="haos Logo" style="width: 120px; height: 50px; margin-right: 5px;">
                         </button>
+
+                        <button  class="glow-on-hover" type="button" onclick="window.location='{{route('users.index')}}'">
+                            <img src="images/microsoft.png" alt="microsoft Logo" style="width: 100px; height: 50px; margin-right: 5px;">
+                        </button>
+                        
                         <button  class="glow-on-hover" type="button" onclick="window.location='{{ route('users.index') }}'">
                             <img src="images/apple.png" alt="haos Logo" style="width: 50px; height: 50px; margin-right: 5px;">
                         </button>
                     @endcan
-
-                        {{-- <button class="glow-on-hover" type="button" onclick="window.location='{{ route('inusitta.index') }}'" >
-                            <img src="images/inusitta.png" alt="Inusitta Logo" style="width: 100px; height: 50px; margin-right: 5px;">
-                        </button> <!--onclick é um evento javascript-->
-
-                        <button  class="glow-on-hover" type="button" onclick="window.location='{{route('users.index')}}'">
-                            <img src="images/microsoft.png" alt="microsoft Logo" style="width: 100px; height: 50px; margin-right: 5px;">
-                        </button>
-                        
-                        <button  class="glow-on-hover" type="button" onclick="window.location='{{route('users.index')}}'">
-                            <img src="images/haos.png" alt="haos Logo" style="width: 120px; height: 50px; margin-right: 5px;">
-                        </button>
-                        <button  class="glow-on-hover" type="button" onclick="window.location='{{ route('users.index') }}'">
-                            <img src="images/apple.png" alt="haos Logo" style="width: 50px; height: 50px; margin-right: 5px;">
-                        </button> --}}
             </div>
         </div>
     </div>
@@ -76,7 +90,7 @@
 
 .glow-on-hover:before {
     content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background: #002bff;
     position: absolute;
     top: -2px;
     left:-2px;

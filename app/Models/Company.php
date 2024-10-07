@@ -48,4 +48,6 @@ class Company extends Authenticatable
      * @var bool
      */
     public $timestamps = true;
+
+   
 }

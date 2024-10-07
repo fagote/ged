@@ -31,7 +31,7 @@ class UserController extends Controller
 
 
     //=========================================
-    // Página index da a pasta empresa Inusittá
+    // Página index da pasta empresa Inusittá
 
     public function indexIN(){
 
@@ -39,6 +39,8 @@ class UserController extends Controller
     }
 
     //=========================================
+
+    
 
     //=========================================
     //Função Para Mostrar a pasta do setor TI
@@ -62,7 +64,7 @@ class UserController extends Controller
     // Função para mostrar a pasta do setor comercial
 
     public function indexInusittaComercial(){
-        return view('admin.sectors.tecnologia_informacao');
+        return view('admin.inusitta.comercial');
     }
 
     //=========================================
@@ -190,6 +192,70 @@ class UserController extends Controller
     }
 
     //=========================================
+
+    //=========================================
+    // inusitta/comercial/qualidade
+
+    public function indexInusittaComercialQualidade(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'Comercial');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'Qualidade');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.macro', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/comercial/producao
+
+    public function indexInusittaComercialProducao(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'Comercial');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'Producao');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.macro', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/comercial/instrucao
+
+    public function indexInusittaComercialInstrucao(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'Comercial');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'Instrucao');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.macro', compact('files'));
+    }
+
+    //=========================================
+
 
 
 
