@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CompanyController;
 use App\Http\Controllers\Admin\MacroController;
 use App\Http\Controllers\Admin\SectorController;
 use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\Admin\HaosController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\CheckIfIsAdmin;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,8 @@ Route::middleware('auth')
         Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
         Route::post('/users',[UserController::class, 'store'])->name('users.store');
         Route::get('/users',[UserController::class, 'index'])->name('users.index');
+
+        // ROTAS PARA EMPRESA INUSITTA
         Route::get('/inusitta',[UserController::class, 'indexIN'])->name('inusitta.index');
         
         Route::get('/inusitta/ti', [UserController::class, 'indexInusittaTI'])->name('ti.index');
@@ -41,9 +44,25 @@ Route::middleware('auth')
         Route::get('inusitta/marketing/instrucao',[UserController::class, 'indexInusittaMarketingInstrucao'])->name('inusittaMarketingInstrucao.index');
 
         Route::get('inusitta/comercial', [UserController::class, 'indexInusittaComercial'])->name('comercial.index');
-        //
-        //
-        //
+        Route::get('inusitta/comercial/qualidade', [UserController::class, 'indexInusittaComercialQualidade'])->name('inusittaComercialQualidade.index');
+        Route::get('inusitta/comercial/instrucao', [UserController::class, 'indexInusittaComercialInstrucao'])->name('inusittaComercialInstrucao.index');
+        Route::get('inusitta/comercial/producao', [UserController::class, 'indexInusittaComercialProducao'])->name('inusittaComercialProducao.index');
+
+        // ROTAS PARA EMPRESA HAOS
+        
+        Route::get('/haos', [HaosController::class, 'indexHaos'])->name('haos.index');
+        /*
+        Route::get('/haos/ti', [HaosController::class, 'indexHaosTI'])->name('ti.index');
+        Route::get('haos/ti/qualidade',[HaosController::class, 'indexHaosTiQualidade'])->name('qualidade.index');
+        Route::get('haos/ti/producao', [HaosController::class, 'indexHaosTiProducao'])->name('producao.index');
+        Route::get('haos/ti/instrucao', [HaosController::class, 'indexHaosTiInstrucao'])->name('instrucao.index');
+        
+        Route::get('haos/marketing', [HaosController::class, 'indexHaosMarketing'])->name('marketing.index');
+        Route::get('haos/marketing/qualidade', [HaosController::class, 'indexHaosMarketingQualidade'])->name('haosMarketingQualidade.index');
+        Route::get('haos/marketing/producao', [HaosController::class, 'indexHaosMarketingProducao'])->name('haosMarketingProducao.index');
+        Route::get('haos/marketing/instrucao',[HaosController::class, 'indexHaosMarketingInstrucao'])->name('haosMarketingInstrucao.index');
+        */
+
 
 
         //==============================================================
