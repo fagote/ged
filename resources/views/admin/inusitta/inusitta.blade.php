@@ -19,17 +19,23 @@
 
 
                     <ul class="file-system">
-                        <li class="folder">
-                            <a href="{{ route('ti.index') }}">Tecnologia da Informação</a>
-                        </li>
+                        @if(Auth::check() && Auth::user()->id_setor == 1 || Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="{{ route('ti.index') }}">Tecnologia da Informação</a>
+                            </li>
+                        @endif
                         
-                        <li class="folder">
-                            <a href="{{ route('marketing.index') }}">Marketing</a>
-                        </li>
+                        @if(Auth::check() && Auth::user()->id_setor == 12 || Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="{{ route('marketing.index') }}">Marketing</a>
+                            </li>
+                        @endif
 
-                        <li class="folder">
-                            <a href="{{ route('comercial.index') }}">Comercial</a>
-                        </li><br><br>
+                        @if(Auth::check() && Auth::user()->id_setor == 21 || Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="{{ route('comercial.index') }}">Comercial</a>
+                            </li><br><br>
+                        @endif
                     </ul>
 
             </div>

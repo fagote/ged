@@ -36,10 +36,10 @@
                             <tr>
                                 <td>{{$file->codigo}}</td>
                                 <td>{{$file->versao}}</td>
-                                <td>{{$file->user->name}}</td>
-                                <td>{{$file->company->name_empresa}}</td>
-                                <td>{{$file->sector->name_setor}}</td>
-                                <td>{{$file->macro->name_macro}}</td>
+                                <td>{{$file->user?->name ?? 'Usuário não definido'}}</td>
+                                <td>{{$file->company?->name_empresa ?? 'Empresa não definida'}}</td>
+                                <td>{{$file->sector?->name_setor ?? 'Setor não definido'}}</td>
+                                <td>{{$file->macro?->name_macro ?? 'Macro não definido'}}</td>
                                 <td>{{$file->file_path}}</td>
                                 <td>
 

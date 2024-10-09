@@ -74,6 +74,10 @@ class UserController extends Controller
 
     public function indexInusittaTiQualidade(){
 
+
+        $companies = Company::all();
+        $users = User::all();
+
         $files = File::whereHas('company', function($query) {
             $query->where('name_empresa', 'Inusitta');
         })
@@ -85,7 +89,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.macros.qualidade', compact('files'));
+        return view('admin.macros.qualidade', compact('files','companies', 'users'));
     }
 
     //=========================================
@@ -94,6 +98,9 @@ class UserController extends Controller
     // Função Para Mostrar os arquivos da macro Produção
 
     public function indexInusittaTiProducao(){
+
+
+        $companies = Company::all();
 
         $files = File::whereHas('company', function($query) {
             $query->where('name_empresa', 'Inusitta');
@@ -106,7 +113,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.macros.qualidade', compact('files'));
+        return view('admin.macros.qualidade', compact('files','companies'));
     }
 
     //=========================================

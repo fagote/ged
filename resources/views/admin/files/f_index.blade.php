@@ -72,14 +72,14 @@
         <tbody>
             @forelse ($files as $file)
             <tr>
-                <td>{{$file->codigo}}</td>
-                <td>{{$file->versao}}</td>
-                <td>{{$file->user->name}}</td>
-                <td>{{$file->company->name_empresa}}</td>
-                <td>{{$file->sector->name_setor}}</td>
-                <td>{{$file->macro->name_macro}}</td>
-                <td>{{$file->file_path}}</td>
-                <td>
+                <td>{{ $file->codigo }}</td>
+            <td>{{ $file->versao }}</td>
+            <td>{{ $file->user?->name ?? 'Usuário não definido' }}</td>
+            <td>{{ $file->company?->name_empresa ?? 'Empresa não definida' }}</td>
+            <td>{{ $file->sector?->name_setor ?? 'Setor não definido' }}</td>
+            <td>{{ $file->macro?->name_macro ?? 'Macro não definida' }}</td>
+            <td>{{ $file->file_path }}</td>
+            <td>
                     <a id="button1" href="{{ route('files.edit', $file->id) }}">Edit</a>
                     <a id="button1" href="{{ route('files.show', $file->id) }}">Excluir</a>
                     <a id="button1" href="{{ route('files.view', $file->id) }}" target="_blank">Visualizar</a>

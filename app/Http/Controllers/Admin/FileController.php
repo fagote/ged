@@ -21,11 +21,12 @@ class FileController extends Controller
     public function index()
     {
 
+        $users = User::all();
         // Permite o meu banco files acessar o banco usuários para mostrar a 
         // informção
         $files = File::with(['user','company','sector','macro'])->paginate(15);
 
-        return view('admin.files.f_index', compact('files'));
+        return view('admin.files.f_index', compact('files','users'));
 
     }
 
@@ -64,7 +65,7 @@ class FileController extends Controller
         $filePath = $file->store('files', 'public');  // Armazena o arquivo na pasta 'storage/app/public/arquivos'
         $validatedData['file_path'] = $filePath;  // Adiciona o caminho do arquivo no array de dados validados
     }
-
+      
     File::create($validatedData);
 
         return redirect()
