@@ -56,7 +56,6 @@ class User extends Authenticatable
         return $this->hasMany(File::class, 'user_id');
     }
 
-
     public function company(){
         return $this->belongsTo(Company::class, 'id_empresa');
     }
