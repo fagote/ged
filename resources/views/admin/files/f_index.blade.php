@@ -66,6 +66,8 @@
                 <th>ID Setor</th>
                 <th>ID Macro</th>
                 <th>Path</th>
+                <th>Ativo</th>
+                <th>Aprovação</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -79,6 +81,8 @@
             <td>{{ $file->sector?->name_setor ?? 'Setor não definido' }}</td>
             <td>{{ $file->macro?->name_macro ?? 'Macro não definida' }}</td>
             <td>{{ $file->file_path }}</td>
+            <td>{{ $file->ativo == 1 ? 'Sim' : 'Não' }}</td>
+            <td>{{ $file->aprovacao }}</td>
             <td>
                     <a id="button1" href="{{ route('files.edit', $file->id) }}">Edit</a>
                     <a id="button1" href="{{ route('files.show', $file->id) }}">Excluir</a>

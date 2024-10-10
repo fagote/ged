@@ -25,30 +25,30 @@
                     <!-- A empresa com id 999 é do usuário master onde ele tem acesso a todas as empresas --> 
                     @if(Auth::check() && Auth::user()->id_empresa == 5 || Auth::user()->id_empresa == 999)  <!-- Substitua 1 pelo ID correto da empresa Inusitta -->
                         <button class="glow-on-hover" type="button" onclick="window.location='{{ route('inusitta.index') }}'" >
-                            <img src="images/inusitta.png" alt="Inusitta Logo" style="width: 200px; height: 100px; margin-right: 5px;">
+                            <img src="images/inusitta(2).png" alt="Inusitta Logo" style="width: 200px; height: 100px; margin-right: 5px;">
                         </button>
                     @endif
                         
                     @if(Auth::check() && Auth::user()->id_empresa == 22 || Auth::user()->id_empresa == 999)
                         <button  class="glow-on-hover" type="button" onclick="window.location='{{route('users.index')}}'">
-                            <img src="images/haos.jpg" alt="haos Logo" style="width: 240px; height: 100px; margin-right: 5px;">
+                            <img src="images/haos(2).png" alt="haos Logo" style="width: 200px; height: 140px; margin-right: 5px;">
                         </button>
                     @endif
                             
                     @if(Auth::check() && Auth::user()->id_empresa == 1 || Auth::user()->id_empresa == 999)
                         <button  class="glow-on-hover" type="button" onclick="window.location='{{route('users.index')}}'">
-                            <img src="images/microsoft.png" alt="microsoft Logo" style="width: 200px; height: 100px; margin-right: 5px;">
+                            <img src="images/artea(2).png" alt="microsoft Logo" style="width: 200px; height: 100px; margin-right: 5px;">
                         </button>
                     @endif
 
                     @if(Auth::check() && Auth::user()->id_empresa == 4 || Auth::user()->id_empresa == 999)
                         <button  class="glow-on-hover" type="button" onclick="window.location='{{ route('users.index') }}'">
-                            <img src="images/apple.png" alt="haos Logo" style="width: 100px; height: 100px; margin-right: 5px;">
+                            <img src="images/lavoratto(2).png" alt="haos Logo" style="width: 230px; height: 100px; margin-right: 5px;">
                         </button>
                     @endif
 
                     
-
+                    
 
 
                     
