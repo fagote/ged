@@ -1,8 +1,10 @@
+<x-icon></x-icon>
 @extends('admin.layouts.app')
 
 
 @section('title', 'Listagem dos usuários')
 @section('content')
+
 
 <h1>USUÁRIOS</h1>
 
@@ -32,7 +34,7 @@
 
 
 
-<a id="button1" href="{{ route('users.create') }}">Adicionar Novo Usuário</a>
+<a href="{{ route('users.create') }}" class="button">Adicionar Novo Usuário</a>
 
 <br>
 
@@ -74,9 +76,10 @@
                 <td>{{$user->company->name_empresa}}</td>
                 <td>{{$user->sector->name_setor}}</td>
                 <td>
-                    <a id="button1" href="{{ route('users.edit', $user->id) }}">Edit</a>
-                    <a id="button1" href="{{ route('users.show', $user->id) }}">Excluir</a>
-                    <a id="button1" href="{{ route( 'permissions.index', $user->id) }}">Permissões</a>
+                    <a href="{{ route('users.edit', $user->id) }}" class="button">Edit</a>
+                    <a href="{{ route( 'permissions.index', $user->id) }}" class="button">Permissões</a>
+                    <a id="button_excluir" href="{{ route('users.show', $user->id) }}">Excluir</a>
+                    
                 </td>
             </tr>
             @empty
@@ -88,31 +91,6 @@
     </table>
     {{ $users->links() }}
     <br>
-
-    {{-- <h2>Arquivos Enviados:</h2> --}}
-
-{{-- @if($files->isEmpty())
-    <p>Nenhum arquivo enviado.</p>
-@else
-    <ul>
-        @foreach($files as $file)
-            <li>
-                @if($file->extension == 'pdf')
-                    <!-- Exibir PDFs -->
-                    <embed src="{{ asset('storage/' . $file->file_path) }}" type="application/pdf" width="600" height="400">
-                @elseif(in_array($file->extension, ['jpg', 'jpeg', 'png', 'gif']))
-                    <!-- Exibir imagens -->
-                    <img src="{{ asset('storage/' . $file->file_path) }}" alt="{{ basename($file->file_path) }}" width="200">
-                @else
-                    <!-- Para outros arquivos, oferecer download -->
-                    <a href="{{ asset('storage/' . $file->file_path) }}" target="_blank">
-                        {{ basename($file->file_path) }} <!-- Nome do arquivo -->
-                    </a>
-                @endif
-            </li>
-        @endforeach
-    </ul>
-@endif --}}
 
 </div>           
 
@@ -126,7 +104,7 @@
 <!-- CSS -->
 
 <style>
-    /* Estilos gerais aplicados a ambos os temas */
+    
     table {
         width: 100%;
         border-collapse: collapse; /* Garante que as bordas não se sobreponham */
@@ -138,13 +116,13 @@
         border: 1px solid #ddd; /* Borda simples e suave */
     }
 
-    thead, h1, h2, a, x1, #button1, form {
+    thead, h1, h2, x1, form {
         transition: color 0.3s, background-color 0.3s; /* Transição suave entre temas */
     }
 
     /* Tema Escuro */
     @media (prefers-color-scheme: dark) {
-        th, td, h1, h2, a, form {
+        th, td, h1, h2, form {
             color: white !important; /* Define a cor do texto como branco */
         }
 
@@ -154,17 +132,6 @@
 
         tbody tr {
             background-color: #111827; /* Cor de fundo das linhas da tabela */
-        }
-
-        #button1 {
-            border: 1px solid white; /* Adiciona uma borda branca aos links */
-            background-color: transparent; /* Mantém o fundo transparente */
-            color: white; /* Garante que a cor do texto seja branca */
-        }
-
-        #button1:hover, a:hover {
-            background-color: rgba(255, 255, 255, 0.2); /* Fundo levemente branco no hover */
-            color: white; /* Garante que a cor do texto continue branca */
         }
     }
 
@@ -182,21 +149,44 @@
             background-color: #e5e7eb; /* Cor de fundo das linhas da tabela */
         }
 
-        #button1 {
-            border: 2px solid black; /* Adiciona uma borda preta aos links */
-            background-color: transparent; /* Mantém o fundo transparente */
-            color: black; /* Garante que a cor do texto seja preta */
-        }
-
-        #button1:hover, a:hover {
-            background-color: rgba(0, 0, 0, 0.1); /* Fundo levemente preto no hover */
-            color: black; /* Garante que a cor do texto continue preta */
-        }
+        
     }
 
-    #adicionar-usuario {
-        animation: pulse 2s infinite; /* Aplica a animação de pulsação */
+    #button_excluir{
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #e54646; 
+        color: white; 
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px; 
+        border: none; 
+        cursor: pointer; 
+        font-size: 16px; 
+        margin-bottom: 5px; 
     }
+    #button_excluir:hover{
+        background-color: #bb3c3c;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #4F46E5; /* Cor de fundo do botão */
+        color: white; /* Cor do texto */
+        text-align: center;
+        text-decoration: none; /* Remove o sublinhado do link */
+        border-radius: 5px; /* Bordas arredondadas */
+        border: none; /* Remove borda */
+        cursor: pointer; /* Mostra o ponteiro do mouse */
+        font-size: 16px; /* Tamanho da fonte */
+        margin-bottom: 5px; 
+    }
+
+    .button:hover {
+        background-color: #423cbb; /* Cor ao passar o mouse */
+    }
+    
 </style>
 
 
@@ -231,13 +221,13 @@
             padding: 10px 20px;
             border: none;
             border-radius: 4px;
-            background-color: #007bff;
+            background-color: #4F46E5;
             color: white;
             cursor: pointer;
         }
 
     #button_search:hover {
-        background-color: #0056b3;
+        background-color: #423cbb;
     }
 </style>
 <!--==================================================-->

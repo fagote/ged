@@ -14,34 +14,33 @@ class CompanyController extends Controller
 {
     public function index()
     {
-
-
         $companies = Company::paginate(15); 
         return view('admin.companies.c_index', compact('companies'));
-
     }
 
     public function create()
     {
         return view('admin.companies.c_create');
     }
-
-
-    
-    /* public function store(Request $request)
-    {
-
-        dd(Company::create( $request->all() ));
-    } */
-
     
     public function store(StoreCompanyRequest $request)
     {
+        // Verifica se o id_empresa já existe no banco de dados
+        $idEmpresaExistente = Company::where('id_empresa', $request->input('id_empresa'))->first();
 
+        if ($idEmpresaExistente) {
+            // Retorna um aviso se o ID já existir
+            return redirect()
+                ->route('companies.index')
+                ->with('error', 'O ID da empresa já existe no banco de dados. Favor inserir um novo ID.');
+        }
+
+        // Se o id_empresa não existir, cria o registro
         Company::create($request->validated());
+
         return redirect()
             ->route('companies.index')
-            ->with('success', 'Empresa adicionada com sucesso');
+            ->with('success', 'Empresa adicionada com sucesso.');
     }
 
     

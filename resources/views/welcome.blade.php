@@ -1,3 +1,5 @@
+<x-icon></x-icon>
+<title>File Manager</title>
 
 <x-guest-layout>
     <!-- Session Status -->

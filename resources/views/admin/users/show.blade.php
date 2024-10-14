@@ -1,3 +1,4 @@
+<x-icon></x-icon>
 @extends('admin.layouts.app')
 
 @section('title', "Detalhes do Usuário")
