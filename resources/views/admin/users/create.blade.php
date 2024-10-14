@@ -1,3 +1,5 @@
+<x-icon></x-icon>
+
 @extends('admin.layouts.app')
 
 

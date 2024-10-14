@@ -1,3 +1,4 @@
+<x-icon></x-icon>
 @extends('admin.layouts.app')
 
 @section('title', "Detalhes do Setor")
@@ -10,16 +11,12 @@
     </ul>
 
 
-    {{-- @can('owner', $user)
-        pode Deletar
-    @endcan --}}
-
     @can('is-admin')
         <form action="{{ route('sectors.destroy', $sector->id_setor) }}" method="post">
 
             @csrf
             @method('delete')
-            <button type="submit">Deletar</button>
+            <button type="submit">Excluir</button>
 
         </form>
     @endcan

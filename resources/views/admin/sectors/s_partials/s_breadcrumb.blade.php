@@ -12,7 +12,6 @@
 
         a {
             color: rgb(255, 255, 255);
-            border: 1px solid #ccc; 
             border-radius: 5px;
         }
         
@@ -26,7 +25,6 @@
 
         a {
             color: black;
-            border: 1px solid #1f1f1f; 
             border-radius: 5px;
         }
 

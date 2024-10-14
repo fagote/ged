@@ -26,17 +26,17 @@ class MacroController extends Controller
         return view('admin.macros.m_create');
     }
 
-
-    
-    /* public function store(Request $request)
-    {
-
-        dd(Company::create( $request->all() ));
-    } */
-
     
     public function store(StoreMacroRequest $request)
     {
+
+        $idMacroExistente = Macro::where('id_macro', $request->input('id_macro'))->first();
+
+        if ($idMacroExistente) {
+            return redirect()
+                ->route('macros.index')
+                ->with('error', 'O ID da macro já existe no banco de dados. Favor inserir um novo ID.');
+        }
 
         Macro::create($request->validated());
         return redirect()

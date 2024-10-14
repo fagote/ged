@@ -1,3 +1,4 @@
+<x-icon></x-icon>
 
 <x-app-layout>
     <x-slot name="header">

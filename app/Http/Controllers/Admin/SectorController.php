@@ -25,29 +25,22 @@ class SectorController extends Controller
 
     }
 
-    public function index3(){
-        
-        $sectors = Sector::all();
-        return view('admin.files.f_partials.f_form', compact('sectors'));
-
-    }
-
     public function create()
     {
         return view('admin.sectors.s_create');
-    }
-
-
-    
-    /* public function store(Request $request)
-    {
-
-        dd(Company::create( $request->all() ));
-    } */
+    }  
 
     
     public function store(StoreSectorRequest $request)
     {
+
+         $idSetorExistente = Sector::where('id_setor', $request->input('id_setor'))->first();
+
+         if ($idSetorExistente) {
+             return redirect()
+                 ->route('sectors.index')
+                 ->with('error', 'O ID do setor já existe no banco de dados. Favor inserir um novo ID.');
+         }
 
         Sector::create($request->validated());
         return redirect()
@@ -114,7 +107,7 @@ class SectorController extends Controller
 
         return redirect()
             ->route('sectors.index')
-            ->with('success', 'Setor deletado com sucesso');
+            ->with('success', 'Setor excluído com sucesso');
 
 
     }

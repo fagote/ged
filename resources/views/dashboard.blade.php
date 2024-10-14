@@ -1,5 +1,10 @@
+<x-icon></x-icon>
 
+<title>File Manager</title>
 <x-app-layout>
+    
+
+
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             Olá {{ auth()->user()->name }}!
@@ -91,7 +96,7 @@
 
 .glow-on-hover:before {
     content: '';
-    background: #002bff;
+    background: #4F46E5;
     position: absolute;
     top: -2px;
     left:-2px;
