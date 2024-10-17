@@ -20,17 +20,30 @@
 
 
                     <ul class="file-system">
+
                         <li class="folder">
-                            <a href="{{route('inusittaMarketingQualidade.index')}}">Qualidade</a>
+                            <a href="{{route('inusittaComercialFormulario.index')}}" class="folder-link">
+                                <img src="{{asset('images/icone_pasta.png')}}" alt="icone pasta" style="width: 20px; height: 20px; margin-right: 10px">
+                                FORMULARIO</a>
+                        </li>
+                         
+                        <li class="folder">
+                            <a href="{{route('inusittaComercialRegistro.index')}}" class="folder-link">
+                                <img src="{{asset('images/icone_pasta.png')}}" alt="icone pasta" style="width: 20px; height: 20px; margin-right: 10px">
+                                REGISTRO</a>
                         </li>
                         
                         <li class="folder">
-                            <a href="{{route('inusittaMarketingProducao.index')}}">Produção</a>
+                            <a href="{{route('inusittaComercialProcedimento.index')}}" class="folder-link">
+                                <img src="{{asset('images/icone_pasta.png')}}" alt="icone pasta" style="width: 20px; height: 20px; margin-right: 10px">
+                                PROCEDIMENTO</a>
                         </li>
 
                         <li class="folder">
-                            <a href="{{route('inusittaMarketingInstrucao.index')}}">Instrução</a>
-                        </li><br><br>
+                            <a href="{{route('inusittaComercialInstrucao.index')}}" class="folder-link">
+                                <img src="{{asset('images/icone_pasta.png')}}" alt="icone pasta" style="width: 20px; height: 20px; margin-right: 10px">
+                                INSTRUCAO</a>
+                        </li>
                     </ul>
                    
 
@@ -112,16 +125,24 @@
 
         .folder {
 
+            font-weight: bold;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+
             @media(prefers-color-scheme: dark){
                 color: white;
             }
 
-            font-weight: bold;
-            color: #2c3e50;
         }
 
         .file {
             color: #16a085;
+        }
+
+        .folder-link{
+            display: inline-flex;
+            align-items: center;
         }
 
 @keyframes glowing {
