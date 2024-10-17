@@ -22,21 +22,258 @@
                     <ul class="file-system">
                         @if(Auth::check() && Auth::user()->id_setor == 1 || Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{ route('ti.index') }}">Tecnologia da Informação</a>
+                                <a href="{{ route('inusittaTi.index') }}" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    TECNOLOGIA DA INFORMAÇÃO
+                                </a>
                             </li>
                         @endif
                         
                         @if(Auth::check() && Auth::user()->id_setor == 12 || Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{ route('marketing.index') }}">Marketing</a>
+                                <a href="{{ route('inusittaMarketing.index') }}" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    MARKETING</a>
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 21 || Auth::user()->id_setor == 999)
+                        
+
+                        <!--=======================-->
+
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{ route('comercial.index') }}">Comercial</a>
-                            </li><br><br>
+                                <a href="{{route('inusittaAlmoxarifado.index')}}" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    ALMOXARIFADO</a>
+                            </li>
                         @endif
+                        
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    ASSISTENCIA
+                                </a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="{{route('inusittaComercial.index')}}" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    COMERCIAL</a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    COMPRAS</a>
+                            </li>
+                        @endif
+                        
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    CONTABILIDADE</a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    CONTAS A PAGAR</a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    CONTAS A RECEBER</a>
+                            </li>
+                        @endif
+                        
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    CUSTO</a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    DESIGN</a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    DIRETORIA ADMINISTRATIVA</a>
+                            </li>
+                        @endif
+                        
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    DIRETORIA COMERCIAL</a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    DIRETORIA INDUSTRIAL</a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    E-COMMERCE</a>
+                            </li>
+                        @endif
+                        
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    ENGENHARIA</a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    EXPEDICAO</a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    EXPORTACAO</a>
+                            </li>
+                        @endif
+                        
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    FATURAMENTO</a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    MANUTENCAO</a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    P&D</a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    PMO</a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    PPCP</a>
+                            </li>
+                        @endif
+                        
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    QUALIDADE</a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    RECEPCAO</a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    RESTAURANTE</a>
+                            </li>
+                        @endif
+                        
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    RH</a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    SAC</a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    SESMT</a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    PROJETOS</a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                            <li class="folder">
+                                <a href="x" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    TRANSPORTE</a>
+                            </li>
+                        @endif
+
                     </ul>
 
             </div>
@@ -123,16 +360,24 @@
 
         .folder {
 
+            font-weight: bold;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+
             @media(prefers-color-scheme: dark){
                 color: white;
             }
-
-            font-weight: bold;
-            color: #2c3e50;
+             
         }
 
         .file {
             color: #16a085;
+        }
+
+        .folder-link{
+            display: inline-flex;
+            align-items: center;
         }
 
 </style>

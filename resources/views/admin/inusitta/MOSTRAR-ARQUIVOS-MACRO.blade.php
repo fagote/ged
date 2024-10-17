@@ -28,27 +28,28 @@
                                 <th>ID Empresa</th>
                                 <th>ID Setor</th>
                                 <th>ID Macro</th>
-                                <th>Path</th>
+                                <th>Ativo</th>
+                                <th>Aprovação</th>
                                 <th>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
                             @forelse ($files as $file)
                             <tr>
-                                <td>{{$file->codigo}}</td>
-                                <td>{{$file->versao}}</td>
-                                <td>{{$file->user?->name ?? 'Usuário não definido'}}</td>
-                                <td>{{$file->company?->name_empresa ?? 'Empresa não definida'}}</td>
-                                <td>{{$file->sector?->name_setor ?? 'Setor não definido'}}</td>
-                                <td>{{$file->macro?->name_macro ?? 'Macro não definido'}}</td>
-                                <td>{{$file->file_path}}</td>
+                                <td>{{ $file->codigo }}</td>
+                                <td>{{ $file->versao }}</td>
+                                <td>{{ $file->user?->name ?? 'Usuário não definido' }}</td>
+                                <td>{{ $file->company?->name_empresa ?? 'Empresa não definida' }}</td>
+                                <td>{{ $file->sector?->name_setor ?? 'Setor não definido' }}</td>
+                                <td>{{ $file->macro?->name_macro ?? 'Macro não definida' }}</td>
+                                <td>{{ $file->ativo == 1 ? 'Sim' : 'Não' }}</td>
+                                <td>{{ $file->aprovacao == 0 ? 'Reprovado' : ($file->aprovacao == 1 ? 'Aguardando' : 'Aprovado') }}</td>
                                 <td>
-
-                                    @can('is-admin')
-                                        <a id="button1" href="{{ route('files.edit', $file->id) }}">Edit</a>
-                                        <a id="button1" href="{{ route('files.show', $file->id) }}">Excluir</a>
-                                    @endcan
-                                    <a id="button1" href="{{ route('files.view', $file->id) }}" target="_blank">Visualizar</a>
+                                        <a href="{{ route('files.edit', $file->id) }}" class="button">Edit</a>
+                                        <a href="{{ route('files.view', $file->id) }}" target="_blank" class="button">Visualizar</a>
+                                        <a href="atividade" class="button">Atividade</a>
+                                        <a href="aprovacao" class="button">Aprovação</a>
+                                        <a id="button_excluir" href="{{ route('files.show', $file->id) }}">Excluir</a>
                                 </td>
                             </tr>
                             @empty
@@ -139,12 +140,13 @@
 
         .folder {
 
+            color: #2c3e50;
+            font-weight: bold;
+            
             @media(prefers-color-scheme: dark){
                 color: white;
             }
 
-            font-weight: bold;
-            color: #2c3e50;
         }
 
         .file {
@@ -170,13 +172,13 @@
         border: 1px solid #ddd; /* Borda simples e suave */
     }
 
-    thead, h1, h2, a, x1, #button1, form {
+    thead, h1, h2, x1, form {
         transition: color 0.3s, background-color 0.3s; /* Transição suave entre temas */
     }
 
     /* Tema Escuro */
     @media (prefers-color-scheme: dark) {
-        th, td, h1, h2, a, form {
+        th, td, h1, h2, form {
             color: white !important; /* Define a cor do texto como branco */
         }
 
@@ -188,21 +190,12 @@
             background-color: #111827; /* Cor de fundo das linhas da tabela */
         }
 
-        #button1 {
-            border: 1px solid white; /* Adiciona uma borda branca aos links */
-            background-color: transparent; /* Mantém o fundo transparente */
-            color: white; /* Garante que a cor do texto seja branca */
-        }
-
-        #button1:hover, a:hover {
-            background-color: rgba(255, 255, 255, 0.2); /* Fundo levemente branco no hover */
-            color: white; /* Garante que a cor do texto continue branca */
-        }
+        
     }
 
     /* Tema Claro */
     @media (prefers-color-scheme: light) {
-        th, td, h1, h2, a, form {
+        th, td, h1, h2, form {
             color: black; /* Define a cor do texto como preto */
         }
 
@@ -213,21 +206,47 @@
         tbody tr {
             background-color: #e5e7eb; /* Cor de fundo das linhas da tabela */
         }
-
-        #button1 {
-            border: 2px solid black; /* Adiciona uma borda preta aos links */
-            background-color: transparent; /* Mantém o fundo transparente */
-            color: black; /* Garante que a cor do texto seja preta */
-        }
-
-        #button1:hover, a:hover {
-            background-color: rgba(0, 0, 0, 0.1); /* Fundo levemente preto no hover */
-            color: black; /* Garante que a cor do texto continue preta */
-        }
     }
 
-    #adicionar-usuario {
-        animation: pulse 2s infinite; /* Aplica a animação de pulsação */
+    #button_excluir{
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #e54646; 
+        color: white; 
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px; 
+        border: none; 
+        cursor: pointer; 
+        font-size: 16px; 
+        margin-bottom: 5px; 
     }
+    #button_excluir:hover{
+        background-color: #bb3c3c;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #4F46E5; /* Cor de fundo do botão */
+        color: white; /* Cor do texto */
+        text-align: center;
+        text-decoration: none; /* Remove o sublinhado do link */
+        border-radius: 5px; /* Bordas arredondadas */
+        border: none; /* Remove borda */
+        cursor: pointer; /* Mostra o ponteiro do mouse */
+        font-size: 16px; /* Tamanho da fonte */
+        margin-bottom: 5px; 
+    }
+
+    .button:hover {
+        background-color: #423cbb; /* Cor ao passar o mouse */
+    }
+
+    .button_container{
+        display: flex;
+        gap: 10px;
+    }
+
 
 </style>

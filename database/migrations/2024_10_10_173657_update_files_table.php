@@ -13,7 +13,7 @@ return new class extends Migration
     {
         // Schema::table, pois estou alterando uma tabela existente.
         Schema::table('files', function(Blueprint $table){
-            $table->boolean('ativo');
+            $table->boolean('ativo')->default(0);
             $table->unsignedInteger('aprovacao')->default(1);
         });
     }
