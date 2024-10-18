@@ -105,9 +105,221 @@ class UserController extends Controller
 
     //=========================================
 
+    //=========================================
+    // Pasta inusitta/contas a pagar 
 
+    public function indexInusittaContasPagar(){
+        return view('admin.inusitta.setores.contaspagar.contaspagar');
+    }
 
+    //=========================================
 
+    //=========================================
+    // Pasta inusitta/contas a receber 
+
+    public function indexInusittaContasReceber(){
+        return view('admin.inusitta.setores.contasreceber.contasreceber');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/custo
+
+    public function indexInusittaCusto(){
+        return view('admin.inusitta.setores.custo.custo');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/design
+
+    public function indexInusittaDesign(){
+        return view('admin.inusitta.setores.designn.design');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/diretoria administrativa
+
+    public function indexInusittaDiretoriaAdministrativa(){
+        return view('admin.inusitta.setores.diretoriaadministrativa.diretoriaadministrativa');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/diretoria comercial
+
+    public function indexInusittaDiretoriaComercial(){
+        return view('admin.inusitta.setores.diretoriacomercial.diretoriacomercial');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/diretoria industrial
+
+    public function indexInusittaDiretoriaIndustrial(){
+        return view('admin.inusitta.setores.diretoriaindustrial.diretoriaindustrial');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/e-commerce
+
+    public function indexInusittaEcommerce(){
+        return view('admin.inusitta.setores.ecommerce.ecommerce');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/engenharia
+
+    public function indexInusittaEngenharia(){
+        return view('admin.inusitta.setores.engenharia.engenharia');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/expedicao
+
+    public function indexInusittaExpedicao(){
+        return view('admin.inusitta.setores.expedicao.expedicao');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/exportacao
+
+    public function indexInusittaExportacao(){
+        return view('admin.inusitta.setores.exportacao.exportacao');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/faturamento
+
+    public function indexInusittaFaturamento(){
+        return view('admin.inusitta.setores.faturamento.faturamento');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/manutencao
+
+    public function indexInusittaManutencao(){
+        return view('admin.inusitta.setores.manutencao.manutencao');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/ped
+
+    public function indexInusittaPed(){
+        return view('admin.inusitta.setores.ped.ped');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/pmo
+
+    public function indexInusittaPmo(){
+        return view('admin.inusitta.setores.pmo.pmo');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/ppcp
+
+    public function indexInusittaPpcp(){
+        return view('admin.inusitta.setores.ppcp.ppcp');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/qualidade
+
+    public function indexInusittaQualidade(){
+        return view('admin.inusitta.setores.qualidade.qualidade');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/recepcao
+
+    public function indexInusittaRecepcao(){
+        return view('admin.inusitta.setores.recepcao.recepcao');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/restaurante
+
+    public function indexInusittaRestaurante(){
+        return view('admin.inusitta.setores.restaurante.restaurante');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/rh
+
+    public function indexInusittaRh(){
+        return view('admin.inusitta.setores.rh.rh');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/sac
+
+    public function indexInusittaSac(){
+        return view('admin.inusitta.setores.sac.sac');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/sesmt
+
+    public function indexInusittaSesmt(){
+        return view('admin.inusitta.setores.sesmt.sesmt');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/projetos
+
+    public function indexInusittaProjetos(){
+        return view('admin.inusitta.setores.projetos.projetos');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/exportacao
+
+    public function indexInusittaTransporte(){
+        return view('admin.inusitta.setores.transporte.transporte');
+    }
+
+    //=========================================
 
     //=========================================
     // Função Para Mostrar os arquivos da macro Instrução
@@ -446,9 +658,677 @@ class UserController extends Controller
 
     //=========================================
 
+    //=========================================
+    // inusitta/assistencia/fomulario
 
+    public function indexInusittaAssistenciaFormulario(){
 
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'assistenca');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'formulario');
+        })
+        ->paginate(10);
 
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/assistencia/registro
+
+    public function indexInusittaAssistenciaRegistro(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'assistencia');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'registro');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/assistencia/procedimento
+
+    public function indexInusittaAssistenciaProcedimento(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'assistencia');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'procedimento');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/almoxarifado/instrucao
+
+    public function indexInusittaAssistenciaInstrucao(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'assistencia');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'instrucao');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/compras/formulario
+
+    public function indexInusittaComprasFormulario(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'compras');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'formulario');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/compras/registro
+
+    public function indexInusittaComprasRegistro(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'compras');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'registro');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/compras/procedimento
+
+    public function indexInusittaComprasProcedimento(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'compras');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'procedimento');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/compras/instrucao
+
+    public function indexInusittaComprasInstrucao(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'compras');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'instrucao');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/contabilidade/formulario
+
+    public function indexInusittaContabilidadeFormulario(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'contabilidade');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'formulario');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/contabilidade/registro
+
+    public function indexInusittaContabilidadeRegistro(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'contabilidade');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'registro');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/contabilidade/procedimento
+
+    public function indexInusittaContabilidadeProcedimento(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'contabilidade');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'procedimento');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/contabilidade/procedimento
+
+    public function indexInusittaContabilidadeInstrucao(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'contabilidade');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'instrucao');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/contas a pagar/formulario
+
+    public function indexInusittaContasPagarFormulario(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'contas a pagar');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'formulário');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/contas a pagar/registro
+
+    public function indexInusittaContasPagarRegistro(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'contas a pagar');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'resgistro');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/contas a pagar/procedimento
+
+    public function indexInusittaContasPagarProcedimento(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'contas a pagar');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'procedimento');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/contas a pagar/registro
+
+    public function indexInusittaContasPagarInstrucao(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'contas a pagar');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'instrucao');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/contas a receber/formulario
+
+    public function indexInusittaContasReceberFormulario(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'contas a receber');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'formulario');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/contas a receber/registro
+
+    public function indexInusittaContasReceberRegistro(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'contas a receber');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'registro');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/contas a receber/procedimento
+
+    public function indexInusittaContasReceberProcedimento(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'contas a receber');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'procedimento');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/contas a receber/instrucao
+
+    public function indexInusittaContasReceberInstrucao(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'contas a receber');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'instrucao');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/custo/formulario
+
+    public function indexInusittaCustoFormulario(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'custo');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'formulario');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/custo/registro
+
+    public function indexInusittaCustoRegistro(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'custo');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'registro');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/custo/procedimento
+
+    public function indexInusittaCustoProcedimento(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'custo');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'procedimento');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/custo/instrucao
+
+    public function indexInusittaCustoInstrucao(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'custo');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'instrucao');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/design/formulario
+
+    public function indexInusittaDesignFormulario(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'design');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'formulario');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/design/registro
+
+    public function indexInusittaDesignRegistro(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'design');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'registro');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/design/procedimento
+
+    public function indexInusittaDesignProcedimento(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'design');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'procedimento');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/design/instrucao
+
+    public function indexInusittaDesignInstrucao(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'design');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'instrucao');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/diretoria administrativa/formulario
+
+    public function indexInusittaDiretoriaAdministrativaFormulario(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'diretoria administrativa');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'formulario');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/diretoria administrativa/registro
+
+    public function indexInusittaDiretoriaAdministrativaRegistro(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'diretoria administrativa');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'registro');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/diretoria administrativa/procedimento
+
+    public function indexInusittaDiretoriaAdministrativaProcedimento(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'diretoria administrativa');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'procedimento');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
+
+    //=========================================
+    // inusitta/diretoria administrativa/instrucao
+
+    public function indexInusittaDiretoriaAdministrativaInstrucao(){
+
+        $files = File::whereHas('company', function($query) {
+            $query->where('name_empresa', 'Inusitta');
+        })
+        ->whereHas('sector', function($query) {
+            $query->where('name_setor', 'diretoria administrativa');
+        })
+        ->whereHas('macro', function($query) {
+            $query->where('name_macro', 'instrucao');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+
+    //=========================================
 
 
 
