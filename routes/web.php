@@ -179,6 +179,48 @@ Route::middleware('auth')
         Route::get('inusitta/qualidade/registro', [UserController::class, 'indexInusittaQualidadeRegistro'])->name('inusittaQualidadeRegistro.index');
         Route::get('inusitta/qualidade/formulario', [UserController::class, 'indexInusittaQualidadeFormulario'])->name('inusittaQualidadeFormulario.index');
 
+        Route::get('inusitta/recepcao', [UserController::class, 'indexInusittaRecepcao'])->name('inusittaRecepcao.index');
+        Route::get('inusitta/recepcao/instrucao', [UserController::class, 'indexInusittaRecepcaoInstrucao'])->name('inusittaRecepcaoInstrucao.index');
+        Route::get('inusitta/recepcao/procedimento',[UserController::class, 'indexInusittaRecepcaoProcedimento'])->name('inusittaRecepcaoProcedimento.index');
+        Route::get('inusitta/recepcao/registro', [UserController::class, 'indexInusittaRecepcaoRegistro'])->name('inusittaRecepcaoRegistro.index');
+        Route::get('inusitta/recepcao/formulario', [UserController::class, 'indexInusittaRecepcaoFormulario'])->name('inusittaRecepcaoFormulario.index');
+
+        Route::get('inusitta/restaurante', [UserController::class, 'indexInusittaRestaurante'])->name('inusittaRestaurante.index');
+        Route::get('inusitta/restaurante/instrucao', [UserController::class, 'indexInusittaRestauranteInstrucao'])->name('inusittaRestauranteInstrucao.index');
+        Route::get('inusitta/restaurante/procedimento',[UserController::class, 'indexInusittaRestauranteProcedimento'])->name('inusittaRestauranteProcedimento.index');
+        Route::get('inusitta/restaurante/registro', [UserController::class, 'indexInusittaRestauranteRegistro'])->name('inusittaRestauranteRegistro.index');
+        Route::get('inusitta/restaurante/formulario', [UserController::class, 'indexInusittaRestauranteFormulario'])->name('inusittaRestauranteFormulario.index');
+
+        Route::get('inusitta/rh', [UserController::class, 'indexInusittaRh'])->name('inusittaRh.index');
+        Route::get('inusitta/rh/instrucao', [UserController::class, 'indexInusittaRhInstrucao'])->name('inusittaRhInstrucao.index');
+        Route::get('inusitta/rh/procedimento',[UserController::class, 'indexInusittaRhProcedimento'])->name('inusittaRhProcedimento.index');
+        Route::get('inusitta/rh/registro', [UserController::class, 'indexInusittaRhRegistro'])->name('inusittaRhRegistro.index');
+        Route::get('inusitta/rh/formulario', [UserController::class, 'indexInusittaRhFormulario'])->name('inusittaRhFormulario.index');
+
+        Route::get('inusitta/sac', [UserController::class, 'indexInusittaSac'])->name('inusittaSac.index');
+        Route::get('inusitta/sac/instrucao', [UserController::class, 'indexInusittaSacInstrucao'])->name('inusittaSacInstrucao.index');
+        Route::get('inusitta/sac/procedimento',[UserController::class, 'indexInusittaSacProcedimento'])->name('inusittaSacProcedimento.index');
+        Route::get('inusitta/sac/registro', [UserController::class, 'indexInusittaSacRegistro'])->name('inusittaSacRegistro.index');
+        Route::get('inusitta/sac/formulario', [UserController::class, 'indexInusittaSacFormulario'])->name('inusittaSacFormulario.index');
+
+        Route::get('inusitta/sesmt', [UserController::class, 'indexInusittaSesmt'])->name('inusittaSesmt.index');
+        Route::get('inusitta/sesmt/instrucao', [UserController::class, 'indexInusittaSesmtInstrucao'])->name('inusittaSesmtInstrucao.index');
+        Route::get('inusitta/sesmt/procedimento',[UserController::class, 'indexInusittaSesmtProcedimento'])->name('inusittaSesmtProcedimento.index');
+        Route::get('inusitta/sesmt/registro', [UserController::class, 'indexInusittaSesmtRegistro'])->name('inusittaSesmtRegistro.index');
+        Route::get('inusitta/sesmt/formulario', [UserController::class, 'indexInusittaSesmtFormulario'])->name('inusittaSesmtFormulario.index');
+
+        Route::get('inusitta/projetos', [UserController::class, 'indexInusittaProjetos'])->name('inusittaProjetos.index');
+        Route::get('inusitta/projetos/instrucao', [UserController::class, 'indexInusittaProjetosInstrucao'])->name('inusittaProjetosInstrucao.index');
+        Route::get('inusitta/projetos/procedimento',[UserController::class, 'indexInusittaProjetosProcedimento'])->name('inusittaProjetosProcedimento.index');
+        Route::get('inusitta/projetos/registro', [UserController::class, 'indexInusittaProjetosRegistro'])->name('inusittaProjetosRegistro.index');
+        Route::get('inusitta/projetos/formulario', [UserController::class, 'indexInusittaProjetosFormulario'])->name('inusittaProjetosFormulario.index');
+
+        Route::get('inusitta/transporte', [UserController::class, 'indexInusittaTransporte'])->name('inusittaTransporte.index');
+        Route::get('inusitta/transporte/instrucao', [UserController::class, 'indexInusittaTransporteInstrucao'])->name('inusittaTransporteInstrucao.index');
+        Route::get('inusitta/transporte/procedimento',[UserController::class, 'indexInusittaTransporteProcedimento'])->name('inusittaTransporteProcedimento.index');
+        Route::get('inusitta/transporte/registro', [UserController::class, 'indexInusittaTransporteRegistro'])->name('inusittaTransporteRegistro.index');
+        Route::get('inusitta/transporte/formulario', [UserController::class, 'indexInusittaTransporteFormulario'])->name('inusittaTransporteFormulario.index');
+
         //======================================================
 
         // ROTAS PARA EMPRESA HAOS
