@@ -220,7 +220,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="x" class="folder-link">
+                                <a href="{{route('inusittaRecepcao.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     RECEPCAO</a>
                             </li>
@@ -228,7 +228,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="x" class="folder-link">
+                                <a href="{{route('inusittaRestaurante.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     RESTAURANTE</a>
                             </li>
@@ -236,7 +236,7 @@
                         
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="x" class="folder-link">
+                                <a href="{{route('inusittaRh.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     RH</a>
                             </li>
@@ -244,7 +244,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="x" class="folder-link">
+                                <a href="{{route('inusittaSac.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     SAC</a>
                             </li>
@@ -252,7 +252,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="x" class="folder-link">
+                                <a href="{{route('inusittaSesmt.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     SESMT</a>
                             </li>
@@ -260,7 +260,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="x" class="folder-link">
+                                <a href="{{route('inusittaProjetos.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     PROJETOS</a>
                             </li>
@@ -268,7 +268,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="x" class="folder-link">
+                                <a href="{{route('inusittaTransporte.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     TRANSPORTE</a>
                             </li>

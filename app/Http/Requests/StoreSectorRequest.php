@@ -23,7 +23,7 @@ class StoreSectorRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name_setor' => 'required|string|min:3|max:255',
+            'name_setor' => 'required|string|min:2|max:255',
             'id_setor' => [
                 'required',
                 'integer',
