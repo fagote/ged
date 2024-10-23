@@ -1,3 +1,4 @@
+<x-icon></x-icon>
 
 <x-app-layout>
     <x-slot name="header">
@@ -21,7 +22,7 @@
                     <ul class="file-system">
                         @if(Auth::check() && Auth::user()->id_setor == 1 || Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{ route('haosTi.index') }}" class="folder-link">
+                                <a href="{{ route('lavorattoTi.index') }}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     TECNOLOGIA DA INFORMAÇÃO
                                 </a>
@@ -30,7 +31,7 @@
                         
                         @if(Auth::check() && Auth::user()->id_setor == 12 || Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{ route('haosMarketing.index') }}" class="folder-link">
+                                <a href="{{ route('lavorattoMarketing.index') }}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     MARKETING</a>
                             </li>
@@ -42,7 +43,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosAlmoxarifado.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoAlmoxarifado.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     ALMOXARIFADO</a>
                             </li>
@@ -50,7 +51,7 @@
                         
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosAssistencia.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoAssistencia.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     ASSISTÊNCIA
                                 </a>
@@ -59,7 +60,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosComercial.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoComercial.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     COMERCIAL</a>
                             </li>
@@ -67,7 +68,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosCompras.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoCompras.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     COMPRAS</a>
                             </li>
@@ -75,7 +76,7 @@
                         
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosContabilidade.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoContabilidade.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     CONTABILIDADE</a>
                             </li>
@@ -83,7 +84,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosContasPagar.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoContasPagar.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     CONTAS A PAGAR</a>
                             </li>
@@ -91,7 +92,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosContasReceber.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoContasReceber.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     CONTAS A RECEBER</a>
                             </li>
@@ -99,7 +100,7 @@
                         
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosCusto.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoCusto.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     CUSTO</a>
                             </li>
@@ -107,7 +108,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosDesign.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoDesign.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     DESIGN</a>
                             </li>
@@ -115,7 +116,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosDiretoriaAdministrativa.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoDiretoriaAdministrativa.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     DIRETORIA ADMINISTRATIVA</a>
                             </li>
@@ -123,7 +124,7 @@
                         
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosDiretoriaComercial.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoDiretoriaComercial.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     DIRETORIA COMERCIAL</a>
                             </li>
@@ -131,7 +132,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosDiretoriaIndustrial.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoDiretoriaIndustrial.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     DIRETORIA INDUSTRIAL</a>
                             </li>
@@ -139,7 +140,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosEcommerce.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoEcommerce.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     E-COMMERCE</a>
                             </li>
@@ -147,7 +148,7 @@
                         
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosEngenharia.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoEngenharia.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     ENGENHARIA</a>
                             </li>
@@ -155,7 +156,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosExpedicao.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoExpedicao.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     EXPEDIÇÃO</a>
                             </li>
@@ -163,7 +164,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosExportacao.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoExportacao.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     EXPORTAÇÃO</a>
                             </li>
@@ -171,7 +172,7 @@
                         
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosFaturamento.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoFaturamento.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     FATURAMENTO</a>
                             </li>
@@ -179,7 +180,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosManutencao.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoManutencao.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     MANUTENÇÃO</a>
                             </li>
@@ -187,7 +188,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosPed.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoPed.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     P&D</a>
                             </li>
@@ -195,7 +196,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosPmo.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoPmo.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     PMO</a>
                             </li>
@@ -203,7 +204,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosPpcp.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoPpcp.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     PPCP</a>
                             </li>
@@ -211,7 +212,7 @@
                         
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosQualidade.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoQualidade.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     QUALIDADE</a>
                             </li>
@@ -219,7 +220,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosRecepcao.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoRecepcao.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     RECEPÇÃO</a>
                             </li>
@@ -227,7 +228,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosRestaurante.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoRestaurante.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     RESTAURANTE</a>
                             </li>
@@ -235,7 +236,7 @@
                         
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosRh.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoRh.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     RH</a>
                             </li>
@@ -243,7 +244,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosSac.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoSac.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     SAC</a>
                             </li>
@@ -251,7 +252,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosSesmt.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoSesmt.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     SESMT</a>
                             </li>
@@ -259,7 +260,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosProjetos.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoProjetos.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     PROJETOS</a>
                             </li>
@@ -267,7 +268,7 @@
 
                         @if(Auth::check() && Auth::user()->id_setor == 999)
                             <li class="folder">
-                                <a href="{{route('haosTransporte.index')}}" class="folder-link">
+                                <a href="{{route('lavorattoTransporte.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     TRANSPORTE</a>
                             </li>
@@ -359,16 +360,18 @@
 
         .folder {
 
+            font-weight: bold;
             color: #2c3e50;
+            display: flex;
+            align-items: center;
 
             @media(prefers-color-scheme: dark){
                 color: white;
             }
-
-            font-weight: bold;
+             
         }
 
-       .file {
+        .file {
             color: #16a085;
         }
 

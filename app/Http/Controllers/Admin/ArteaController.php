@@ -6,14 +6,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\File;
 
-class HaosController extends Controller
+class ArteaController extends Controller
 {
+    
     //=========================================
-    // Página index da pasta empresa Haos
+    // Página index da pasta empresa Artea
 
-    public function indexHaos(){
+    public function indexArtea(){
 
-        return view('admin.haos.haos');
+        return view('admin.artea.artea');
     }
 
     //========================================= 
@@ -21,8 +22,8 @@ class HaosController extends Controller
     //=========================================
     //Função Para Mostrar a pasta do setor TI
 
-    public function indexHaosTi(){
-        return view('admin.haos.setores.tecnologia-informacao.tecnologia_informacao');
+    public function indexArteaTi(){
+        return view('admin.artea.setores.tecnologia-informacao.tecnologia_informacao');
     }
     //OBS: a view tecnologia_informacao.blade.php funciona como um curinga para ser chamado nos outros setores.
     //=========================================
@@ -30,8 +31,8 @@ class HaosController extends Controller
     //=========================================
     // Função para mostrar a pasta do setor marketing
 
-    public function indexHaosMarketing(){
-        return view('admin.haos.setores.marketing.marketing');
+    public function indexArteaMarketing(){
+        return view('admin.artea.setores.marketing.marketing');
     }
 
     //=========================================
@@ -39,260 +40,260 @@ class HaosController extends Controller
     //=========================================
     // Função para mostrar a pasta do setor comercial
 
-    public function indexHaosComercial(){
-        return view('admin.haos.setores.comercial.comercial');
+    public function indexArteaComercial(){
+        return view('admin.artea.setores.comercial.comercial');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/almoxarifado
+    // Pasta artea/almoxarifado
 
-    public function indexHaosAlmoxarifado(){
-        return view('admin.haos.setores.almoxarifado.almoxarifado');
+    public function indexArteaAlmoxarifado(){
+        return view('admin.artea.setores.almoxarifado.almoxarifado');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/assistencia
+    // Pasta artea/assistencia
 
-    public function indexHaosAssistencia(){
-        return view('admin.haos.setores.assistencia.assistencia');
+    public function indexArteaAssistencia(){
+        return view('admin.artea.setores.assistencia.assistencia');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/compras
+    // Pasta artea/compras
 
-    public function indexHaosCompras(){
-        return view('admin.haos.setores.compras.compras');
+    public function indexArteaCompras(){
+        return view('admin.artea.setores.compras.compras');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/contabilidade
+    // Pasta artea/contabilidade
 
-    public function indexHaosContabilidade(){
-        return view('admin.haos.setores.contabilidade.contabilidade');
+    public function indexArteaContabilidade(){
+        return view('admin.artea.setores.contabilidade.contabilidade');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/contas a pagar 
+    // Pasta artea/contas a pagar 
 
-    public function indexHaosContasPagar(){
-        return view('admin.haos.setores.contaspagar.contaspagar');
+    public function indexArteaContasPagar(){
+        return view('admin.artea.setores.contaspagar.contaspagar');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/contas a receber 
+    // Pasta artea/contas a receber 
 
-    public function indexHaosContasReceber(){
-        return view('admin.haos.setores.contasreceber.contasreceber');
+    public function indexArteaContasReceber(){
+        return view('admin.artea.setores.contasreceber.contasreceber');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/custo
+    // Pasta artea/custo
 
-    public function indexHaosCusto(){
-        return view('admin.haos.setores.custo.custo');
+    public function indexArteaCusto(){
+        return view('admin.artea.setores.custo.custo');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/design
+    // Pasta artea/design
 
-    public function indexHaosDesign(){
-        return view('admin.haos.setores.designn.design');
+    public function indexArteaDesign(){
+        return view('admin.artea.setores.designn.design');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/diretoria administrativa
+    // Pasta artea/diretoria administrativa
 
-    public function indexHaosDiretoriaAdministrativa(){
-        return view('admin.haos.setores.diretoriaadministrativa.diretoriaadministrativa');
+    public function indexArteaDiretoriaAdministrativa(){
+        return view('admin.artea.setores.diretoriaadministrativa.diretoriaadministrativa');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/diretoria comercial
+    // Pasta artea/diretoria comercial
 
-    public function indexHaosDiretoriaComercial(){
-        return view('admin.haos.setores.diretoriacomercial.diretoriacomercial');
+    public function indexArteaDiretoriaComercial(){
+        return view('admin.artea.setores.diretoriacomercial.diretoriacomercial');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/diretoria industrial
+    // Pasta artea/diretoria industrial
 
-    public function indexHaosDiretoriaIndustrial(){
-        return view('admin.haos.setores.diretoriaindustrial.diretoriaindustrial');
+    public function indexArteaDiretoriaIndustrial(){
+        return view('admin.artea.setores.diretoriaindustrial.diretoriaindustrial');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/e-commerce
+    // Pasta artea/e-commerce
 
-    public function indexHaosEcommerce(){
-        return view('admin.haos.setores.ecommerce.ecommerce');
+    public function indexArteaEcommerce(){
+        return view('admin.artea.setores.ecommerce.ecommerce');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/engenharia
+    // Pasta artea/engenharia
 
-    public function indexHaosEngenharia(){
-        return view('admin.haos.setores.engenharia.engenharia');
+    public function indexArteaEngenharia(){
+        return view('admin.artea.setores.engenharia.engenharia');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/expedicao
+    // Pasta artea/expedicao
 
-    public function indexHaosExpedicao(){
-        return view('admin.haos.setores.expedicao.expedicao');
+    public function indexArteaExpedicao(){
+        return view('admin.artea.setores.expedicao.expedicao');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/exportacao
+    // Pasta artea/exportacao
 
-    public function indexHaosExportacao(){
-        return view('admin.haos.setores.exportacao.exportacao');
+    public function indexArteaExportacao(){
+        return view('admin.artea.setores.exportacao.exportacao');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/faturamento
+    // Pasta artea/faturamento
 
-    public function indexHaosFaturamento(){
-        return view('admin.haos.setores.faturamento.faturamento');
+    public function indexArteaFaturamento(){
+        return view('admin.artea.setores.faturamento.faturamento');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/manutencao
+    // Pasta artea/manutencao
 
-    public function indexHaosManutencao(){
-        return view('admin.haos.setores.manutencao.manutencao');
+    public function indexArteaManutencao(){
+        return view('admin.artea.setores.manutencao.manutencao');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/ped
+    // Pasta artea/ped
 
-    public function indexHaosPed(){
-        return view('admin.haos.setores.ped.ped');
+    public function indexArteaPed(){
+        return view('admin.artea.setores.ped.ped');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/pmo
+    // Pasta artea/pmo
 
-    public function indexHaosPmo(){
-        return view('admin.haos.setores.pmo.pmo');
+    public function indexArteaPmo(){
+        return view('admin.artea.setores.pmo.pmo');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/ppcp
+    // Pasta artea/ppcp
 
-    public function indexHaosPpcp(){
-        return view('admin.haos.setores.ppcp.ppcp');
+    public function indexArteaPpcp(){
+        return view('admin.artea.setores.ppcp.ppcp');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/qualidade
+    // Pasta artea/qualidade
 
-    public function indexHaosQualidade(){
-        return view('admin.haos.setores.qualidade.qualidade');
+    public function indexArteaQualidade(){
+        return view('admin.artea.setores.qualidade.qualidade');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/recepcao
+    // Pasta artea/recepcao
 
-    public function indexHaosRecepcao(){
-        return view('admin.haos.setores.recepcao.recepcao');
+    public function indexArteaRecepcao(){
+        return view('admin.artea.setores.recepcao.recepcao');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/restaurante
+    // Pasta artea/restaurante
 
-    public function indexHaosRestaurante(){
-        return view('admin.haos.setores.restaurante.restaurante');
+    public function indexArteaRestaurante(){
+        return view('admin.artea.setores.restaurante.restaurante');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/rh
+    // Pasta artea/rh
 
-    public function indexHaosRh(){
-        return view('admin.haos.setores.rh.rh');
+    public function indexArteaRh(){
+        return view('admin.artea.setores.rh.rh');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/sac
+    // Pasta artea/sac
 
-    public function indexHaosSac(){
-        return view('admin.haos.setores.sac.sac');
+    public function indexArteaSac(){
+        return view('admin.artea.setores.sac.sac');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/sesmt
+    // Pasta artea/sesmt
 
-    public function indexHaosSesmt(){
-        return view('admin.haos.setores.sesmt.sesmt');
+    public function indexArteaSesmt(){
+        return view('admin.artea.setores.sesmt.sesmt');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/projetos
+    // Pasta artea/projetos
 
-    public function indexHaosProjetos(){
-        return view('admin.haos.setores.projetos.projetos');
+    public function indexArteaProjetos(){
+        return view('admin.artea.setores.projetos.projetos');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/exportacao
+    // Pasta artea/exportacao
 
-    public function indexHaosTransporte(){
-        return view('admin.haos.setores.transporte.transporte');
+    public function indexArteaTransporte(){
+        return view('admin.artea.setores.transporte.transporte');
     }
 
     //=========================================
@@ -300,10 +301,10 @@ class HaosController extends Controller
     //=========================================
     // Função Para Mostrar os arquivos da macro Instrução
 
-    public function indexHaosTiInstrucao(){
+    public function indexArteaTiInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'Tecnologia da Informação');
@@ -313,7 +314,7 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
@@ -321,11 +322,11 @@ class HaosController extends Controller
     //=========================================
     // Função Para Mostrar os arquivos da macro qualidade
 
-    public function indexHaosTiProcedimento(){
+    public function indexArteaTiProcedimento(){
 
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'Tecnologia da Informação');
@@ -335,7 +336,7 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
@@ -343,11 +344,11 @@ class HaosController extends Controller
     //=========================================
     // Função Para Mostrar os arquivos da macro Produção
 
-    public function indexHaosTiRegistro(){
+    public function indexArteaTiRegistro(){
 
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'Tecnologia da Informação');
@@ -357,7 +358,7 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
@@ -365,11 +366,11 @@ class HaosController extends Controller
     //=========================================
     // Função Para Mostrar os arquivos da macro Produção
 
-    public function indexHaosTiFormulario(){
+    public function indexArteaTiFormulario(){
 
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'Tecnologia da Informação');
@@ -379,7 +380,7 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
@@ -388,10 +389,10 @@ class HaosController extends Controller
     //=========================================
     // Função Para Mostrar os arquivos da macro Instrução
 
-    public function indexHaosMarketingInstrucao(){
+    public function indexArteaMarketingInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'Marketing');
@@ -401,7 +402,7 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
@@ -409,10 +410,10 @@ class HaosController extends Controller
     //=========================================
     // Função para mostrar os arquivos da macro procedimento
 
-    public function indexHaosMarketingProcedimento(){
+    public function indexArteaMarketingProcedimento(){
 
         $files = File::whereHas('company', function($query){
-            $query->where('name_empresa','Haos');
+            $query->where('name_empresa','Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor','Marketing');
@@ -421,7 +422,7 @@ class HaosController extends Controller
             $query->where('name_macro','procedimento');
         }) -> paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
@@ -429,10 +430,10 @@ class HaosController extends Controller
     //=========================================
     // Função para mostrar os arquivos da macro produção
 
-    public function indexHaosMarketingRegistro(){
+    public function indexArteaMarketingRegistro(){
 
         $files = File::whereHas('company', function($query){
-            $query->where('name_empresa','Haos');
+            $query->where('name_empresa','Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor','Marketing');
@@ -441,7 +442,7 @@ class HaosController extends Controller
             $query->where('name_macro','registro');
         }) -> paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
@@ -449,10 +450,10 @@ class HaosController extends Controller
     //=========================================
     // Função para mostrar os arquivos da macro produção
 
-    public function indexHaosMarketingFormulario(){
+    public function indexArteaMarketingFormulario(){
 
         $files = File::whereHas('company', function($query){
-            $query->where('name_empresa','Haos');
+            $query->where('name_empresa','Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor','Marketing');
@@ -461,18 +462,18 @@ class HaosController extends Controller
             $query->where('name_macro','formulario');
         }) -> paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/comercial/instrucao
+    // artea/comercial/instrucao
 
-    public function indexHaosComercialInstrucao(){
+    public function indexArteaComercialInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'Comercial');
@@ -482,18 +483,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/comercial/procedimento
+    // artea/comercial/procedimento
 
-    public function indexHaosComercialProcedimento(){
+    public function indexArteaComercialProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'Comercial');
@@ -503,18 +504,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/comercial/registro
+    // artea/comercial/registro
 
-    public function indexHaosComercialRegistro(){
+    public function indexArteaComercialRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'Comercial');
@@ -524,18 +525,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/comercial/registro
+    // artea/comercial/registro
 
-    public function indexHaosComercialFormulario(){
+    public function indexArteaComercialFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'Comercial');
@@ -545,18 +546,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/almoxarifado/instrucao
+    // artea/almoxarifado/instrucao
 
-    public function indexHaosAlmoxarifadoInstrucao(){
+    public function indexArteaAlmoxarifadoInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'almoxarifado');
@@ -566,18 +567,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/almoxarifado/procedimento
+    // artea/almoxarifado/procedimento
 
-    public function indexHaosAlmoxarifadoProcedimento(){
+    public function indexArteaAlmoxarifadoProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'almoxarifado');
@@ -587,18 +588,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/almoxarifado/registro
+    // artea/almoxarifado/registro
 
-    public function indexHaosAlmoxarifadoRegistro(){
+    public function indexArteaAlmoxarifadoRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'almoxarifado');
@@ -608,18 +609,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/almoxarifado/fomulario
+    // artea/almoxarifado/fomulario
 
-    public function indexHaosAlmoxarifadoFormulario(){
+    public function indexArteaAlmoxarifadoFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'almoxarifado');
@@ -629,18 +630,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/assistencia/fomulario
+    // artea/assistencia/fomulario
 
-    public function indexHaosAssistenciaFormulario(){
+    public function indexArteaAssistenciaFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'assistenca');
@@ -650,18 +651,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/assistencia/registro
+    // artea/assistencia/registro
 
-    public function indexHaosAssistenciaRegistro(){
+    public function indexArteaAssistenciaRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'assistencia');
@@ -671,18 +672,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/assistencia/procedimento
+    // artea/assistencia/procedimento
 
-    public function indexHaosAssistenciaProcedimento(){
+    public function indexArteaAssistenciaProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'assistencia');
@@ -692,18 +693,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/almoxarifado/instrucao
+    // artea/almoxarifado/instrucao
 
-    public function indexHaosAssistenciaInstrucao(){
+    public function indexArteaAssistenciaInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'assistencia');
@@ -713,18 +714,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/compras/formulario
+    // artea/compras/formulario
 
-    public function indexHaosComprasFormulario(){
+    public function indexArteaComprasFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'compras');
@@ -734,18 +735,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/compras/registro
+    // artea/compras/registro
 
-    public function indexHaosComprasRegistro(){
+    public function indexArteaComprasRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'compras');
@@ -755,18 +756,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/compras/procedimento
+    // artea/compras/procedimento
 
-    public function indexHaosComprasProcedimento(){
+    public function indexArteaComprasProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'compras');
@@ -776,18 +777,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/compras/instrucao
+    // artea/compras/instrucao
 
-    public function indexHaosComprasInstrucao(){
+    public function indexArteaComprasInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'compras');
@@ -797,18 +798,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/contabilidade/formulario
+    // artea/contabilidade/formulario
 
-    public function indexHaosContabilidadeFormulario(){
+    public function indexArteaContabilidadeFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'contabilidade');
@@ -818,18 +819,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/contabilidade/registro
+    // artea/contabilidade/registro
 
-    public function indexHaosContabilidadeRegistro(){
+    public function indexArteaContabilidadeRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'contabilidade');
@@ -839,18 +840,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/contabilidade/procedimento
+    // artea/contabilidade/procedimento
 
-    public function indexHaosContabilidadeProcedimento(){
+    public function indexArteaContabilidadeProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'contabilidade');
@@ -860,18 +861,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/contabilidade/procedimento
+    // artea/contabilidade/procedimento
 
-    public function indexHaosContabilidadeInstrucao(){
+    public function indexArteaContabilidadeInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'contabilidade');
@@ -881,18 +882,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/contas a pagar/formulario
+    // artea/contas a pagar/formulario
 
-    public function indexHaosContasPagarFormulario(){
+    public function indexArteaContasPagarFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'contas a pagar');
@@ -902,18 +903,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/contas a pagar/registro
+    // artea/contas a pagar/registro
 
-    public function indexHaosContasPagarRegistro(){
+    public function indexArteaContasPagarRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'contas a pagar');
@@ -923,18 +924,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/contas a pagar/procedimento
+    // artea/contas a pagar/procedimento
 
-    public function indexHaosContasPagarProcedimento(){
+    public function indexArteaContasPagarProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'contas a pagar');
@@ -944,18 +945,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/contas a pagar/registro
+    // artea/contas a pagar/registro
 
-    public function indexHaosContasPagarInstrucao(){
+    public function indexArteaContasPagarInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'contas a pagar');
@@ -965,18 +966,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/contas a receber/formulario
+    // artea/contas a receber/formulario
 
-    public function indexHaosContasReceberFormulario(){
+    public function indexArteaContasReceberFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'contas a receber');
@@ -986,18 +987,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/contas a receber/registro
+    // artea/contas a receber/registro
 
-    public function indexHaosContasReceberRegistro(){
+    public function indexArteaContasReceberRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'contas a receber');
@@ -1007,18 +1008,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/contas a receber/procedimento
+    // artea/contas a receber/procedimento
 
-    public function indexHaosContasReceberProcedimento(){
+    public function indexArteaContasReceberProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'contas a receber');
@@ -1028,18 +1029,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/contas a receber/instrucao
+    // artea/contas a receber/instrucao
 
-    public function indexHaosContasReceberInstrucao(){
+    public function indexArteaContasReceberInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'contas a receber');
@@ -1049,18 +1050,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/custo/formulario
+    // artea/custo/formulario
 
-    public function indexHaosCustoFormulario(){
+    public function indexArteaCustoFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'custo');
@@ -1070,18 +1071,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/custo/registro
+    // artea/custo/registro
 
-    public function indexHaosCustoRegistro(){
+    public function indexArteaCustoRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'custo');
@@ -1091,18 +1092,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/custo/procedimento
+    // artea/custo/procedimento
 
-    public function indexHaosCustoProcedimento(){
+    public function indexArteaCustoProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'custo');
@@ -1112,18 +1113,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/custo/instrucao
+    // artea/custo/instrucao
 
-    public function indexHaosCustoInstrucao(){
+    public function indexArteaCustoInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'custo');
@@ -1133,18 +1134,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/design/formulario
+    // artea/design/formulario
 
-    public function indexHaosDesignFormulario(){
+    public function indexArteaDesignFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'design');
@@ -1154,18 +1155,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/design/registro
+    // artea/design/registro
 
-    public function indexHaosDesignRegistro(){
+    public function indexArteaDesignRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'design');
@@ -1175,18 +1176,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/design/procedimento
+    // artea/design/procedimento
 
-    public function indexHaosDesignProcedimento(){
+    public function indexArteaDesignProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'design');
@@ -1196,18 +1197,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/design/instrucao
+    // artea/design/instrucao
 
-    public function indexHaosDesignInstrucao(){
+    public function indexArteaDesignInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'design');
@@ -1217,18 +1218,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/diretoria administrativa/formulario
+    // artea/diretoria administrativa/formulario
 
-    public function indexHaosDiretoriaAdministrativaFormulario(){
+    public function indexArteaDiretoriaAdministrativaFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'diretoria administrativa');
@@ -1238,18 +1239,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/diretoria administrativa/registro
+    // artea/diretoria administrativa/registro
 
-    public function indexHaosDiretoriaAdministrativaRegistro(){
+    public function indexArteaDiretoriaAdministrativaRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'diretoria administrativa');
@@ -1259,18 +1260,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/diretoria administrativa/procedimento
+    // artea/diretoria administrativa/procedimento
 
-    public function indexHaosDiretoriaAdministrativaProcedimento(){
+    public function indexArteaDiretoriaAdministrativaProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'diretoria administrativa');
@@ -1280,18 +1281,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/diretoria administrativa/instrucao
+    // artea/diretoria administrativa/instrucao
 
-    public function indexHaosDiretoriaAdministrativaInstrucao(){
+    public function indexArteaDiretoriaAdministrativaInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'diretoria administrativa');
@@ -1301,18 +1302,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/diretoria comercial/ formulario
+    // artea/diretoria comercial/ formulario
 
-    public function indexHaosDiretoriaComercialFormulario(){
+    public function indexArteaDiretoriaComercialFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'diretoria comercial');
@@ -1322,18 +1323,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/diretoria comercial/ registro
+    // artea/diretoria comercial/ registro
 
-    public function indexHaosDiretoriaComercialRegistro(){
+    public function indexArteaDiretoriaComercialRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'diretoria comercial');
@@ -1343,18 +1344,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/diretoria comercial/ procedimento
+    // artea/diretoria comercial/ procedimento
 
-    public function indexHaosDiretoriaComercialProcedimento(){
+    public function indexArteaDiretoriaComercialProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'diretoria comercial');
@@ -1364,18 +1365,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/diretoria comercial/ instrucao
+    // artea/diretoria comercial/ instrucao
 
-    public function indexHaosDiretoriaComercialInstrucao(){
+    public function indexArteaDiretoriaComercialInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'diretoria comercial');
@@ -1385,18 +1386,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/diretoria industrial/ formulario
+    // artea/diretoria industrial/ formulario
 
-    public function indexHaosDiretoriaIndustrialFormulario(){
+    public function indexArteaDiretoriaIndustrialFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'diretoria industrial');
@@ -1406,18 +1407,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/diretoria industrial/ registro
+    // artea/diretoria industrial/ registro
 
-    public function indexHaosDiretoriaIndustrialRegistro(){
+    public function indexArteaDiretoriaIndustrialRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'diretoria industrial');
@@ -1427,18 +1428,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/diretoria industrial/ procedimento
+    // artea/diretoria industrial/ procedimento
 
-    public function indexHaosDiretoriaIndustrialProcedimento(){
+    public function indexArteaDiretoriaIndustrialProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'diretoria industrial');
@@ -1448,18 +1449,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/diretoria industrial/ instrucao
+    // artea/diretoria industrial/ instrucao
 
-    public function indexHaosDiretoriaIndustrialInstrucao(){
+    public function indexArteaDiretoriaIndustrialInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'diretoria industrial');
@@ -1469,18 +1470,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/ecommerce/ formulario
+    // artea/ecommerce/ formulario
 
-    public function indexHaosEcommerceFormulario(){
+    public function indexArteaEcommerceFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'ecommerce');
@@ -1490,18 +1491,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/ecommerce/ registro
+    // artea/ecommerce/ registro
 
-    public function indexHaosEcommerceRegistro(){
+    public function indexArteaEcommerceRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'ecommerce');
@@ -1511,18 +1512,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/ecommerce/ procedimento
+    // artea/ecommerce/ procedimento
 
-    public function indexHaosEcommerceProcedimento(){
+    public function indexArteaEcommerceProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'ecommerce');
@@ -1532,18 +1533,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/ecommerce/ instrucao
+    // artea/ecommerce/ instrucao
 
-    public function indexHaosEcommerceInstrucao(){
+    public function indexArteaEcommerceInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'ecommerce');
@@ -1553,18 +1554,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/engenharia/ formulario
+    // artea/engenharia/ formulario
 
-    public function indexHaosEngenhariaFormulario(){
+    public function indexArteaEngenhariaFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'engenharia');
@@ -1574,18 +1575,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/engenharia/ registro
+    // artea/engenharia/ registro
 
-    public function indexHaosEngenhariaRegistro(){
+    public function indexArteaEngenhariaRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'engenharia');
@@ -1595,18 +1596,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/engenharia/ procedimento
+    // artea/engenharia/ procedimento
 
-    public function indexHaosEngenhariaProcedimento(){
+    public function indexArteaEngenhariaProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'engenharia');
@@ -1616,18 +1617,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/engenharia/ instrucao
+    // artea/engenharia/ instrucao
 
-    public function indexHaosEngenhariaInstrucao(){
+    public function indexArteaEngenhariaInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'engenharia');
@@ -1637,18 +1638,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/expedicao/ formulario
+    // artea/expedicao/ formulario
 
-    public function indexHaosExpedicaoFormulario(){
+    public function indexArteaExpedicaoFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'expedicao');
@@ -1658,18 +1659,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/expedicao/ registro
+    // artea/expedicao/ registro
 
-    public function indexHaosExpedicaoRegistro(){
+    public function indexArteaExpedicaoRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'expedicao');
@@ -1679,18 +1680,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/expedicao/ procedimento
+    // artea/expedicao/ procedimento
 
-    public function indexHaosExpedicaoProcedimento(){
+    public function indexArteaExpedicaoProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'expedicao');
@@ -1700,18 +1701,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/expedicao/ instrucao
+    // artea/expedicao/ instrucao
 
-    public function indexHaosExpedicaoInstrucao(){
+    public function indexArteaExpedicaoInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'expedicao');
@@ -1721,18 +1722,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/exportacao/ formulario
+    // artea/exportacao/ formulario
 
-    public function indexHaosExportacaoFormulario(){
+    public function indexArteaExportacaoFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'exportacao');
@@ -1742,18 +1743,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/exportacao/ registro
+    // artea/exportacao/ registro
 
-    public function indexHaosExportacaoRegistro(){
+    public function indexArteaExportacaoRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'exportacao');
@@ -1763,18 +1764,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/exportacao/ procedimento
+    // artea/exportacao/ procedimento
 
-    public function indexHaosExportacaoProcedimento(){
+    public function indexArteaExportacaoProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'exportacao');
@@ -1784,18 +1785,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/exportacao/ instrucao
+    // artea/exportacao/ instrucao
 
-    public function indexHaosExportacaoInstrucao(){
+    public function indexArteaExportacaoInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'exportacao');
@@ -1805,18 +1806,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/faturamento/ formulario
+    // artea/faturamento/ formulario
 
-    public function indexHaosFaturamentoFormulario(){
+    public function indexArteaFaturamentoFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'faturamento');
@@ -1826,18 +1827,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/faturamento/ registro
+    // artea/faturamento/ registro
 
-    public function indexHaosFaturamentoRegistro(){
+    public function indexArteaFaturamentoRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'faturamento');
@@ -1847,18 +1848,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/faturamento/ procedimento
+    // artea/faturamento/ procedimento
 
-    public function indexHaosFaturamentoProcedimento(){
+    public function indexArteaFaturamentoProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'faturamento');
@@ -1868,18 +1869,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/faturamento/ instrucao
+    // artea/faturamento/ instrucao
 
-    public function indexHaosFaturamentoInstrucao(){
+    public function indexArteaFaturamentoInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'faturamento');
@@ -1889,18 +1890,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/manutencao/ formulario
+    // artea/manutencao/ formulario
 
-    public function indexHaosManutencaoFormulario(){
+    public function indexArteaManutencaoFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'manutencao');
@@ -1910,18 +1911,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/manutencao/ registro
+    // artea/manutencao/ registro
 
-    public function indexHaosManutencaoRegistro(){
+    public function indexArteaManutencaoRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'manutencao');
@@ -1931,18 +1932,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/manutencao/ procedimento
+    // artea/manutencao/ procedimento
 
-    public function indexHaosManutencaoProcedimento(){
+    public function indexArteaManutencaoProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'manutencao');
@@ -1952,18 +1953,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/manutencao/ instrucao
+    // artea/manutencao/ instrucao
 
-    public function indexHaosManutencaoInstrucao(){
+    public function indexArteaManutencaoInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'manutencao');
@@ -1973,18 +1974,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/ped/ formulario
+    // artea/ped/ formulario
 
-    public function indexHaosPedFormulario(){
+    public function indexArteaPedFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'p&d');
@@ -1994,18 +1995,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/ped/ registro
+    // artea/ped/ registro
 
-    public function indexHaosPedRegistro(){
+    public function indexArteaPedRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'p&d');
@@ -2015,18 +2016,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/ped/ procedimento
+    // artea/ped/ procedimento
 
-    public function indexHaosPedProcedimento(){
+    public function indexArteaPedProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'p&d');
@@ -2036,18 +2037,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/ped/ instrucao
+    // artea/ped/ instrucao
 
-    public function indexHaosPedInstrucao(){
+    public function indexArteaPedInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'p&d');
@@ -2057,18 +2058,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/pmo/ formulario
+    // artea/pmo/ formulario
 
-    public function indexHaosPmoFormulario(){
+    public function indexArteaPmoFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'pmo');
@@ -2078,18 +2079,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/pmo/ registro
+    // artea/pmo/ registro
 
-    public function indexHaosPmoRegistro(){
+    public function indexArteaPmoRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'pmo');
@@ -2099,18 +2100,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/pmo/ procedimento
+    // artea/pmo/ procedimento
 
-    public function indexHaosPmoProcedimento(){
+    public function indexArteaPmoProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'pmo');
@@ -2120,18 +2121,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/pmo/ instrucao
+    // artea/pmo/ instrucao
 
-    public function indexHaosPmoInstrucao(){
+    public function indexArteaPmoInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'pmo');
@@ -2141,18 +2142,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/ppcp/ formulario
+    // artea/ppcp/ formulario
 
-    public function indexHaosPpcpFormulario(){
+    public function indexArteaPpcpFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'ppcp');
@@ -2162,18 +2163,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/ppcp/ registro
+    // artea/ppcp/ registro
 
-    public function indexHaosPpcpRegistro(){
+    public function indexArteaPpcpRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'ppcp');
@@ -2183,18 +2184,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/ppcp/ procedimento
+    // artea/ppcp/ procedimento
 
-    public function indexHaosPpcpProcedimento(){
+    public function indexArteaPpcpProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'ppcp');
@@ -2204,18 +2205,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/ppcp/ instrucao
+    // artea/ppcp/ instrucao
 
-    public function indexHaosPpcpInstrucao(){
+    public function indexArteaPpcpInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'ppcp');
@@ -2225,18 +2226,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/qualidade/ formulario
+    // artea/qualidade/ formulario
 
-    public function indexHaosQualidadeFormulario(){
+    public function indexArteaQualidadeFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'qualidade');
@@ -2246,18 +2247,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/qualidade/ registro
+    // artea/qualidade/ registro
 
-    public function indexHaosQualidadeRegistro(){
+    public function indexArteaQualidadeRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'qualidade');
@@ -2267,18 +2268,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/qualidade/ procedimento
+    // artea/qualidade/ procedimento
 
-    public function indexHaosQualidadeProcedimento(){
+    public function indexArteaQualidadeProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'qualidade');
@@ -2288,18 +2289,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/qualidade/ instrucao
+    // artea/qualidade/ instrucao
 
-    public function indexHaosQualidadeInstrucao(){
+    public function indexArteaQualidadeInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'qualidade');
@@ -2309,18 +2310,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     // QUALIDADE
     //=========================================
 
     //=========================================
-    // haos/recepcao/ formulario
+    // artea/recepcao/ formulario
 
-    public function indexHaosRecepcaoFormulario(){
+    public function indexArteaRecepcaoFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'recepcao');
@@ -2330,18 +2331,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/recepcao/ registro
+    // artea/recepcao/ registro
 
-    public function indexHaosRecepcaoRegistro(){
+    public function indexArteaRecepcaoRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'recepcao');
@@ -2351,18 +2352,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/recepcao/ procedimento
+    // artea/recepcao/ procedimento
 
-    public function indexHaosRecepcaoProcedimento(){
+    public function indexArteaRecepcaoProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'recepcao');
@@ -2372,18 +2373,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/recepcao/ instrucao
+    // artea/recepcao/ instrucao
 
-    public function indexHaosRecepcaoInstrucao(){
+    public function indexArteaRecepcaoInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'recepcao');
@@ -2393,18 +2394,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/restaurante/ formulario
+    // artea/restaurante/ formulario
 
-    public function indexHaosRestauranteFormulario(){
+    public function indexArteaRestauranteFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'restaurante');
@@ -2414,18 +2415,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/restaurante/ registro
+    // artea/restaurante/ registro
 
-    public function indexHaosRestauranteRegistro(){
+    public function indexArteaRestauranteRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'restaurante');
@@ -2435,18 +2436,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/restaurante/ procedimento
+    // artea/restaurante/ procedimento
 
-    public function indexHaosRestauranteProcedimento(){
+    public function indexArteaRestauranteProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'restaurante');
@@ -2456,18 +2457,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/restaurante/ instrucao
+    // artea/restaurante/ instrucao
 
-    public function indexHaosRestauranteInstrucao(){
+    public function indexArteaRestauranteInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'restaurante');
@@ -2477,18 +2478,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/rh/ formulario
+    // artea/rh/ formulario
 
-    public function indexHaosRhFormulario(){
+    public function indexArteaRhFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'rh');
@@ -2498,18 +2499,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/rh/ registro
+    // artea/rh/ registro
 
-    public function indexHaosRhRegistro(){
+    public function indexArteaRhRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'rh');
@@ -2519,18 +2520,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/rh/ procedimento
+    // artea/rh/ procedimento
 
-    public function indexHaosRhProcedimento(){
+    public function indexArteaRhProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'rh');
@@ -2540,18 +2541,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/rh/ instrucao
+    // artea/rh/ instrucao
 
-    public function indexHaosRhInstrucao(){
+    public function indexArteaRhInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'rh');
@@ -2561,18 +2562,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/sac/ formulario
+    // artea/sac/ formulario
 
-    public function indexHaosSacFormulario(){
+    public function indexArteaSacFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'sac');
@@ -2582,18 +2583,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/sac/ registro
+    // artea/sac/ registro
 
-    public function indexHaosSacRegistro(){
+    public function indexArteaSacRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'sac');
@@ -2603,18 +2604,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/sac/ procedimento
+    // artea/sac/ procedimento
 
-    public function indexHaosSacProcedimento(){
+    public function indexArteaSacProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'sac');
@@ -2624,18 +2625,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/sac/ instrucao
+    // artea/sac/ instrucao
 
-    public function indexHaosSacInstrucao(){
+    public function indexArteaSacInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'sac');
@@ -2645,18 +2646,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/sesmt/ formulario
+    // artea/sesmt/ formulario
 
-    public function indexHaosSesmtFormulario(){
+    public function indexArteaSesmtFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'sesmt');
@@ -2666,18 +2667,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/sesmt/ registro
+    // artea/sesmt/ registro
 
-    public function indexHaosSesmtRegistro(){
+    public function indexArteaSesmtRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'sesmt');
@@ -2687,18 +2688,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/sesmt/ procedimento
+    // artea/sesmt/ procedimento
 
-    public function indexHaosSesmtProcedimento(){
+    public function indexArteaSesmtProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'sesmt');
@@ -2708,18 +2709,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/sesmt/ instrucao
+    // artea/sesmt/ instrucao
 
-    public function indexHaosSesmtInstrucao(){
+    public function indexArteaSesmtInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'sesmt');
@@ -2729,18 +2730,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/projetos/ formulario
+    // artea/projetos/ formulario
 
-    public function indexHaosProjetosFormulario(){
+    public function indexArteaProjetosFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'projetos');
@@ -2750,18 +2751,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/projetos/ registro
+    // artea/projetos/ registro
 
-    public function indexHaosProjetosRegistro(){
+    public function indexArteaProjetosRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'projetos');
@@ -2771,18 +2772,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/projetos/ procedimento
+    // artea/projetos/ procedimento
 
-    public function indexHaosProjetosProcedimento(){
+    public function indexArteaProjetosProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'projetos');
@@ -2792,18 +2793,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/projetos/ instrucao
+    // artea/projetos/ instrucao
 
-    public function indexHaosProjetosInstrucao(){
+    public function indexArteaProjetosInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'projetos');
@@ -2813,18 +2814,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/transporte/ formulario
+    // artea/transporte/ formulario
 
-    public function indexHaosTransporteFormulario(){
+    public function indexArteaTransporteFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'transporte');
@@ -2834,18 +2835,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/transporte/ registro
+    // artea/transporte/ registro
 
-    public function indexHaosTransporteRegistro(){
+    public function indexArteaTransporteRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'transporte');
@@ -2855,18 +2856,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/transporte/ procedimento
+    // artea/transporte/ procedimento
 
-    public function indexHaosTransporteProcedimento(){
+    public function indexArteaTransporteProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'transporte');
@@ -2876,18 +2877,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/transporte/ instrucao
+    // artea/transporte/ instrucao
 
-    public function indexHaosTransporteInstrucao(){
+    public function indexArteaTransporteInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Artea');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'transporte');
@@ -2897,8 +2898,11 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 }
+
+
+

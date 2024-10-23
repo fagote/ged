@@ -6,14 +6,16 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\File;
 
-class HaosController extends Controller
+class LavorattoController extends Controller
 {
+    
+    
     //=========================================
-    // Página index da pasta empresa Haos
+    // Página index da pasta empresa Lavoratto
 
-    public function indexHaos(){
+    public function indexLavoratto(){
 
-        return view('admin.haos.haos');
+        return view('admin.lavoratto.lavoratto');
     }
 
     //========================================= 
@@ -21,8 +23,8 @@ class HaosController extends Controller
     //=========================================
     //Função Para Mostrar a pasta do setor TI
 
-    public function indexHaosTi(){
-        return view('admin.haos.setores.tecnologia-informacao.tecnologia_informacao');
+    public function indexLavorattoTi(){
+        return view('admin.lavoratto.setores.tecnologia-informacao.tecnologia_informacao');
     }
     //OBS: a view tecnologia_informacao.blade.php funciona como um curinga para ser chamado nos outros setores.
     //=========================================
@@ -30,8 +32,8 @@ class HaosController extends Controller
     //=========================================
     // Função para mostrar a pasta do setor marketing
 
-    public function indexHaosMarketing(){
-        return view('admin.haos.setores.marketing.marketing');
+    public function indexLavorattoMarketing(){
+        return view('admin.lavoratto.setores.marketing.marketing');
     }
 
     //=========================================
@@ -39,260 +41,260 @@ class HaosController extends Controller
     //=========================================
     // Função para mostrar a pasta do setor comercial
 
-    public function indexHaosComercial(){
-        return view('admin.haos.setores.comercial.comercial');
+    public function indexLavorattoComercial(){
+        return view('admin.lavoratto.setores.comercial.comercial');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/almoxarifado
+    // Pasta lavoratto/almoxarifado
 
-    public function indexHaosAlmoxarifado(){
-        return view('admin.haos.setores.almoxarifado.almoxarifado');
+    public function indexLavorattoAlmoxarifado(){
+        return view('admin.lavoratto.setores.almoxarifado.almoxarifado');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/assistencia
+    // Pasta lavoratto/assistencia
 
-    public function indexHaosAssistencia(){
-        return view('admin.haos.setores.assistencia.assistencia');
+    public function indexLavorattoAssistencia(){
+        return view('admin.lavoratto.setores.assistencia.assistencia');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/compras
+    // Pasta lavoratto/compras
 
-    public function indexHaosCompras(){
-        return view('admin.haos.setores.compras.compras');
+    public function indexLavorattoCompras(){
+        return view('admin.lavoratto.setores.compras.compras');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/contabilidade
+    // Pasta lavoratto/contabilidade
 
-    public function indexHaosContabilidade(){
-        return view('admin.haos.setores.contabilidade.contabilidade');
+    public function indexLavorattoContabilidade(){
+        return view('admin.lavoratto.setores.contabilidade.contabilidade');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/contas a pagar 
+    // Pasta lavoratto/contas a pagar 
 
-    public function indexHaosContasPagar(){
-        return view('admin.haos.setores.contaspagar.contaspagar');
+    public function indexLavorattoContasPagar(){
+        return view('admin.lavoratto.setores.contaspagar.contaspagar');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/contas a receber 
+    // Pasta lavoratto/contas a receber 
 
-    public function indexHaosContasReceber(){
-        return view('admin.haos.setores.contasreceber.contasreceber');
+    public function indexLavorattoContasReceber(){
+        return view('admin.lavoratto.setores.contasreceber.contasreceber');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/custo
+    // Pasta lavoratto/custo
 
-    public function indexHaosCusto(){
-        return view('admin.haos.setores.custo.custo');
+    public function indexLavorattoCusto(){
+        return view('admin.lavoratto.setores.custo.custo');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/design
+    // Pasta lavoratto/design
 
-    public function indexHaosDesign(){
-        return view('admin.haos.setores.designn.design');
+    public function indexLavorattoDesign(){
+        return view('admin.lavoratto.setores.designn.design');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/diretoria administrativa
+    // Pasta lavoratto/diretoria administrativa
 
-    public function indexHaosDiretoriaAdministrativa(){
-        return view('admin.haos.setores.diretoriaadministrativa.diretoriaadministrativa');
+    public function indexLavorattoDiretoriaAdministrativa(){
+        return view('admin.lavoratto.setores.diretoriaadministrativa.diretoriaadministrativa');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/diretoria comercial
+    // Pasta lavoratto/diretoria comercial
 
-    public function indexHaosDiretoriaComercial(){
-        return view('admin.haos.setores.diretoriacomercial.diretoriacomercial');
+    public function indexLavorattoDiretoriaComercial(){
+        return view('admin.lavoratto.setores.diretoriacomercial.diretoriacomercial');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/diretoria industrial
+    // Pasta lavoratto/diretoria industrial
 
-    public function indexHaosDiretoriaIndustrial(){
-        return view('admin.haos.setores.diretoriaindustrial.diretoriaindustrial');
+    public function indexLavorattoDiretoriaIndustrial(){
+        return view('admin.lavoratto.setores.diretoriaindustrial.diretoriaindustrial');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/e-commerce
+    // Pasta lavoratto/e-commerce
 
-    public function indexHaosEcommerce(){
-        return view('admin.haos.setores.ecommerce.ecommerce');
+    public function indexLavorattoEcommerce(){
+        return view('admin.lavoratto.setores.ecommerce.ecommerce');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/engenharia
+    // Pasta lavoratto/engenharia
 
-    public function indexHaosEngenharia(){
-        return view('admin.haos.setores.engenharia.engenharia');
+    public function indexLavorattoEngenharia(){
+        return view('admin.lavoratto.setores.engenharia.engenharia');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/expedicao
+    // Pasta lavoratto/expedicao
 
-    public function indexHaosExpedicao(){
-        return view('admin.haos.setores.expedicao.expedicao');
+    public function indexLavorattoExpedicao(){
+        return view('admin.lavoratto.setores.expedicao.expedicao');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/exportacao
+    // Pasta lavoratto/exportacao
 
-    public function indexHaosExportacao(){
-        return view('admin.haos.setores.exportacao.exportacao');
+    public function indexLavorattoExportacao(){
+        return view('admin.lavoratto.setores.exportacao.exportacao');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/faturamento
+    // Pasta lavoratto/faturamento
 
-    public function indexHaosFaturamento(){
-        return view('admin.haos.setores.faturamento.faturamento');
+    public function indexLavorattoFaturamento(){
+        return view('admin.lavoratto.setores.faturamento.faturamento');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/manutencao
+    // Pasta lavoratto/manutencao
 
-    public function indexHaosManutencao(){
-        return view('admin.haos.setores.manutencao.manutencao');
+    public function indexLavorattoManutencao(){
+        return view('admin.lavoratto.setores.manutencao.manutencao');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/ped
+    // Pasta lavoratto/ped
 
-    public function indexHaosPed(){
-        return view('admin.haos.setores.ped.ped');
+    public function indexLavorattoPed(){
+        return view('admin.lavoratto.setores.ped.ped');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/pmo
+    // Pasta lavoratto/pmo
 
-    public function indexHaosPmo(){
-        return view('admin.haos.setores.pmo.pmo');
+    public function indexLavorattoPmo(){
+        return view('admin.lavoratto.setores.pmo.pmo');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/ppcp
+    // Pasta lavoratto/ppcp
 
-    public function indexHaosPpcp(){
-        return view('admin.haos.setores.ppcp.ppcp');
+    public function indexLavorattoPpcp(){
+        return view('admin.lavoratto.setores.ppcp.ppcp');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/qualidade
+    // Pasta lavoratto/qualidade
 
-    public function indexHaosQualidade(){
-        return view('admin.haos.setores.qualidade.qualidade');
+    public function indexLavorattoQualidade(){
+        return view('admin.lavoratto.setores.qualidade.qualidade');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/recepcao
+    // Pasta lavoratto/recepcao
 
-    public function indexHaosRecepcao(){
-        return view('admin.haos.setores.recepcao.recepcao');
+    public function indexLavorattoRecepcao(){
+        return view('admin.lavoratto.setores.recepcao.recepcao');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/restaurante
+    // Pasta lavoratto/restaurante
 
-    public function indexHaosRestaurante(){
-        return view('admin.haos.setores.restaurante.restaurante');
+    public function indexLavorattoRestaurante(){
+        return view('admin.lavoratto.setores.restaurante.restaurante');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/rh
+    // Pasta lavoratto/rh
 
-    public function indexHaosRh(){
-        return view('admin.haos.setores.rh.rh');
+    public function indexLavorattoRh(){
+        return view('admin.lavoratto.setores.rh.rh');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/sac
+    // Pasta lavoratto/sac
 
-    public function indexHaosSac(){
-        return view('admin.haos.setores.sac.sac');
+    public function indexLavorattoSac(){
+        return view('admin.lavoratto.setores.sac.sac');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/sesmt
+    // Pasta lavoratto/sesmt
 
-    public function indexHaosSesmt(){
-        return view('admin.haos.setores.sesmt.sesmt');
+    public function indexLavorattoSesmt(){
+        return view('admin.lavoratto.setores.sesmt.sesmt');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/projetos
+    // Pasta lavoratto/projetos
 
-    public function indexHaosProjetos(){
-        return view('admin.haos.setores.projetos.projetos');
+    public function indexLavorattoProjetos(){
+        return view('admin.lavoratto.setores.projetos.projetos');
     }
 
     //=========================================
 
     //=========================================
-    // Pasta haos/exportacao
+    // Pasta lavoratto/exportacao
 
-    public function indexHaosTransporte(){
-        return view('admin.haos.setores.transporte.transporte');
+    public function indexLavorattoTransporte(){
+        return view('admin.lavoratto.setores.transporte.transporte');
     }
 
     //=========================================
@@ -300,10 +302,10 @@ class HaosController extends Controller
     //=========================================
     // Função Para Mostrar os arquivos da macro Instrução
 
-    public function indexHaosTiInstrucao(){
+    public function indexLavorattoTiInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'Tecnologia da Informação');
@@ -313,7 +315,7 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
@@ -321,11 +323,11 @@ class HaosController extends Controller
     //=========================================
     // Função Para Mostrar os arquivos da macro qualidade
 
-    public function indexHaosTiProcedimento(){
+    public function indexLavorattoTiProcedimento(){
 
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'Tecnologia da Informação');
@@ -335,7 +337,7 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
@@ -343,11 +345,11 @@ class HaosController extends Controller
     //=========================================
     // Função Para Mostrar os arquivos da macro Produção
 
-    public function indexHaosTiRegistro(){
+    public function indexLavorattoTiRegistro(){
 
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'Tecnologia da Informação');
@@ -357,7 +359,7 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
@@ -365,11 +367,11 @@ class HaosController extends Controller
     //=========================================
     // Função Para Mostrar os arquivos da macro Produção
 
-    public function indexHaosTiFormulario(){
+    public function indexLavorattoTiFormulario(){
 
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'Tecnologia da Informação');
@@ -379,7 +381,7 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
@@ -388,10 +390,10 @@ class HaosController extends Controller
     //=========================================
     // Função Para Mostrar os arquivos da macro Instrução
 
-    public function indexHaosMarketingInstrucao(){
+    public function indexLavorattoMarketingInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'Marketing');
@@ -401,7 +403,7 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
@@ -409,10 +411,10 @@ class HaosController extends Controller
     //=========================================
     // Função para mostrar os arquivos da macro procedimento
 
-    public function indexHaosMarketingProcedimento(){
+    public function indexLavorattoMarketingProcedimento(){
 
         $files = File::whereHas('company', function($query){
-            $query->where('name_empresa','Haos');
+            $query->where('name_empresa','Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor','Marketing');
@@ -421,7 +423,7 @@ class HaosController extends Controller
             $query->where('name_macro','procedimento');
         }) -> paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
@@ -429,10 +431,10 @@ class HaosController extends Controller
     //=========================================
     // Função para mostrar os arquivos da macro produção
 
-    public function indexHaosMarketingRegistro(){
+    public function indexLavorattoMarketingRegistro(){
 
         $files = File::whereHas('company', function($query){
-            $query->where('name_empresa','Haos');
+            $query->where('name_empresa','Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor','Marketing');
@@ -441,7 +443,7 @@ class HaosController extends Controller
             $query->where('name_macro','registro');
         }) -> paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
@@ -449,10 +451,10 @@ class HaosController extends Controller
     //=========================================
     // Função para mostrar os arquivos da macro produção
 
-    public function indexHaosMarketingFormulario(){
+    public function indexLavorattoMarketingFormulario(){
 
         $files = File::whereHas('company', function($query){
-            $query->where('name_empresa','Haos');
+            $query->where('name_empresa','Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor','Marketing');
@@ -461,18 +463,18 @@ class HaosController extends Controller
             $query->where('name_macro','formulario');
         }) -> paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/comercial/instrucao
+    // lavoratto/comercial/instrucao
 
-    public function indexHaosComercialInstrucao(){
+    public function indexLavorattoComercialInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'Comercial');
@@ -482,18 +484,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/comercial/procedimento
+    // lavoratto/comercial/procedimento
 
-    public function indexHaosComercialProcedimento(){
+    public function indexLavorattoComercialProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'Comercial');
@@ -503,18 +505,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/comercial/registro
+    // lavoratto/comercial/registro
 
-    public function indexHaosComercialRegistro(){
+    public function indexLavorattoComercialRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'Comercial');
@@ -524,18 +526,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/comercial/registro
+    // lavoratto/comercial/registro
 
-    public function indexHaosComercialFormulario(){
+    public function indexLavorattoComercialFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'Comercial');
@@ -545,18 +547,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/almoxarifado/instrucao
+    // lavoratto/almoxarifado/instrucao
 
-    public function indexHaosAlmoxarifadoInstrucao(){
+    public function indexLavorattoAlmoxarifadoInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'almoxarifado');
@@ -566,18 +568,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/almoxarifado/procedimento
+    // lavoratto/almoxarifado/procedimento
 
-    public function indexHaosAlmoxarifadoProcedimento(){
+    public function indexLavorattoAlmoxarifadoProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'almoxarifado');
@@ -587,18 +589,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/almoxarifado/registro
+    // lavoratto/almoxarifado/registro
 
-    public function indexHaosAlmoxarifadoRegistro(){
+    public function indexLavorattoAlmoxarifadoRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'almoxarifado');
@@ -608,18 +610,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/almoxarifado/fomulario
+    // lavoratto/almoxarifado/fomulario
 
-    public function indexHaosAlmoxarifadoFormulario(){
+    public function indexLavorattoAlmoxarifadoFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'almoxarifado');
@@ -629,18 +631,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/assistencia/fomulario
+    // lavoratto/assistencia/fomulario
 
-    public function indexHaosAssistenciaFormulario(){
+    public function indexLavorattoAssistenciaFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'assistenca');
@@ -650,18 +652,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/assistencia/registro
+    // lavoratto/assistencia/registro
 
-    public function indexHaosAssistenciaRegistro(){
+    public function indexLavorattoAssistenciaRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'assistencia');
@@ -671,18 +673,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/assistencia/procedimento
+    // lavoratto/assistencia/procedimento
 
-    public function indexHaosAssistenciaProcedimento(){
+    public function indexLavorattoAssistenciaProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'assistencia');
@@ -692,18 +694,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/almoxarifado/instrucao
+    // lavoratto/almoxarifado/instrucao
 
-    public function indexHaosAssistenciaInstrucao(){
+    public function indexLavorattoAssistenciaInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'assistencia');
@@ -713,18 +715,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/compras/formulario
+    // lavoratto/compras/formulario
 
-    public function indexHaosComprasFormulario(){
+    public function indexLavorattoComprasFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'compras');
@@ -734,18 +736,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/compras/registro
+    // lavoratto/compras/registro
 
-    public function indexHaosComprasRegistro(){
+    public function indexLavorattoComprasRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'compras');
@@ -755,18 +757,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/compras/procedimento
+    // lavoratto/compras/procedimento
 
-    public function indexHaosComprasProcedimento(){
+    public function indexLavorattoComprasProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'compras');
@@ -776,18 +778,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/compras/instrucao
+    // lavoratto/compras/instrucao
 
-    public function indexHaosComprasInstrucao(){
+    public function indexLavorattoComprasInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'compras');
@@ -797,18 +799,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/contabilidade/formulario
+    // lavoratto/contabilidade/formulario
 
-    public function indexHaosContabilidadeFormulario(){
+    public function indexLavorattoContabilidadeFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'contabilidade');
@@ -818,18 +820,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/contabilidade/registro
+    // lavoratto/contabilidade/registro
 
-    public function indexHaosContabilidadeRegistro(){
+    public function indexLavorattoContabilidadeRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'contabilidade');
@@ -839,18 +841,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/contabilidade/procedimento
+    // lavoratto/contabilidade/procedimento
 
-    public function indexHaosContabilidadeProcedimento(){
+    public function indexLavorattoContabilidadeProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'contabilidade');
@@ -860,18 +862,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/contabilidade/procedimento
+    // lavoratto/contabilidade/procedimento
 
-    public function indexHaosContabilidadeInstrucao(){
+    public function indexLavorattoContabilidadeInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'contabilidade');
@@ -881,18 +883,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/contas a pagar/formulario
+    // lavoratto/contas a pagar/formulario
 
-    public function indexHaosContasPagarFormulario(){
+    public function indexLavorattoContasPagarFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'contas a pagar');
@@ -902,18 +904,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/contas a pagar/registro
+    // lavoratto/contas a pagar/registro
 
-    public function indexHaosContasPagarRegistro(){
+    public function indexLavorattoContasPagarRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'contas a pagar');
@@ -923,18 +925,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/contas a pagar/procedimento
+    // lavoratto/contas a pagar/procedimento
 
-    public function indexHaosContasPagarProcedimento(){
+    public function indexLavorattoContasPagarProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'contas a pagar');
@@ -944,18 +946,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/contas a pagar/registro
+    // lavoratto/contas a pagar/registro
 
-    public function indexHaosContasPagarInstrucao(){
+    public function indexLavorattoContasPagarInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'contas a pagar');
@@ -965,18 +967,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/contas a receber/formulario
+    // lavoratto/contas a receber/formulario
 
-    public function indexHaosContasReceberFormulario(){
+    public function indexLavorattoContasReceberFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'contas a receber');
@@ -986,18 +988,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/contas a receber/registro
+    // lavoratto/contas a receber/registro
 
-    public function indexHaosContasReceberRegistro(){
+    public function indexLavorattoContasReceberRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'contas a receber');
@@ -1007,18 +1009,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/contas a receber/procedimento
+    // lavoratto/contas a receber/procedimento
 
-    public function indexHaosContasReceberProcedimento(){
+    public function indexLavorattoContasReceberProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'contas a receber');
@@ -1028,18 +1030,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/contas a receber/instrucao
+    // lavoratto/contas a receber/instrucao
 
-    public function indexHaosContasReceberInstrucao(){
+    public function indexLavorattoContasReceberInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'contas a receber');
@@ -1049,18 +1051,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/custo/formulario
+    // lavoratto/custo/formulario
 
-    public function indexHaosCustoFormulario(){
+    public function indexLavorattoCustoFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'custo');
@@ -1070,18 +1072,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/custo/registro
+    // lavoratto/custo/registro
 
-    public function indexHaosCustoRegistro(){
+    public function indexLavorattoCustoRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'custo');
@@ -1091,18 +1093,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/custo/procedimento
+    // lavoratto/custo/procedimento
 
-    public function indexHaosCustoProcedimento(){
+    public function indexLavorattoCustoProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'custo');
@@ -1112,18 +1114,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/custo/instrucao
+    // lavoratto/custo/instrucao
 
-    public function indexHaosCustoInstrucao(){
+    public function indexLavorattoCustoInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'custo');
@@ -1133,18 +1135,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/design/formulario
+    // lavoratto/design/formulario
 
-    public function indexHaosDesignFormulario(){
+    public function indexLavorattoDesignFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'design');
@@ -1154,18 +1156,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/design/registro
+    // lavoratto/design/registro
 
-    public function indexHaosDesignRegistro(){
+    public function indexLavorattoDesignRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'design');
@@ -1175,18 +1177,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/design/procedimento
+    // lavoratto/design/procedimento
 
-    public function indexHaosDesignProcedimento(){
+    public function indexLavorattoDesignProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'design');
@@ -1196,18 +1198,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/design/instrucao
+    // lavoratto/design/instrucao
 
-    public function indexHaosDesignInstrucao(){
+    public function indexLavorattoDesignInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'design');
@@ -1217,18 +1219,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/diretoria administrativa/formulario
+    // lavoratto/diretoria administrativa/formulario
 
-    public function indexHaosDiretoriaAdministrativaFormulario(){
+    public function indexLavorattoDiretoriaAdministrativaFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'diretoria administrativa');
@@ -1238,18 +1240,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/diretoria administrativa/registro
+    // lavoratto/diretoria administrativa/registro
 
-    public function indexHaosDiretoriaAdministrativaRegistro(){
+    public function indexLavorattoDiretoriaAdministrativaRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'diretoria administrativa');
@@ -1259,18 +1261,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/diretoria administrativa/procedimento
+    // lavoratto/diretoria administrativa/procedimento
 
-    public function indexHaosDiretoriaAdministrativaProcedimento(){
+    public function indexLavorattoDiretoriaAdministrativaProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'diretoria administrativa');
@@ -1280,18 +1282,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/diretoria administrativa/instrucao
+    // lavoratto/diretoria administrativa/instrucao
 
-    public function indexHaosDiretoriaAdministrativaInstrucao(){
+    public function indexLavorattoDiretoriaAdministrativaInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'diretoria administrativa');
@@ -1301,18 +1303,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/diretoria comercial/ formulario
+    // lavoratto/diretoria comercial/ formulario
 
-    public function indexHaosDiretoriaComercialFormulario(){
+    public function indexLavorattoDiretoriaComercialFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'diretoria comercial');
@@ -1322,18 +1324,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/diretoria comercial/ registro
+    // lavoratto/diretoria comercial/ registro
 
-    public function indexHaosDiretoriaComercialRegistro(){
+    public function indexLavorattoDiretoriaComercialRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'diretoria comercial');
@@ -1343,18 +1345,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/diretoria comercial/ procedimento
+    // lavoratto/diretoria comercial/ procedimento
 
-    public function indexHaosDiretoriaComercialProcedimento(){
+    public function indexLavorattoDiretoriaComercialProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'diretoria comercial');
@@ -1364,18 +1366,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/diretoria comercial/ instrucao
+    // lavoratto/diretoria comercial/ instrucao
 
-    public function indexHaosDiretoriaComercialInstrucao(){
+    public function indexLavorattoDiretoriaComercialInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'diretoria comercial');
@@ -1385,18 +1387,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/diretoria industrial/ formulario
+    // lavoratto/diretoria industrial/ formulario
 
-    public function indexHaosDiretoriaIndustrialFormulario(){
+    public function indexLavorattoDiretoriaIndustrialFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'diretoria industrial');
@@ -1406,18 +1408,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/diretoria industrial/ registro
+    // lavoratto/diretoria industrial/ registro
 
-    public function indexHaosDiretoriaIndustrialRegistro(){
+    public function indexLavorattoDiretoriaIndustrialRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'diretoria industrial');
@@ -1427,18 +1429,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/diretoria industrial/ procedimento
+    // lavoratto/diretoria industrial/ procedimento
 
-    public function indexHaosDiretoriaIndustrialProcedimento(){
+    public function indexLavorattoDiretoriaIndustrialProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'diretoria industrial');
@@ -1448,18 +1450,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/diretoria industrial/ instrucao
+    // lavoratto/diretoria industrial/ instrucao
 
-    public function indexHaosDiretoriaIndustrialInstrucao(){
+    public function indexLavorattoDiretoriaIndustrialInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'diretoria industrial');
@@ -1469,18 +1471,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/ecommerce/ formulario
+    // lavoratto/ecommerce/ formulario
 
-    public function indexHaosEcommerceFormulario(){
+    public function indexLavorattoEcommerceFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'ecommerce');
@@ -1490,18 +1492,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/ecommerce/ registro
+    // lavoratto/ecommerce/ registro
 
-    public function indexHaosEcommerceRegistro(){
+    public function indexLavorattoEcommerceRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'ecommerce');
@@ -1511,18 +1513,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/ecommerce/ procedimento
+    // lavoratto/ecommerce/ procedimento
 
-    public function indexHaosEcommerceProcedimento(){
+    public function indexLavorattoEcommerceProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'ecommerce');
@@ -1532,18 +1534,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/ecommerce/ instrucao
+    // lavoratto/ecommerce/ instrucao
 
-    public function indexHaosEcommerceInstrucao(){
+    public function indexLavorattoEcommerceInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'ecommerce');
@@ -1553,18 +1555,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/engenharia/ formulario
+    // lavoratto/engenharia/ formulario
 
-    public function indexHaosEngenhariaFormulario(){
+    public function indexLavorattoEngenhariaFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'engenharia');
@@ -1574,18 +1576,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/engenharia/ registro
+    // lavoratto/engenharia/ registro
 
-    public function indexHaosEngenhariaRegistro(){
+    public function indexLavorattoEngenhariaRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'engenharia');
@@ -1595,18 +1597,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/engenharia/ procedimento
+    // lavoratto/engenharia/ procedimento
 
-    public function indexHaosEngenhariaProcedimento(){
+    public function indexLavorattoEngenhariaProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'engenharia');
@@ -1616,18 +1618,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/engenharia/ instrucao
+    // lavoratto/engenharia/ instrucao
 
-    public function indexHaosEngenhariaInstrucao(){
+    public function indexLavorattoEngenhariaInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'engenharia');
@@ -1637,18 +1639,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/expedicao/ formulario
+    // lavoratto/expedicao/ formulario
 
-    public function indexHaosExpedicaoFormulario(){
+    public function indexLavorattoExpedicaoFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'expedicao');
@@ -1658,18 +1660,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/expedicao/ registro
+    // lavoratto/expedicao/ registro
 
-    public function indexHaosExpedicaoRegistro(){
+    public function indexLavorattoExpedicaoRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'expedicao');
@@ -1679,18 +1681,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/expedicao/ procedimento
+    // lavoratto/expedicao/ procedimento
 
-    public function indexHaosExpedicaoProcedimento(){
+    public function indexLavorattoExpedicaoProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'expedicao');
@@ -1700,18 +1702,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/expedicao/ instrucao
+    // lavoratto/expedicao/ instrucao
 
-    public function indexHaosExpedicaoInstrucao(){
+    public function indexLavorattoExpedicaoInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'expedicao');
@@ -1721,18 +1723,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/exportacao/ formulario
+    // lavoratto/exportacao/ formulario
 
-    public function indexHaosExportacaoFormulario(){
+    public function indexLavorattoExportacaoFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'exportacao');
@@ -1742,18 +1744,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/exportacao/ registro
+    // lavoratto/exportacao/ registro
 
-    public function indexHaosExportacaoRegistro(){
+    public function indexLavorattoExportacaoRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'exportacao');
@@ -1763,18 +1765,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/exportacao/ procedimento
+    // lavoratto/exportacao/ procedimento
 
-    public function indexHaosExportacaoProcedimento(){
+    public function indexLavorattoExportacaoProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'exportacao');
@@ -1784,18 +1786,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/exportacao/ instrucao
+    // lavoratto/exportacao/ instrucao
 
-    public function indexHaosExportacaoInstrucao(){
+    public function indexLavorattoExportacaoInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'exportacao');
@@ -1805,18 +1807,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/faturamento/ formulario
+    // lavoratto/faturamento/ formulario
 
-    public function indexHaosFaturamentoFormulario(){
+    public function indexLavorattoFaturamentoFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'faturamento');
@@ -1826,18 +1828,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/faturamento/ registro
+    // lavoratto/faturamento/ registro
 
-    public function indexHaosFaturamentoRegistro(){
+    public function indexLavorattoFaturamentoRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'faturamento');
@@ -1847,18 +1849,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/faturamento/ procedimento
+    // lavoratto/faturamento/ procedimento
 
-    public function indexHaosFaturamentoProcedimento(){
+    public function indexLavorattoFaturamentoProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'faturamento');
@@ -1868,18 +1870,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/faturamento/ instrucao
+    // lavoratto/faturamento/ instrucao
 
-    public function indexHaosFaturamentoInstrucao(){
+    public function indexLavorattoFaturamentoInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'faturamento');
@@ -1889,18 +1891,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/manutencao/ formulario
+    // lavoratto/manutencao/ formulario
 
-    public function indexHaosManutencaoFormulario(){
+    public function indexLavorattoManutencaoFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'manutencao');
@@ -1910,18 +1912,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/manutencao/ registro
+    // lavoratto/manutencao/ registro
 
-    public function indexHaosManutencaoRegistro(){
+    public function indexLavorattoManutencaoRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'manutencao');
@@ -1931,18 +1933,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/manutencao/ procedimento
+    // lavoratto/manutencao/ procedimento
 
-    public function indexHaosManutencaoProcedimento(){
+    public function indexLavorattoManutencaoProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'manutencao');
@@ -1952,18 +1954,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/manutencao/ instrucao
+    // lavoratto/manutencao/ instrucao
 
-    public function indexHaosManutencaoInstrucao(){
+    public function indexLavorattoManutencaoInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'manutencao');
@@ -1973,18 +1975,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/ped/ formulario
+    // lavoratto/ped/ formulario
 
-    public function indexHaosPedFormulario(){
+    public function indexLavorattoPedFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'p&d');
@@ -1994,18 +1996,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/ped/ registro
+    // lavoratto/ped/ registro
 
-    public function indexHaosPedRegistro(){
+    public function indexLavorattoPedRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'p&d');
@@ -2015,18 +2017,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/ped/ procedimento
+    // lavoratto/ped/ procedimento
 
-    public function indexHaosPedProcedimento(){
+    public function indexLavorattoPedProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'p&d');
@@ -2036,18 +2038,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/ped/ instrucao
+    // lavoratto/ped/ instrucao
 
-    public function indexHaosPedInstrucao(){
+    public function indexLavorattoPedInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'p&d');
@@ -2057,18 +2059,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/pmo/ formulario
+    // lavoratto/pmo/ formulario
 
-    public function indexHaosPmoFormulario(){
+    public function indexLavorattoPmoFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'pmo');
@@ -2078,18 +2080,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/pmo/ registro
+    // lavoratto/pmo/ registro
 
-    public function indexHaosPmoRegistro(){
+    public function indexLavorattoPmoRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'pmo');
@@ -2099,18 +2101,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/pmo/ procedimento
+    // lavoratto/pmo/ procedimento
 
-    public function indexHaosPmoProcedimento(){
+    public function indexLavorattoPmoProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'pmo');
@@ -2120,18 +2122,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/pmo/ instrucao
+    // lavoratto/pmo/ instrucao
 
-    public function indexHaosPmoInstrucao(){
+    public function indexLavorattoPmoInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'pmo');
@@ -2141,18 +2143,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/ppcp/ formulario
+    // lavoratto/ppcp/ formulario
 
-    public function indexHaosPpcpFormulario(){
+    public function indexLavorattoPpcpFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'ppcp');
@@ -2162,18 +2164,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/ppcp/ registro
+    // lavoratto/ppcp/ registro
 
-    public function indexHaosPpcpRegistro(){
+    public function indexLavorattoPpcpRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'ppcp');
@@ -2183,18 +2185,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/ppcp/ procedimento
+    // lavoratto/ppcp/ procedimento
 
-    public function indexHaosPpcpProcedimento(){
+    public function indexLavorattoPpcpProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'ppcp');
@@ -2204,18 +2206,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/ppcp/ instrucao
+    // lavoratto/ppcp/ instrucao
 
-    public function indexHaosPpcpInstrucao(){
+    public function indexLavorattoPpcpInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'ppcp');
@@ -2225,18 +2227,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/qualidade/ formulario
+    // lavoratto/qualidade/ formulario
 
-    public function indexHaosQualidadeFormulario(){
+    public function indexLavorattoQualidadeFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'qualidade');
@@ -2246,18 +2248,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/qualidade/ registro
+    // lavoratto/qualidade/ registro
 
-    public function indexHaosQualidadeRegistro(){
+    public function indexLavorattoQualidadeRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'qualidade');
@@ -2267,18 +2269,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/qualidade/ procedimento
+    // lavoratto/qualidade/ procedimento
 
-    public function indexHaosQualidadeProcedimento(){
+    public function indexLavorattoQualidadeProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'qualidade');
@@ -2288,18 +2290,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/qualidade/ instrucao
+    // lavoratto/qualidade/ instrucao
 
-    public function indexHaosQualidadeInstrucao(){
+    public function indexLavorattoQualidadeInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'qualidade');
@@ -2309,18 +2311,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     // QUALIDADE
     //=========================================
 
     //=========================================
-    // haos/recepcao/ formulario
+    // lavoratto/recepcao/ formulario
 
-    public function indexHaosRecepcaoFormulario(){
+    public function indexLavorattoRecepcaoFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'recepcao');
@@ -2330,18 +2332,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // haos/recepcao/ registro
+    // lavoratto/recepcao/ registro
 
-    public function indexHaosRecepcaoRegistro(){
+    public function indexLavorattoRecepcaoRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'recepcao');
@@ -2351,18 +2353,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/recepcao/ procedimento
+    // lavoratto/recepcao/ procedimento
 
-    public function indexHaosRecepcaoProcedimento(){
+    public function indexLavorattoRecepcaoProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'recepcao');
@@ -2372,18 +2374,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/recepcao/ instrucao
+    // lavoratto/recepcao/ instrucao
 
-    public function indexHaosRecepcaoInstrucao(){
+    public function indexLavorattoRecepcaoInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'recepcao');
@@ -2393,18 +2395,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/restaurante/ formulario
+    // lavoratto/restaurante/ formulario
 
-    public function indexHaosRestauranteFormulario(){
+    public function indexLavorattoRestauranteFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'restaurante');
@@ -2414,18 +2416,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/restaurante/ registro
+    // lavoratto/restaurante/ registro
 
-    public function indexHaosRestauranteRegistro(){
+    public function indexLavorattoRestauranteRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'restaurante');
@@ -2435,18 +2437,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/restaurante/ procedimento
+    // lavoratto/restaurante/ procedimento
 
-    public function indexHaosRestauranteProcedimento(){
+    public function indexLavorattoRestauranteProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'restaurante');
@@ -2456,18 +2458,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/restaurante/ instrucao
+    // lavoratto/restaurante/ instrucao
 
-    public function indexHaosRestauranteInstrucao(){
+    public function indexLavorattoRestauranteInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'restaurante');
@@ -2477,18 +2479,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/rh/ formulario
+    // lavoratto/rh/ formulario
 
-    public function indexHaosRhFormulario(){
+    public function indexLavorattoRhFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'rh');
@@ -2498,18 +2500,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/rh/ registro
+    // lavoratto/rh/ registro
 
-    public function indexHaosRhRegistro(){
+    public function indexLavorattoRhRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'rh');
@@ -2519,18 +2521,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/rh/ procedimento
+    // lavoratto/rh/ procedimento
 
-    public function indexHaosRhProcedimento(){
+    public function indexLavorattoRhProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'rh');
@@ -2540,18 +2542,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/rh/ instrucao
+    // lavoratto/rh/ instrucao
 
-    public function indexHaosRhInstrucao(){
+    public function indexLavorattoRhInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'rh');
@@ -2561,18 +2563,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/sac/ formulario
+    // lavoratto/sac/ formulario
 
-    public function indexHaosSacFormulario(){
+    public function indexLavorattoSacFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'sac');
@@ -2582,18 +2584,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/sac/ registro
+    // lavoratto/sac/ registro
 
-    public function indexHaosSacRegistro(){
+    public function indexLavorattoSacRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'sac');
@@ -2603,18 +2605,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/sac/ procedimento
+    // lavoratto/sac/ procedimento
 
-    public function indexHaosSacProcedimento(){
+    public function indexLavorattoSacProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'sac');
@@ -2624,18 +2626,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/sac/ instrucao
+    // lavoratto/sac/ instrucao
 
-    public function indexHaosSacInstrucao(){
+    public function indexLavorattoSacInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'sac');
@@ -2645,18 +2647,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/sesmt/ formulario
+    // lavoratto/sesmt/ formulario
 
-    public function indexHaosSesmtFormulario(){
+    public function indexLavorattoSesmtFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'sesmt');
@@ -2666,18 +2668,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/sesmt/ registro
+    // lavoratto/sesmt/ registro
 
-    public function indexHaosSesmtRegistro(){
+    public function indexLavorattoSesmtRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'sesmt');
@@ -2687,18 +2689,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/sesmt/ procedimento
+    // lavoratto/sesmt/ procedimento
 
-    public function indexHaosSesmtProcedimento(){
+    public function indexLavorattoSesmtProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'sesmt');
@@ -2708,18 +2710,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/sesmt/ instrucao
+    // lavoratto/sesmt/ instrucao
 
-    public function indexHaosSesmtInstrucao(){
+    public function indexLavorattoSesmtInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'sesmt');
@@ -2729,18 +2731,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/projetos/ formulario
+    // lavoratto/projetos/ formulario
 
-    public function indexHaosProjetosFormulario(){
+    public function indexLavorattoProjetosFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'projetos');
@@ -2750,18 +2752,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/projetos/ registro
+    // lavoratto/projetos/ registro
 
-    public function indexHaosProjetosRegistro(){
+    public function indexLavorattoProjetosRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'projetos');
@@ -2771,18 +2773,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/projetos/ procedimento
+    // lavoratto/projetos/ procedimento
 
-    public function indexHaosProjetosProcedimento(){
+    public function indexLavorattoProjetosProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'projetos');
@@ -2792,18 +2794,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/projetos/ instrucao
+    // lavoratto/projetos/ instrucao
 
-    public function indexHaosProjetosInstrucao(){
+    public function indexLavorattoProjetosInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'projetos');
@@ -2813,18 +2815,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/transporte/ formulario
+    // lavoratto/transporte/ formulario
 
-    public function indexHaosTransporteFormulario(){
+    public function indexLavorattoTransporteFormulario(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'transporte');
@@ -2834,18 +2836,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/transporte/ registro
+    // lavoratto/transporte/ registro
 
-    public function indexHaosTransporteRegistro(){
+    public function indexLavorattoTransporteRegistro(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'transporte');
@@ -2855,18 +2857,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/transporte/ procedimento
+    // lavoratto/transporte/ procedimento
 
-    public function indexHaosTransporteProcedimento(){
+    public function indexLavorattoTransporteProcedimento(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'transporte');
@@ -2876,18 +2878,18 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // haos/transporte/ instrucao
+    // lavoratto/transporte/ instrucao
 
-    public function indexHaosTransporteInstrucao(){
+    public function indexLavorattoTransporteInstrucao(){
 
         $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where('name_empresa', 'Lavoratto');
         })
         ->whereHas('sector', function($query) {
             $query->where('name_setor', 'transporte');
@@ -2897,8 +2899,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
     //=========================================
 }
+
+
+
+
+

@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\MacroController;
 use App\Http\Controllers\Admin\SectorController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\HaosController;
+use App\Http\Controllers\Admin\ArteaController;
+use App\Http\Controllers\Admin\LavorattoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\CheckIfIsAdmin;
 use Illuminate\Support\Facades\Route;
@@ -226,21 +228,584 @@ Route::middleware('auth')
         // ROTAS PARA EMPRESA HAOS
         
         Route::get('/haos', [HaosController::class, 'indexHaos'])->name('haos.index');
-        /*
-        Route::get('/haos/ti', [HaosController::class, 'indexHaosTI'])->name('ti.index');
-        Route::get('haos/ti/qualidade',[HaosController::class, 'indexHaosTiQualidade'])->name('qualidade.index');
-        Route::get('haos/ti/producao', [HaosController::class, 'indexHaosTiProducao'])->name('producao.index');
-        Route::get('haos/ti/instrucao', [HaosController::class, 'indexHaosTiInstrucao'])->name('instrucao.index');
         
-        Route::get('haos/marketing', [HaosController::class, 'indexHaosMarketing'])->name('marketing.index');
-        Route::get('haos/marketing/qualidade', [HaosController::class, 'indexHaosMarketingQualidade'])->name('haosMarketingQualidade.index');
-        Route::get('haos/marketing/producao', [HaosController::class, 'indexHaosMarketingProducao'])->name('haosMarketingProducao.index');
-        Route::get('haos/marketing/instrucao',[HaosController::class, 'indexHaosMarketingInstrucao'])->name('haosMarketingInstrucao.index');
-        */
+        
+        Route::get('/haos/ti', [HaosController::class, 'indexHaosTi'])->name('haosTi.index');
+        Route::get('haos/ti/instrucao', [HaosController::class, 'indexHaosTiInstrucao'])->name('haosTiInstrucao.index');
+        Route::get('haos/ti/procedimento',[HaosController::class, 'indexHaosTiProcedimento'])->name('haosTiProcedimento.index');
+        Route::get('haos/ti/registro', [HaosController::class, 'indexHaosTiRegistro'])->name('haosTiRegistro.index');
+        Route::get('haos/ti/formulario', [HaosController::class, 'indexHaosTiFormulario'])->name('haosTiFormulario.index');
+        
+        Route::get('haos/marketing', [HaosController::class, 'indexHaosMarketing'])->name('haosMarketing.index');
+        Route::get('haos/marketing/instrucao', [HaosController::class, 'indexHaosMarketingInstrucao'])->name('haosMarketingInstrucao.index');
+        Route::get('haos/marketing/procedimento',[HaosController::class, 'indexHaosMarketingProcedimento'])->name('haosMarketingProcedimento.index');
+        Route::get('haos/marketing/registro', [HaosController::class, 'indexHaosMarketingRegistro'])->name('haosMarketingRegistro.index');
+        Route::get('haos/marketing/formulario', [HaosController::class, 'indexHaosMarketingFormulario'])->name('haosMarketingFormulario.index');
 
+        Route::get('haos/comercial', [HaosController::class, 'indexHaosComercial'])->name('haosComercial.index');
+        Route::get('haos/comercial/instrucao', [HaosController::class, 'indexHaosComercialInstrucao'])->name('haosComercialInstrucao.index');
+        Route::get('haos/comercial/procedimento',[HaosController::class, 'indexHaosComercialProcedimento'])->name('haosComercialProcedimento.index');
+        Route::get('haos/comercial/registro', [HaosController::class, 'indexHaosComercialRegistro'])->name('haosComercialRegistro.index');
+        Route::get('haos/comercial/formulario', [HaosController::class, 'indexHaosComercialFormulario'])->name('haosComercialFormulario.index');
 
+        Route::get('haos/almoxarifado', [HaosController::class, 'indexHaosAlmoxarifado'])->name('haosAlmoxarifado.index');
+        Route::get('haos/almoxarifado/instrucao', [HaosController::class, 'indexHaosAlmoxarifadoInstrucao'])->name('haosAlmoxarifadoInstrucao.index');
+        Route::get('haos/almoxarifado/procedimento',[HaosController::class, 'indexHaosAlmoxarifadoProcedimento'])->name('haosAlmoxarifadoProcedimento.index');
+        Route::get('haos/almoxarifado/registro', [HaosController::class, 'indexHaosAlmoxarifadoRegistro'])->name('haosAlmoxarifadoRegistro.index');
+        Route::get('haos/almoxarifado/formulario', [HaosController::class, 'indexHaosAlmoxarifadoFormulario'])->name('haosAlmoxarifadoFormulario.index');
+
+        Route::get('haos/assistencia', [HaosController::class, 'indexHaosAssistencia'])->name('haosAssistencia.index');
+        Route::get('haos/assistencia/instrucao', [HaosController::class, 'indexHaosAssistenciaInstrucao'])->name('haosAssistenciaInstrucao.index');
+        Route::get('haos/assistencia/procedimento',[HaosController::class, 'indexHaosAssistenciaProcedimento'])->name('haosAssistenciaProcedimento.index');
+        Route::get('haos/assistencia/registro', [HaosController::class, 'indexHaosAssistenciaRegistro'])->name('haosAssistenciaRegistro.index');
+        Route::get('haos/assistencia/formulario', [HaosController::class, 'indexHaosAssistenciaFormulario'])->name('haosAssistenciaFormulario.index');
+
+        Route::get('haos/compras', [HaosController::class, 'indexHaosCompras'])->name('haosCompras.index');
+        Route::get('haos/compras/instrucao', [HaosController::class, 'indexHaosComprasInstrucao'])->name('haosComprasInstrucao.index');
+        Route::get('haos/compras/procedimento',[HaosController::class, 'indexHaosComprasProcedimento'])->name('haosComprasProcedimento.index');
+        Route::get('haos/compras/registro', [HaosController::class, 'indexHaosComprasRegistro'])->name('haosComprasRegistro.index');
+        Route::get('haos/compras/formulario', [HaosController::class, 'indexHaosComprasFormulario'])->name('haosComprasFormulario.index');
+
+        Route::get('haos/contabilidade', [HaosController::class, 'indexHaosContabilidade'])->name('haosContabilidade.index');
+        Route::get('haos/contabilidade/instrucao', [HaosController::class, 'indexHaosContabilidadeInstrucao'])->name('haosContabilidadeInstrucao.index');
+        Route::get('haos/contabilidade/procedimento',[HaosController::class, 'indexHaosContabilidadeProcedimento'])->name('haosContabilidadeProcedimento.index');
+        Route::get('haos/contabilidade/registro', [HaosController::class, 'indexHaosContabilidadeRegistro'])->name('haosContabilidadeRegistro.index');
+        Route::get('haos/contabilidade/formulario', [HaosController::class, 'indexHaosContabilidadeFormulario'])->name('haosContabilidadeFormulario.index');
+
+        Route::get('haos/contaspagar', [HaosController::class, 'indexHaosContasPagar'])->name('haosContasPagar.index');
+        Route::get('haos/contaspagar/instrucao', [HaosController::class, 'indexHaosContasPagarInstrucao'])->name('haosContasPagarInstrucao.index');
+        Route::get('haos/contaspagar/procedimento',[HaosController::class, 'indexHaosContasPagarProcedimento'])->name('haosContasPagarProcedimento.index');
+        Route::get('haos/contaspagar/registro', [HaosController::class, 'indexHaosContasPagarRegistro'])->name('haosContasPagarRegistro.index');
+        Route::get('haos/contaspagar/formulario', [HaosController::class, 'indexHaosContasPagarFormulario'])->name('haosContasPagarFormulario.index');
+
+        Route::get('haos/contasreceber', [HaosController::class, 'indexHaosContasReceber'])->name('haosContasReceber.index');
+        Route::get('haos/contasreceber/instrucao', [HaosController::class, 'indexHaosContasReceberInstrucao'])->name('haosContasReceberInstrucao.index');
+        Route::get('haos/contasreceber/procedimento',[HaosController::class, 'indexHaosContasReceberProcedimento'])->name('haosContasReceberProcedimento.index');
+        Route::get('haos/contasreceber/registro', [HaosController::class, 'indexHaosContasReceberRegistro'])->name('haosContasReceberRegistro.index');
+        Route::get('haos/contasreceber/formulario', [HaosController::class, 'indexHaosContasReceberFormulario'])->name('haosContasReceberFormulario.index');
+
+        Route::get('haos/custo', [HaosController::class, 'indexHaosCusto'])->name('haosCusto.index');
+        Route::get('haos/custo/instrucao', [HaosController::class, 'indexHaosCustoInstrucao'])->name('haosCustoInstrucao.index');
+        Route::get('haos/custo/procedimento',[HaosController::class, 'indexHaosCustoProcedimento'])->name('haosCustoProcedimento.index');
+        Route::get('haos/custo/registro', [HaosController::class, 'indexHaosCustoRegistro'])->name('haosCustoRegistro.index');
+        Route::get('haos/custo/formulario', [HaosController::class, 'indexHaosCustoFormulario'])->name('haosCustoFormulario.index');
+
+        Route::get('haos/design', [HaosController::class, 'indexHaosDesign'])->name('haosDesign.index');
+        Route::get('haos/design/instrucao', [HaosController::class, 'indexHaosDesignInstrucao'])->name('haosDesignInstrucao.index');
+        Route::get('haos/design/procedimento',[HaosController::class, 'indexHaosDesignProcedimento'])->name('haosDesignProcedimento.index');
+        Route::get('haos/design/registro', [HaosController::class, 'indexHaosDesignRegistro'])->name('haosDesignRegistro.index');
+        Route::get('haos/design/formulario', [HaosController::class, 'indexHaosDesignFormulario'])->name('haosDesignFormulario.index');
+
+        Route::get('haos/diretoriaadministrativa', [HaosController::class, 'indexHaosDiretoriaAdministrativa'])->name('haosDiretoriaAdministrativa.index');
+        Route::get('haos/diretoriaadministrativa/instrucao', [HaosController::class, 'indexHaosDiretoriaAdministrativaInstrucao'])->name('haosDiretoriaAdministrativaInstrucao.index');
+        Route::get('haos/diretoriaadministrativa/procedimento',[HaosController::class, 'indexHaosDiretoriaAdministrativaProcedimento'])->name('haosDiretoriaAdministrativaProcedimento.index');
+        Route::get('haos/diretoriaadministrativa/registro', [HaosController::class, 'indexHaosDiretoriaAdministrativaRegistro'])->name('haosDiretoriaAdministrativaRegistro.index');
+        Route::get('haos/diretoriaadministrativa/formulario', [HaosController::class, 'indexHaosDiretoriaAdministrativaFormulario'])->name('haosDiretoriaAdministrativaFormulario.index');
+
+        Route::get('haos/diretoriacomercial', [HaosController::class, 'indexHaosDiretoriaComercial'])->name('haosDiretoriaComercial.index');
+        Route::get('haos/diretoriacomercial/instrucao', [HaosController::class, 'indexHaosDiretoriaComercialInstrucao'])->name('haosDiretoriaComercialInstrucao.index');
+        Route::get('haos/diretoriacomercial/procedimento',[HaosController::class, 'indexHaosDiretoriaComercialProcedimento'])->name('haosDiretoriaComercialProcedimento.index');
+        Route::get('haos/diretoriacomercial/registro', [HaosController::class, 'indexHaosDiretoriaComercialRegistro'])->name('haosDiretoriaComercialRegistro.index');
+        Route::get('haos/diretoriacomercial/formulario', [HaosController::class, 'indexHaosDiretoriaComercialFormulario'])->name('haosDiretoriaComercialFormulario.index');
+
+        Route::get('haos/diretoriaindustrial', [HaosController::class, 'indexHaosDiretoriaIndustrial'])->name('haosDiretoriaIndustrial.index');
+        Route::get('haos/diretoriaindustrial/instrucao', [HaosController::class, 'indexHaosDiretoriaIndustrialInstrucao'])->name('haosDiretoriaIndustrialInstrucao.index');
+        Route::get('haos/diretoriaindustrial/procedimento',[HaosController::class, 'indexHaosDiretoriaIndustrialProcedimento'])->name('haosDiretoriaIndustrialProcedimento.index');
+        Route::get('haos/diretoriaindustrial/registro', [HaosController::class, 'indexHaosDiretoriaIndustrialRegistro'])->name('haosDiretoriaIndustrialRegistro.index');
+        Route::get('haos/diretoriaindustrial/formulario', [HaosController::class, 'indexHaosDiretoriaIndustrialFormulario'])->name('haosDiretoriaIndustrialFormulario.index');
+
+        Route::get('haos/ecommerce', [HaosController::class, 'indexHaosEcommerce'])->name('haosEcommerce.index');
+        Route::get('haos/ecommerce/instrucao', [HaosController::class, 'indexHaosEcommerceInstrucao'])->name('haosEcommerceInstrucao.index');
+        Route::get('haos/ecommerce/procedimento',[HaosController::class, 'indexHaosEcommerceProcedimento'])->name('haosEcommerceProcedimento.index');
+        Route::get('haos/ecommerce/registro', [HaosController::class, 'indexHaosEcommerceRegistro'])->name('haosEcommerceRegistro.index');
+        Route::get('haos/ecommerce/formulario', [HaosController::class, 'indexHaosEcommerceFormulario'])->name('haosEcommerceFormulario.index');
+
+        Route::get('haos/engenharia', [HaosController::class, 'indexHaosEngenharia'])->name('haosEngenharia.index');
+        Route::get('haos/engenharia/instrucao', [HaosController::class, 'indexHaosEngenhariaInstrucao'])->name('haosEngenhariaInstrucao.index');
+        Route::get('haos/engenharia/procedimento',[HaosController::class, 'indexHaosEngenhariaProcedimento'])->name('haosEngenhariaProcedimento.index');
+        Route::get('haos/engenharia/registro', [HaosController::class, 'indexHaosEngenhariaRegistro'])->name('haosEngenhariaRegistro.index');
+        Route::get('haos/engenharia/formulario', [HaosController::class, 'indexHaosEngenhariaFormulario'])->name('haosEngenhariaFormulario.index');
+
+        Route::get('haos/expedicao', [HaosController::class, 'indexHaosExpedicao'])->name('haosExpedicao.index');
+        Route::get('haos/expedicao/instrucao', [HaosController::class, 'indexHaosExpedicaoInstrucao'])->name('haosExpedicaoInstrucao.index');
+        Route::get('haos/expedicao/procedimento',[HaosController::class, 'indexHaosExpedicaoProcedimento'])->name('haosExpedicaoProcedimento.index');
+        Route::get('haos/expedicao/registro', [HaosController::class, 'indexHaosExpedicaoRegistro'])->name('haosExpedicaoRegistro.index');
+        Route::get('haos/expedicao/formulario', [HaosController::class, 'indexHaosExpedicaoFormulario'])->name('haosExpedicaoFormulario.index');
+
+        Route::get('haos/exportacao', [HaosController::class, 'indexHaosExportacao'])->name('haosExportacao.index');
+        Route::get('haos/exportacao/instrucao', [HaosController::class, 'indexHaosExportacaoInstrucao'])->name('haosExportacaoInstrucao.index');
+        Route::get('haos/exportacao/procedimento',[HaosController::class, 'indexHaosExportacaoProcedimento'])->name('haosExportacaoProcedimento.index');
+        Route::get('haos/exportacao/registro', [HaosController::class, 'indexHaosExportacaoRegistro'])->name('haosExportacaoRegistro.index');
+        Route::get('haos/exportacao/formulario', [HaosController::class, 'indexHaosExportacaoFormulario'])->name('haosExportacaoFormulario.index');
+
+        Route::get('haos/faturamento', [HaosController::class, 'indexHaosFaturamento'])->name('haosFaturamento.index');
+        Route::get('haos/faturamento/instrucao', [HaosController::class, 'indexHaosFaturamentoInstrucao'])->name('haosFaturamentoInstrucao.index');
+        Route::get('haos/faturamento/procedimento',[HaosController::class, 'indexHaosFaturamentoProcedimento'])->name('haosFaturamentoProcedimento.index');
+        Route::get('haos/faturamento/registro', [HaosController::class, 'indexHaosFaturamentoRegistro'])->name('haosFaturamentoRegistro.index');
+        Route::get('haos/faturamento/formulario', [HaosController::class, 'indexHaosFaturamentoFormulario'])->name('haosFaturamentoFormulario.index');
+
+        Route::get('haos/manutencao', [HaosController::class, 'indexHaosManutencao'])->name('haosManutencao.index');
+        Route::get('haos/manutencao/instrucao', [HaosController::class, 'indexHaosManutencaoInstrucao'])->name('haosManutencaoInstrucao.index');
+        Route::get('haos/manutencao/procedimento',[HaosController::class, 'indexHaosManutencaoProcedimento'])->name('haosManutencaoProcedimento.index');
+        Route::get('haos/manutencao/registro', [HaosController::class, 'indexHaosManutencaoRegistro'])->name('haosManutencaoRegistro.index');
+        Route::get('haos/manutencao/formulario', [HaosController::class, 'indexHaosManutencaoFormulario'])->name('haosManutencaoFormulario.index');
+
+        Route::get('haos/ped', [HaosController::class, 'indexHaosPed'])->name('haosPed.index');
+        Route::get('haos/ped/instrucao', [HaosController::class, 'indexHaosPedInstrucao'])->name('haosPedInstrucao.index');
+        Route::get('haos/ped/procedimento',[HaosController::class, 'indexHaosPedProcedimento'])->name('haosPedProcedimento.index');
+        Route::get('haos/ped/registro', [HaosController::class, 'indexHaosPedRegistro'])->name('haosPedRegistro.index');
+        Route::get('haos/ped/formulario', [HaosController::class, 'indexHaosPedFormulario'])->name('haosPedFormulario.index');
+
+        Route::get('haos/pmo', [HaosController::class, 'indexHaosPmo'])->name('haosPmo.index');
+        Route::get('haos/pmo/instrucao', [HaosController::class, 'indexHaosPmoInstrucao'])->name('haosPmoInstrucao.index');
+        Route::get('haos/pmo/procedimento',[HaosController::class, 'indexHaosPmoProcedimento'])->name('haosPmoProcedimento.index');
+        Route::get('haos/pmo/registro', [HaosController::class, 'indexHaosPmoRegistro'])->name('haosPmoRegistro.index');
+        Route::get('haos/pmo/formulario', [HaosController::class, 'indexHaosPmoFormulario'])->name('haosPmoFormulario.index');
+
+        Route::get('haos/ppcp', [HaosController::class, 'indexHaosPpcp'])->name('haosPpcp.index');
+        Route::get('haos/ppcp/instrucao', [HaosController::class, 'indexHaosPpcpInstrucao'])->name('haosPpcpInstrucao.index');
+        Route::get('haos/ppcp/procedimento',[HaosController::class, 'indexHaosPpcpProcedimento'])->name('haosPpcpProcedimento.index');
+        Route::get('haos/ppcp/registro', [HaosController::class, 'indexHaosPpcpRegistro'])->name('haosPpcpRegistro.index');
+        Route::get('haos/ppcp/formulario', [HaosController::class, 'indexHaosPpcpFormulario'])->name('haosPpcpFormulario.index');
+
+        Route::get('haos/qualidade', [HaosController::class, 'indexHaosQualidade'])->name('haosQualidade.index');
+        Route::get('haos/qualidade/instrucao', [HaosController::class, 'indexHaosQualidadeInstrucao'])->name('haosQualidadeInstrucao.index');
+        Route::get('haos/qualidade/procedimento',[HaosController::class, 'indexHaosQualidadeProcedimento'])->name('haosQualidadeProcedimento.index');
+        Route::get('haos/qualidade/registro', [HaosController::class, 'indexHaosQualidadeRegistro'])->name('haosQualidadeRegistro.index');
+        Route::get('haos/qualidade/formulario', [HaosController::class, 'indexHaosQualidadeFormulario'])->name('haosQualidadeFormulario.index');
+
+        Route::get('haos/recepcao', [HaosController::class, 'indexHaosRecepcao'])->name('haosRecepcao.index');
+        Route::get('haos/recepcao/instrucao', [HaosController::class, 'indexHaosRecepcaoInstrucao'])->name('haosRecepcaoInstrucao.index');
+        Route::get('haos/recepcao/procedimento',[HaosController::class, 'indexHaosRecepcaoProcedimento'])->name('haosRecepcaoProcedimento.index');
+        Route::get('haos/recepcao/registro', [HaosController::class, 'indexHaosRecepcaoRegistro'])->name('haosRecepcaoRegistro.index');
+        Route::get('haos/recepcao/formulario', [HaosController::class, 'indexHaosRecepcaoFormulario'])->name('haosRecepcaoFormulario.index');
+
+        Route::get('haos/restaurante', [HaosController::class, 'indexHaosRestaurante'])->name('haosRestaurante.index');
+        Route::get('haos/restaurante/instrucao', [HaosController::class, 'indexHaosRestauranteInstrucao'])->name('haosRestauranteInstrucao.index');
+        Route::get('haos/restaurante/procedimento',[HaosController::class, 'indexHaosRestauranteProcedimento'])->name('haosRestauranteProcedimento.index');
+        Route::get('haos/restaurante/registro', [HaosController::class, 'indexHaosRestauranteRegistro'])->name('haosRestauranteRegistro.index');
+        Route::get('haos/restaurante/formulario', [HaosController::class, 'indexHaosRestauranteFormulario'])->name('haosRestauranteFormulario.index');
+
+        Route::get('haos/rh', [HaosController::class, 'indexHaosRh'])->name('haosRh.index');
+        Route::get('haos/rh/instrucao', [HaosController::class, 'indexHaosRhInstrucao'])->name('haosRhInstrucao.index');
+        Route::get('haos/rh/procedimento',[HaosController::class, 'indexHaosRhProcedimento'])->name('haosRhProcedimento.index');
+        Route::get('haos/rh/registro', [HaosController::class, 'indexHaosRhRegistro'])->name('haosRhRegistro.index');
+        Route::get('haos/rh/formulario', [HaosController::class, 'indexHaosRhFormulario'])->name('haosRhFormulario.index');
+
+        Route::get('haos/sac', [HaosController::class, 'indexHaosSac'])->name('haosSac.index');
+        Route::get('haos/sac/instrucao', [HaosController::class, 'indexHaosSacInstrucao'])->name('haosSacInstrucao.index');
+        Route::get('haos/sac/procedimento',[HaosController::class, 'indexHaosSacProcedimento'])->name('haosSacProcedimento.index');
+        Route::get('haos/sac/registro', [HaosController::class, 'indexHaosSacRegistro'])->name('haosSacRegistro.index');
+        Route::get('haos/sac/formulario', [HaosController::class, 'indexHaosSacFormulario'])->name('haosSacFormulario.index');
+
+        Route::get('haos/sesmt', [HaosController::class, 'indexHaosSesmt'])->name('haosSesmt.index');
+        Route::get('haos/sesmt/instrucao', [HaosController::class, 'indexHaosSesmtInstrucao'])->name('haosSesmtInstrucao.index');
+        Route::get('haos/sesmt/procedimento',[HaosController::class, 'indexHaosSesmtProcedimento'])->name('haosSesmtProcedimento.index');
+        Route::get('haos/sesmt/registro', [HaosController::class, 'indexHaosSesmtRegistro'])->name('haosSesmtRegistro.index');
+        Route::get('haos/sesmt/formulario', [HaosController::class, 'indexHaosSesmtFormulario'])->name('haosSesmtFormulario.index');
+
+        Route::get('haos/projetos', [HaosController::class, 'indexHaosProjetos'])->name('haosProjetos.index');
+        Route::get('haos/projetos/instrucao', [HaosController::class, 'indexHaosProjetosInstrucao'])->name('haosProjetosInstrucao.index');
+        Route::get('haos/projetos/procedimento',[HaosController::class, 'indexHaosProjetosProcedimento'])->name('haosProjetosProcedimento.index');
+        Route::get('haos/projetos/registro', [HaosController::class, 'indexHaosProjetosRegistro'])->name('haosProjetosRegistro.index');
+        Route::get('haos/projetos/formulario', [HaosController::class, 'indexHaosProjetosFormulario'])->name('haosProjetosFormulario.index');
+
+        Route::get('haos/transporte', [HaosController::class, 'indexHaosTransporte'])->name('haosTransporte.index');
+        Route::get('haos/transporte/instrucao', [HaosController::class, 'indexHaosTransporteInstrucao'])->name('haosTransporteInstrucao.index');
+        Route::get('haos/transporte/procedimento',[HaosController::class, 'indexHaosTransporteProcedimento'])->name('haosTransporteProcedimento.index');
+        Route::get('haos/transporte/registro', [HaosController::class, 'indexHaosTransporteRegistro'])->name('haosTransporteRegistro.index');
+        Route::get('haos/transporte/formulario', [HaosController::class, 'indexHaosTransporteFormulario'])->name('haosTransporteFormulario.index');
 
         //==============================================================
+
+        //======================================================
+
+        // ROTAS PARA EMPRESA ARTEA
+        
+        Route::get('/artea', [ArteaController::class, 'indexArtea'])->name('artea.index');
+        
+        
+        Route::get('/artea/ti', [ArteaController::class, 'indexArteaTi'])->name('arteaTi.index');
+        Route::get('artea/ti/instrucao', [ArteaController::class, 'indexArteaTiInstrucao'])->name('arteaTiInstrucao.index');
+        Route::get('artea/ti/procedimento',[ArteaController::class, 'indexArteaTiProcedimento'])->name('arteaTiProcedimento.index');
+        Route::get('artea/ti/registro', [ArteaController::class, 'indexArteaTiRegistro'])->name('arteaTiRegistro.index');
+        Route::get('artea/ti/formulario', [ArteaController::class, 'indexArteaTiFormulario'])->name('arteaTiFormulario.index');
+        
+        Route::get('artea/marketing', [ArteaController::class, 'indexArteaMarketing'])->name('arteaMarketing.index');
+        Route::get('artea/marketing/instrucao', [ArteaController::class, 'indexArteaMarketingInstrucao'])->name('arteaMarketingInstrucao.index');
+        Route::get('artea/marketing/procedimento',[ArteaController::class, 'indexArteaMarketingProcedimento'])->name('arteaMarketingProcedimento.index');
+        Route::get('artea/marketing/registro', [ArteaController::class, 'indexArteaMarketingRegistro'])->name('arteaMarketingRegistro.index');
+        Route::get('artea/marketing/formulario', [ArteaController::class, 'indexArteaMarketingFormulario'])->name('arteaMarketingFormulario.index');
+
+        Route::get('artea/comercial', [ArteaController::class, 'indexArteaComercial'])->name('arteaComercial.index');
+        Route::get('artea/comercial/instrucao', [ArteaController::class, 'indexArteaComercialInstrucao'])->name('arteaComercialInstrucao.index');
+        Route::get('artea/comercial/procedimento',[ArteaController::class, 'indexArteaComercialProcedimento'])->name('arteaComercialProcedimento.index');
+        Route::get('artea/comercial/registro', [ArteaController::class, 'indexArteaComercialRegistro'])->name('arteaComercialRegistro.index');
+        Route::get('artea/comercial/formulario', [ArteaController::class, 'indexArteaComercialFormulario'])->name('arteaComercialFormulario.index');
+
+        Route::get('artea/almoxarifado', [ArteaController::class, 'indexArteaAlmoxarifado'])->name('arteaAlmoxarifado.index');
+        Route::get('artea/almoxarifado/instrucao', [ArteaController::class, 'indexArteaAlmoxarifadoInstrucao'])->name('arteaAlmoxarifadoInstrucao.index');
+        Route::get('artea/almoxarifado/procedimento',[ArteaController::class, 'indexArteaAlmoxarifadoProcedimento'])->name('arteaAlmoxarifadoProcedimento.index');
+        Route::get('artea/almoxarifado/registro', [ArteaController::class, 'indexArteaAlmoxarifadoRegistro'])->name('arteaAlmoxarifadoRegistro.index');
+        Route::get('artea/almoxarifado/formulario', [ArteaController::class, 'indexArteaAlmoxarifadoFormulario'])->name('arteaAlmoxarifadoFormulario.index');
+
+        Route::get('artea/assistencia', [ArteaController::class, 'indexArteaAssistencia'])->name('arteaAssistencia.index');
+        Route::get('artea/assistencia/instrucao', [ArteaController::class, 'indexArteaAssistenciaInstrucao'])->name('arteaAssistenciaInstrucao.index');
+        Route::get('artea/assistencia/procedimento',[ArteaController::class, 'indexArteaAssistenciaProcedimento'])->name('arteaAssistenciaProcedimento.index');
+        Route::get('artea/assistencia/registro', [ArteaController::class, 'indexArteaAssistenciaRegistro'])->name('arteaAssistenciaRegistro.index');
+        Route::get('artea/assistencia/formulario', [ArteaController::class, 'indexArteaAssistenciaFormulario'])->name('arteaAssistenciaFormulario.index');
+
+        Route::get('artea/compras', [ArteaController::class, 'indexArteaCompras'])->name('arteaCompras.index');
+        Route::get('artea/compras/instrucao', [ArteaController::class, 'indexArteaComprasInstrucao'])->name('arteaComprasInstrucao.index');
+        Route::get('artea/compras/procedimento',[ArteaController::class, 'indexArteaComprasProcedimento'])->name('arteaComprasProcedimento.index');
+        Route::get('artea/compras/registro', [ArteaController::class, 'indexArteaComprasRegistro'])->name('arteaComprasRegistro.index');
+        Route::get('artea/compras/formulario', [ArteaController::class, 'indexArteaComprasFormulario'])->name('arteaComprasFormulario.index');
+
+        Route::get('artea/contabilidade', [ArteaController::class, 'indexArteaContabilidade'])->name('arteaContabilidade.index');
+        Route::get('artea/contabilidade/instrucao', [ArteaController::class, 'indexArteaContabilidadeInstrucao'])->name('arteaContabilidadeInstrucao.index');
+        Route::get('artea/contabilidade/procedimento',[ArteaController::class, 'indexArteaContabilidadeProcedimento'])->name('arteaContabilidadeProcedimento.index');
+        Route::get('artea/contabilidade/registro', [ArteaController::class, 'indexArteaContabilidadeRegistro'])->name('arteaContabilidadeRegistro.index');
+        Route::get('artea/contabilidade/formulario', [ArteaController::class, 'indexArteaContabilidadeFormulario'])->name('arteaContabilidadeFormulario.index');
+
+        Route::get('artea/contaspagar', [ArteaController::class, 'indexArteaContasPagar'])->name('arteaContasPagar.index');
+        Route::get('artea/contaspagar/instrucao', [ArteaController::class, 'indexArteaContasPagarInstrucao'])->name('arteaContasPagarInstrucao.index');
+        Route::get('artea/contaspagar/procedimento',[ArteaController::class, 'indexArteaContasPagarProcedimento'])->name('arteaContasPagarProcedimento.index');
+        Route::get('artea/contaspagar/registro', [ArteaController::class, 'indexArteaContasPagarRegistro'])->name('arteaContasPagarRegistro.index');
+        Route::get('artea/contaspagar/formulario', [ArteaController::class, 'indexArteaContasPagarFormulario'])->name('arteaContasPagarFormulario.index');
+
+        Route::get('artea/contasreceber', [ArteaController::class, 'indexArteaContasReceber'])->name('arteaContasReceber.index');
+        Route::get('artea/contasreceber/instrucao', [ArteaController::class, 'indexArteaContasReceberInstrucao'])->name('arteaContasReceberInstrucao.index');
+        Route::get('artea/contasreceber/procedimento',[ArteaController::class, 'indexArteaContasReceberProcedimento'])->name('arteaContasReceberProcedimento.index');
+        Route::get('artea/contasreceber/registro', [ArteaController::class, 'indexArteaContasReceberRegistro'])->name('arteaContasReceberRegistro.index');
+        Route::get('artea/contasreceber/formulario', [ArteaController::class, 'indexArteaContasReceberFormulario'])->name('arteaContasReceberFormulario.index');
+
+        Route::get('artea/custo', [ArteaController::class, 'indexArteaCusto'])->name('arteaCusto.index');
+        Route::get('artea/custo/instrucao', [ArteaController::class, 'indexArteaCustoInstrucao'])->name('arteaCustoInstrucao.index');
+        Route::get('artea/custo/procedimento',[ArteaController::class, 'indexArteaCustoProcedimento'])->name('arteaCustoProcedimento.index');
+        Route::get('artea/custo/registro', [ArteaController::class, 'indexArteaCustoRegistro'])->name('arteaCustoRegistro.index');
+        Route::get('artea/custo/formulario', [ArteaController::class, 'indexArteaCustoFormulario'])->name('arteaCustoFormulario.index');
+
+        Route::get('artea/design', [ArteaController::class, 'indexArteaDesign'])->name('arteaDesign.index');
+        Route::get('artea/design/instrucao', [ArteaController::class, 'indexArteaDesignInstrucao'])->name('arteaDesignInstrucao.index');
+        Route::get('artea/design/procedimento',[ArteaController::class, 'indexArteaDesignProcedimento'])->name('arteaDesignProcedimento.index');
+        Route::get('artea/design/registro', [ArteaController::class, 'indexArteaDesignRegistro'])->name('arteaDesignRegistro.index');
+        Route::get('artea/design/formulario', [ArteaController::class, 'indexArteaDesignFormulario'])->name('arteaDesignFormulario.index');
+
+        Route::get('artea/diretoriaadministrativa', [ArteaController::class, 'indexArteaDiretoriaAdministrativa'])->name('arteaDiretoriaAdministrativa.index');
+        Route::get('artea/diretoriaadministrativa/instrucao', [ArteaController::class, 'indexArteaDiretoriaAdministrativaInstrucao'])->name('arteaDiretoriaAdministrativaInstrucao.index');
+        Route::get('artea/diretoriaadministrativa/procedimento',[ArteaController::class, 'indexArteaDiretoriaAdministrativaProcedimento'])->name('arteaDiretoriaAdministrativaProcedimento.index');
+        Route::get('artea/diretoriaadministrativa/registro', [ArteaController::class, 'indexArteaDiretoriaAdministrativaRegistro'])->name('arteaDiretoriaAdministrativaRegistro.index');
+        Route::get('artea/diretoriaadministrativa/formulario', [ArteaController::class, 'indexArteaDiretoriaAdministrativaFormulario'])->name('arteaDiretoriaAdministrativaFormulario.index');
+
+        Route::get('artea/diretoriacomercial', [ArteaController::class, 'indexArteaDiretoriaComercial'])->name('arteaDiretoriaComercial.index');
+        Route::get('artea/diretoriacomercial/instrucao', [ArteaController::class, 'indexArteaDiretoriaComercialInstrucao'])->name('arteaDiretoriaComercialInstrucao.index');
+        Route::get('artea/diretoriacomercial/procedimento',[ArteaController::class, 'indexArteaDiretoriaComercialProcedimento'])->name('arteaDiretoriaComercialProcedimento.index');
+        Route::get('artea/diretoriacomercial/registro', [ArteaController::class, 'indexArteaDiretoriaComercialRegistro'])->name('arteaDiretoriaComercialRegistro.index');
+        Route::get('artea/diretoriacomercial/formulario', [ArteaController::class, 'indexArteaDiretoriaComercialFormulario'])->name('arteaDiretoriaComercialFormulario.index');
+
+        Route::get('artea/diretoriaindustrial', [ArteaController::class, 'indexArteaDiretoriaIndustrial'])->name('arteaDiretoriaIndustrial.index');
+        Route::get('artea/diretoriaindustrial/instrucao', [ArteaController::class, 'indexArteaDiretoriaIndustrialInstrucao'])->name('arteaDiretoriaIndustrialInstrucao.index');
+        Route::get('artea/diretoriaindustrial/procedimento',[ArteaController::class, 'indexArteaDiretoriaIndustrialProcedimento'])->name('arteaDiretoriaIndustrialProcedimento.index');
+        Route::get('artea/diretoriaindustrial/registro', [ArteaController::class, 'indexArteaDiretoriaIndustrialRegistro'])->name('arteaDiretoriaIndustrialRegistro.index');
+        Route::get('artea/diretoriaindustrial/formulario', [ArteaController::class, 'indexArteaDiretoriaIndustrialFormulario'])->name('arteaDiretoriaIndustrialFormulario.index');
+
+        Route::get('artea/ecommerce', [ArteaController::class, 'indexArteaEcommerce'])->name('arteaEcommerce.index');
+        Route::get('artea/ecommerce/instrucao', [ArteaController::class, 'indexArteaEcommerceInstrucao'])->name('arteaEcommerceInstrucao.index');
+        Route::get('artea/ecommerce/procedimento',[ArteaController::class, 'indexArteaEcommerceProcedimento'])->name('arteaEcommerceProcedimento.index');
+        Route::get('artea/ecommerce/registro', [ArteaController::class, 'indexArteaEcommerceRegistro'])->name('arteaEcommerceRegistro.index');
+        Route::get('artea/ecommerce/formulario', [ArteaController::class, 'indexArteaEcommerceFormulario'])->name('arteaEcommerceFormulario.index');
+
+        Route::get('artea/engenharia', [ArteaController::class, 'indexArteaEngenharia'])->name('arteaEngenharia.index');
+        Route::get('artea/engenharia/instrucao', [ArteaController::class, 'indexArteaEngenhariaInstrucao'])->name('arteaEngenhariaInstrucao.index');
+        Route::get('artea/engenharia/procedimento',[ArteaController::class, 'indexArteaEngenhariaProcedimento'])->name('arteaEngenhariaProcedimento.index');
+        Route::get('artea/engenharia/registro', [ArteaController::class, 'indexArteaEngenhariaRegistro'])->name('arteaEngenhariaRegistro.index');
+        Route::get('artea/engenharia/formulario', [ArteaController::class, 'indexArteaEngenhariaFormulario'])->name('arteaEngenhariaFormulario.index');
+
+        Route::get('artea/expedicao', [ArteaController::class, 'indexArteaExpedicao'])->name('arteaExpedicao.index');
+        Route::get('artea/expedicao/instrucao', [ArteaController::class, 'indexArteaExpedicaoInstrucao'])->name('arteaExpedicaoInstrucao.index');
+        Route::get('artea/expedicao/procedimento',[ArteaController::class, 'indexArteaExpedicaoProcedimento'])->name('arteaExpedicaoProcedimento.index');
+        Route::get('artea/expedicao/registro', [ArteaController::class, 'indexArteaExpedicaoRegistro'])->name('arteaExpedicaoRegistro.index');
+        Route::get('artea/expedicao/formulario', [ArteaController::class, 'indexArteaExpedicaoFormulario'])->name('arteaExpedicaoFormulario.index');
+
+        Route::get('artea/exportacao', [ArteaController::class, 'indexArteaExportacao'])->name('arteaExportacao.index');
+        Route::get('artea/exportacao/instrucao', [ArteaController::class, 'indexArteaExportacaoInstrucao'])->name('arteaExportacaoInstrucao.index');
+        Route::get('artea/exportacao/procedimento',[ArteaController::class, 'indexArteaExportacaoProcedimento'])->name('arteaExportacaoProcedimento.index');
+        Route::get('artea/exportacao/registro', [ArteaController::class, 'indexArteaExportacaoRegistro'])->name('arteaExportacaoRegistro.index');
+        Route::get('artea/exportacao/formulario', [ArteaController::class, 'indexArteaExportacaoFormulario'])->name('arteaExportacaoFormulario.index');
+
+        Route::get('artea/faturamento', [ArteaController::class, 'indexArteaFaturamento'])->name('arteaFaturamento.index');
+        Route::get('artea/faturamento/instrucao', [ArteaController::class, 'indexArteaFaturamentoInstrucao'])->name('arteaFaturamentoInstrucao.index');
+        Route::get('artea/faturamento/procedimento',[ArteaController::class, 'indexArteaFaturamentoProcedimento'])->name('arteaFaturamentoProcedimento.index');
+        Route::get('artea/faturamento/registro', [ArteaController::class, 'indexArteaFaturamentoRegistro'])->name('arteaFaturamentoRegistro.index');
+        Route::get('artea/faturamento/formulario', [ArteaController::class, 'indexArteaFaturamentoFormulario'])->name('arteaFaturamentoFormulario.index');
+
+        Route::get('artea/manutencao', [ArteaController::class, 'indexArteaManutencao'])->name('arteaManutencao.index');
+        Route::get('artea/manutencao/instrucao', [ArteaController::class, 'indexArteaManutencaoInstrucao'])->name('arteaManutencaoInstrucao.index');
+        Route::get('artea/manutencao/procedimento',[ArteaController::class, 'indexArteaManutencaoProcedimento'])->name('arteaManutencaoProcedimento.index');
+        Route::get('artea/manutencao/registro', [ArteaController::class, 'indexArteaManutencaoRegistro'])->name('arteaManutencaoRegistro.index');
+        Route::get('artea/manutencao/formulario', [ArteaController::class, 'indexArteaManutencaoFormulario'])->name('arteaManutencaoFormulario.index');
+
+        Route::get('artea/ped', [ArteaController::class, 'indexArteaPed'])->name('arteaPed.index');
+        Route::get('artea/ped/instrucao', [ArteaController::class, 'indexArteaPedInstrucao'])->name('arteaPedInstrucao.index');
+        Route::get('artea/ped/procedimento',[ArteaController::class, 'indexArteaPedProcedimento'])->name('arteaPedProcedimento.index');
+        Route::get('artea/ped/registro', [ArteaController::class, 'indexArteaPedRegistro'])->name('arteaPedRegistro.index');
+        Route::get('artea/ped/formulario', [ArteaController::class, 'indexArteaPedFormulario'])->name('arteaPedFormulario.index');
+
+        Route::get('artea/pmo', [ArteaController::class, 'indexArteaPmo'])->name('arteaPmo.index');
+        Route::get('artea/pmo/instrucao', [ArteaController::class, 'indexArteaPmoInstrucao'])->name('arteaPmoInstrucao.index');
+        Route::get('artea/pmo/procedimento',[ArteaController::class, 'indexArteaPmoProcedimento'])->name('arteaPmoProcedimento.index');
+        Route::get('artea/pmo/registro', [ArteaController::class, 'indexArteaPmoRegistro'])->name('arteaPmoRegistro.index');
+        Route::get('artea/pmo/formulario', [ArteaController::class, 'indexArteaPmoFormulario'])->name('arteaPmoFormulario.index');
+
+        Route::get('artea/ppcp', [ArteaController::class, 'indexArteaPpcp'])->name('arteaPpcp.index');
+        Route::get('artea/ppcp/instrucao', [ArteaController::class, 'indexArteaPpcpInstrucao'])->name('arteaPpcpInstrucao.index');
+        Route::get('artea/ppcp/procedimento',[ArteaController::class, 'indexArteaPpcpProcedimento'])->name('arteaPpcpProcedimento.index');
+        Route::get('artea/ppcp/registro', [ArteaController::class, 'indexArteaPpcpRegistro'])->name('arteaPpcpRegistro.index');
+        Route::get('artea/ppcp/formulario', [ArteaController::class, 'indexArteaPpcpFormulario'])->name('arteaPpcpFormulario.index');
+
+        Route::get('artea/qualidade', [ArteaController::class, 'indexArteaQualidade'])->name('arteaQualidade.index');
+        Route::get('artea/qualidade/instrucao', [ArteaController::class, 'indexArteaQualidadeInstrucao'])->name('arteaQualidadeInstrucao.index');
+        Route::get('artea/qualidade/procedimento',[ArteaController::class, 'indexArteaQualidadeProcedimento'])->name('arteaQualidadeProcedimento.index');
+        Route::get('artea/qualidade/registro', [ArteaController::class, 'indexArteaQualidadeRegistro'])->name('arteaQualidadeRegistro.index');
+        Route::get('artea/qualidade/formulario', [ArteaController::class, 'indexArteaQualidadeFormulario'])->name('arteaQualidadeFormulario.index');
+
+        Route::get('artea/recepcao', [ArteaController::class, 'indexArteaRecepcao'])->name('arteaRecepcao.index');
+        Route::get('artea/recepcao/instrucao', [ArteaController::class, 'indexArteaRecepcaoInstrucao'])->name('arteaRecepcaoInstrucao.index');
+        Route::get('artea/recepcao/procedimento',[ArteaController::class, 'indexArteaRecepcaoProcedimento'])->name('arteaRecepcaoProcedimento.index');
+        Route::get('artea/recepcao/registro', [ArteaController::class, 'indexArteaRecepcaoRegistro'])->name('arteaRecepcaoRegistro.index');
+        Route::get('artea/recepcao/formulario', [ArteaController::class, 'indexArteaRecepcaoFormulario'])->name('arteaRecepcaoFormulario.index');
+
+        Route::get('artea/restaurante', [ArteaController::class, 'indexArteaRestaurante'])->name('arteaRestaurante.index');
+        Route::get('artea/restaurante/instrucao', [ArteaController::class, 'indexArteaRestauranteInstrucao'])->name('arteaRestauranteInstrucao.index');
+        Route::get('artea/restaurante/procedimento',[ArteaController::class, 'indexArteaRestauranteProcedimento'])->name('arteaRestauranteProcedimento.index');
+        Route::get('artea/restaurante/registro', [ArteaController::class, 'indexArteaRestauranteRegistro'])->name('arteaRestauranteRegistro.index');
+        Route::get('artea/restaurante/formulario', [ArteaController::class, 'indexArteaRestauranteFormulario'])->name('arteaRestauranteFormulario.index');
+
+        Route::get('artea/rh', [ArteaController::class, 'indexArteaRh'])->name('arteaRh.index');
+        Route::get('artea/rh/instrucao', [ArteaController::class, 'indexArteaRhInstrucao'])->name('arteaRhInstrucao.index');
+        Route::get('artea/rh/procedimento',[ArteaController::class, 'indexArteaRhProcedimento'])->name('arteaRhProcedimento.index');
+        Route::get('artea/rh/registro', [ArteaController::class, 'indexArteaRhRegistro'])->name('arteaRhRegistro.index');
+        Route::get('artea/rh/formulario', [ArteaController::class, 'indexArteaRhFormulario'])->name('arteaRhFormulario.index');
+
+        Route::get('artea/sac', [ArteaController::class, 'indexArteaSac'])->name('arteaSac.index');
+        Route::get('artea/sac/instrucao', [ArteaController::class, 'indexArteaSacInstrucao'])->name('arteaSacInstrucao.index');
+        Route::get('artea/sac/procedimento',[ArteaController::class, 'indexArteaSacProcedimento'])->name('arteaSacProcedimento.index');
+        Route::get('artea/sac/registro', [ArteaController::class, 'indexArteaSacRegistro'])->name('arteaSacRegistro.index');
+        Route::get('artea/sac/formulario', [ArteaController::class, 'indexArteaSacFormulario'])->name('arteaSacFormulario.index');
+
+        Route::get('artea/sesmt', [ArteaController::class, 'indexArteaSesmt'])->name('arteaSesmt.index');
+        Route::get('artea/sesmt/instrucao', [ArteaController::class, 'indexArteaSesmtInstrucao'])->name('arteaSesmtInstrucao.index');
+        Route::get('artea/sesmt/procedimento',[ArteaController::class, 'indexArteaSesmtProcedimento'])->name('arteaSesmtProcedimento.index');
+        Route::get('artea/sesmt/registro', [ArteaController::class, 'indexArteaSesmtRegistro'])->name('arteaSesmtRegistro.index');
+        Route::get('artea/sesmt/formulario', [ArteaController::class, 'indexArteaSesmtFormulario'])->name('arteaSesmtFormulario.index');
+
+        Route::get('artea/projetos', [ArteaController::class, 'indexArteaProjetos'])->name('arteaProjetos.index');
+        Route::get('artea/projetos/instrucao', [ArteaController::class, 'indexArteaProjetosInstrucao'])->name('arteaProjetosInstrucao.index');
+        Route::get('artea/projetos/procedimento',[ArteaController::class, 'indexArteaProjetosProcedimento'])->name('arteaProjetosProcedimento.index');
+        Route::get('artea/projetos/registro', [ArteaController::class, 'indexArteaProjetosRegistro'])->name('arteaProjetosRegistro.index');
+        Route::get('artea/projetos/formulario', [ArteaController::class, 'indexArteaProjetosFormulario'])->name('arteaProjetosFormulario.index');
+
+        Route::get('artea/transporte', [ArteaController::class, 'indexArteaTransporte'])->name('arteaTransporte.index');
+        Route::get('artea/transporte/instrucao', [ArteaController::class, 'indexArteaTransporteInstrucao'])->name('arteaTransporteInstrucao.index');
+        Route::get('artea/transporte/procedimento',[ArteaController::class, 'indexArteaTransporteProcedimento'])->name('arteaTransporteProcedimento.index');
+        Route::get('artea/transporte/registro', [ArteaController::class, 'indexArteaTransporteRegistro'])->name('arteaTransporteRegistro.index');
+        Route::get('artea/transporte/formulario', [ArteaController::class, 'indexArteaTransporteFormulario'])->name('arteaTransporteFormulario.index');
+
+
+        //======================================================
+
+        // ROTAS PARA EMPRESA LAVORATTO
+        
+        Route::get('/lavoratto', [LavorattoController::class, 'indexLavoratto'])->name('lavoratto.index');
+        
+        
+        Route::get('/lavoratto/ti', [LavorattoController::class, 'indexLavorattoTi'])->name('lavorattoTi.index');
+        Route::get('lavoratto/ti/instrucao', [LavorattoController::class, 'indexLavorattoTiInstrucao'])->name('lavorattoTiInstrucao.index');
+        Route::get('lavoratto/ti/procedimento',[LavorattoController::class, 'indexLavorattoTiProcedimento'])->name('lavorattoTiProcedimento.index');
+        Route::get('lavoratto/ti/registro', [LavorattoController::class, 'indexLavorattoTiRegistro'])->name('lavorattoTiRegistro.index');
+        Route::get('lavoratto/ti/formulario', [LavorattoController::class, 'indexLavorattoTiFormulario'])->name('lavorattoTiFormulario.index');
+        
+        Route::get('lavoratto/marketing', [LavorattoController::class, 'indexLavorattoMarketing'])->name('lavorattoMarketing.index');
+        Route::get('lavoratto/marketing/instrucao', [LavorattoController::class, 'indexLavorattoMarketingInstrucao'])->name('lavorattoMarketingInstrucao.index');
+        Route::get('lavoratto/marketing/procedimento',[LavorattoController::class, 'indexLavorattoMarketingProcedimento'])->name('lavorattoMarketingProcedimento.index');
+        Route::get('lavoratto/marketing/registro', [LavorattoController::class, 'indexLavorattoMarketingRegistro'])->name('lavorattoMarketingRegistro.index');
+        Route::get('lavoratto/marketing/formulario', [LavorattoController::class, 'indexLavorattoMarketingFormulario'])->name('lavorattoMarketingFormulario.index');
+
+        Route::get('lavoratto/comercial', [LavorattoController::class, 'indexLavorattoComercial'])->name('lavorattoComercial.index');
+        Route::get('lavoratto/comercial/instrucao', [LavorattoController::class, 'indexLavorattoComercialInstrucao'])->name('lavorattoComercialInstrucao.index');
+        Route::get('lavoratto/comercial/procedimento',[LavorattoController::class, 'indexLavorattoComercialProcedimento'])->name('lavorattoComercialProcedimento.index');
+        Route::get('lavoratto/comercial/registro', [LavorattoController::class, 'indexLavorattoComercialRegistro'])->name('lavorattoComercialRegistro.index');
+        Route::get('lavoratto/comercial/formulario', [LavorattoController::class, 'indexLavorattoComercialFormulario'])->name('lavorattoComercialFormulario.index');
+
+        Route::get('lavoratto/almoxarifado', [LavorattoController::class, 'indexLavorattoAlmoxarifado'])->name('lavorattoAlmoxarifado.index');
+        Route::get('lavoratto/almoxarifado/instrucao', [LavorattoController::class, 'indexLavorattoAlmoxarifadoInstrucao'])->name('lavorattoAlmoxarifadoInstrucao.index');
+        Route::get('lavoratto/almoxarifado/procedimento',[LavorattoController::class, 'indexLavorattoAlmoxarifadoProcedimento'])->name('lavorattoAlmoxarifadoProcedimento.index');
+        Route::get('lavoratto/almoxarifado/registro', [LavorattoController::class, 'indexLavorattoAlmoxarifadoRegistro'])->name('lavorattoAlmoxarifadoRegistro.index');
+        Route::get('lavoratto/almoxarifado/formulario', [LavorattoController::class, 'indexLavorattoAlmoxarifadoFormulario'])->name('lavorattoAlmoxarifadoFormulario.index');
+
+        Route::get('lavoratto/assistencia', [LavorattoController::class, 'indexLavorattoAssistencia'])->name('lavorattoAssistencia.index');
+        Route::get('lavoratto/assistencia/instrucao', [LavorattoController::class, 'indexLavorattoAssistenciaInstrucao'])->name('lavorattoAssistenciaInstrucao.index');
+        Route::get('lavoratto/assistencia/procedimento',[LavorattoController::class, 'indexLavorattoAssistenciaProcedimento'])->name('lavorattoAssistenciaProcedimento.index');
+        Route::get('lavoratto/assistencia/registro', [LavorattoController::class, 'indexLavorattoAssistenciaRegistro'])->name('lavorattoAssistenciaRegistro.index');
+        Route::get('lavoratto/assistencia/formulario', [LavorattoController::class, 'indexLavorattoAssistenciaFormulario'])->name('lavorattoAssistenciaFormulario.index');
+
+        Route::get('lavoratto/compras', [LavorattoController::class, 'indexLavorattoCompras'])->name('lavorattoCompras.index');
+        Route::get('lavoratto/compras/instrucao', [LavorattoController::class, 'indexLavorattoComprasInstrucao'])->name('lavorattoComprasInstrucao.index');
+        Route::get('lavoratto/compras/procedimento',[LavorattoController::class, 'indexLavorattoComprasProcedimento'])->name('lavorattoComprasProcedimento.index');
+        Route::get('lavoratto/compras/registro', [LavorattoController::class, 'indexLavorattoComprasRegistro'])->name('lavorattoComprasRegistro.index');
+        Route::get('lavoratto/compras/formulario', [LavorattoController::class, 'indexLavorattoComprasFormulario'])->name('lavorattoComprasFormulario.index');
+
+        Route::get('lavoratto/contabilidade', [LavorattoController::class, 'indexLavorattoContabilidade'])->name('lavorattoContabilidade.index');
+        Route::get('lavoratto/contabilidade/instrucao', [LavorattoController::class, 'indexLavorattoContabilidadeInstrucao'])->name('lavorattoContabilidadeInstrucao.index');
+        Route::get('lavoratto/contabilidade/procedimento',[LavorattoController::class, 'indexLavorattoContabilidadeProcedimento'])->name('lavorattoContabilidadeProcedimento.index');
+        Route::get('lavoratto/contabilidade/registro', [LavorattoController::class, 'indexLavorattoContabilidadeRegistro'])->name('lavorattoContabilidadeRegistro.index');
+        Route::get('lavoratto/contabilidade/formulario', [LavorattoController::class, 'indexLavorattoContabilidadeFormulario'])->name('lavorattoContabilidadeFormulario.index');
+
+        Route::get('lavoratto/contaspagar', [LavorattoController::class, 'indexLavorattoContasPagar'])->name('lavorattoContasPagar.index');
+        Route::get('lavoratto/contaspagar/instrucao', [LavorattoController::class, 'indexLavorattoContasPagarInstrucao'])->name('lavorattoContasPagarInstrucao.index');
+        Route::get('lavoratto/contaspagar/procedimento',[LavorattoController::class, 'indexLavorattoContasPagarProcedimento'])->name('lavorattoContasPagarProcedimento.index');
+        Route::get('lavoratto/contaspagar/registro', [LavorattoController::class, 'indexLavorattoContasPagarRegistro'])->name('lavorattoContasPagarRegistro.index');
+        Route::get('lavoratto/contaspagar/formulario', [LavorattoController::class, 'indexLavorattoContasPagarFormulario'])->name('lavorattoContasPagarFormulario.index');
+
+        Route::get('lavoratto/contasreceber', [LavorattoController::class, 'indexLavorattoContasReceber'])->name('lavorattoContasReceber.index');
+        Route::get('lavoratto/contasreceber/instrucao', [LavorattoController::class, 'indexLavorattoContasReceberInstrucao'])->name('lavorattoContasReceberInstrucao.index');
+        Route::get('lavoratto/contasreceber/procedimento',[LavorattoController::class, 'indexLavorattoContasReceberProcedimento'])->name('lavorattoContasReceberProcedimento.index');
+        Route::get('lavoratto/contasreceber/registro', [LavorattoController::class, 'indexLavorattoContasReceberRegistro'])->name('lavorattoContasReceberRegistro.index');
+        Route::get('lavoratto/contasreceber/formulario', [LavorattoController::class, 'indexLavorattoContasReceberFormulario'])->name('lavorattoContasReceberFormulario.index');
+
+        Route::get('lavoratto/custo', [LavorattoController::class, 'indexLavorattoCusto'])->name('lavorattoCusto.index');
+        Route::get('lavoratto/custo/instrucao', [LavorattoController::class, 'indexLavorattoCustoInstrucao'])->name('lavorattoCustoInstrucao.index');
+        Route::get('lavoratto/custo/procedimento',[LavorattoController::class, 'indexLavorattoCustoProcedimento'])->name('lavorattoCustoProcedimento.index');
+        Route::get('lavoratto/custo/registro', [LavorattoController::class, 'indexLavorattoCustoRegistro'])->name('lavorattoCustoRegistro.index');
+        Route::get('lavoratto/custo/formulario', [LavorattoController::class, 'indexLavorattoCustoFormulario'])->name('lavorattoCustoFormulario.index');
+
+        Route::get('lavoratto/design', [LavorattoController::class, 'indexLavorattoDesign'])->name('lavorattoDesign.index');
+        Route::get('lavoratto/design/instrucao', [LavorattoController::class, 'indexLavorattoDesignInstrucao'])->name('lavorattoDesignInstrucao.index');
+        Route::get('lavoratto/design/procedimento',[LavorattoController::class, 'indexLavorattoDesignProcedimento'])->name('lavorattoDesignProcedimento.index');
+        Route::get('lavoratto/design/registro', [LavorattoController::class, 'indexLavorattoDesignRegistro'])->name('lavorattoDesignRegistro.index');
+        Route::get('lavoratto/design/formulario', [LavorattoController::class, 'indexLavorattoDesignFormulario'])->name('lavorattoDesignFormulario.index');
+
+        Route::get('lavoratto/diretoriaadministrativa', [LavorattoController::class, 'indexLavorattoDiretoriaAdministrativa'])->name('lavorattoDiretoriaAdministrativa.index');
+        Route::get('lavoratto/diretoriaadministrativa/instrucao', [LavorattoController::class, 'indexLavorattoDiretoriaAdministrativaInstrucao'])->name('lavorattoDiretoriaAdministrativaInstrucao.index');
+        Route::get('lavoratto/diretoriaadministrativa/procedimento',[LavorattoController::class, 'indexLavorattoDiretoriaAdministrativaProcedimento'])->name('lavorattoDiretoriaAdministrativaProcedimento.index');
+        Route::get('lavoratto/diretoriaadministrativa/registro', [LavorattoController::class, 'indexLavorattoDiretoriaAdministrativaRegistro'])->name('lavorattoDiretoriaAdministrativaRegistro.index');
+        Route::get('lavoratto/diretoriaadministrativa/formulario', [LavorattoController::class, 'indexLavorattoDiretoriaAdministrativaFormulario'])->name('lavorattoDiretoriaAdministrativaFormulario.index');
+
+        Route::get('lavoratto/diretoriacomercial', [LavorattoController::class, 'indexLavorattoDiretoriaComercial'])->name('lavorattoDiretoriaComercial.index');
+        Route::get('lavoratto/diretoriacomercial/instrucao', [LavorattoController::class, 'indexLavorattoDiretoriaComercialInstrucao'])->name('lavorattoDiretoriaComercialInstrucao.index');
+        Route::get('lavoratto/diretoriacomercial/procedimento',[LavorattoController::class, 'indexLavorattoDiretoriaComercialProcedimento'])->name('lavorattoDiretoriaComercialProcedimento.index');
+        Route::get('lavoratto/diretoriacomercial/registro', [LavorattoController::class, 'indexLavorattoDiretoriaComercialRegistro'])->name('lavorattoDiretoriaComercialRegistro.index');
+        Route::get('lavoratto/diretoriacomercial/formulario', [LavorattoController::class, 'indexLavorattoDiretoriaComercialFormulario'])->name('lavorattoDiretoriaComercialFormulario.index');
+
+        Route::get('lavoratto/diretoriaindustrial', [LavorattoController::class, 'indexLavorattoDiretoriaIndustrial'])->name('lavorattoDiretoriaIndustrial.index');
+        Route::get('lavoratto/diretoriaindustrial/instrucao', [LavorattoController::class, 'indexLavorattoDiretoriaIndustrialInstrucao'])->name('lavorattoDiretoriaIndustrialInstrucao.index');
+        Route::get('lavoratto/diretoriaindustrial/procedimento',[LavorattoController::class, 'indexLavorattoDiretoriaIndustrialProcedimento'])->name('lavorattoDiretoriaIndustrialProcedimento.index');
+        Route::get('lavoratto/diretoriaindustrial/registro', [LavorattoController::class, 'indexLavorattoDiretoriaIndustrialRegistro'])->name('lavorattoDiretoriaIndustrialRegistro.index');
+        Route::get('lavoratto/diretoriaindustrial/formulario', [LavorattoController::class, 'indexLavorattoDiretoriaIndustrialFormulario'])->name('lavorattoDiretoriaIndustrialFormulario.index');
+
+        Route::get('lavoratto/ecommerce', [LavorattoController::class, 'indexLavorattoEcommerce'])->name('lavorattoEcommerce.index');
+        Route::get('lavoratto/ecommerce/instrucao', [LavorattoController::class, 'indexLavorattoEcommerceInstrucao'])->name('lavorattoEcommerceInstrucao.index');
+        Route::get('lavoratto/ecommerce/procedimento',[LavorattoController::class, 'indexLavorattoEcommerceProcedimento'])->name('lavorattoEcommerceProcedimento.index');
+        Route::get('lavoratto/ecommerce/registro', [LavorattoController::class, 'indexLavorattoEcommerceRegistro'])->name('lavorattoEcommerceRegistro.index');
+        Route::get('lavoratto/ecommerce/formulario', [LavorattoController::class, 'indexLavorattoEcommerceFormulario'])->name('lavorattoEcommerceFormulario.index');
+
+        Route::get('lavoratto/engenharia', [LavorattoController::class, 'indexLavorattoEngenharia'])->name('lavorattoEngenharia.index');
+        Route::get('lavoratto/engenharia/instrucao', [LavorattoController::class, 'indexLavorattoEngenhariaInstrucao'])->name('lavorattoEngenhariaInstrucao.index');
+        Route::get('lavoratto/engenharia/procedimento',[LavorattoController::class, 'indexLavorattoEngenhariaProcedimento'])->name('lavorattoEngenhariaProcedimento.index');
+        Route::get('lavoratto/engenharia/registro', [LavorattoController::class, 'indexLavorattoEngenhariaRegistro'])->name('lavorattoEngenhariaRegistro.index');
+        Route::get('lavoratto/engenharia/formulario', [LavorattoController::class, 'indexLavorattoEngenhariaFormulario'])->name('lavorattoEngenhariaFormulario.index');
+
+        Route::get('lavoratto/expedicao', [LavorattoController::class, 'indexLavorattoExpedicao'])->name('lavorattoExpedicao.index');
+        Route::get('lavoratto/expedicao/instrucao', [LavorattoController::class, 'indexLavorattoExpedicaoInstrucao'])->name('lavorattoExpedicaoInstrucao.index');
+        Route::get('lavoratto/expedicao/procedimento',[LavorattoController::class, 'indexLavorattoExpedicaoProcedimento'])->name('lavorattoExpedicaoProcedimento.index');
+        Route::get('lavoratto/expedicao/registro', [LavorattoController::class, 'indexLavorattoExpedicaoRegistro'])->name('lavorattoExpedicaoRegistro.index');
+        Route::get('lavoratto/expedicao/formulario', [LavorattoController::class, 'indexLavorattoExpedicaoFormulario'])->name('lavorattoExpedicaoFormulario.index');
+
+        Route::get('lavoratto/exportacao', [LavorattoController::class, 'indexLavorattoExportacao'])->name('lavorattoExportacao.index');
+        Route::get('lavoratto/exportacao/instrucao', [LavorattoController::class, 'indexLavorattoExportacaoInstrucao'])->name('lavorattoExportacaoInstrucao.index');
+        Route::get('lavoratto/exportacao/procedimento',[LavorattoController::class, 'indexLavorattoExportacaoProcedimento'])->name('lavorattoExportacaoProcedimento.index');
+        Route::get('lavoratto/exportacao/registro', [LavorattoController::class, 'indexLavorattoExportacaoRegistro'])->name('lavorattoExportacaoRegistro.index');
+        Route::get('lavoratto/exportacao/formulario', [LavorattoController::class, 'indexLavorattoExportacaoFormulario'])->name('lavorattoExportacaoFormulario.index');
+
+        Route::get('lavoratto/faturamento', [LavorattoController::class, 'indexLavorattoFaturamento'])->name('lavorattoFaturamento.index');
+        Route::get('lavoratto/faturamento/instrucao', [LavorattoController::class, 'indexLavorattoFaturamentoInstrucao'])->name('lavorattoFaturamentoInstrucao.index');
+        Route::get('lavoratto/faturamento/procedimento',[LavorattoController::class, 'indexLavorattoFaturamentoProcedimento'])->name('lavorattoFaturamentoProcedimento.index');
+        Route::get('lavoratto/faturamento/registro', [LavorattoController::class, 'indexLavorattoFaturamentoRegistro'])->name('lavorattoFaturamentoRegistro.index');
+        Route::get('lavoratto/faturamento/formulario', [LavorattoController::class, 'indexLavorattoFaturamentoFormulario'])->name('lavorattoFaturamentoFormulario.index');
+
+        Route::get('lavoratto/manutencao', [LavorattoController::class, 'indexLavorattoManutencao'])->name('lavorattoManutencao.index');
+        Route::get('lavoratto/manutencao/instrucao', [LavorattoController::class, 'indexLavorattoManutencaoInstrucao'])->name('lavorattoManutencaoInstrucao.index');
+        Route::get('lavoratto/manutencao/procedimento',[LavorattoController::class, 'indexLavorattoManutencaoProcedimento'])->name('lavorattoManutencaoProcedimento.index');
+        Route::get('lavoratto/manutencao/registro', [LavorattoController::class, 'indexLavorattoManutencaoRegistro'])->name('lavorattoManutencaoRegistro.index');
+        Route::get('lavoratto/manutencao/formulario', [LavorattoController::class, 'indexLavorattoManutencaoFormulario'])->name('lavorattoManutencaoFormulario.index');
+
+        Route::get('lavoratto/ped', [LavorattoController::class, 'indexLavorattoPed'])->name('lavorattoPed.index');
+        Route::get('lavoratto/ped/instrucao', [LavorattoController::class, 'indexLavorattoPedInstrucao'])->name('lavorattoPedInstrucao.index');
+        Route::get('lavoratto/ped/procedimento',[LavorattoController::class, 'indexLavorattoPedProcedimento'])->name('lavorattoPedProcedimento.index');
+        Route::get('lavoratto/ped/registro', [LavorattoController::class, 'indexLavorattoPedRegistro'])->name('lavorattoPedRegistro.index');
+        Route::get('lavoratto/ped/formulario', [LavorattoController::class, 'indexLavorattoPedFormulario'])->name('lavorattoPedFormulario.index');
+
+        Route::get('lavoratto/pmo', [LavorattoController::class, 'indexLavorattoPmo'])->name('lavorattoPmo.index');
+        Route::get('lavoratto/pmo/instrucao', [LavorattoController::class, 'indexLavorattoPmoInstrucao'])->name('lavorattoPmoInstrucao.index');
+        Route::get('lavoratto/pmo/procedimento',[LavorattoController::class, 'indexLavorattoPmoProcedimento'])->name('lavorattoPmoProcedimento.index');
+        Route::get('lavoratto/pmo/registro', [LavorattoController::class, 'indexLavorattoPmoRegistro'])->name('lavorattoPmoRegistro.index');
+        Route::get('lavoratto/pmo/formulario', [LavorattoController::class, 'indexLavorattoPmoFormulario'])->name('lavorattoPmoFormulario.index');
+
+        Route::get('lavoratto/ppcp', [LavorattoController::class, 'indexLavorattoPpcp'])->name('lavorattoPpcp.index');
+        Route::get('lavoratto/ppcp/instrucao', [LavorattoController::class, 'indexLavorattoPpcpInstrucao'])->name('lavorattoPpcpInstrucao.index');
+        Route::get('lavoratto/ppcp/procedimento',[LavorattoController::class, 'indexLavorattoPpcpProcedimento'])->name('lavorattoPpcpProcedimento.index');
+        Route::get('lavoratto/ppcp/registro', [LavorattoController::class, 'indexLavorattoPpcpRegistro'])->name('lavorattoPpcpRegistro.index');
+        Route::get('lavoratto/ppcp/formulario', [LavorattoController::class, 'indexLavorattoPpcpFormulario'])->name('lavorattoPpcpFormulario.index');
+
+        Route::get('lavoratto/qualidade', [LavorattoController::class, 'indexLavorattoQualidade'])->name('lavorattoQualidade.index');
+        Route::get('lavoratto/qualidade/instrucao', [LavorattoController::class, 'indexLavorattoQualidadeInstrucao'])->name('lavorattoQualidadeInstrucao.index');
+        Route::get('lavoratto/qualidade/procedimento',[LavorattoController::class, 'indexLavorattoQualidadeProcedimento'])->name('lavorattoQualidadeProcedimento.index');
+        Route::get('lavoratto/qualidade/registro', [LavorattoController::class, 'indexLavorattoQualidadeRegistro'])->name('lavorattoQualidadeRegistro.index');
+        Route::get('lavoratto/qualidade/formulario', [LavorattoController::class, 'indexLavorattoQualidadeFormulario'])->name('lavorattoQualidadeFormulario.index');
+
+        Route::get('lavoratto/recepcao', [LavorattoController::class, 'indexLavorattoRecepcao'])->name('lavorattoRecepcao.index');
+        Route::get('lavoratto/recepcao/instrucao', [LavorattoController::class, 'indexLavorattoRecepcaoInstrucao'])->name('lavorattoRecepcaoInstrucao.index');
+        Route::get('lavoratto/recepcao/procedimento',[LavorattoController::class, 'indexLavorattoRecepcaoProcedimento'])->name('lavorattoRecepcaoProcedimento.index');
+        Route::get('lavoratto/recepcao/registro', [LavorattoController::class, 'indexLavorattoRecepcaoRegistro'])->name('lavorattoRecepcaoRegistro.index');
+        Route::get('lavoratto/recepcao/formulario', [LavorattoController::class, 'indexLavorattoRecepcaoFormulario'])->name('lavorattoRecepcaoFormulario.index');
+
+        Route::get('lavoratto/restaurante', [LavorattoController::class, 'indexLavorattoRestaurante'])->name('lavorattoRestaurante.index');
+        Route::get('lavoratto/restaurante/instrucao', [LavorattoController::class, 'indexLavorattoRestauranteInstrucao'])->name('lavorattoRestauranteInstrucao.index');
+        Route::get('lavoratto/restaurante/procedimento',[LavorattoController::class, 'indexLavorattoRestauranteProcedimento'])->name('lavorattoRestauranteProcedimento.index');
+        Route::get('lavoratto/restaurante/registro', [LavorattoController::class, 'indexLavorattoRestauranteRegistro'])->name('lavorattoRestauranteRegistro.index');
+        Route::get('lavoratto/restaurante/formulario', [LavorattoController::class, 'indexLavorattoRestauranteFormulario'])->name('lavorattoRestauranteFormulario.index');
+
+        Route::get('lavoratto/rh', [LavorattoController::class, 'indexLavorattoRh'])->name('lavorattoRh.index');
+        Route::get('lavoratto/rh/instrucao', [LavorattoController::class, 'indexLavorattoRhInstrucao'])->name('lavorattoRhInstrucao.index');
+        Route::get('lavoratto/rh/procedimento',[LavorattoController::class, 'indexLavorattoRhProcedimento'])->name('lavorattoRhProcedimento.index');
+        Route::get('lavoratto/rh/registro', [LavorattoController::class, 'indexLavorattoRhRegistro'])->name('lavorattoRhRegistro.index');
+        Route::get('lavoratto/rh/formulario', [LavorattoController::class, 'indexLavorattoRhFormulario'])->name('lavorattoRhFormulario.index');
+
+        Route::get('lavoratto/sac', [LavorattoController::class, 'indexLavorattoSac'])->name('lavorattoSac.index');
+        Route::get('lavoratto/sac/instrucao', [LavorattoController::class, 'indexLavorattoSacInstrucao'])->name('lavorattoSacInstrucao.index');
+        Route::get('lavoratto/sac/procedimento',[LavorattoController::class, 'indexLavorattoSacProcedimento'])->name('lavorattoSacProcedimento.index');
+        Route::get('lavoratto/sac/registro', [LavorattoController::class, 'indexLavorattoSacRegistro'])->name('lavorattoSacRegistro.index');
+        Route::get('lavoratto/sac/formulario', [LavorattoController::class, 'indexLavorattoSacFormulario'])->name('lavorattoSacFormulario.index');
+
+        Route::get('lavoratto/sesmt', [LavorattoController::class, 'indexLavorattoSesmt'])->name('lavorattoSesmt.index');
+        Route::get('lavoratto/sesmt/instrucao', [LavorattoController::class, 'indexLavorattoSesmtInstrucao'])->name('lavorattoSesmtInstrucao.index');
+        Route::get('lavoratto/sesmt/procedimento',[LavorattoController::class, 'indexLavorattoSesmtProcedimento'])->name('lavorattoSesmtProcedimento.index');
+        Route::get('lavoratto/sesmt/registro', [LavorattoController::class, 'indexLavorattoSesmtRegistro'])->name('lavorattoSesmtRegistro.index');
+        Route::get('lavoratto/sesmt/formulario', [LavorattoController::class, 'indexLavorattoSesmtFormulario'])->name('lavorattoSesmtFormulario.index');
+
+        Route::get('lavoratto/projetos', [LavorattoController::class, 'indexLavorattoProjetos'])->name('lavorattoProjetos.index');
+        Route::get('lavoratto/projetos/instrucao', [LavorattoController::class, 'indexLavorattoProjetosInstrucao'])->name('lavorattoProjetosInstrucao.index');
+        Route::get('lavoratto/projetos/procedimento',[LavorattoController::class, 'indexLavorattoProjetosProcedimento'])->name('lavorattoProjetosProcedimento.index');
+        Route::get('lavoratto/projetos/registro', [LavorattoController::class, 'indexLavorattoProjetosRegistro'])->name('lavorattoProjetosRegistro.index');
+        Route::get('lavoratto/projetos/formulario', [LavorattoController::class, 'indexLavorattoProjetosFormulario'])->name('lavorattoProjetosFormulario.index');
+
+        Route::get('lavoratto/transporte', [LavorattoController::class, 'indexLavorattoTransporte'])->name('lavorattoTransporte.index');
+        Route::get('lavoratto/transporte/instrucao', [LavorattoController::class, 'indexLavorattoTransporteInstrucao'])->name('lavorattoTransporteInstrucao.index');
+        Route::get('lavoratto/transporte/procedimento',[LavorattoController::class, 'indexLavorattoTransporteProcedimento'])->name('lavorattoTransporteProcedimento.index');
+        Route::get('lavoratto/transporte/registro', [LavorattoController::class, 'indexLavorattoTransporteRegistro'])->name('lavorattoTransporteRegistro.index');
+        Route::get('lavoratto/transporte/formulario', [LavorattoController::class, 'indexLavorattoTransporteFormulario'])->name('lavorattoTransporteFormulario.index');
+
+
 
         
         
