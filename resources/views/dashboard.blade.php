@@ -7,7 +7,7 @@
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            Olá {{ auth()->user()->name }}!
+            Olá {{ auth()->user()->name }} &#128075; !
             @can('is-admin')
                 Você possui perfil administrador!
             @endcan
@@ -35,20 +35,20 @@
                     @endif
                         
                     @if(Auth::check() && Auth::user()->id_empresa == 22 || Auth::user()->id_empresa == 999)
-                        <button  class="glow-on-hover" type="button" onclick="window.location='{{route('users.index')}}'">
+                        <button  class="glow-on-hover" type="button" onclick="window.location='{{route('haos.index')}}'">
                             <img src="images/haos(2).png" alt="haos Logo" style="width: 200px; height: 140px; margin-right: 5px;">
                         </button>
                     @endif
                             
                     @if(Auth::check() && Auth::user()->id_empresa == 1 || Auth::user()->id_empresa == 999)
-                        <button  class="glow-on-hover" type="button" onclick="window.location='{{route('users.index')}}'">
-                            <img src="images/artea(2).png" alt="microsoft Logo" style="width: 200px; height: 100px; margin-right: 5px;">
+                        <button  class="glow-on-hover" type="button" onclick="window.location='{{route('artea.index')}}'">
+                            <img src="images/artea(2).png" alt="artea Logo" style="width: 200px; height: 100px; margin-right: 5px;">
                         </button>
                     @endif
 
                     @if(Auth::check() && Auth::user()->id_empresa == 4 || Auth::user()->id_empresa == 999)
-                        <button  class="glow-on-hover" type="button" onclick="window.location='{{ route('users.index') }}'">
-                            <img src="images/lavoratto(2).png" alt="haos Logo" style="width: 230px; height: 100px; margin-right: 5px;">
+                        <button  class="glow-on-hover" type="button" onclick="window.location='{{ route('lavoratto.index') }}'">
+                            <img src="images/lavoratto(2).png" alt="lavoratto Logo" style="width: 230px; height: 100px; margin-right: 5px;">
                         </button>
                     @endif
 

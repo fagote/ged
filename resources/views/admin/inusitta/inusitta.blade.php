@@ -3,7 +3,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            Olá {{ auth()->user()->name }}!
+            Olá {{ auth()->user()->name }} &#128075; !
             @can('is-admin')
                 Você possui perfil administrador!
             @endcan
@@ -53,7 +53,7 @@
                             <li class="folder">
                                 <a href="{{route('inusittaAssistencia.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
-                                    ASSISTENCIA
+                                    ASSISTÊNCIA
                                 </a>
                             </li>
                         @endif
@@ -158,7 +158,7 @@
                             <li class="folder">
                                 <a href="{{route('inusittaExpedicao.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
-                                    EXPEDICAO</a>
+                                    EXPEDIÇÃO</a>
                             </li>
                         @endif
 
@@ -166,7 +166,7 @@
                             <li class="folder">
                                 <a href="{{route('inusittaExportacao.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
-                                    EXPORTACAO</a>
+                                    EXPORTAÇÃO</a>
                             </li>
                         @endif
                         
@@ -182,7 +182,7 @@
                             <li class="folder">
                                 <a href="{{route('inusittaManutencao.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
-                                    MANUTENCAO</a>
+                                    MANUTENÇÃO</a>
                             </li>
                         @endif
 
@@ -222,7 +222,7 @@
                             <li class="folder">
                                 <a href="{{route('inusittaRecepcao.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
-                                    RECEPCAO</a>
+                                    RECEPÇÃO</a>
                             </li>
                         @endif
 
