@@ -30,6 +30,101 @@ class FileController extends Controller
 
     }
 
+    public function aguardandoAprovacao() {
+
+        $files = File::where('aprovacao', 1)->paginate(15);
+        return view('admin.files.aguardandoAprovacao', compact('files'));
+
+    }
+
+    public function aprovar($id){
+
+        $file = File::find($id);
+
+        if(!$file){
+            return redirect()->back()->with('error','Arquivo não encontrado.');
+        }
+
+        $file->aprovacao = 2;
+        $file->save();
+
+        return redirect()->back()->with('success','Arquivo aprovado com sucesso.');
+
+    }
+
+    
+    public function reprovar($id)
+{
+    // Encontre o arquivo pelo ID
+    $file = File::find($id);
+
+    // Verifique se o arquivo foi encontrado
+    if (!$file) {
+        return redirect()->back()->with('error', 'Arquivo não encontrado.');
+    }
+
+    // Atualize o campo de aprovação para '0' ou 'reprovado'
+    $file->aprovacao = 0;
+    $file->save();
+
+    // Redirecione com uma mensagem de sucesso
+    return redirect()->back()->with('success', 'Arquivo reprovado.');
+}
+
+
+    public function arquivosAprovados(){
+
+        $files = File::where('aprovacao', 2)->paginate('15');
+        return view('admin.files.arquivosAprovados',compact('files'));
+
+    }
+
+    public function arquivosReprovados(){
+        $files = File::where('aprovacao', 0)->paginate('15');
+        return view('admin.files.arquivosReprovados', compact('files'));
+    }
+    
+    public function arquivosInativos(){
+
+        $files = File::where('ativo', 0)->paginate(15);
+        return view('admin.files.arquivosInativos', compact('files'));
+
+    }
+
+    public function arquivosAtivos(){
+
+        $files = File::where('ativo', 1)->paginate(15);
+        return view('admin.files.arquivosAtivos', compact('files'));
+
+    }
+
+    public function ativar($id){
+
+        $file = File::find($id);
+
+        if(!$file){
+            return redirect()->back()->with('error', 'Erro ao encontrar arquivo');
+        }
+
+        $file->ativo = 1;
+        $file->save();
+
+        return redirect()->back()->with('success','Arquivo ativado com sucesso.');
+
+    }
+
+    public function inativar($id){
+        $file = File::find($id);
+
+        if(!$file){
+            return redirect()->back()->with('error','Erro ao encontrar arquivo.');
+        }
+
+        $file->ativo = 0;
+        $file->save();
+
+        return redirect()->back()->with('success','Arquivo inativado com sucesso.');
+    }
 
     public function create()
     {

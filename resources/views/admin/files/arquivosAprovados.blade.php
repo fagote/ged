@@ -2,14 +2,14 @@
 @extends('admin.layouts.app')
 
 
-@section('title', 'Listagem dos Arquivos')
+@section('title', 'Arquivos Aprovados')
 @section('content')
 
 
 <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-    ARQUIVOS 
+    ARQUIVOS APROVADOS
 </h2>
-
+    
 
 <!--==================================================-->
 <!-- Formulário de Busca -->
@@ -37,9 +37,8 @@
 
 <br><br>
 <a class="button" href="{{ route('files.create') }}">Adicionar Novo Arquivo</a>
-<a href="{{route('arquivosAprovados.index')}}" class="button">Arquivos Aprovados</a>
-<a href="x" class="button">Arquivos Ativos</a>
-<a href="x" class="button">Arquivos Reprovados</a>
+<a href="{{route('arquivosAtivos.index')}}" class="button">Arquivos Ativos</a>
+<a href="{{route('arquivosReprovados.index')}}" class="button">Arquivos Reprovados</a>
 <a href="{{route('arquivosInativos.index')}}" class="button">Arquivos Inativos</a>
 <a class="button" href="{{route('aguardandoAprovacao.index')}}" >Arquivos Aguardando Aprovação</a>
 
@@ -74,7 +73,6 @@
                 <th>ID Empresa</th>
                 <th>ID Setor</th>
                 <th>ID Macro</th>
-                <th>Path</th>
                 <th>Ativo</th>
                 <th>Aprovação</th>
                 <th>Ações</th>
@@ -89,15 +87,12 @@
                 <td>{{ $file->company?->name_empresa ?? 'Empresa não definida' }}</td>
                 <td>{{ $file->sector?->name_setor ?? 'Setor não definido' }}</td>
                 <td>{{ $file->macro?->name_macro ?? 'Macro não definida' }}</td>
-                <td>{{ $file->file_path }}</td>
                 <td>{{ $file->ativo == 1 ? 'Sim' : 'Não' }}</td>
-                <td>{{ $file->aprovacao == 0 ? 'Reprovado' : ($file->aprovacao == 1 ? 'Aguardando' : 'Aprovado') }}
-                    
-                </td> 
+                <td>{{ $file->aprovacao == 0 ? 'Reprovado' : ($file->aprovacao == 1 ? 'Aguardando' : 'Aprovado') }}</td>
                 <td>
-                        <a href="{{ route('files.edit', $file->id) }}" class="button">Edit</a>
-                        <a href="{{ route('files.view', $file->id) }}" target="_blank" class="button">Visualizar</a>
-                        <a id="button_excluir" href="{{ route('files.show', $file->id) }}">Excluir</a>
+                    <a href="{{ route('files.edit', $file->id) }}" class="button">Edit</a>
+                    <a href="{{ route('files.view', $file->id) }}" target="_blank" class="button">Visualizar</a>
+                    <a id="button_excluir" href="{{ route('files.show', $file->id) }}">Excluir</a>
                 </td>
             </tr>
             @empty
