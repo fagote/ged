@@ -2,12 +2,11 @@
 @extends('admin.layouts.app')
 
 
-@section('title', 'Listagem dos Arquivos')
+@section('title', 'Arquivos Inativos')
 @section('content')
 
-
 <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-    ARQUIVOS 
+    ARQUIVOS INATIVOS
 </h2>
 
 
@@ -37,11 +36,10 @@
 
 <br><br>
 <a class="button" href="{{ route('files.create') }}">Adicionar Novo Arquivo</a>
-<a href="{{route('arquivosAprovados.index')}}" class="button">Arquivos Aprovados</a>
-<a href="x" class="button">Arquivos Ativos</a>
-<a href="x" class="button">Arquivos Reprovados</a>
-<a href="{{route('arquivosInativos.index')}}" class="button">Arquivos Inativos</a>
-<a class="button" href="{{route('aguardandoAprovacao.index')}}" >Arquivos Aguardando Aprovação</a>
+<a href="{{route('arquivosReprovados.index')}}" class="button">Arquivos Aprovados</a>
+<a href="{{route('arquivosAtivos.index')}}" class="button">Arquivos Ativos</a>
+<a href="{{route('arquivosReprovados.index')}}" class="button">Arquivos Reprovados</a>
+<a href="{{route('aguardandoAprovacao.index')}}" class="button">Arquivos Aguardando Aprovação</a>
 
 <br>
 
@@ -74,7 +72,6 @@
                 <th>ID Empresa</th>
                 <th>ID Setor</th>
                 <th>ID Macro</th>
-                <th>Path</th>
                 <th>Ativo</th>
                 <th>Aprovação</th>
                 <th>Ações</th>
@@ -89,15 +86,16 @@
                 <td>{{ $file->company?->name_empresa ?? 'Empresa não definida' }}</td>
                 <td>{{ $file->sector?->name_setor ?? 'Setor não definido' }}</td>
                 <td>{{ $file->macro?->name_macro ?? 'Macro não definida' }}</td>
-                <td>{{ $file->file_path }}</td>
                 <td>{{ $file->ativo == 1 ? 'Sim' : 'Não' }}</td>
                 <td>{{ $file->aprovacao == 0 ? 'Reprovado' : ($file->aprovacao == 1 ? 'Aguardando' : 'Aprovado') }}
                     
-                </td> 
+                </td>
                 <td>
-                        <a href="{{ route('files.edit', $file->id) }}" class="button">Edit</a>
-                        <a href="{{ route('files.view', $file->id) }}" target="_blank" class="button">Visualizar</a>
-                        <a id="button_excluir" href="{{ route('files.show', $file->id) }}">Excluir</a>
+                    <form class="button" action="{{route('files.ativar', $file->id)}}" method="POST">
+                        @csrf
+                        <button type="submit">Ativar</button>
+                    </form>
+
                 </td>
             </tr>
             @empty
@@ -175,7 +173,7 @@
     }
 
 
-    #button_excluir{
+    .button_excluir{
         display: inline-block;
         padding: 5px 10px;
         background-color: #e54646; 
@@ -188,7 +186,7 @@
         font-size: 16px; 
         margin-bottom: 5px; 
     }
-    #button_excluir:hover{
+    .button_excluir:hover{
         background-color: #bb3c3c;
     }
 

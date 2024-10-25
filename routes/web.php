@@ -805,10 +805,6 @@ Route::middleware('auth')
         Route::get('lavoratto/transporte/registro', [LavorattoController::class, 'indexLavorattoTransporteRegistro'])->name('lavorattoTransporteRegistro.index');
         Route::get('lavoratto/transporte/formulario', [LavorattoController::class, 'indexLavorattoTransporteFormulario'])->name('lavorattoTransporteFormulario.index');
 
-
-
-        
-        
     });
     
 
@@ -816,6 +812,16 @@ Route::middleware('auth')
 //==============================================================
 // ROTAS PARA FILES
 
+
+Route::post('/files/{id}/ativar', [FileController::class, 'ativar'])->name('files.ativar');
+Route::post('/files/{id}/inativar', [FileController::class, 'inativar'])->name('files.inativar');
+Route::post('/files/{id}/reprovar', [FileController::class, 'reprovar'])->name('files.reprovar');
+Route::post('/files/{id}/aprovar', [FileController::class, 'aprovar'])->name('files.aprovar');
+Route::get('/files/arquivosativos', [FileController::class, 'arquivosAtivos'])->name('arquivosAtivos.index');
+Route::get('/files/arquivosreprovados',[FileController::class, 'arquivosReprovados'])->name('arquivosReprovados.index');
+Route::get('/files/arquivosaprovados', [FileController::class, 'arquivosAprovados'])->name('arquivosAprovados.index');
+Route::get('/files/arquivosinativos', [FileController::class, 'arquivosInativos'])->name('arquivosInativos.index');
+Route::get('/files/aguardandoaprovacao', [FileController::class, 'aguardandoAprovacao'])->name('aguardandoAprovacao.index');
 Route::get('/files/search', [FileController::class, 'search'])->name('files.search');
 Route::delete('/files/{file}/destroy', [FileController::class, 'destroy'])->name('files.destroy')->middleware(CheckIfIsAdmin::class);
 Route::post('/files/{id}/upload', [FileController::class, 'upload'])->name('files.upload');

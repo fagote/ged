@@ -2,12 +2,11 @@
 @extends('admin.layouts.app')
 
 
-@section('title', 'Listagem dos Arquivos')
+@section('title', 'Arquivos Reprovados')
 @section('content')
 
-
 <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-    ARQUIVOS 
+    ARQUIVOS REPROVADOS
 </h2>
 
 
@@ -38,8 +37,7 @@
 <br><br>
 <a class="button" href="{{ route('files.create') }}">Adicionar Novo Arquivo</a>
 <a href="{{route('arquivosAprovados.index')}}" class="button">Arquivos Aprovados</a>
-<a href="x" class="button">Arquivos Ativos</a>
-<a href="x" class="button">Arquivos Reprovados</a>
+<a href="{{route('arquivosAtivos.index')}}" class="button">Arquivos Ativos</a>
 <a href="{{route('arquivosInativos.index')}}" class="button">Arquivos Inativos</a>
 <a class="button" href="{{route('aguardandoAprovacao.index')}}" >Arquivos Aguardando Aprovação</a>
 
@@ -93,7 +91,7 @@
                 <td>{{ $file->ativo == 1 ? 'Sim' : 'Não' }}</td>
                 <td>{{ $file->aprovacao == 0 ? 'Reprovado' : ($file->aprovacao == 1 ? 'Aguardando' : 'Aprovado') }}
                     
-                </td> 
+                </td>
                 <td>
                         <a href="{{ route('files.edit', $file->id) }}" class="button">Edit</a>
                         <a href="{{ route('files.view', $file->id) }}" target="_blank" class="button">Visualizar</a>
