@@ -38,8 +38,8 @@
 <br><br>
 <a class="button" href="{{ route('files.create') }}">Adicionar Novo Arquivo</a>
 <a href="{{route('arquivosAprovados.index')}}" class="button">Arquivos Aprovados</a>
-<a href="x" class="button">Arquivos Ativos</a>
-<a href="x" class="button">Arquivos Reprovados</a>
+<a href="{{route('arquivosAtivos.index')}}" class="button">Arquivos Ativos</a>
+<a href="{{route('arquivosReprovados.index')}}" class="button">Arquivos Reprovados</a>
 <a href="{{route('arquivosInativos.index')}}" class="button">Arquivos Inativos</a>
 <a class="button" href="{{route('aguardandoAprovacao.index')}}" >Arquivos Aguardando Aprovação</a>
 
@@ -202,7 +202,7 @@
         border-radius: 5px; /* Bordas arredondadas */
         border: none; /* Remove borda */
         cursor: pointer; /* Mostra o ponteiro do mouse */
-        font-size: 16px; /* Tamanho da fonte */
+        font-size: 18px; /* Tamanho da fonte */
         margin-bottom: 5px; 
     }
 

@@ -46,6 +46,7 @@ class FileController extends Controller
         }
 
         $file->aprovacao = 2;
+        $file->ativo = 1;
         $file->save();
 
         return redirect()->back()->with('success','Arquivo aprovado com sucesso.');
@@ -53,18 +54,17 @@ class FileController extends Controller
     }
 
     
-    public function reprovar($id)
+    public function reprovar(Request $request, $id)
 {
-    // Encontre o arquivo pelo ID
     $file = File::find($id);
 
-    // Verifique se o arquivo foi encontrado
     if (!$file) {
         return redirect()->back()->with('error', 'Arquivo não encontrado.');
     }
 
-    // Atualize o campo de aprovação para '0' ou 'reprovado'
+    $file->motivoReprovacao = $request->input('motivoReprovacao');
     $file->aprovacao = 0;
+    $file->ativo = 0;
     $file->save();
 
     // Redirecione com uma mensagem de sucesso
@@ -145,7 +145,7 @@ class FileController extends Controller
     {
     // Validação dos campos
     $validatedData = $request->validate([
-        'file_path' => 'required|file|max:4096',  // Validação para o arquivo (máx. 2 MB)
+        'file_path' => 'required|file|max:10240',  
         'versao' => 'required|integer',
         'codigo' => 'required|string',
         'user_id' => 'required|exists:users,id',

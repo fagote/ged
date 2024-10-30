@@ -45,6 +45,7 @@ class File extends Authenticatable
         'id_setor',
         'id_empresa',
         'file_path',
+        'motivoReprovacao',
     ];
     
     /**
