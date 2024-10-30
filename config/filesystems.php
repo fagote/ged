@@ -73,4 +73,6 @@ return [
         public_path('storage') => storage_path('app/public'),
     ],
 
+    'file_path' => 'required|file|max:10240',
+
 ];

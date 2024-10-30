@@ -1,4 +1,12 @@
 <x-icon></x-icon>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 @extends('admin.layouts.app')
 
 
@@ -94,11 +102,38 @@
                         @csrf
                         <button type="submit">Aprovar</button>
                     </form>
+
                     
-                    <form class="button_excluir" action="{{route('files.reprovar',$file->id)}}" method="POST">
-                        @csrf
-                        <button type="submit">Reprovar</button>
-                    </form>
+                    
+                    <button type="button" class="button_excluir" data-toggle="modal" data-target="#reprovarModal">
+                        Reprovar
+                    </button>
+                    
+                    <div class="modal fade" id="reprovarModal" tabindex="-1" role="dialog" aria-labelledby="reprovarModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="reprovarModalLabel">Motivo da Reprovação</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="reprovarForm" action="{{ route('files.reprovar', $file->id) }}" method="POST">
+                                        @csrf
+                                        <div class="form-group">
+                                            <label for="motivo" class="text-light">Escreva o motivo da reprovação:</label>
+                                            <textarea class="form-control" id="motivo" name="motivoReprovacao" rows="4" required></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-danger">Reprovar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+
                 </td>
             </tr>
             @empty
@@ -215,6 +250,39 @@
         display: flex;
         gap: 10px;
     }
+
+    /*CONFIGURAÇÕES MODAL*/
+
+    /* Estilo específico para o modal */
+    #reprovarModal .modal-content {
+        background-color: #343a40; /* Cor de fundo escura */
+        color: #ffffff; /* Texto claro */
+    }
+
+    #reprovarModal .modal-header {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Linha inferior do cabeçalho */
+    }
+
+    #reprovarModal .modal-header .close {
+        color: #ffffff; /* Cor do botão de fechar */
+    }
+
+    #reprovarModal .modal-body .form-control {
+        background-color: #495057; /* Cor de fundo do textarea */
+        color: #ffffff; /* Texto claro no textarea */
+    }
+
+    #reprovarModal .modal-body .form-control:focus {
+        background-color: #6c757d; /* Cor de fundo do textarea ao focar */
+        color: #ffffff; /* Texto claro no textarea ao focar */
+    }
+
+    #reprovarModal .btn-danger {
+        background-color: #dc3545; /* Cor do botão "Reprovar" */
+        border: none; /* Sem borda */
+    }
+
+
 
 </style>
 

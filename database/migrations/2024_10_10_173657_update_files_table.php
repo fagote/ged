@@ -15,6 +15,7 @@ return new class extends Migration
         Schema::table('files', function(Blueprint $table){
             $table->boolean('ativo')->default(0);
             $table->unsignedInteger('aprovacao')->default(1);
+            $table->string('motivoReprovacao')->nullable();
         });
     }
 
@@ -26,6 +27,7 @@ return new class extends Migration
         Schema::table('files', function (Blueprint $table){
             $table->dropColumn('ativo');
             $table->dropColumn('aprovacao');
+            $table->dropColumn('motivoReprovacao');
         });
     }
 };
