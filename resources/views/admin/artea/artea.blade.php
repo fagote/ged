@@ -40,7 +40,7 @@
 
                         <!--=======================-->
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 5 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaAlmoxarifado.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -48,7 +48,7 @@
                             </li>
                         @endif
                         
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 24 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaAssistencia.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -57,7 +57,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 21 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaComercial.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -65,7 +65,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 25 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaCompras.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -73,7 +73,7 @@
                             </li>
                         @endif
                         
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 26 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaContabilidade.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -81,7 +81,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 27 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaContasPagar.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -89,7 +89,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 28 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaContasReceber.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -97,7 +97,7 @@
                             </li>
                         @endif
                         
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 3 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaCusto.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -105,7 +105,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 29 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaDesign.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -113,7 +113,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 7 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaDiretoriaAdministrativa.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -121,7 +121,7 @@
                             </li>
                         @endif
                         
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 30 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaDiretoriaComercial.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -129,7 +129,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 4 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaDiretoriaIndustrial.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -137,7 +137,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 6 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaEcommerce.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -145,7 +145,7 @@
                             </li>
                         @endif
                         
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 2 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaEngenharia.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -153,7 +153,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 8 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaExpedicao.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -161,7 +161,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 9 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaExportacao.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -169,7 +169,7 @@
                             </li>
                         @endif
                         
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 31 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaFaturamento.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -177,7 +177,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 10 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaManutencao.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -185,7 +185,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 11 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaPed.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -193,7 +193,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 13 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaPmo.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -201,7 +201,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 14 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaPpcp.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -209,7 +209,7 @@
                             </li>
                         @endif
                         
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 15 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaQualidade.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -217,7 +217,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 16 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaRecepcao.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -225,7 +225,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 17 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaRestaurante.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -233,7 +233,7 @@
                             </li>
                         @endif
                         
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 18 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaRh.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -241,7 +241,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 19 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaSac.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -249,7 +249,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 20 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaSesmt.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -257,7 +257,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 22 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaProjetos.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -265,7 +265,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 23 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('arteaTransporte.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">

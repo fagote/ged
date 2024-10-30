@@ -33,9 +33,9 @@
                             {{ __('Macros') }}
                         </x-nav-link>
 
-                        <x-nav-link :href="route('permissions.index')" :active="request()->routeIs('permissions.index')"> 
+                        {{-- <x-nav-link :href="route('permissions.index')" :active="request()->routeIs('permissions.index')"> 
                             {{__('Permissões')}}
-                        </x-nav-link>
+                        </x-nav-link> --}}
 
                         <x-nav-link :href="route('files.index')" :active="request()->routeIs('files.index')"> 
                             {{__('Arquivos')}}
@@ -78,9 +78,9 @@
                                 {{__('Macros')}}
                             </x-dropdown-link>
 
-                            <x-dropdown-link :href="route('permissions.index')">
+                            {{-- <x-dropdown-link :href="route('permissions.index')">
                                 {{__('Permissões')}}
-                            </x-dropdown-link>
+                            </x-dropdown-link> --}}
 
                             <x-dropdown-link :href="route('files.index')" :active="request()->routeIs('files.index')"> 
                                 {{__('Arquivos')}}

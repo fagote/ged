@@ -40,13 +40,13 @@
                         </button>
                     @endif
                             
-                    @if(Auth::check() && Auth::user()->id_empresa == 1 || Auth::user()->id_empresa == 999)
+                    @if(Auth::check() && Auth::user()->id_empresa == 2 || Auth::user()->id_empresa == 999)
                         <button  class="glow-on-hover" type="button" onclick="window.location='{{route('artea.index')}}'">
                             <img src="images/artea(2).png" alt="artea Logo" style="width: 200px; height: 100px; margin-right: 5px;">
                         </button>
                     @endif
 
-                    @if(Auth::check() && Auth::user()->id_empresa == 4 || Auth::user()->id_empresa == 999)
+                    @if(Auth::check() && Auth::user()->id_empresa == 1 || Auth::user()->id_empresa == 999)
                         <button  class="glow-on-hover" type="button" onclick="window.location='{{ route('lavoratto.index') }}'">
                             <img src="images/lavoratto(2).png" alt="lavoratto Logo" style="width: 230px; height: 100px; margin-right: 5px;">
                         </button>

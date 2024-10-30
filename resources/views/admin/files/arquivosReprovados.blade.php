@@ -80,7 +80,7 @@
         </thead>
         <tbody>
             @forelse ($files as $file)
-            <tr>
+            <tr> 
                 <td>{{ $file->codigo }}</td>
                 <td>{{ $file->versao }}</td>
                 <td>{{ $file->user?->name ?? 'Usuário não definido' }}</td>
@@ -200,7 +200,7 @@
         border-radius: 5px; /* Bordas arredondadas */
         border: none; /* Remove borda */
         cursor: pointer; /* Mostra o ponteiro do mouse */
-        font-size: 16px; /* Tamanho da fonte */
+        font-size: 18px; /* Tamanho da fonte */
         margin-bottom: 5px; 
     }
 
