@@ -41,7 +41,7 @@
 
                         <!--=======================-->
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 5 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaAlmoxarifado.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -49,7 +49,7 @@
                             </li>
                         @endif
                         
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 24 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaAssistencia.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -58,7 +58,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 21 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaComercial.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -66,7 +66,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 25 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaCompras.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -74,7 +74,7 @@
                             </li>
                         @endif
                         
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 26 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaContabilidade.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -82,7 +82,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 27 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaContasPagar.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -90,7 +90,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 28 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaContasReceber.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -98,7 +98,7 @@
                             </li>
                         @endif
                         
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 3 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaCusto.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -106,7 +106,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 29 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaDesign.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -114,7 +114,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 7 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaDiretoriaAdministrativa.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -122,7 +122,7 @@
                             </li>
                         @endif
                         
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 30 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaDiretoriaComercial.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -130,7 +130,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 4 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaDiretoriaIndustrial.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -138,7 +138,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 6 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaEcommerce.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -146,7 +146,7 @@
                             </li>
                         @endif
                         
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 2 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaEngenharia.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -154,7 +154,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 8 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaExpedicao.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -162,7 +162,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 9 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaExportacao.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -170,7 +170,7 @@
                             </li>
                         @endif
                         
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 31 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaFaturamento.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -178,7 +178,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 10 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaManutencao.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -186,7 +186,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 11 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaPed.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -194,7 +194,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 13 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaPmo.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -202,7 +202,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 14 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaPpcp.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -210,7 +210,7 @@
                             </li>
                         @endif
                         
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 15 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaQualidade.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -218,7 +218,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 16 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaRecepcao.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -226,7 +226,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 17 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaRestaurante.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -234,7 +234,7 @@
                             </li>
                         @endif
                         
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 18 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaRh.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -242,7 +242,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 19 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaSac.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -250,7 +250,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 20 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaSesmt.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -258,7 +258,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 22 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaProjetos.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -266,7 +266,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor == 999)
+                        @if(Auth::check() && Auth::user()->id_setor == 23 || Auth::user()->id_setor == 999)
                             <li class="folder">
                                 <a href="{{route('inusittaTransporte.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">

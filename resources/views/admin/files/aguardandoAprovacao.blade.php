@@ -238,7 +238,7 @@
         border-radius: 5px; /* Bordas arredondadas */
         border: none; /* Remove borda */
         cursor: pointer; /* Mostra o ponteiro do mouse */
-        font-size: 16px; /* Tamanho da fonte */
+        font-size: 18px; /* Tamanho da fonte */
         margin-bottom: 5px; 
     }
 
