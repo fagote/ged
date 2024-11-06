@@ -20,21 +20,19 @@
     <table>
         <thead>
             <tr>
-                <th>ID_Usuário</th>
-                <th>ID_Empresa</th>
-                <th>ID_Setor</th>
+                <th>ID_Permissão</th>
+                <th>Descrição</th>
                 <th>Ações</th>
             </tr>
         </thead>
         <tbody>
             @forelse ($permissions as $permission)
             <tr>
-                <td>{{$permission->id_usuario}}</td>
-                <td>{{$permission->id_empresa}}</td>
-                <td>{{$permission->id_setor}}</td>
+                <td>{{$permission->id_permissao}}</td>
+                <td>{{$permission->descricao}}</td>
                 <td>
-                    <a id="button1" href="{{ route('permissions.edit', $permission->id) }}">Edit</a>
-                    <a id="button1" href="{{ route('permissions.show', $permission->id) }}">Detalhes</a>
+                    <a id="button1" href="{{ route('permissions.edit', $permission->id_permissao) }}">Edit</a>
+                    <a id="button1" href="{{ route('permissions.show', $permission->id_permissao) }}">Detalhes</a>
                 </td>
             </tr>
             @empty

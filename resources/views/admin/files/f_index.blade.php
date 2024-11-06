@@ -86,8 +86,8 @@
                 <td>{{ $file->versao }}</td>
                 <td>{{ $file->user?->name ?? 'Usuário não definido' }}</td>
                 <td>{{ $file->company?->name_empresa ?? 'Empresa não definida' }}</td>
-                <td>{{ $file->sector?->name_setor ?? 'Setor não definido' }}</td>
-                <td>{{ $file->macro?->name_macro ?? 'Macro não definida' }}</td>
+                <td>{{ $file->sector?->name_setor ?? 'Setor não definido' }}</td>  
+                <td>{{ $file->macro?->name_macro ?? 'Macro não definida' }}</td>                                                                                                                                                                                                                                                                                                                                                                                                                  
                 <td>{{ $file->ativo == 1 ? 'Sim' : 'Não' }}</td>
                 <td>{{ $file->aprovacao == 0 ? 'Reprovado' : ($file->aprovacao == 1 ? 'Aguardando' : 'Aprovado') }}
                     

@@ -16,31 +16,35 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
-                    @can('is-admin')
+                    @if(Auth::check() && Auth::user()->id_permission == 1 || Auth::user()->id_permission == 2)
                         <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
                             {{ __('Usuários') }}
                         </x-nav-link>
-
-                        <x-nav-link :href="route('companies.index')" :active="request()->routeIs('companies.index')">
-                            {{ __('Empresas') }}
-                        </x-nav-link>
-
-                        <x-nav-link :href="route('sectors.index')" :active="request()->routeIs('sectors.index')">
-                            {{ __('Setores') }}
-                        </x-nav-link>
-
-                        <x-nav-link :href="route('macros.index')" :active="request()->routeIs('macros.index')">
-                            {{ __('Macros') }}
-                        </x-nav-link>
-
-                        {{-- <x-nav-link :href="route('permissions.index')" :active="request()->routeIs('permissions.index')"> 
-                            {{__('Permissões')}}
-                        </x-nav-link> --}}
-
+                        
                         <x-nav-link :href="route('files.index')" :active="request()->routeIs('files.index')"> 
                             {{__('Arquivos')}}
-                        </x-nav-link>
-                    @endcan
+                        </x-nav-link> 
+
+                        @if(Auth::check() && Auth::user()->id_permission == 1)
+                            <x-nav-link :href="route('companies.index')" :active="request()->routeIs('companies.index')">
+                                {{ __('Empresas') }}
+                            </x-nav-link>
+
+                            <x-nav-link :href="route('sectors.index')" :active="request()->routeIs('sectors.index')">
+                                {{ __('Setores') }}
+                            </x-nav-link>
+
+                            <x-nav-link :href="route('macros.index')" :active="request()->routeIs('macros.index')">
+                                {{ __('Macros') }}
+                            </x-nav-link>
+
+                            <x-nav-link :href="route('permissions.index')" :active="request()->routeIs('permissions.index')"> 
+                                {{__('Permissões')}}
+                            </x-nav-link>
+                        @endif
+
+                    @endif
+                    
                 </div>
             </div>
 
@@ -61,35 +65,73 @@
 
                     <x-slot name="content">
 
-                        @can('is-admin')
+
+                        <!--=========================================-->
+                        <!-- IMPLEMENTAÇÃO DE USUÁRIO INTERMEDIÁRIO -->
+                        
+                        {{-- @if(Auth::check() && Auth::user()->id_permissao == 1 || Auth::user()->id_permissao == 2)
                             <x-dropdown-link :href="route('users.index')" >
                                 {{ __('Usuários')}}
                             </x-dropdown-link>
-
-                            <x-dropdown-link :href="route('companies.index')">
-                                {{__('Empresas')}}
-                            </x-dropdown-link>
-
-                            <x-dropdown-link :href="route('sectors.index')">
-                                {{__('Setores')}}
-                            </x-dropdown-link>
-
-                            <x-dropdown-link :href="route('macros.index')">
-                                {{__('Macros')}}
-                            </x-dropdown-link>
-
-                            {{-- <x-dropdown-link :href="route('permissions.index')">
-                                {{__('Permissões')}}
-                            </x-dropdown-link> --}}
 
                             <x-dropdown-link :href="route('files.index')" :active="request()->routeIs('files.index')"> 
                                 {{__('Arquivos')}}
                             </x-dropdown-link>
 
-                            <x-dropdown-link :href="route('profile.edit')">
-                                {{ __('Profile') }}
-                            </x-dropdown-link>
-                        @endcan
+                            @if(Auth::check() && Auth::user()->id_permission == 1)
+                                <x-dropdown-link :href="route('companies.index')">
+                                    {{__('Empresas')}}
+                                </x-dropdown-link>
+
+                                <x-dropdown-link :href="route('sectors.index')">
+                                    {{__('Setores')}}
+                                </x-dropdown-link>
+
+                                <x-dropdown-link :href="route('macros.index')">
+                                    {{__('Macros')}}
+                                </x-dropdown-link>
+
+                                <x-dropdown-link :href="route('profile.edit')">
+                                    {{ __('Profile') }}
+                                </x-dropdown-link>
+                            @endif
+                        @endif  --}}
+
+                        <!--=========================================-->
+
+
+                            @if(Auth::check() && Auth::user()->id_permission == 1 || Auth::user()->id_permission == 2)
+                                <x-dropdown-link :href="route('users.index')" >
+                                    {{ __('Usuários')}}
+                                </x-dropdown-link>
+
+                                <x-dropdown-link :href="route('files.index')" :active="request()->routeIs('files.index')"> 
+                                    {{__('Arquivos')}}
+                                </x-dropdown-link>
+
+                                @if(Auth::check() && Auth::user()->id_permission == 1)
+                                    <x-dropdown-link :href="route('companies.index')">
+                                        {{__('Empresas')}}
+                                    </x-dropdown-link>
+
+                                    <x-dropdown-link :href="route('sectors.index')">
+                                        {{__('Setores')}}
+                                    </x-dropdown-link>
+
+                                    <x-dropdown-link :href="route('macros.index')">
+                                        {{__('Macros')}}
+                                    </x-dropdown-link>
+
+                                    <x-dropdown-link :href="route('permissions.index')">
+                                        {{__('Permissões')}}
+                                    </x-dropdown-link>
+
+                                    <x-dropdown-link :href="route('profile.edit')">
+                                        {{ __('Profile') }}
+                                    </x-dropdown-link>
+                                @endif
+                            @endif
+                        
                         
 
                         
@@ -137,36 +179,38 @@
 
             <div class="mt-3 space-y-1">
 
-                @can('is-admin')
+                @if(Auth::check() && Auth::user()->id_permission == 1 || Auth::user()->id_permission == 2)
                     <x-responsive-nav-link :href="route('users.index')">
                         {{ __('Usuários') }}
-                    </x-responsive-nav-link>
-
-                    <x-responsive-nav-link :href="route('companies.index')">
-                        {{ __('Empresas') }}
-                    </x-responsive-nav-link>
-
-                    <x-responsive-nav-link :href="route('sectors.index')">
-                        {{ __('Setores') }}
-                    </x-responsive-nav-link>
-
-                    <x-responsive-nav-link :href="route('macros.index')">
-                        {{__('Macros')}}
                     </x-responsive-nav-link>
 
                     <x-responsive-nav-link :href="route('files.index')">
                         {{__('Arquivos')}}
                     </x-responsive-nav-link>
 
-                    <x-responsive-nav-link :href="route('permissions.index')">
-                        {{ __('Permissões') }}
-                    </x-responsive-nav-link>
+                    @if(Auth::check() && Auth::user()->id_permission == 1)
+                        <x-responsive-nav-link :href="route('companies.index')">
+                            {{ __('Empresas') }}
+                        </x-responsive-nav-link>
 
-                    <x-responsive-nav-link :href="route('profile.edit')">
-                        {{ __('Profile') }}
-                    </x-responsive-nav-link>
+                        <x-responsive-nav-link :href="route('sectors.index')">
+                            {{ __('Setores') }}
+                        </x-responsive-nav-link>
 
-                @endcan
+                        <x-responsive-nav-link :href="route('macros.index')">
+                            {{__('Macros')}}
+                        </x-responsive-nav-link>
+
+                        <x-responsive-nav-link :href="route('permissions.index')">
+                            {{ __('Permissões') }}
+                        </x-responsive-nav-link>
+
+                        <x-responsive-nav-link :href="route('profile.edit')">
+                            {{ __('Profile') }}
+                        </x-responsive-nav-link>
+                    @endcan
+
+                @endif
                 
 
                 

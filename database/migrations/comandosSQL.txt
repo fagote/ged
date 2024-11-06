@@ -63,11 +63,65 @@ INSERT INTO `macros` (`id_macro`, `name_macro`, `created_at`, `updated_at`) VALU
 //=============================================================
 // INSERIR USUÁRIOS MASTER NO BANCO DE DADOS
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`,
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`,`id_permission`,
  `remember_token`, `deleted_at`, `created_at`, `updated_at`, `id_empresa`, `id_setor`, `id_file`) VALUES
 (1, 'leonardo', 'leofagot@hotmail.com', NULL, '$2y$12$ewz78fjvEJv/.4dLiZpWGOTLQ7mrqCdcooAhCG/y1sNrtLjFOX6zi', NULL,
  NULL, '2024-10-07 18:58:31', '2024-10-07 19:02:40', 999, 999, NULL),
 (2, 'wesley', 'wesley@hotmail.com', NULL, '$2y$12$HXHNQncPhxJ2QhT9Ci8RdOkQ5UW3uLa00v.XtMMGzpsvPWO3/UW8S',
- 'BUIqGoIocFx2Ip1mMRcbDn1AMiTLqAr2ZvmY2ldyVmg3xp1GMesr4LPhUv5Q', NULL, '2024-10-07 19:49:39', '2024-10-07 19:49:39', 999, 999, NULL);
+ 'BUIqGoIocFx2Ip1mMRcbDn1AMiTLqAr2ZvmY2ldyVmg3xp1GMesr4LPhUv5Q', NULL, '2024-10-07 19:49:39', '2024-10-07 19:49:39', 999, 999, NULL),
+(3, 'joao', 'joao@hotmail.com', NULL, '$2y$12$TbC34tI/9YoEPBNqYGDrfuGIqXQvU72xkwsDpX392Rz2sPM2zsH46', NULL, NULL,
+  '2024-10-30 18:23:45', '2024-10-30 18:23:45', 5, 28, NULL),
+(4, 'jonas', 'jonas@hotmail.com', NULL, '$2y$12$Qoz9bvq597.6lweBluIEnO7xK2OellSdL9HKVI7UCZFlD.VauZsyG', NULL, NULL,
+ '2024-10-30 18:48:05', '2024-10-31 16:11:30', 999, 999, NULL),
+(5, 'gabriel', 'gabriel@hotmail.com', NULL, '$2y$12$ewz78fjvEJv/.4dLiZpWGOTLQ7mrqCdcooAhCG/y1sNrtLjFOX6zi', NULL,
+ NULL, '2024-10-07 18:58:31', '2024-10-07 19:02:40', 999, 999, NULL),
+(6, 'leonardo', 'leofagot555@hotmail.com', NULL, '$2y$12$ewz78fjvEJv/.4dLiZpWGOTLQ7mrqCdcooAhCG/y1sNrtLjFOX6zi',
+ NULL, '2024-10-30 19:17:22', '2024-10-07 18:58:31', '2024-10-30 19:17:22', 999, 999, NULL);
+
+//=============================================================
+
+//=============================================================
+// INSERIR ARQUIVOS NO BANCO DE DADOS
+
+INSERT INTO `files` (`id`, `file_path`, `versao`, `codigo`, `id_macro`, `id_setor`, `id_empresa`, `created_at`, `updated_at`, `user_id`, `ativo`, `aprovacao`, `motivoReprovacao`) VALUES
+(10, 'files/zuE9Dqfx3pqj02oV2SemIAnKtF6GOzToWkgXKVSG.docx', 1, 'ppp-63 qualidade de manutenção', 1, 13, 5, '2024-09-26 17:51:18', '2024-10-28 18:41:44', 22, 1, 2, NULL),
+(12, 'files/mpG23xCMseGjUpLqoGZHNmgYczIJdM4ffQXSU1FH.png', 9999, 'jk-95654654', 2, 12, 5, '2024-09-27 11:23:15', '2024-10-28 18:41:45', 22, 1, 2, NULL),
+(14, 'files/7cuusTYrxIPu7TDum3lJeejEUYHl8ZIF4Wepqhdh.jpg', 1, 'poo-63 v1', 4, 1, 5, '2024-09-27 12:01:35', '2024-10-28 18:41:47', 22, 1, 0, NULL),
+(16, 'files/V1XVOdk3X2hakzQ8vCL63U7H6UQZLDQ0eonGTlMZ.pdf', 99999, 'poo-63 qualidade de manutenção', 4, 21, 5, '2024-09-27 16:19:24', '2024-10-28 18:41:49', 22, 1, 2, NULL),
+(17, 'files/rv7UkTAhhom36UDRsgvQs1VBOU6fBfs83RP0Ulds.jpg', 111, 'poo-63 qualidade de manutenção', 1, 12, 5, '2024-09-27 16:31:40', '2024-10-28 18:41:50', 42, 1, 0, NULL),
+(18, 'files/G4Eh8rg9RaU8hQIBs0sPL3CUeYHp5upuTBmiRDtf.png', 9, 'teste com imagem', 1, 1, 5, '2024-09-27 16:42:25', '2024-10-28 18:41:51', 22, 1, 0, NULL),
+(19, 'files/QlbtCa8eCeEJmTqmyrAIFiFSRvsyQLls8qY7U0EM.docx', 9, 'teste com docs', 1, 1, 5, '2024-09-27 16:43:00', '2024-10-28 18:41:51', 22, 1, 0, NULL),
+(20, 'files/hhoKTDUVoUMsejlIMhxFCocXHG8GKjpOtNh26715.ods', 9, 'teste com planilha', 1, 1, 5, '2024-09-27 16:43:32', '2024-10-28 18:18:08', 30, 0, 0, NULL),
+(22, 'files/y5q3Tai7NNjGqYKf2UsKykEtV7D52dE2VTUKth4N.docx', 15, 'poo-63 qualidade de manutenção', 1, 1, 5, '2024-09-30 11:04:18', '2024-10-28 18:32:40', 22, 0, 0, 'esta faltando documentos'),
+(27, 'files/QxJA7V86vJxzgMYJSiQYOejxycUA148PtS5NG7YD.docx', 99, 'novo documento sdf', 1, 1, 5, '2024-10-03 18:05:14', '2024-10-28 18:40:54', 32, 0, 0, 'faltando preencher campo 3 do arquivo.'),
+(28, 'files/Mj4Jnov7YPTZysbIacuDaZ8dUkwsIkQKidAF0eb4.png', 99, 'jk-9555', 4, 1, 5, '2024-10-09 18:19:44', '2024-10-28 19:04:23', 22, 1, 0, 'Formatou o pc errado.'),
+(30, 'files/G6l6tvzL65j3xx0E3wzquJ7nLpPkZzQu0sHduBpP.png', 2, 'poo-63 v2', 1, 1, 5, '2024-10-09 19:09:16', '2024-10-28 19:36:52', 22, 1, 0, 'Ta ruim.'),
+(31, 'files/dSOeBZhszw132qJKZewxKAe2t5PY4VfWJuOwFJhQ.png', 1, 'jk-95-v1', 1, 21, 5, '2024-10-10 16:24:45', '2024-10-28 18:42:39', 22, 1, 1, NULL),
+(32, 'files/PkcrVuaSlAibK0NQrc0nZgbKgwRFON5mNqJqvdwE.docx', 1, 'jk-9599-v1', 4, 1, 5, '2024-10-17 18:57:12', '2024-10-28 19:17:28', 42, 1, 2, NULL),
+(33, 'files/9LhJt7FsNuEFvwQRNfqNJnOQ6VQF95aAtBlnnPVG.docx', 3, 'jk-9599-v3', 4, 5, 5, '2024-10-17 19:13:18', '2024-10-25 19:09:51', 50, 0, 1, NULL),
+(34, 'files/k6S7ByCYcrFNlni4eXPkLRAnImYXo5Bi2mPWOdCy.pdf', 6, 'pr-459 v-6', 4, 7, 5, '2024-10-18 19:50:42', '2024-10-28 19:55:30', 50, 1, 2, NULL),
+(35, 'files/k0BnreIpvVrwrEQnIZqa7ZYmAZ6nLXJbv0mZL6U4.pdf', 4, '2121-v4', 4, 6, 5, '2024-10-21 17:29:02', '2024-10-21 17:29:02', 22, 0, 1, NULL),
+(36, 'files/sgfDfHDV0i6GHQilfXEndUGvjQcN1mrnZ3gwCuhV.ods', 4, 'jk-95-v4', 4, 3, 5, '2024-10-21 17:36:57', '2024-10-21 17:38:00', 42, 0, 1, NULL),
+(37, 'files/2a6oDsS3KWSP5gKBkgoCdaTsnRv8LrmiG966U8zR.pdf', 5, 'jk-95-v5', 1, 8, 5, '2024-10-21 18:04:07', '2024-10-21 18:05:28', 22, 0, 1, NULL),
+(38, 'files/aND9NtQrg1X1Qrd6d02xzPmkzsCY42eqmH13zbco.pdf', 5, 'jk-95 v-5', 1, 14, 5, '2024-10-21 19:46:15', '2024-10-21 19:47:09', 22, 0, 1, NULL),
+(39, 'files/HXGvNmeUGwmO9E54qvC5iLclaTq1HmN6lzyrfdtI.ods', 8, 'jk-95 v-8', 4, 15, 5, '2024-10-21 19:55:17', '2024-10-21 19:55:57', 22, 0, 1, NULL),
+(40, 'files/kBihZ85BRBKR7beBp4RbID69FrDzN2pvKOt0PKdn.pdf', 4, 'jk-95 v-4', 1, 16, 5, '2024-10-23 16:38:39', '2024-10-23 16:39:49', 22, 0, 1, NULL),
+(41, 'files/ALbEIqhReKz9Hke2AxXkX7cvRttdHmGq2JNXXh4p.png', 4, 'jk-95 v4', 1, 17, 5, '2024-10-23 16:50:02', '2024-10-23 16:50:56', 22, 0, 1, NULL),
+(42, 'files/WLwC1LNMihHothiuLP6W1I3zsMA74DwkrQt5O8vS.png', 3, 'jk-95', 1, 18, 5, '2024-10-23 17:02:37', '2024-10-23 17:07:41', 22, 0, 1, NULL),
+(43, 'files/tZlm3YEucvcS3hpICw7ILwBH6bJMSZPgIGJHg4mm.png', 4, 'jk-95', 1, 19, 5, '2024-10-23 17:14:59', '2024-10-23 17:16:18', 22, 0, 1, NULL),
+(44, 'files/Kr5gaLRn7Trmz0GA6MaRtSh9BK4dBHnFPIdidvDa.ods', 4, 'jk-95', 1, 20, 5, '2024-10-23 17:21:45', '2024-10-23 17:22:25', 22, 0, 1, NULL),
+(45, 'files/p3fJR74byhAehI5L6CtBCaVa6dk4XNxl15sqShBc.pdf', 4, 'jk-95', 1, 22, 5, '2024-10-23 17:27:01', '2024-10-23 17:27:48', 22, 0, 1, NULL),
+(46, 'files/UWefTp7tk2PJtvuBhkAPTN7wSvngmtLk9Q4nnaKl.png', 55, 'jk-95', 1, 23, 5, '2024-10-23 17:33:56', '2024-10-23 17:34:37', 22, 0, 1, NULL),
+(47, 'files/Hyn22ehA67Bq8SVYtVlKSgThdOv6v6osAun7BG42.png', 5, 'jk-95', 1, 3, 22, '2024-10-23 18:42:48', '2024-10-23 18:42:48', 22, 0, 1, NULL),
+(48, 'files/rghZKpNUgobe2wKKLyKY33ko56d4yeXULKLboX1i.png', 4, 'jk-95', 2, 23, 22, '2024-10-23 18:53:38', '2024-10-23 18:53:38', 22, 0, 1, NULL),
+(49, 'files/9raYA3NVbPuzVwhFKFqYxhW5MaBVyywStzYBnqKu.docx', 5, 'jk-95', 4, 15, 2, '2024-10-23 19:16:24', '2024-10-23 19:16:24', 22, 0, 1, NULL),
+(50, 'files/adGAQsxAld7b4XEJVGotSBvrKP57w4g7bhMsnJTW.docx', 7, 'jk-95', 3, 2, 1, '2024-10-23 19:41:14', '2024-10-23 19:41:14', 22, 0, 1, NULL),
+(51, 'files/zttwCMS4fzzeYPFS4PXwRxV1nKWlXuMqdGcSFb3t.webp', 2, 'jk-9599-v3', 1, 1, 1, '2024-10-25 19:12:02', '2024-10-25 19:12:02', 52, 0, 1, NULL),
+(52, 'files/lDd7tjYW0LovJQMsp0mNDqlRWHt0ndfjmVxaSVAL.pdf', 3, 'jk-95', 1, 1, 1, '2024-10-30 16:47:30', '2024-10-30 16:47:30', 22, 0, 1, NULL),
+(53, 'files/XGOsOWnRcO1HBnUP7vz6xtbkXDoQTFaz2CttBV6C.xlsx', 4, 'jk-95', 1, 1, 1, '2024-10-30 16:48:22', '2024-10-30 16:48:22', 22, 0, 1, NULL),
+(54, 'files/o7hypvJ0G2E5rjzla7aMxAEM8XF4z3ELaNQZRXzw.pdf', 3, 'jk-95', 1, 1, 1, '2024-10-30 16:49:45', '2024-10-30 16:49:45', 22, 0, 1, NULL),
+(55, 'files/Cvg2661M6uLKqPltN1TKMpptBTFl25Djq8WlYSM1.pdf', 3, 'jk-95', 1, 1, 1, '2024-10-30 16:53:35', '2024-10-30 16:53:35', 22, 0, 1, NULL),
+(56, 'files/tHQmDMl3ofQIhwoJzTWzNCOO7sc6egllzXzFtnW0.pdf', 3, 'jk-95', 1, 28, 5, '2024-10-30 18:25:00', '2024-10-30 18:25:00', 53, 0, 1, NULL),
+(57, 'files/gTiezVDbwGnXzUANFLi2GkcJUeyZfYKaS2DTx4Fh.pdf', 4, 'jk-95', 1, 13, 2, '2024-10-30 18:46:45', '2024-10-30 18:46:45', 22, 0, 1, NULL);
 
 //=============================================================

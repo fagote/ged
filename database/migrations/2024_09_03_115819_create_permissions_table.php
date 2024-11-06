@@ -12,15 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('permissions', function (Blueprint $table) {
-            $table->id();
-
-            // chaves estrangeiras de colunas "id" de outras tabelas
-            $table->foreignId('id_usuario')->constained('users')->onDelete('cascade');
-            $table->foreignId('id_empresa')->contained('companies')->onDelete('cascade');
-            $table->foreignId('id_setor')->constained('sectors')->onDelete('cascade');
-
-            //created_at e updated_at
+            
+            $table->id('id_permissao');
+            $table->string('descricao'); 
             $table->timestamps();
+
         });
     }
 

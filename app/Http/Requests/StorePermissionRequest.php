@@ -23,9 +23,8 @@ class StorePermissionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id_usuario' => 'required|integer|min:1',
-            'id_empresa' => 'required|string|min:1',
-            'id_setor' => 'required|integer|min:1',
+            'id_permissao' => 'required|integer|min:1',
+            'descricao' => 'required|string|max:255',
         ];
     }
 }

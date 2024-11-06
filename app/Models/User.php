@@ -23,6 +23,7 @@ class User extends Authenticatable
         'password',
         'id_empresa',
         'id_setor',
+        'id_permission',
     ];
 
     /**
@@ -62,5 +63,9 @@ class User extends Authenticatable
 
     public function sector(){
         return $this->belongsTo(Sector::class, 'id_setor');
+    }
+
+    public function permission(){
+        return $this->belongsTo(Permission::class, 'id_permission');
     }
 }

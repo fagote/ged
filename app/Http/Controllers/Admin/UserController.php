@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Models\File;
 use App\Models\Company;
 use App\Models\Sector;
+use App\Models\Permission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -23,7 +24,8 @@ class UserController extends Controller
     {
 
 
-        $users = User::with(['company','sector'])->paginate(15); //User::all();
+        $users = User::paginate(15); //User::all();
+        //$users = User::where('id_permission','!=', '1')->paginate(15);
 
         return view('admin.users.index', compact('users'));
 
@@ -2929,19 +2931,15 @@ class UserController extends Controller
     
 
     
-
-
-
-
-    
     public function create()
     {
 
         $sectors = Sector::all();
         $companies = Company::all();
         $files = File::all();
+        $permissions = Permission::all();
 
-        return view('admin.users.create', compact('sectors', 'companies'));
+        return view('admin.users.create', compact('sectors', 'companies', 'permissions'));
     }
 
     public function store(StoreUserRequest $request)
@@ -2960,13 +2958,14 @@ class UserController extends Controller
         $sectors = Sector::all();
         $companies = Company::all();
         $files = File::all();
+        $permissions = Permission::all();
 
         //$company = Company::find($id);
         if (!$user = User::find($id)) {
             return redirect()->route('users.index')->with('message', 'Usuário não encontrado');
         }
 
-        return view('admin.users.edit', compact('user','companies', 'sectors'));
+        return view('admin.users.edit', compact('user','companies', 'sectors', 'permissions'));
 
     }
 
@@ -2977,15 +2976,17 @@ class UserController extends Controller
             return back()->with('message', 'Usuário não encontrado');
         }
 
-        $data = $request->only('name', 'email', 'id_empresa', 'id_setor');
+        $data = $request->only('name', 'email', 'id_empresa', 'id_setor', 'id_permission');
+
+        if (auth()->user()->id === $user->id) {
+            unset($data['id_permission']); 
+        }
+
         if ($request->password) {
             $data['password'] = bcrypt($request->password);
         }
 
-
-
         $user->update($data);
-
 
         return redirect()
             ->route('users.index')
@@ -3008,7 +3009,6 @@ class UserController extends Controller
     public function destroy(string $id)
     {
 
-        //if(Gate::allows(string))
 
         if (!$user = User::find($id)) {
             return redirect()->route('users.index')->with('message', 'Usuário não encontrado');
@@ -3019,7 +3019,7 @@ class UserController extends Controller
         }
 
 
-        $user->delete();
+        $user->forceDelete();
 
         return redirect()
             ->route('users.index')

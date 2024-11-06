@@ -2,10 +2,9 @@
 
 @csrf() 
 
-<input type="number" name="id_usuario" placeholder="ID do usuário" value="{{ $permission->id_usuario ?? old('id_usuario') }}" min="1" required>
-<input type="text" name="id_empresa" placeholder="ID da Empresa" value="{{ $permission->id_empresa ?? old('id_emrpresa') }}" required>
-<input type="number" name="id_usuario" placeholder="ID do Setor" value="{{ $permission->id_setor ?? old('id_setor') }}" min="1" required>
-<button type="submit">Enviar</button>
+<input type="number" name="id_permissao" placeholder="ID da Permissão" value="{{ $permission->id_permissao ?? old('id_permissao') }}" min="1" required>
+<input type="text" name="descricao" placeholder="Descrição da Permissão" value="{{ $permission->descricao ?? old('descricao') }}" required>
+<button type="submit">Enviar</button> 
 
 <style>
     /* Estilo geral para os campos de texto */

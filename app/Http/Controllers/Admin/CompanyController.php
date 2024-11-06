@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 
 class CompanyController extends Controller
 {
-    public function index()
+    public function index() 
     {
         $companies = Company::paginate(15); 
         return view('admin.companies.c_index', compact('companies'));

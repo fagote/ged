@@ -26,14 +26,6 @@ class PermissionController extends Controller
         return view('admin.permissions.p_create');
     }
 
-
-    
-    /* public function store(Request $request)
-    {
-
-        dd(Company::create( $request->all() ));
-    } */
-
     
     public function store(StorePermissionRequest $request)
     {
@@ -64,7 +56,7 @@ class PermissionController extends Controller
             return back()->with('message', 'Permissão não encontrada');
         }
 
-        $data = $request->only('id_empresa', 'id_setor');
+        $data = $request->only('id_permissao', 'descricao');
         
         $permission->update($data);
 
