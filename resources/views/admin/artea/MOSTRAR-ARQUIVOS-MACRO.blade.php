@@ -46,12 +46,10 @@
                                 <td>{{ $file->aprovacao == 0 ? 'Reprovado' : ($file->aprovacao == 1 ? 'Aguardando' : 'Aprovado') }}</td>
                                 <td>
                                     <a href="{{ route('files.view', $file->id) }}" target="_blank" class="button">Visualizar</a>
-                                    @can('is-admin')
+                                    @if(Auth::check() && Auth::user()->id_permission == 1 || Auth::user()->id_permission == 2)
                                         <a href="{{ route('files.edit', $file->id) }}" class="button">Edit</a>
-                                        <a href="atividade" class="button">Atividade</a>
-                                        <a href="aprovacao" class="button">Aprovação</a>
                                         <a id="button_excluir" href="{{ route('files.show', $file->id) }}">Excluir</a>
-                                    @endcan
+                                    @endif
                                 </td>
                             </tr>
                             @empty

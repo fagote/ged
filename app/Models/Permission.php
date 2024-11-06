@@ -16,7 +16,7 @@ class Permission extends Authenticatable
      *
      * @var string
      */
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'id_permissao';
 
     /**
      * Indicates if the IDs are auto-incrementing.
@@ -38,9 +38,8 @@ class Permission extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'id_usuario',
-        'id_empresa',
-        'id_setor',
+        'id_permissao',
+        'descricao',
     ];
     
     /**

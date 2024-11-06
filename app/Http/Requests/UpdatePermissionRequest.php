@@ -18,12 +18,7 @@ class UpdatePermissionRequest extends StorePermissionRequest
 
         $rules = parent::rules();
 
-        /*
-        $rules['password'] = [
-            'nullable',
-            'min:6',
-            'max:20',
-        ];*/
+        
 
         return $rules;
     }

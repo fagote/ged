@@ -65,21 +65,34 @@
                 <th>E-mail</th>
                 <th>Empresa</th>
                 <th>Setor</th>
+                @if(Auth::check() && Auth::user()->id_permission == 1)
+                    <th>Permissão do Usuário</th>
+                @endif
                 <th>Ações</th>
             </tr>
         </thead>
         <tbody>
             @forelse ($users as $user)
+
+            @if(Auth::check() && Auth::user()->id_permission == 2)
+                @if($user->id_permission == 1)
+                    @continue
+                @endif
+            @endif
+
             <tr>
                 <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
-                <td>{{$user->company->name_empresa}}</td>
-                <td>{{$user->sector->name_setor}}</td>
+                <td>{{$user->company?->name_empresa ?? 'Empresa não definida'}}</td>
+                <td>{{$user->sector?->name_setor ?? 'Setor não definido'}}</td>
+
+                @if(Auth::check() && Auth::user()->id_permission == 1)
+                    <td>{{$user->permission?->descricao ?? 'Permissão não definida'}}</td>
+                @endif
+
                 <td>
                     <a href="{{ route('users.edit', $user->id) }}" class="button">Edit</a>
-                    <a href="{{ route( 'permissions.index', $user->id) }}" class="button">Permissões</a>
                     <a id="button_excluir" href="{{ route('users.show', $user->id) }}">Excluir</a>
-                    
                 </td>
             </tr>
             @empty

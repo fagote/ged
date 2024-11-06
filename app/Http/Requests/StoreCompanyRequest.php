@@ -28,8 +28,6 @@ class StoreCompanyRequest extends FormRequest
                 'required',
                 'integer',
                 'min:1',
-                //'unique:users,email',
-                //Rule::unique('users', 'email') -> ignore($this->user, 'id')
 
             ]
         ];

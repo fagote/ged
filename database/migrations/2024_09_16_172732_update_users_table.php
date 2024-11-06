@@ -16,6 +16,8 @@ return new class extends Migration
             $table->foreignId('id_empresa')->nullable()->constrained('companies','id_empresa')->onDelete('cascade');
             $table->foreignId('id_setor')->nullable()->constrained('sectors', 'id_setor')->onDelete('cascade');
             $table->foreignId('id_file')->nullable()->constrained('files')->onDelete('cascade');
+            $table->foreignId('id_permission')->nullable()->constrained('permissions','id_permissao')->onDelete('cascade');
+
         });
     }
 
@@ -29,8 +31,9 @@ return new class extends Migration
             $table->dropForeign(['id_empresa']);
             $table->dropForeign(['id_setor']);
             $table->dropForeign(['id_file']);
+            $table->dropForeign(['id_permission']);
 
-            $table->dropColumn(['id_empresa', 'id_setor', 'id_file']);
+            $table->dropColumn(['id_empresa', 'id_setor', 'id_file', 'id_permission']);
         });
     }
 };

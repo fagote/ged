@@ -21,7 +21,6 @@
         pode Deletar
     @endcan --}}
 
-    @can('is-admin')
         <form action="{{ route('files.destroy', $file->id) }}" method="post">
 
             @csrf
@@ -29,10 +28,6 @@
             <button type="submit">Excluir</button>
 
         </form>
-
-
-    @endcan
-
 
 @endsection
 

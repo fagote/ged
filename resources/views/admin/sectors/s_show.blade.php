@@ -11,7 +11,6 @@
     </ul>
 
 
-    @can('is-admin')
         <form action="{{ route('sectors.destroy', $sector->id_setor) }}" method="post">
 
             @csrf
@@ -19,7 +18,6 @@
             <button type="submit">Excluir</button>
 
         </form>
-    @endcan
 
 
 @endsection

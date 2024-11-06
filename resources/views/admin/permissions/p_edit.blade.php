@@ -14,7 +14,7 @@
         </div>
     @endif
 
-    <form action=" {{ route('permissions.update', $permission->id) }} " method="POST">
+    <form action=" {{ route('permissions.update', $permission->id_permissao) }} " method="POST">
 
         @method('PUT')
         @include('admin.permissions.p_partials.p_form')

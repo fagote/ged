@@ -5,10 +5,8 @@
 @section('content')
     <h1>Informações da permissão </h1>
     <ul>
-        <li>Id Usuário: {{ $permission->id_usuario }}</li>
-        <li>Id Empresa: {{ $permission->id_empresa }}</li>
-        <li>Id Setor: {{ $permission->id_setor }}</li>
-
+        <li>Id Permissão: {{ $permission->id_permissao }}</li>
+        <li>Descrição: {{ $permission->descricao }}</li>
     </ul>
 
 
@@ -16,8 +14,7 @@
         pode Deletar
     @endcan --}}
 
-    @can('is-admin')
-        <form action="{{ route('permissions.destroy', $permission->id) }}" method="post">
+        <form action="{{ route('permissions.destroy', $permission->id_permissao) }}" method="post">
 
             @csrf
             @method('delete')
@@ -31,7 +28,6 @@
         </div>
     @endif
 
-    @endcan
 
 
 @endsection

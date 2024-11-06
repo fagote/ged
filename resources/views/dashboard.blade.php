@@ -28,25 +28,25 @@
                 <div class="button-container">
                     <!-- Condição para limitar o acesso das pessoas nas empresas -->
                     <!-- A empresa com id 999 é do usuário master onde ele tem acesso a todas as empresas --> 
-                    @if(Auth::check() && Auth::user()->id_empresa == 5 || Auth::user()->id_empresa == 999)  <!-- Substitua 1 pelo ID correto da empresa Inusitta -->
+                    @if(Auth::check() && Auth::user()->id_empresa == 5 || Auth::user()->id_permission == 1 || Auth::user()->id_permission == 2)  <!-- Substitua 1 pelo ID correto da empresa Inusitta -->
                         <button class="glow-on-hover" type="button" onclick="window.location='{{ route('inusitta.index') }}'" >
                             <img src="images/inusitta(2).png" alt="Inusitta Logo" style="width: 200px; height: 100px; margin-right: 5px;">
                         </button>
                     @endif
                         
-                    @if(Auth::check() && Auth::user()->id_empresa == 22 || Auth::user()->id_empresa == 999)
+                    @if(Auth::check() && Auth::user()->id_empresa == 22 || Auth::user()->id_permission == 1 || Auth::user()->id_permission == 2)
                         <button  class="glow-on-hover" type="button" onclick="window.location='{{route('haos.index')}}'">
                             <img src="images/haos(2).png" alt="haos Logo" style="width: 200px; height: 140px; margin-right: 5px;">
                         </button>
                     @endif
                             
-                    @if(Auth::check() && Auth::user()->id_empresa == 2 || Auth::user()->id_empresa == 999)
+                    @if(Auth::check() && Auth::user()->id_empresa == 2 || Auth::user()->id_permission == 1 || Auth::user()->id_permission == 2)
                         <button  class="glow-on-hover" type="button" onclick="window.location='{{route('artea.index')}}'">
                             <img src="images/artea(2).png" alt="artea Logo" style="width: 200px; height: 100px; margin-right: 5px;">
                         </button>
                     @endif
 
-                    @if(Auth::check() && Auth::user()->id_empresa == 1 || Auth::user()->id_empresa == 999)
+                    @if(Auth::check() && Auth::user()->id_empresa == 1 || Auth::user()->id_permission == 1 || Auth::user()->id_permission == 2)
                         <button  class="glow-on-hover" type="button" onclick="window.location='{{ route('lavoratto.index') }}'">
                             <img src="images/lavoratto(2).png" alt="lavoratto Logo" style="width: 230px; height: 100px; margin-right: 5px;">
                         </button>

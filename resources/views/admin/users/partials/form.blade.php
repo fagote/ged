@@ -9,7 +9,7 @@
 <script>
     $(document).ready(function() {
         $('.select2').select2({
-            placeholder: "Selecione um usuário",
+            placeholder: "Selecione uma opção",
             allowClear: true
         });
     });
@@ -43,6 +43,19 @@
     @endforeach
 </select><br>
 
+<br>
+
+@if(Auth::check() && Auth::user()->id_permission == 1)
+    <label for="id_permission">Selecione a Permissão do Usuário</label><br>
+    <select name="id_permission" class="select2">
+        @foreach ($permissions as $permission)
+            <option value="{{ $permission->id_permissao }}" 
+                {{ (isset($user) && $user->id_permission == $permission->id_permissao) || old('id_permission') == $permission->id_permissao ? 'selected' : '' }}>
+                {{ $permission->descricao }}
+            </option>
+        @endforeach
+    </select><br>
+@endif
 <br>
 
 <input type="password" name="password" placeholder="Senha">

@@ -15,7 +15,6 @@
         pode Deletar
     @endcan --}}
 
-    @can('is-admin')
         <form action="{{ route('companies.destroy', $company->id_empresa) }}" method="post">
 
             @csrf
@@ -29,9 +28,6 @@
             {{ session('success') }}
         </div>
     @endif
-
-    @endcan
-
 
 @endsection
 
