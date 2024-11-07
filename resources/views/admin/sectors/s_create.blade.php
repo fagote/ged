@@ -7,7 +7,7 @@
 
     
 
-    @include('admin.sectors.s_partials.s_breadcrumb')
+    {{-- @include('admin.sectors.s_partials.s_breadcrumb') --}}
 
     <div class="py-6">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200">

@@ -35,6 +35,14 @@
                         </thead>
                         <tbody>
                             @forelse ($files as $file)
+
+                            <!-- Função para não mostrar aos usuários comuns arquivos NÃO ativos e reprovados-->
+                            @if(Auth::check() && Auth::user()->id_permission == 3 || Auth::user()->id_permission == NULL)
+                                @if($file->ativo == 0 || $file->aprovacao == 0 || $file->aprovacao == 1)
+                                    @continue
+                                @endif
+                            @endif
+
                             <tr>
                                 <td>{{ $file->codigo }}</td>
                                 <td>{{ $file->versao }}</td>
@@ -42,8 +50,8 @@
                                 <td>{{ $file->company?->name_empresa ?? 'Empresa não definida' }}</td>
                                 <td>{{ $file->sector?->name_setor ?? 'Setor não definido' }}</td>
                                 <td>{{ $file->macro?->name_macro ?? 'Macro não definida' }}</td>
-                                <td>{{ $file->ativo == 1 ? 'Sim' : 'Não' }}</td>
-                                <td>{{ $file->aprovacao == 0 ? 'Reprovado' : ($file->aprovacao == 1 ? 'Aguardando' : 'Aprovado') }}</td>
+                                <td>{{ $file->ativo == 1 ? 'Sim' : 'Não' }}</td> <!-- 0 = nao/ 1 = sim -->
+                                <td>{{ $file->aprovacao == 0 ? 'Reprovado' : ($file->aprovacao == 1 ? 'Aguardando' : 'Aprovado') }}</td> <!--0 = reprovado/ 1 = aguardando/ 2 = aprovado-->
                                 <td>
                                     <a href="{{ route('files.view', $file->id) }}" target="_blank" class="button">Visualizar</a>
                                     @if(Auth::check() && Auth::user()->id_permission == 1 || Auth::user()->id_permission == 2)

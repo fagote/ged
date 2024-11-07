@@ -35,13 +35,13 @@
 
 
 <br><br>
-<a class="button" href="{{ route('files.create') }}">Adicionar Novo Arquivo</a>
+<a class="button" href="{{ route('files.create') }}" style="background-color: #8a8a8a; color:#ffffff; ">Adicionar Novo Arquivo</a>
 <a href="{{route('arquivosAprovados.index')}}" class="button">Arquivos Aprovados</a>
-<a href="{{route('arquivosReprovados.index')}}" class="button">Arquivos Reprovados</a>
-<a href="{{route('arquivosInativos.index')}}" class="button">Arquivos Inativos</a>
-<a class="button" href="{{route('aguardandoAprovacao.index')}}" >Arquivos Aguardando Aprovação</a>
+<a href="{{route('arquivosReprovados.index')}}" class="button" style="background-color: #e54646;">Arquivos Reprovados</a>
+<a href="{{route('arquivosInativos.index')}}" class="button" style="background-color: #000000; color:#ffffff">Arquivos Inativos</a>
+<a class="button" href="{{route('aguardandoAprovacao.index')}}" style="background-color: #facc00; color:#000000">Arquivos Aguardando Aprovação</a>
 
-<br>
+<br><br>
 
     <!-- <x-alert></x-alert> -->
 
@@ -205,9 +205,7 @@
         margin-bottom: 5px; 
     }
 
-    .button:hover {
-        background-color: #423cbb; /* Cor ao passar o mouse */
-    }
+    
 
     .button_container{
         display: flex;

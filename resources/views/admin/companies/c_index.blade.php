@@ -3,8 +3,7 @@
 
 @section('title', 'Listagem das empresas')
 @section('content')
-<h1>EMPRESAS</h1>
-
+<br>
 
 <a href="{{ route('companies.create') }}" class="button">Adicionar Nova Empresa</a>
 

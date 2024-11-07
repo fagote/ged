@@ -4,8 +4,7 @@
 
 @section('title', 'Listagem das macros')
 @section('content')
-<h1>Macros</h1>
-
+<br>
 
 <a class="button" href="{{ route('macros.create') }}">Adicionar Nova Macro</a>
 
