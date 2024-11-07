@@ -58,6 +58,15 @@
                             </li>
                         @endif
 
+                        @if(Auth::check() && Auth::user()->id_setor == 32 || Auth::user()->id_permission == 1 || Auth::user()->id_permission == 2)
+                            <li class="folder">
+                                <a href="{{route('inusittaAtelie.index')}}" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    ATELIÊ
+                                </a>
+                            </li>
+                        @endif
+
                         @if(Auth::check() && Auth::user()->id_setor == 21 || Auth::user()->id_permission == 1 || Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaComercial.index')}}" class="folder-link">
