@@ -3,8 +3,7 @@
 
 @section('title', 'Permissões')
 @section('content')
-<h1>Permissões</h1>
-
+<br>
 
 <a id="button1" href="{{ route('permissions.create') }}">Adicionar Permissões</a>
 

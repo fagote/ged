@@ -7,7 +7,7 @@
 
     <!-- <h1 style=color:white>Nova Empresa</h1> -->
 
-    @include('admin.macros.m_partials.m_breadcrumb')
+    {{-- @include('admin.macros.m_partials.m_breadcrumb') --}}
 
     <div class="py-6">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200">

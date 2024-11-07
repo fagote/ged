@@ -7,7 +7,7 @@
 
     <!-- <h1 style= color:white>Novo Usuário</h1> -->
 
-    @include('admin.files.f_partials.f_breadcrumb')
+    {{-- @include('admin.files.f_partials.f_breadcrumb') --}}
 
     <div class="py-6">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200">

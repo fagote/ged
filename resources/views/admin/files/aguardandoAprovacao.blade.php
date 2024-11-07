@@ -42,13 +42,13 @@
 
 
 <br><br>
-<a class="button" href="{{ route('files.create') }}">Adicionar Novo Arquivo</a>
+<a class="button" href="{{ route('files.create') }}" style="background-color: #8a8a8a; color:#ffffff; ">Adicionar Novo Arquivo</a>
 <a href="{{route('arquivosAprovados.index')}}" class="button">Arquivos Aprovados</a>
-<a href="{{route('arquivosAtivos.index')}}" class="button">Arquivos Ativos</a>
-<a href="{{route('arquivosReprovados.index')}}" class="button">Arquivos Reprovados</a>
-<a href="{{route('arquivosInativos.index')}}" class="button">Arquivos Inativos</a>
+<a href="{{route('arquivosAtivos.index')}}" class="button" style="background-color: #1dac00; ">Arquivos Ativos</a>
+<a href="{{route('arquivosReprovados.index')}}" class="button" style="background-color: #e54646;">Arquivos Reprovados</a>
+<a href="{{route('arquivosInativos.index')}}" class="button" style="background-color: #000000; color:#ffffff">Arquivos Inativos</a>
 
-<br>
+<br><br>
 
     <!-- <x-alert></x-alert> -->
 

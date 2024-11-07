@@ -4,8 +4,7 @@
 
 @section('title', 'Listagem dos setores')
 @section('content')
-<h1>SETORES</h1>
-
+<br>
 
 <a class="button" href="{{ route('sectors.create') }}">Adicionar Novo Setor</a>
 

@@ -35,6 +35,14 @@
                         </thead>
                         <tbody>
                             @forelse ($files as $file)
+
+
+                            @if(Auth::check() && Auth::user()->id_permission == 3 || Auth::user()->permission == NULL)
+                                @if($file->ativo == 0 || $file->aprovacao == 0 || $file->aprovacao == 1)
+                                    @continue
+                                @endif
+                            @endif
+
                             <tr>
                                 <td>{{ $file->codigo }}</td>
                                 <td>{{ $file->versao }}</td>

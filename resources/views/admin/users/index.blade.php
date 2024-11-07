@@ -6,7 +6,7 @@
 @section('content')
 
 
-<h1>USUÁRIOS</h1>
+<br>
 
 
 <!--==================================================-->
@@ -35,7 +35,7 @@
 
 
 <a href="{{ route('users.create') }}" class="button">Adicionar Novo Usuário</a>
-
+<br>
 <br>
 
     <!-- <x-alert></x-alert> -->
