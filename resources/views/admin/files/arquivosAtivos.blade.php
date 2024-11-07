@@ -5,9 +5,7 @@
 @section('title', 'Arquivos Ativos')
 @section('content')
 
-<h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-    ARQUIVOS ATIVOS
-</h2>
+<br>
 
 
 <!--==================================================-->
@@ -35,6 +33,10 @@
 
 
 <br><br>
+<h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+    ARQUIVOS ATIVOS
+</h2>
+<br>
 <a class="button" href="{{ route('files.create') }}" style="background-color: #8a8a8a; color:#ffffff; ">Adicionar Novo Arquivo</a>
 <a href="{{route('arquivosAprovados.index')}}" class="button">Arquivos Aprovados</a>
 <a href="{{route('arquivosReprovados.index')}}" class="button" style="background-color: #e54646;">Arquivos Reprovados</a>

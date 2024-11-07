@@ -223,6 +223,12 @@ Route::middleware('auth')
         Route::get('inusitta/transporte/registro', [UserController::class, 'indexInusittaTransporteRegistro'])->name('inusittaTransporteRegistro.index');
         Route::get('inusitta/transporte/formulario', [UserController::class, 'indexInusittaTransporteFormulario'])->name('inusittaTransporteFormulario.index');
 
+        Route::get('inusitta/atelie', [UserController::class, 'indexInusittaAtelie'])->name('inusittaAtelie.index');
+        Route::get('inusitta/atelie/instrucao', [UserController::class, 'indexInusittaAtelieInstrucao'])->name('inusittaAtelieInstrucao.index');
+        Route::get('inusitta/atelie/procedimento',[UserController::class, 'indexInusittaAtelieProcedimento'])->name('inusittaAtelieProcedimento.index');
+        Route::get('inusitta/atelie/registro', [UserController::class, 'indexInusittaAtelieRegistro'])->name('inusittaAtelieRegistro.index');
+        Route::get('inusitta/atelie/formulario', [UserController::class, 'indexInusittaAtelieFormulario'])->name('inusittaAtelieFormulario.index');
+
         //======================================================
 
         // ROTAS PARA EMPRESA HAOS
