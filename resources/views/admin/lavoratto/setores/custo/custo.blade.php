@@ -8,6 +8,27 @@
                 Você possui perfil administrador!
             @endcan
         </h2>
+
+        {{-- <!--==================================================-->
+        <!-- Formulário de Busca -->
+        <div class="busca">
+            <form id="form_search" action="{{ route('files.search') }}" method="GET">
+                <input id="input_search" type="text" name="search" placeholder="Buscar arquivo pelo código..." value="{{ request('search') }}" required>
+                <button id="button_search" type="submit">Buscar</button>
+            </form>
+
+            <!-- Mostrando os Usuários Encontrados -->
+            @if(request('search') && isset($files) && $files->count())
+                <ul>
+                    @foreach($files as $file)
+                        <!--<li>{{ $file->codigo }}</li>--> 
+                    @endforeach
+                </ul>
+                
+            @endif
+        </div>
+
+<!--==================================================--> --}}
     </x-slot>
 
     
@@ -150,4 +171,47 @@
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
+
 </style>
+
+<!--==================================================-->
+<!-- CSS - CAMPO DE BUSCA -->
+<style>
+    /* Estilos para centralizar o conteúdo */
+    .busca {
+        display: flex;
+        justify-content: center; /* Centraliza horizontalmente */
+       /* align-items: center;  Centraliza verticalmente */
+        height: 10vh; /* Usa toda a altura da tela */
+    }
+
+    #form_search {
+            display: flex;
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Alinha verticalmente */
+            margin: 20px; /* Margem ao redor do formulário */
+        }
+
+        #input_search {
+            padding: 10px;
+            margin-right: 5px; /* Espaço entre o input e o botão */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 300px; /* Largura do campo de texto */
+            color: black;
+        }
+
+        #button_search {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4F46E5;
+            color: white;
+            cursor: pointer;
+        }
+
+    #button_search:hover {
+        background-color: #423cbb;
+    }
+</style>
+<!--==================================================-->

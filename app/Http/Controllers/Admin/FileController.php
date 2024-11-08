@@ -290,7 +290,29 @@ class FileController extends Controller
     //=========================================
     
     //=========================================
-    // Função
+    // Busca de arquivos para usuários comuns
+
+    public function searchCommonUser(Request $request)
+    {
+        $user = auth()->user(); // Obtém o usuário logado
+        $file = File::all();
+    
+        // Identifica as permissões do usuário logado (empresa e setor)
+        $empresaId = $user->id_empresa; // ou ajuste conforme a relação
+        $setorId = $user->id_setor;     // ou ajuste conforme a relação
+    
+        // Realiza a busca de arquivos com o filtro de empresa, setor e código
+        $files = File::where('id_empresa', $empresaId)
+                     ->where('id_setor', $setorId)
+                     ->where('ativo',$file->ativo = 1)
+                     ->where('aprovacao', $file->aprovacao = 2)
+                     ->where('codigo', 'like', '%' . $request->search . '%')
+                     ->paginate(10);
+    
+        return view('admin.files.f_index', compact('files'));
+    }
+    
+
     //=========================================
     
    

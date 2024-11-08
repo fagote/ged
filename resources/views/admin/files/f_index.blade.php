@@ -11,22 +11,16 @@
 
 <!--==================================================-->
 <!-- Formulário de Busca -->
-<div class="busca">
-    <form id="form_search" action="{{ route('files.search') }}" method="GET">
-        <input id="input_search" type="text" name="search" placeholder="Buscar arquivo pelo código..." value="{{ request('search') }}" required>
-        <button id="button_search" type="submit">Buscar</button>
-    </form>
 
-    <!-- Mostrando os Usuários Encontrados -->
-    @if(request('search') && isset($files) && $files->count())
-        <ul>
-            @foreach($files as $file)
-                <!--<li>{{ $file->codigo }}</li>--> 
-            @endforeach
-        </ul>
-        
-    @endif
-</div>
+
+@if(Auth::check() && Auth::user()->id_permission == 1 || Auth::user()->id_permission == 2)
+    <div class="busca">
+        <form id="form_search" action="{{ route('files.search') }}" method="GET">
+            <input id="input_search" type="text" name="search" placeholder="Buscar arquivo pelo código..." value="{{ request('search') }}" required>
+            <button id="button_search" type="submit">Buscar</button>
+        </form>
+    </div>
+@endif
 
 <!--==================================================-->
 
@@ -34,12 +28,15 @@
 
 
 <br>
-<a id="b1" class="button" href="{{ route('files.create') }}" style="background-color: #8a8a8a; color:#ffffff; ">Adicionar Novo Arquivo</a>
-<a href="{{route('arquivosAprovados.index')}}" class="button">Arquivos Aprovados</a>
-<a href="{{route('arquivosAtivos.index')}}" class="button" style="background-color: #1dac00; ">Arquivos Ativos</a>
-<a href="{{route('arquivosReprovados.index')}}" class="button" style="background-color: #e54646;">Arquivos Reprovados</a>
-<a href="{{route('arquivosInativos.index')}}" class="button" style="background-color: #000000; color:#ffffff">Arquivos Inativos</a>
-<a class="button" href="{{route('aguardandoAprovacao.index')}}" style="background-color: #facc00; color:#000000">Arquivos Aguardando Aprovação</a>
+
+@if(Auth::check() && Auth::user()->id_permission == 1 || Auth::user()->id_permission == 2)
+    <a id="b1" class="button" href="{{ route('files.create') }}" style="background-color: #8a8a8a; color:#ffffff; ">Adicionar Novo Arquivo</a>
+    <a href="{{route('arquivosAprovados.index')}}" class="button">Arquivos Aprovados</a>
+    <a href="{{route('arquivosAtivos.index')}}" class="button" style="background-color: #1dac00; ">Arquivos Ativos</a>
+    <a href="{{route('arquivosReprovados.index')}}" class="button" style="background-color: #e54646;">Arquivos Reprovados</a>
+    <a href="{{route('arquivosInativos.index')}}" class="button" style="background-color: #000000; color:#ffffff">Arquivos Inativos</a>
+    <a class="button" href="{{route('aguardandoAprovacao.index')}}" style="background-color: #facc00; color:#000000">Arquivos Aguardando Aprovação</a>
+@endif
 
 <br>
 
@@ -91,9 +88,13 @@
                     
                 </td> 
                 <td>
+                    <a href="{{ route('files.view', $file->id) }}" target="_blank" class="button">Visualizar</a>
+
+                    @if(Auth::check() && Auth::user()->id_permission == 1 || Auth::user()->id_permission == 2)
                         <a href="{{ route('files.edit', $file->id) }}" class="button">Edit</a>
-                        <a href="{{ route('files.view', $file->id) }}" target="_blank" class="button">Visualizar</a>
                         <a id="button_excluir" href="{{ route('files.show', $file->id) }}">Excluir</a>
+                    @endif
+
                 </td>
             </tr>
             @empty
