@@ -829,6 +829,7 @@ Route::get('/files/arquivosaprovados', [FileController::class, 'arquivosAprovado
 Route::get('/files/arquivosinativos', [FileController::class, 'arquivosInativos'])->name('arquivosInativos.index');
 Route::get('/files/aguardandoaprovacao', [FileController::class, 'aguardandoAprovacao'])->name('aguardandoAprovacao.index');
 Route::get('/files/search', [FileController::class, 'search'])->name('files.search');
+Route::get('/files/searchCommonUser', [FileController::class, 'searchCommonUser'])->name('filesCommonUser.search');
 Route::delete('/files/{file}/destroy', [FileController::class, 'destroy'])->name('files.destroy')->middleware(CheckIfIsAdmin::class);
 Route::post('/files/{id}/upload', [FileController::class, 'upload'])->name('files.upload');
 Route::get('/files/create',[FileController::class, 'create'])->name('files.create');

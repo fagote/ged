@@ -16,6 +16,22 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
+                    @if(Auth::check() && Auth::user()->id_permission == NULL || Auth::user()->id_permission == 3)
+                        <x-nav-link>
+                            <!--==================================================-->
+                            <!-- Formulário de Busca -->
+                            <div class="busca">
+                                <form id="form_search" action="{{ route('filesCommonUser.search') }}" method="GET">
+                                    <input id="input_search" type="text" name="search" placeholder="Buscar arquivo pelo código..." value="{{ request('search') }}" required>
+                                    <button id="button_search" type="submit">Buscar</button>
+                                </form>
+
+                            </div>
+
+                            <!--==================================================-->
+                        </x-nav-link>
+                    @endif
+
                     @if(Auth::check() && Auth::user()->id_permission == 1 || Auth::user()->id_permission == 2)
                         <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
                             {{ __('Usuários') }}
@@ -229,3 +245,45 @@
         </div>
     </div>
 </nav>
+
+<!--==================================================-->
+<!-- CSS - CAMPO DE BUSCA -->
+<style>
+    /* Estilos para centralizar o conteúdo */
+    .busca {
+        display: flex;
+        justify-content: center; /* Centraliza horizontalmente */
+       /* align-items: center;  Centraliza verticalmente */
+        height: 10vh; /* Usa toda a altura da tela */
+    }
+
+    #form_search {
+            display: flex;
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Alinha verticalmente */
+            margin: 20px; /* Margem ao redor do formulário */
+        }
+
+        #input_search {
+            padding: 10px;
+            margin-right: 5px; /* Espaço entre o input e o botão */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 300px; /* Largura do campo de texto */
+            color: black;
+        }
+
+        #button_search {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4F46E5;
+            color: white;
+            cursor: pointer;
+        }
+
+    #button_search:hover {
+        background-color: #423cbb;
+    }
+</style>
+<!--==================================================-->
