@@ -23,7 +23,7 @@
                             <div class="busca">
                                 <form id="form_search" action="{{ route('filesCommonUser.search') }}" method="GET">
                                     <input id="input_search" type="text" name="search" placeholder="Buscar arquivo pelo código..." value="{{ request('search') }}" required>
-                                    <button id="button_search" type="submit">Buscar</button>
+                                    <button id="button_search" type="submit">Buscar</button> 
                                 </form>
 
                             </div>

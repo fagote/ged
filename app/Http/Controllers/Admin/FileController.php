@@ -298,12 +298,51 @@ class FileController extends Controller
         $file = File::all();
     
         // Identifica as permissões do usuário logado (empresa e setor)
-        $empresaId = $user->id_empresa; // ou ajuste conforme a relação
-        $setorId = $user->id_setor;     // ou ajuste conforme a relação
+        $empresaId1 = $user->id_empresa1; 
+        $empresaId2 = $user->id_empresa2;
+        $empresaId3 = $user->id_empresa3;
+        $empresaId4 = $user->id_empresa4;
+        $setorId1 = $user->id_setor1;  
+        $setorId2 = $user->id_setor2; 
+        $setorId3 = $user->id_setor3; 
+        $setorId4 = $user->id_setor4; 
+        $setorId5 = $user->id_setor5; 
+        $setorId6 = $user->id_setor6; 
+        $setorId7 = $user->id_setor7; 
+        $setorId8 = $user->id_setor8; 
+        $setorId9 = $user->id_setor9; 
+        $setorId10 = $user->id_setor10; 
+        $setorId11 = $user->id_setor11; 
+        $setorId12 = $user->id_setor12; 
+        $setorId13 = $user->id_setor13; 
+        $setorId14 = $user->id_setor14; 
+        $setorId15 = $user->id_setor15;  
+        $setorId16 = $user->id_setor16;  
+        $setorId17 = $user->id_setor17; 
+        $setorId18 = $user->id_setor18; 
+        $setorId19 = $user->id_setor19; 
+        $setorId20 = $user->id_setor20; 
+        $setorId21 = $user->id_setor21; 
+        $setorId22 = $user->id_setor22; 
+        $setorId23 = $user->id_setor23; 
+        $setorId24 = $user->id_setor24; 
+        $setorId25 = $user->id_setor25; 
+        $setorId26 = $user->id_setor26; 
+        $setorId27 = $user->id_setor27; 
+        $setorId28 = $user->id_setor28; 
+        $setorId29 = $user->id_setor29; 
+        $setorId30 = $user->id_setor30;  
+        $setorId31 = $user->id_setor31;  
+        $setorId32 = $user->id_setor32; 
+      
     
         // Realiza a busca de arquivos com o filtro de empresa, setor e código
-        $files = File::where('id_empresa', $empresaId)
-                     ->where('id_setor', $setorId)
+        $files = File::whereIn('id_empresa', [$empresaId1, $empresaId2,$empresaId3,$empresaId4])
+                     ->whereIn('id_setor', [$setorId1,$setorId2,$setorId3,$setorId4,$setorId5,
+                                                            $setorId6,$setorId7,$setorId8,$setorId9,$setorId10,$setorId11,
+                                                            $setorId12,$setorId13,$setorId14,$setorId15,$setorId16,$setorId17,$setorId18,
+                                                            $setorId19,$setorId20,$setorId21,$setorId22,$setorId23,$setorId24,$setorId25,
+                                                            $setorId26,$setorId27,$setorId28,$setorId29,$setorId30,$setorId31,$setorId32])
                      ->where('ativo',$file->ativo = 1)
                      ->where('aprovacao', $file->aprovacao = 2)
                      ->where('codigo', 'like', '%' . $request->search . '%')
