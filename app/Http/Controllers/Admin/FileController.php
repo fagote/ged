@@ -144,24 +144,27 @@ class FileController extends Controller
     public function store(StoreFileRequest $request)
     {
     // Validação dos campos
-    $validatedData = $request->validate([
-        'file_path' => 'required|file|max:10240',  
-        'versao' => 'required|integer',
-        'codigo' => 'required|string',
-        'user_id' => 'required|exists:users,id',
-        'id_macro' => 'required|exists:macros,id_macro',
-        'id_setor' => 'required|exists:sectors,id_setor',
-        'id_empresa' => 'required|exists:companies,id_empresa',
-    ]);
+    $data = $request->validated();
 
     // Upload do arquivo
     if ($request->hasFile('file_path')) {
         $file = $request->file('file_path');
         $filePath = $file->store('files', 'public');  // Armazena o arquivo na pasta 'storage/app/public/arquivos'
-        $validatedData['file_path'] = $filePath;  // Adiciona o caminho do arquivo no array de dados validados
+        $data['file_path'] = $filePath;  // Adiciona o caminho do arquivo no array de dados validados
     }
+
+    $empresas = $request->input('id_empresa', []); // Pega o array de empresas ou vazio se não selecionado
+    for ($i = 1; $i <= 4; $i++) {
+        $data["id_empresa{$i}"] = isset($empresas[$i - 1]) ? $empresas[$i - 1] : null;
+    }
+
+    // Verifica os campos de setores (id_setor[])
+    $setores = $request->input('id_setor', []); // Pega o array de setores ou vazio se não selecionado
+    for ($i = 1; $i <= 32; $i++) {
+        $data["id_setor{$i}"] = isset($setores[$i - 1]) ? $setores[$i - 1] : null;
+    }   
       
-    File::create($validatedData);
+    File::create($data);
 
         return redirect()
             ->route('files.index')
@@ -198,7 +201,22 @@ class FileController extends Controller
         }
 
         // Coleta todos os dados exceto o arquivo
-        $data = $request->only('versao', 'codigo', 'id_macro', 'id_setor', 'id_empresa', 'user_id');
+        $data = $request->only('versao', 'codigo', 'id_macro', 'user_id');
+
+
+        $empresas = $request->input('id_empresa', []);  // Vai pegar o array de empresas ou um array vazio se não houver seleção
+        // Adiciona as empresas no array de dados
+        for ($i = 1; $i <= 4; $i++) {
+            $data["id_empresa{$i}"] = isset($empresas[$i - 1]) ? $empresas[$i - 1] : null;
+        }
+
+        // Verifica os campos de setores (id_setor[])
+        $setores = $request->input('id_setor', []);  // Vai pegar o array de setores ou um array vazio se não houver seleção
+        // Adiciona os setores no array de dados
+        for ($i = 1; $i <= 32; $i++) {
+            $data["id_setor{$i}"] = isset($setores[$i - 1]) ? $setores[$i - 1] : null;
+        }   
+
 
         // Verifica se um novo arquivo foi enviado
         if ($request->hasFile('file_path')) {

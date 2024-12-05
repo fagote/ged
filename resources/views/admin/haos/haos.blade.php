@@ -104,25 +104,6 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 32 || Auth::user()->id_setor2 == 32 || Auth::user()->id_setor3 == 32 || 
-                            Auth::user()->id_setor4 == 32 || Auth::user()->id_setor5 == 32 || Auth::user()->id_setor6 == 32 || 
-                            Auth::user()->id_setor7 == 32 || Auth::user()->id_setor8 == 32 || Auth::user()->id_setor9 == 32 || 
-                            Auth::user()->id_setor10 == 32 || Auth::user()->id_setor11 == 32 || Auth::user()->id_setor12 == 32 || 
-                            Auth::user()->id_setor13 == 32 || Auth::user()->id_setor14 == 32 || Auth::user()->id_setor15 == 32 || 
-                            Auth::user()->id_setor16 == 32 || Auth::user()->id_setor17 == 32 || Auth::user()->id_setor18 == 32 || 
-                            Auth::user()->id_setor19 == 32 || Auth::user()->id_setor20 == 32 || Auth::user()->id_setor21 == 32 || 
-                            Auth::user()->id_setor22 == 32 || Auth::user()->id_setor23 == 32 || Auth::user()->id_setor24 == 32 || 
-                            Auth::user()->id_setor25 == 32 || Auth::user()->id_setor26 == 32 || Auth::user()->id_setor27 == 32 || 
-                            Auth::user()->id_setor28 == 32 || Auth::user()->id_setor29 == 32 || Auth::user()->id_setor30 == 32 || 
-                            Auth::user()->id_setor31 == 32 || Auth::user()->id_setor32 == 32 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
-                            <li class="folder">
-                                <a href="{{route('haosAtelie.index')}}" class="folder-link">
-                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
-                                    ATELIÊ
-                                </a>
-                            </li>
-                        @endif
 
                         @if(Auth::check() && Auth::user()->id_setor1 == 21 || Auth::user()->id_setor2 == 21 || Auth::user()->id_setor3 == 21 || 
                             Auth::user()->id_setor4 == 21 || Auth::user()->id_setor5 == 21 || Auth::user()->id_setor6 == 21 || 

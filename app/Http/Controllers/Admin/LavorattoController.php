@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\File;
+use App\Models\Company;
+use App\Models\Sector;
 
 class LavorattoController extends Controller
 {
@@ -302,15 +304,28 @@ class LavorattoController extends Controller
     //=========================================
     // Função Para Mostrar os arquivos da macro Instrução
 
-    public function indexLavorattoTiInstrucao(){
+    public function indexLavorattoTiInstrucao()
+    {
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Tecnologia da Informação');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Tecnologia da Informação')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
+        
+        ->whereHas('macro', function ($query) {
             $query->where('name_macro', 'instrução');
         })
         ->paginate(10);
@@ -326,14 +341,27 @@ class LavorattoController extends Controller
     public function indexLavorattoTiProcedimento(){
 
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Tecnologia da Informação');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Tecnologia da Informação')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'Procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'procedimento');
         })
         ->paginate(10);
 
@@ -348,14 +376,27 @@ class LavorattoController extends Controller
     public function indexLavorattoTiRegistro(){
 
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Tecnologia da Informação');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Tecnologia da Informação')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'Registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'registro');
         })
         ->paginate(10);
 
@@ -370,14 +411,27 @@ class LavorattoController extends Controller
     public function indexLavorattoTiFormulario(){
 
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Tecnologia da Informação');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Tecnologia da Informação')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'Formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'formulario');
         })
         ->paginate(10);
 
@@ -392,14 +446,27 @@ class LavorattoController extends Controller
 
     public function indexLavorattoMarketingInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Marketing');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Marketing')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'instrução');
         })
         ->paginate(10);
 
@@ -413,15 +480,29 @@ class LavorattoController extends Controller
 
     public function indexLavorattoMarketingProcedimento(){
 
-        $files = File::whereHas('company', function($query){
-            $query->where('name_empresa','Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor','Marketing');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Marketing')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query){
-            $query->where('name_macro','procedimento');
-        }) -> paginate(10);
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'procedimento');
+        })
+        -> paginate(10);
 
         return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
@@ -433,15 +514,28 @@ class LavorattoController extends Controller
 
     public function indexLavorattoMarketingRegistro(){
 
-        $files = File::whereHas('company', function($query){
-            $query->where('name_empresa','Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor','Marketing');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Marketing')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query){
-            $query->where('name_macro','registro');
-        }) -> paginate(10);
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'registro');
+        })-> paginate(10);
 
         return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
@@ -453,15 +547,28 @@ class LavorattoController extends Controller
 
     public function indexLavorattoMarketingFormulario(){
 
-        $files = File::whereHas('company', function($query){
-            $query->where('name_empresa','Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor','Marketing');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Marketing')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query){
-            $query->where('name_macro','formulario');
-        }) -> paginate(10);
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'formulário');
+        })-> paginate(10);
 
         return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
@@ -469,18 +576,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/comercial/instrucao
+    // inusitta/comercial/instrucao
 
     public function indexLavorattoComercialInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -490,18 +610,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/comercial/procedimento
+    // inusitta/comercial/procedimento
 
     public function indexLavorattoComercialProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -511,18 +644,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/comercial/registro
+    // inusitta/comercial/registro
 
     public function indexLavorattoComercialRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -532,18 +678,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/comercial/registro
+    // inusitta/comercial/registro
 
     public function indexLavorattoComercialFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -553,18 +712,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/almoxarifado/instrucao
+    // inusitta/almoxarifado/instrucao
 
     public function indexLavorattoAlmoxarifadoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'almoxarifado');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Almoxarifado')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -574,18 +746,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/almoxarifado/procedimento
+    // inusitta/almoxarifado/procedimento
 
     public function indexLavorattoAlmoxarifadoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'almoxarifado');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Almoxarifado')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -595,18 +780,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/almoxarifado/registro
+    // inusitta/almoxarifado/registro
 
     public function indexLavorattoAlmoxarifadoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'almoxarifado');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Almoxarifado')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -616,18 +814,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/almoxarifado/fomulario
+    // inusitta/almoxarifado/fomulario
 
     public function indexLavorattoAlmoxarifadoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'almoxarifado');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Almoxarifado')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -637,18 +848,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/assistencia/fomulario
+    // inusitta/assistencia/fomulario
 
     public function indexLavorattoAssistenciaFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'assistenca');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Assistencia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -658,18 +882,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/assistencia/registro
+    // inusitta/assistencia/registro
 
     public function indexLavorattoAssistenciaRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'assistencia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Assistencia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -679,18 +916,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/assistencia/procedimento
+    // inusitta/assistencia/procedimento
 
     public function indexLavorattoAssistenciaProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'assistencia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Assistencia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -700,18 +950,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/almoxarifado/instrucao
+    // inusitta/almoxarifado/instrucao
 
     public function indexLavorattoAssistenciaInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'assistencia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Assistencia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -721,18 +984,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/compras/formulario
+    // inusitta/compras/formulario
 
     public function indexLavorattoComprasFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'compras');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Compras')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -742,18 +1018,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/compras/registro
+    // inusitta/compras/registro
 
     public function indexLavorattoComprasRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'compras');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Compras')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -763,18 +1052,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/compras/procedimento
+    // inusitta/compras/procedimento
 
     public function indexLavorattoComprasProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'compras');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Compras')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -784,18 +1086,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/compras/instrucao
+    // inusitta/compras/instrucao
 
     public function indexLavorattoComprasInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'compras');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Compras')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -805,18 +1120,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/contabilidade/formulario
+    // inusitta/contabilidade/formulario
 
     public function indexLavorattoContabilidadeFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contabilidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Contabilidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -826,18 +1154,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/contabilidade/registro
+    // inusitta/contabilidade/registro
 
     public function indexLavorattoContabilidadeRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contabilidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Contabilidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -847,18 +1188,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/contabilidade/procedimento
+    // inusitta/contabilidade/procedimento
 
     public function indexLavorattoContabilidadeProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contabilidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Contabilidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -868,18 +1222,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/contabilidade/procedimento
+    // inusitta/contabilidade/procedimento
 
     public function indexLavorattoContabilidadeInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contabilidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Contabilidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -889,18 +1256,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/contas a pagar/formulario
+    // inusitta/contas a pagar/formulario
 
     public function indexLavorattoContasPagarFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a pagar');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a pagar')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulário');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -910,18 +1290,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/contas a pagar/registro
+    // inusitta/contas a pagar/registro
 
     public function indexLavorattoContasPagarRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a pagar');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a pagar')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'resgistro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -931,18 +1324,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/contas a pagar/procedimento
+    // inusitta/contas a pagar/procedimento
 
     public function indexLavorattoContasPagarProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a pagar');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a pagar')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -952,18 +1358,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/contas a pagar/registro
+    // inusitta/contas a pagar/registro
 
     public function indexLavorattoContasPagarInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a pagar');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a pagar')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -973,18 +1392,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/contas a receber/formulario
+    // inusitta/contas a receber/formulario
 
     public function indexLavorattoContasReceberFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a receber');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a receber')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -994,18 +1426,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/contas a receber/registro
+    // inusitta/contas a receber/registro
 
     public function indexLavorattoContasReceberRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a receber');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a receber')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1015,18 +1460,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/contas a receber/procedimento
+    // inusitta/contas a receber/procedimento
 
     public function indexLavorattoContasReceberProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a receber');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a receber')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1036,18 +1494,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/contas a receber/instrucao
+    // inusitta/contas a receber/instrucao
 
     public function indexLavorattoContasReceberInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a receber');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a receber')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1057,18 +1528,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/custo/formulario
+    // inusitta/custo/formulario
 
     public function indexLavorattoCustoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'custo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Custo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1078,18 +1562,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/custo/registro
+    // inusitta/custo/registro
 
     public function indexLavorattoCustoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'custo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Custo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1099,18 +1596,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/custo/procedimento
+    // inusitta/custo/procedimento
 
     public function indexLavorattoCustoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'custo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Custo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1120,18 +1630,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/custo/instrucao
+    // inusitta/custo/instrucao
 
     public function indexLavorattoCustoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'custo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Custo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1141,18 +1664,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/design/formulario
+    // inusitta/design/formulario
 
     public function indexLavorattoDesignFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'design');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Design')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1162,18 +1698,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/design/registro
+    // inusitta/design/registro
 
     public function indexLavorattoDesignRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'design');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Design')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1183,18 +1732,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/design/procedimento
+    // inusitta/design/procedimento
 
     public function indexLavorattoDesignProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'design');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Design')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1204,18 +1766,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/design/instrucao
+    // inusitta/design/instrucao
 
     public function indexLavorattoDesignInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'design');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Design')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1223,20 +1798,38 @@ class LavorattoController extends Controller
     }
 
     //=========================================
+    
+    
+    //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
 
     //=========================================
-    // lavoratto/diretoria administrativa/formulario
+    // inusitta/diretoria administrativa/formulario
 
     public function indexLavorattoDiretoriaAdministrativaFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria administrativa');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria administrativa')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1246,18 +1839,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/diretoria administrativa/registro
+    // inusitta/diretoria administrativa/registro
 
     public function indexLavorattoDiretoriaAdministrativaRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria administrativa');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Administrativa')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1267,18 +1873,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/diretoria administrativa/procedimento
+    // inusitta/diretoria administrativa/procedimento
 
     public function indexLavorattoDiretoriaAdministrativaProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria administrativa');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Administrativa')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1288,18 +1907,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/diretoria administrativa/instrucao
+    // inusitta/diretoria administrativa/instrucao
 
     public function indexLavorattoDiretoriaAdministrativaInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria administrativa');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Administrativa')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1309,18 +1941,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/diretoria comercial/ formulario
+    // inusitta/diretoria comercial/ formulario
 
     public function indexLavorattoDiretoriaComercialFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1330,18 +1975,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/diretoria comercial/ registro
+    // inusitta/diretoria comercial/ registro
 
     public function indexLavorattoDiretoriaComercialRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1351,18 +2009,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/diretoria comercial/ procedimento
+    // inusitta/diretoria comercial/ procedimento
 
     public function indexLavorattoDiretoriaComercialProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1372,18 +2043,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/diretoria comercial/ instrucao
+    // inusitta/diretoria comercial/ instrucao
 
     public function indexLavorattoDiretoriaComercialInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1393,18 +2077,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/diretoria industrial/ formulario
+    // inusitta/diretoria industrial/ formulario
 
     public function indexLavorattoDiretoriaIndustrialFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria industrial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Industrial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1414,18 +2111,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/diretoria industrial/ registro
+    // inusitta/diretoria industrial/ registro
 
     public function indexLavorattoDiretoriaIndustrialRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria industrial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Industrial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1435,18 +2145,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/diretoria industrial/ procedimento
+    // inusitta/diretoria industrial/ procedimento
 
     public function indexLavorattoDiretoriaIndustrialProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria industrial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Industrial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1456,18 +2179,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/diretoria industrial/ instrucao
+    // inusitta/diretoria industrial/ instrucao
 
     public function indexLavorattoDiretoriaIndustrialInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria industrial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Industrial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1477,18 +2213,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/ecommerce/ formulario
+    // inusitta/ecommerce/ formulario
 
     public function indexLavorattoEcommerceFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ecommerce');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ecommerce')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1498,18 +2247,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/ecommerce/ registro
+    // inusitta/ecommerce/ registro
 
     public function indexLavorattoEcommerceRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ecommerce');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ecommerce')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1519,18 +2281,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/ecommerce/ procedimento
+    // inusitta/ecommerce/ procedimento
 
     public function indexLavorattoEcommerceProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ecommerce');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ecommerce')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1540,18 +2315,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/ecommerce/ instrucao
+    // inusitta/ecommerce/ instrucao
 
     public function indexLavorattoEcommerceInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ecommerce');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ecommerce')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1561,18 +2349,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/engenharia/ formulario
+    // inusitta/engenharia/ formulario
 
     public function indexLavorattoEngenhariaFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'engenharia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Engenharia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1582,18 +2383,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/engenharia/ registro
+    // inusitta/engenharia/ registro
 
     public function indexLavorattoEngenhariaRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'engenharia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Engenharia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1603,18 +2417,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/engenharia/ procedimento
+    // inusitta/engenharia/ procedimento
 
     public function indexLavorattoEngenhariaProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'engenharia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Engenharia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1624,18 +2451,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/engenharia/ instrucao
+    // inusitta/engenharia/ instrucao
 
     public function indexLavorattoEngenhariaInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'engenharia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Engenharia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1645,18 +2485,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/expedicao/ formulario
+    // inusitta/expedicao/ formulario
 
     public function indexLavorattoExpedicaoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'expedicao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Expedicao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1666,18 +2519,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/expedicao/ registro
+    // inusitta/expedicao/ registro
 
     public function indexLavorattoExpedicaoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'expedicao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Expedicao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1687,18 +2553,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/expedicao/ procedimento
+    // inusitta/expedicao/ procedimento
 
     public function indexLavorattoExpedicaoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'expedicao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Expedicao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1708,18 +2587,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/expedicao/ instrucao
+    // inusitta/expedicao/ instrucao
 
     public function indexLavorattoExpedicaoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'expedicao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Expedicao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1729,18 +2621,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/exportacao/ formulario
+    // inusitta/exportacao/ formulario
 
     public function indexLavorattoExportacaoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'exportacao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Exportacao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1750,18 +2655,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/exportacao/ registro
+    // inusitta/exportacao/ registro
 
     public function indexLavorattoExportacaoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'exportacao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Exportacao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1771,18 +2689,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/exportacao/ procedimento
+    // inusitta/exportacao/ procedimento
 
     public function indexLavorattoExportacaoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'exportacao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Exportacao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1792,18 +2723,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/exportacao/ instrucao
+    // inusitta/exportacao/ instrucao
 
     public function indexLavorattoExportacaoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'exportacao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Exportacao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1813,18 +2757,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/faturamento/ formulario
+    // inusitta/faturamento/ formulario
 
     public function indexLavorattoFaturamentoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'faturamento');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Faturamento')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1834,18 +2791,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/faturamento/ registro
+    // inusitta/faturamento/ registro
 
     public function indexLavorattoFaturamentoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'faturamento');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Faturamento')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1855,18 +2825,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/faturamento/ procedimento
+    // inusitta/faturamento/ procedimento
 
     public function indexLavorattoFaturamentoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'faturamento');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Faturamento')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1876,18 +2859,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/faturamento/ instrucao
+    // inusitta/faturamento/ instrucao
 
     public function indexLavorattoFaturamentoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'faturamento');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Faturamento')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1897,18 +2893,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/manutencao/ formulario
+    // inusitta/manutencao/ formulario
 
     public function indexLavorattoManutencaoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'manutencao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Manutencao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1918,18 +2927,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/manutencao/ registro
+    // inusitta/manutencao/ registro
 
     public function indexLavorattoManutencaoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'manutencao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Manutencao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1939,18 +2961,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/manutencao/ procedimento
+    // inusitta/manutencao/ procedimento
 
     public function indexLavorattoManutencaoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'manutencao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Manutencao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1960,18 +2995,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/manutencao/ instrucao
+    // inusitta/manutencao/ instrucao
 
     public function indexLavorattoManutencaoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'manutencao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Manutencao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1981,18 +3029,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/ped/ formulario
+    // inusitta/ped/ formulario
 
     public function indexLavorattoPedFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'p&d');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'P&d')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2002,18 +3063,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/ped/ registro
+    // inusitta/ped/ registro
 
     public function indexLavorattoPedRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'p&d');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'P&d')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2023,18 +3097,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/ped/ procedimento
+    // inusitta/ped/ procedimento
 
     public function indexLavorattoPedProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'p&d');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'P&d')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2044,18 +3131,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/ped/ instrucao
+    // inusitta/ped/ instrucao
 
     public function indexLavorattoPedInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'p&d');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'P&d')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2065,18 +3165,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/pmo/ formulario
+    // inusitta/pmo/ formulario
 
     public function indexLavorattoPmoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'pmo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Pmo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2086,18 +3199,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/pmo/ registro
+    // inusitta/pmo/ registro
 
     public function indexLavorattoPmoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'pmo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Pmo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2107,18 +3233,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/pmo/ procedimento
+    // inusitta/pmo/ procedimento
 
     public function indexLavorattoPmoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'pmo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Pmo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2128,18 +3267,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/pmo/ instrucao
+    // inusitta/pmo/ instrucao
 
     public function indexLavorattoPmoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'pmo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Pmo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2149,18 +3301,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/ppcp/ formulario
+    // inusitta/ppcp/ formulario
 
     public function indexLavorattoPpcpFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ppcp');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ppcp')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2170,18 +3335,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/ppcp/ registro
+    // inusitta/ppcp/ registro
 
     public function indexLavorattoPpcpRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ppcp');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ppcp')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2191,18 +3369,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/ppcp/ procedimento
+    // inusitta/ppcp/ procedimento
 
     public function indexLavorattoPpcpProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ppcp');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ppcp')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2212,18 +3403,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/ppcp/ instrucao
+    // inusitta/ppcp/ instrucao
 
     public function indexLavorattoPpcpInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ppcp');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ppcp')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2233,18 +3437,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/qualidade/ formulario
+    // inusitta/qualidade/ formulario
 
     public function indexLavorattoQualidadeFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'qualidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Qualidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2254,18 +3471,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/qualidade/ registro
+    // inusitta/qualidade/ registro
 
     public function indexLavorattoQualidadeRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'qualidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Qualidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2275,18 +3505,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/qualidade/ procedimento
+    // inusitta/qualidade/ procedimento
 
     public function indexLavorattoQualidadeProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'qualidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Qualidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2296,18 +3539,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/qualidade/ instrucao
+    // inusitta/qualidade/ instrucao
 
     public function indexLavorattoQualidadeInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'qualidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Qualidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2317,18 +3573,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/recepcao/ formulario
+    // inusitta/recepcao/ formulario
 
     public function indexLavorattoRecepcaoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'recepcao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Recepcao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2338,18 +3607,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/recepcao/ registro
+    // inusitta/recepcao/ registro
 
     public function indexLavorattoRecepcaoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'recepcao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Recepcao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2359,18 +3641,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/recepcao/ procedimento
+    // inusitta/recepcao/ procedimento
 
     public function indexLavorattoRecepcaoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'recepcao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Recepcao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2380,18 +3675,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/recepcao/ instrucao
+    // inusitta/recepcao/ instrucao
 
     public function indexLavorattoRecepcaoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'recepcao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Recepcao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2401,18 +3709,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/restaurante/ formulario
+    // inusitta/restaurante/ formulario
 
     public function indexLavorattoRestauranteFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'restaurante');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Restaurante')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2422,18 +3743,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/restaurante/ registro
+    // inusitta/restaurante/ registro
 
     public function indexLavorattoRestauranteRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'restaurante');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Restaurante')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2443,18 +3777,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/restaurante/ procedimento
+    // inusitta/restaurante/ procedimento
 
     public function indexLavorattoRestauranteProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'restaurante');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Restaurante')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2464,18 +3811,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/restaurante/ instrucao
+    // inusitta/restaurante/ instrucao
 
     public function indexLavorattoRestauranteInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'restaurante');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Restaurante')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2485,18 +3845,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/rh/ formulario
+    // inusitta/rh/ formulario
 
     public function indexLavorattoRhFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'rh');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Rh')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2506,18 +3879,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/rh/ registro
+    // inusitta/rh/ registro
 
     public function indexLavorattoRhRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'rh');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Rh')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2527,18 +3913,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/rh/ procedimento
+    // inusitta/rh/ procedimento
 
     public function indexLavorattoRhProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'rh');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Rh')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2548,18 +3947,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/rh/ instrucao
+    // inusitta/rh/ instrucao
 
     public function indexLavorattoRhInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'rh');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Rh')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2569,18 +3981,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/sac/ formulario
+    // inusitta/sac/ formulario
 
     public function indexLavorattoSacFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sac');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sac')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2590,18 +4015,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/sac/ registro
+    // inusitta/sac/ registro
 
     public function indexLavorattoSacRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sac');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sac')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2611,18 +4049,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/sac/ procedimento
+    // inusitta/sac/ procedimento
 
     public function indexLavorattoSacProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sac');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sac')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2632,18 +4083,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/sac/ instrucao
+    // inusitta/sac/ instrucao
 
     public function indexLavorattoSacInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sac');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sac')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2653,18 +4117,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/sesmt/ formulario
+    // inusitta/sesmt/ formulario
 
     public function indexLavorattoSesmtFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sesmt');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sesmt')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2674,18 +4151,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/sesmt/ registro
+    // inusitta/sesmt/ registro
 
     public function indexLavorattoSesmtRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sesmt');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sesmt')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2695,18 +4185,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/sesmt/ procedimento
+    // inusitta/sesmt/ procedimento
 
     public function indexLavorattoSesmtProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sesmt');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sesmt')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2716,18 +4219,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/sesmt/ instrucao
+    // inusitta/sesmt/ instrucao
 
     public function indexLavorattoSesmtInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sesmt');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sesmt')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2737,18 +4253,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/projetos/ formulario
+    // inusitta/projetos/ formulario
 
     public function indexLavorattoProjetosFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'projetos');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Projetos')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2758,18 +4287,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/projetos/ registro
+    // inusitta/projetos/ registro
 
     public function indexLavorattoProjetosRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'projetos');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Projetos')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2779,18 +4321,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/projetos/ procedimento
+    // inusitta/projetos/ procedimento
 
     public function indexLavorattoProjetosProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'projetos');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Projetos')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2800,18 +4355,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/projetos/ instrucao
+    // inusitta/projetos/ instrucao
 
     public function indexLavorattoProjetosInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'projetos');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Projetos')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2821,18 +4389,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/transporte/ formulario
+    // inusitta/transporte/ formulario
 
     public function indexLavorattoTransporteFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'transporte');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Transporte')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2842,18 +4423,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/transporte/ registro
+    // inusitta/transporte/ registro
 
     public function indexLavorattoTransporteRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'transporte');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Transporte')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2863,18 +4457,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/transporte/ procedimento
+    // inusitta/transporte/ procedimento
 
     public function indexLavorattoTransporteProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'transporte');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Transporte')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2884,18 +4491,31 @@ class LavorattoController extends Controller
     //=========================================
 
     //=========================================
-    // lavoratto/transporte/ instrucao
+    // inusitta/transporte/ instrucao
 
     public function indexLavorattoTransporteInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Lavoratto');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Lavoratto')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'transporte');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Transporte')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 

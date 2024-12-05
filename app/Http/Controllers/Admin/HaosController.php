@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\File;
+use App\Models\Company;
+use App\Models\Sector;
 
 class HaosController extends Controller
 {
@@ -300,15 +302,28 @@ class HaosController extends Controller
     //=========================================
     // Função Para Mostrar os arquivos da macro Instrução
 
-    public function indexHaosTiInstrucao(){
+    public function indexHaosTiInstrucao()
+    {
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Tecnologia da Informação');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Tecnologia da Informação')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
+        
+        ->whereHas('macro', function ($query) {
             $query->where('name_macro', 'instrução');
         })
         ->paginate(10);
@@ -324,14 +339,27 @@ class HaosController extends Controller
     public function indexHaosTiProcedimento(){
 
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Tecnologia da Informação');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Tecnologia da Informação')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'Procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'procedimento');
         })
         ->paginate(10);
 
@@ -346,14 +374,27 @@ class HaosController extends Controller
     public function indexHaosTiRegistro(){
 
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Tecnologia da Informação');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Tecnologia da Informação')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'Registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'registro');
         })
         ->paginate(10);
 
@@ -368,14 +409,27 @@ class HaosController extends Controller
     public function indexHaosTiFormulario(){
 
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Tecnologia da Informação');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Tecnologia da Informação')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'Formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'formulario');
         })
         ->paginate(10);
 
@@ -390,14 +444,27 @@ class HaosController extends Controller
 
     public function indexHaosMarketingInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Marketing');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Marketing')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'instrução');
         })
         ->paginate(10);
 
@@ -411,15 +478,29 @@ class HaosController extends Controller
 
     public function indexHaosMarketingProcedimento(){
 
-        $files = File::whereHas('company', function($query){
-            $query->where('name_empresa','Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor','Marketing');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Marketing')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query){
-            $query->where('name_macro','procedimento');
-        }) -> paginate(10);
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'procedimento');
+        })
+        -> paginate(10);
 
         return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
@@ -431,15 +512,28 @@ class HaosController extends Controller
 
     public function indexHaosMarketingRegistro(){
 
-        $files = File::whereHas('company', function($query){
-            $query->where('name_empresa','Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor','Marketing');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Marketing')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query){
-            $query->where('name_macro','registro');
-        }) -> paginate(10);
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'registro');
+        })-> paginate(10);
 
         return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
@@ -451,15 +545,28 @@ class HaosController extends Controller
 
     public function indexHaosMarketingFormulario(){
 
-        $files = File::whereHas('company', function($query){
-            $query->where('name_empresa','Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor','Marketing');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Marketing')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query){
-            $query->where('name_macro','formulario');
-        }) -> paginate(10);
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'formulário');
+        })-> paginate(10);
 
         return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
@@ -467,18 +574,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/comercial/instrucao
+    // inusitta/comercial/instrucao
 
     public function indexHaosComercialInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -488,18 +608,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/comercial/procedimento
+    // inusitta/comercial/procedimento
 
     public function indexHaosComercialProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -509,18 +642,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/comercial/registro
+    // inusitta/comercial/registro
 
     public function indexHaosComercialRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -530,18 +676,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/comercial/registro
+    // inusitta/comercial/registro
 
     public function indexHaosComercialFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -551,18 +710,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/almoxarifado/instrucao
+    // inusitta/almoxarifado/instrucao
 
     public function indexHaosAlmoxarifadoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'almoxarifado');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Almoxarifado')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -572,18 +744,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/almoxarifado/procedimento
+    // inusitta/almoxarifado/procedimento
 
     public function indexHaosAlmoxarifadoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'almoxarifado');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Almoxarifado')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -593,18 +778,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/almoxarifado/registro
+    // inusitta/almoxarifado/registro
 
     public function indexHaosAlmoxarifadoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'almoxarifado');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Almoxarifado')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -614,18 +812,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/almoxarifado/fomulario
+    // inusitta/almoxarifado/fomulario
 
     public function indexHaosAlmoxarifadoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'almoxarifado');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Almoxarifado')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -635,18 +846,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/assistencia/fomulario
+    // inusitta/assistencia/fomulario
 
     public function indexHaosAssistenciaFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'assistenca');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Assistencia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -656,18 +880,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/assistencia/registro
+    // inusitta/assistencia/registro
 
     public function indexHaosAssistenciaRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'assistencia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Assistencia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -677,18 +914,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/assistencia/procedimento
+    // inusitta/assistencia/procedimento
 
     public function indexHaosAssistenciaProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'assistencia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Assistencia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -698,18 +948,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/almoxarifado/instrucao
+    // inusitta/almoxarifado/instrucao
 
     public function indexHaosAssistenciaInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'assistencia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Assistencia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -719,18 +982,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/compras/formulario
+    // inusitta/compras/formulario
 
     public function indexHaosComprasFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'compras');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Compras')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -740,18 +1016,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/compras/registro
+    // inusitta/compras/registro
 
     public function indexHaosComprasRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'compras');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Compras')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -761,18 +1050,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/compras/procedimento
+    // inusitta/compras/procedimento
 
     public function indexHaosComprasProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'compras');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Compras')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -782,18 +1084,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/compras/instrucao
+    // inusitta/compras/instrucao
 
     public function indexHaosComprasInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'compras');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Compras')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -803,18 +1118,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/contabilidade/formulario
+    // inusitta/contabilidade/formulario
 
     public function indexHaosContabilidadeFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contabilidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Contabilidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -824,18 +1152,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/contabilidade/registro
+    // inusitta/contabilidade/registro
 
     public function indexHaosContabilidadeRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contabilidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Contabilidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -845,18 +1186,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/contabilidade/procedimento
+    // inusitta/contabilidade/procedimento
 
     public function indexHaosContabilidadeProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contabilidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Contabilidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -866,18 +1220,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/contabilidade/procedimento
+    // inusitta/contabilidade/procedimento
 
     public function indexHaosContabilidadeInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contabilidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Contabilidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -887,18 +1254,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/contas a pagar/formulario
+    // inusitta/contas a pagar/formulario
 
     public function indexHaosContasPagarFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a pagar');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a pagar')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulário');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -908,18 +1288,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/contas a pagar/registro
+    // inusitta/contas a pagar/registro
 
     public function indexHaosContasPagarRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a pagar');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a pagar')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'resgistro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -929,18 +1322,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/contas a pagar/procedimento
+    // inusitta/contas a pagar/procedimento
 
     public function indexHaosContasPagarProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a pagar');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a pagar')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -950,18 +1356,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/contas a pagar/registro
+    // inusitta/contas a pagar/registro
 
     public function indexHaosContasPagarInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a pagar');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a pagar')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -971,18 +1390,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/contas a receber/formulario
+    // inusitta/contas a receber/formulario
 
     public function indexHaosContasReceberFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a receber');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a receber')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -992,18 +1424,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/contas a receber/registro
+    // inusitta/contas a receber/registro
 
     public function indexHaosContasReceberRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a receber');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a receber')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1013,18 +1458,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/contas a receber/procedimento
+    // inusitta/contas a receber/procedimento
 
     public function indexHaosContasReceberProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a receber');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a receber')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1034,18 +1492,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/contas a receber/instrucao
+    // inusitta/contas a receber/instrucao
 
     public function indexHaosContasReceberInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a receber');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a receber')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1055,18 +1526,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/custo/formulario
+    // inusitta/custo/formulario
 
     public function indexHaosCustoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'custo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Custo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1076,18 +1560,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/custo/registro
+    // inusitta/custo/registro
 
     public function indexHaosCustoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'custo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Custo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1097,18 +1594,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/custo/procedimento
+    // inusitta/custo/procedimento
 
     public function indexHaosCustoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'custo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Custo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1118,18 +1628,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/custo/instrucao
+    // inusitta/custo/instrucao
 
     public function indexHaosCustoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'custo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Custo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1139,18 +1662,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/design/formulario
+    // inusitta/design/formulario
 
     public function indexHaosDesignFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'design');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Design')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1160,18 +1696,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/design/registro
+    // inusitta/design/registro
 
     public function indexHaosDesignRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'design');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Design')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1181,18 +1730,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/design/procedimento
+    // inusitta/design/procedimento
 
     public function indexHaosDesignProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'design');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Design')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1202,18 +1764,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/design/instrucao
+    // inusitta/design/instrucao
 
     public function indexHaosDesignInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'design');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Design')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1221,20 +1796,38 @@ class HaosController extends Controller
     }
 
     //=========================================
+    
+    
+    //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
 
     //=========================================
-    // haos/diretoria administrativa/formulario
+    // inusitta/diretoria administrativa/formulario
 
     public function indexHaosDiretoriaAdministrativaFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria administrativa');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria administrativa')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1244,18 +1837,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/diretoria administrativa/registro
+    // inusitta/diretoria administrativa/registro
 
     public function indexHaosDiretoriaAdministrativaRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria administrativa');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Administrativa')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1265,18 +1871,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/diretoria administrativa/procedimento
+    // inusitta/diretoria administrativa/procedimento
 
     public function indexHaosDiretoriaAdministrativaProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria administrativa');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Administrativa')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1286,18 +1905,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/diretoria administrativa/instrucao
+    // inusitta/diretoria administrativa/instrucao
 
     public function indexHaosDiretoriaAdministrativaInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria administrativa');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Administrativa')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1307,18 +1939,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/diretoria comercial/ formulario
+    // inusitta/diretoria comercial/ formulario
 
     public function indexHaosDiretoriaComercialFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1328,18 +1973,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/diretoria comercial/ registro
+    // inusitta/diretoria comercial/ registro
 
     public function indexHaosDiretoriaComercialRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1349,18 +2007,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/diretoria comercial/ procedimento
+    // inusitta/diretoria comercial/ procedimento
 
     public function indexHaosDiretoriaComercialProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1370,18 +2041,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/diretoria comercial/ instrucao
+    // inusitta/diretoria comercial/ instrucao
 
     public function indexHaosDiretoriaComercialInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1391,18 +2075,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/diretoria industrial/ formulario
+    // inusitta/diretoria industrial/ formulario
 
     public function indexHaosDiretoriaIndustrialFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria industrial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Industrial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1412,18 +2109,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/diretoria industrial/ registro
+    // inusitta/diretoria industrial/ registro
 
     public function indexHaosDiretoriaIndustrialRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria industrial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Industrial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1433,18 +2143,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/diretoria industrial/ procedimento
+    // inusitta/diretoria industrial/ procedimento
 
     public function indexHaosDiretoriaIndustrialProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria industrial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Industrial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1454,18 +2177,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/diretoria industrial/ instrucao
+    // inusitta/diretoria industrial/ instrucao
 
     public function indexHaosDiretoriaIndustrialInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria industrial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Industrial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1475,18 +2211,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/ecommerce/ formulario
+    // inusitta/ecommerce/ formulario
 
     public function indexHaosEcommerceFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ecommerce');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ecommerce')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1496,18 +2245,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/ecommerce/ registro
+    // inusitta/ecommerce/ registro
 
     public function indexHaosEcommerceRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ecommerce');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ecommerce')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1517,18 +2279,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/ecommerce/ procedimento
+    // inusitta/ecommerce/ procedimento
 
     public function indexHaosEcommerceProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ecommerce');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ecommerce')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1538,18 +2313,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/ecommerce/ instrucao
+    // inusitta/ecommerce/ instrucao
 
     public function indexHaosEcommerceInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ecommerce');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ecommerce')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1559,18 +2347,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/engenharia/ formulario
+    // inusitta/engenharia/ formulario
 
     public function indexHaosEngenhariaFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'engenharia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Engenharia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1580,18 +2381,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/engenharia/ registro
+    // inusitta/engenharia/ registro
 
     public function indexHaosEngenhariaRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'engenharia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Engenharia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1601,18 +2415,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/engenharia/ procedimento
+    // inusitta/engenharia/ procedimento
 
     public function indexHaosEngenhariaProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'engenharia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Engenharia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1622,18 +2449,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/engenharia/ instrucao
+    // inusitta/engenharia/ instrucao
 
     public function indexHaosEngenhariaInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'engenharia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Engenharia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1643,18 +2483,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/expedicao/ formulario
+    // inusitta/expedicao/ formulario
 
     public function indexHaosExpedicaoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'expedicao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Expedicao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1664,18 +2517,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/expedicao/ registro
+    // inusitta/expedicao/ registro
 
     public function indexHaosExpedicaoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'expedicao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Expedicao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1685,18 +2551,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/expedicao/ procedimento
+    // inusitta/expedicao/ procedimento
 
     public function indexHaosExpedicaoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'expedicao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Expedicao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1706,18 +2585,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/expedicao/ instrucao
+    // inusitta/expedicao/ instrucao
 
     public function indexHaosExpedicaoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'expedicao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Expedicao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1727,18 +2619,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/exportacao/ formulario
+    // inusitta/exportacao/ formulario
 
     public function indexHaosExportacaoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'exportacao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Exportacao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1748,18 +2653,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/exportacao/ registro
+    // inusitta/exportacao/ registro
 
     public function indexHaosExportacaoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'exportacao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Exportacao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1769,18 +2687,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/exportacao/ procedimento
+    // inusitta/exportacao/ procedimento
 
     public function indexHaosExportacaoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'exportacao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Exportacao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1790,18 +2721,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/exportacao/ instrucao
+    // inusitta/exportacao/ instrucao
 
     public function indexHaosExportacaoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'exportacao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Exportacao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1811,18 +2755,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/faturamento/ formulario
+    // inusitta/faturamento/ formulario
 
     public function indexHaosFaturamentoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'faturamento');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Faturamento')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1832,18 +2789,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/faturamento/ registro
+    // inusitta/faturamento/ registro
 
     public function indexHaosFaturamentoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'faturamento');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Faturamento')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1853,18 +2823,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/faturamento/ procedimento
+    // inusitta/faturamento/ procedimento
 
     public function indexHaosFaturamentoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'faturamento');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Faturamento')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1874,18 +2857,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/faturamento/ instrucao
+    // inusitta/faturamento/ instrucao
 
     public function indexHaosFaturamentoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'faturamento');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Faturamento')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1895,18 +2891,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/manutencao/ formulario
+    // inusitta/manutencao/ formulario
 
     public function indexHaosManutencaoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'manutencao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Manutencao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1916,18 +2925,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/manutencao/ registro
+    // inusitta/manutencao/ registro
 
     public function indexHaosManutencaoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'manutencao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Manutencao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1937,18 +2959,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/manutencao/ procedimento
+    // inusitta/manutencao/ procedimento
 
     public function indexHaosManutencaoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'manutencao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Manutencao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1958,18 +2993,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/manutencao/ instrucao
+    // inusitta/manutencao/ instrucao
 
     public function indexHaosManutencaoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'manutencao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Manutencao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1979,18 +3027,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/ped/ formulario
+    // inusitta/ped/ formulario
 
     public function indexHaosPedFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'p&d');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'P&d')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2000,18 +3061,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/ped/ registro
+    // inusitta/ped/ registro
 
     public function indexHaosPedRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'p&d');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'P&d')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2021,18 +3095,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/ped/ procedimento
+    // inusitta/ped/ procedimento
 
     public function indexHaosPedProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'p&d');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'P&d')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2042,18 +3129,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/ped/ instrucao
+    // inusitta/ped/ instrucao
 
     public function indexHaosPedInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'p&d');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'P&d')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2063,18 +3163,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/pmo/ formulario
+    // inusitta/pmo/ formulario
 
     public function indexHaosPmoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'pmo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Pmo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2084,18 +3197,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/pmo/ registro
+    // inusitta/pmo/ registro
 
     public function indexHaosPmoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'pmo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Pmo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2105,18 +3231,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/pmo/ procedimento
+    // inusitta/pmo/ procedimento
 
     public function indexHaosPmoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'pmo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Pmo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2126,18 +3265,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/pmo/ instrucao
+    // inusitta/pmo/ instrucao
 
     public function indexHaosPmoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'pmo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Pmo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2147,18 +3299,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/ppcp/ formulario
+    // inusitta/ppcp/ formulario
 
     public function indexHaosPpcpFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ppcp');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ppcp')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2168,18 +3333,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/ppcp/ registro
+    // inusitta/ppcp/ registro
 
     public function indexHaosPpcpRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ppcp');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ppcp')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2189,18 +3367,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/ppcp/ procedimento
+    // inusitta/ppcp/ procedimento
 
     public function indexHaosPpcpProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ppcp');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ppcp')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2210,18 +3401,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/ppcp/ instrucao
+    // inusitta/ppcp/ instrucao
 
     public function indexHaosPpcpInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ppcp');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ppcp')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2231,18 +3435,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/qualidade/ formulario
+    // inusitta/qualidade/ formulario
 
     public function indexHaosQualidadeFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'qualidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Qualidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2252,18 +3469,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/qualidade/ registro
+    // inusitta/qualidade/ registro
 
     public function indexHaosQualidadeRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'qualidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Qualidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2273,18 +3503,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/qualidade/ procedimento
+    // inusitta/qualidade/ procedimento
 
     public function indexHaosQualidadeProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'qualidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Qualidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2294,18 +3537,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/qualidade/ instrucao
+    // inusitta/qualidade/ instrucao
 
     public function indexHaosQualidadeInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'qualidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Qualidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2315,18 +3571,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/recepcao/ formulario
+    // inusitta/recepcao/ formulario
 
     public function indexHaosRecepcaoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'recepcao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Recepcao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2336,18 +3605,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/recepcao/ registro
+    // inusitta/recepcao/ registro
 
     public function indexHaosRecepcaoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'recepcao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Recepcao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2357,18 +3639,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/recepcao/ procedimento
+    // inusitta/recepcao/ procedimento
 
     public function indexHaosRecepcaoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'recepcao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Recepcao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2378,18 +3673,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/recepcao/ instrucao
+    // inusitta/recepcao/ instrucao
 
     public function indexHaosRecepcaoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'recepcao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Recepcao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2399,18 +3707,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/restaurante/ formulario
+    // inusitta/restaurante/ formulario
 
     public function indexHaosRestauranteFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'restaurante');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Restaurante')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2420,18 +3741,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/restaurante/ registro
+    // inusitta/restaurante/ registro
 
     public function indexHaosRestauranteRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'restaurante');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Restaurante')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2441,18 +3775,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/restaurante/ procedimento
+    // inusitta/restaurante/ procedimento
 
     public function indexHaosRestauranteProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'restaurante');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Restaurante')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2462,18 +3809,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/restaurante/ instrucao
+    // inusitta/restaurante/ instrucao
 
     public function indexHaosRestauranteInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'restaurante');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Restaurante')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2483,18 +3843,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/rh/ formulario
+    // inusitta/rh/ formulario
 
     public function indexHaosRhFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'rh');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Rh')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2504,18 +3877,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/rh/ registro
+    // inusitta/rh/ registro
 
     public function indexHaosRhRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'rh');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Rh')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2525,18 +3911,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/rh/ procedimento
+    // inusitta/rh/ procedimento
 
     public function indexHaosRhProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'rh');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Rh')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2546,18 +3945,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/rh/ instrucao
+    // inusitta/rh/ instrucao
 
     public function indexHaosRhInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'rh');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Rh')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2567,18 +3979,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/sac/ formulario
+    // inusitta/sac/ formulario
 
     public function indexHaosSacFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sac');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sac')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2588,18 +4013,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/sac/ registro
+    // inusitta/sac/ registro
 
     public function indexHaosSacRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sac');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sac')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2609,18 +4047,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/sac/ procedimento
+    // inusitta/sac/ procedimento
 
     public function indexHaosSacProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sac');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sac')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2630,18 +4081,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/sac/ instrucao
+    // inusitta/sac/ instrucao
 
     public function indexHaosSacInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sac');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sac')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2651,18 +4115,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/sesmt/ formulario
+    // inusitta/sesmt/ formulario
 
     public function indexHaosSesmtFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sesmt');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sesmt')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2672,18 +4149,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/sesmt/ registro
+    // inusitta/sesmt/ registro
 
     public function indexHaosSesmtRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sesmt');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sesmt')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2693,18 +4183,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/sesmt/ procedimento
+    // inusitta/sesmt/ procedimento
 
     public function indexHaosSesmtProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sesmt');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sesmt')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2714,18 +4217,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/sesmt/ instrucao
+    // inusitta/sesmt/ instrucao
 
     public function indexHaosSesmtInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sesmt');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sesmt')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2735,18 +4251,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/projetos/ formulario
+    // inusitta/projetos/ formulario
 
     public function indexHaosProjetosFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'projetos');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Projetos')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2756,18 +4285,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/projetos/ registro
+    // inusitta/projetos/ registro
 
     public function indexHaosProjetosRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'projetos');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Projetos')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2777,18 +4319,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/projetos/ procedimento
+    // inusitta/projetos/ procedimento
 
     public function indexHaosProjetosProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'projetos');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Projetos')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2798,18 +4353,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/projetos/ instrucao
+    // inusitta/projetos/ instrucao
 
     public function indexHaosProjetosInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'projetos');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Projetos')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2819,18 +4387,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/transporte/ formulario
+    // inusitta/transporte/ formulario
 
     public function indexHaosTransporteFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'transporte');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Transporte')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2840,18 +4421,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/transporte/ registro
+    // inusitta/transporte/ registro
 
     public function indexHaosTransporteRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'transporte');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Transporte')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2861,18 +4455,31 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/transporte/ procedimento
+    // inusitta/transporte/ procedimento
 
     public function indexHaosTransporteProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'transporte');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Transporte')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2882,23 +4489,35 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
-    // haos/transporte/ instrucao
+    // inusitta/transporte/ instrucao
 
     public function indexHaosTransporteInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Haos');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'transporte');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Transporte')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
         return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
     
-    //=========================================
 }

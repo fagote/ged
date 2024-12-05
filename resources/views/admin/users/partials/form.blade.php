@@ -51,7 +51,7 @@
 <label for="setores">Selecione os Setores</label><br>
 @foreach ($sectors as $sector)
     <div>
-        <input type="checkbox" 
+        <input type="checkbox"  
             name="id_setor[]" 
             id="setor_{{ $sector->id_setor }}" 
             value="{{(int) $sector->id_setor }}"
@@ -79,15 +79,21 @@
 
 @if(Auth::check() && Auth::user()->id_permission == 1)
     <label for="id_permission">Selecione a Permissão do Usuário</label><br>
-    <select name="id_permission" class="select2">
-        @foreach ($permissions as $permission)
-            <option value="{{ $permission->id_permissao }}" 
-                {{ (isset($user) && $user->id_permission == $permission->id_permissao) || old('id_permission') == $permission->id_permissao ? 'selected' : '' }}>
+    @foreach ($permissions as $permission)
+        <div>
+            <input 
+                type="radio" 
+                name="id_permission" 
+                id="permission_{{ $permission->id_permissao }}" 
+                value="{{ $permission->id_permissao }}"
+                {{ (isset($user) && $user->id_permission == $permission->id_permissao) || old('id_permission') == $permission->id_permissao ? 'checked' : '' }}>
+            <label for="permission_{{ $permission->id_permissao }}">
                 {{ $permission->descricao }}
-            </option>
-        @endforeach
-    </select><br>
+            </label>
+        </div>
+    @endforeach
 @endif
+
 <br>
 
 <input type="password" name="password" placeholder="Senha">

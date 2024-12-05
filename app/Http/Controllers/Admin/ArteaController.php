@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\File;
+use App\Models\File; 
+use App\Models\Company;
+use App\Models\Sector;
 
 class ArteaController extends Controller
 {
@@ -301,15 +303,28 @@ class ArteaController extends Controller
     //=========================================
     // Função Para Mostrar os arquivos da macro Instrução
 
-    public function indexArteaTiInstrucao(){
+    public function indexArteaTiInstrucao()
+    {
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Tecnologia da Informação');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Tecnologia da Informação')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
+        
+        ->whereHas('macro', function ($query) {
             $query->where('name_macro', 'instrução');
         })
         ->paginate(10);
@@ -325,14 +340,27 @@ class ArteaController extends Controller
     public function indexArteaTiProcedimento(){
 
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Tecnologia da Informação');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Tecnologia da Informação')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'Procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'procedimento');
         })
         ->paginate(10);
 
@@ -347,14 +375,27 @@ class ArteaController extends Controller
     public function indexArteaTiRegistro(){
 
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Tecnologia da Informação');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Tecnologia da Informação')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'Registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'registro');
         })
         ->paginate(10);
 
@@ -369,14 +410,27 @@ class ArteaController extends Controller
     public function indexArteaTiFormulario(){
 
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Tecnologia da Informação');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Tecnologia da Informação')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'Formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'formulario');
         })
         ->paginate(10);
 
@@ -391,14 +445,27 @@ class ArteaController extends Controller
 
     public function indexArteaMarketingInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Marketing');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Marketing')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'instrução');
         })
         ->paginate(10);
 
@@ -412,15 +479,29 @@ class ArteaController extends Controller
 
     public function indexArteaMarketingProcedimento(){
 
-        $files = File::whereHas('company', function($query){
-            $query->where('name_empresa','Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor','Marketing');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Marketing')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query){
-            $query->where('name_macro','procedimento');
-        }) -> paginate(10);
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'procedimento');
+        })
+        -> paginate(10);
 
         return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
@@ -432,15 +513,28 @@ class ArteaController extends Controller
 
     public function indexArteaMarketingRegistro(){
 
-        $files = File::whereHas('company', function($query){
-            $query->where('name_empresa','Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor','Marketing');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Marketing')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query){
-            $query->where('name_macro','registro');
-        }) -> paginate(10);
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'registro');
+        })-> paginate(10);
 
         return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
@@ -452,15 +546,28 @@ class ArteaController extends Controller
 
     public function indexArteaMarketingFormulario(){
 
-        $files = File::whereHas('company', function($query){
-            $query->where('name_empresa','Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor','Marketing');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Marketing')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query){
-            $query->where('name_macro','formulario');
-        }) -> paginate(10);
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'formulário');
+        })-> paginate(10);
 
         return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
@@ -468,18 +575,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/comercial/instrucao
+    // inusitta/comercial/instrucao
 
     public function indexArteaComercialInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -489,18 +609,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/comercial/procedimento
+    // inusitta/comercial/procedimento
 
     public function indexArteaComercialProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -510,18 +643,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/comercial/registro
+    // inusitta/comercial/registro
 
     public function indexArteaComercialRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -531,18 +677,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/comercial/registro
+    // inusitta/comercial/registro
 
     public function indexArteaComercialFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -552,18 +711,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/almoxarifado/instrucao
+    // inusitta/almoxarifado/instrucao
 
     public function indexArteaAlmoxarifadoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'almoxarifado');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Almoxarifado')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -573,18 +745,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/almoxarifado/procedimento
+    // inusitta/almoxarifado/procedimento
 
     public function indexArteaAlmoxarifadoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'almoxarifado');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Almoxarifado')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -594,18 +779,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/almoxarifado/registro
+    // inusitta/almoxarifado/registro
 
     public function indexArteaAlmoxarifadoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'almoxarifado');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Almoxarifado')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -615,18 +813,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/almoxarifado/fomulario
+    // inusitta/almoxarifado/fomulario
 
     public function indexArteaAlmoxarifadoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'almoxarifado');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Almoxarifado')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -636,18 +847,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/assistencia/fomulario
+    // inusitta/assistencia/fomulario
 
     public function indexArteaAssistenciaFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'assistenca');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Assistencia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -657,18 +881,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/assistencia/registro
+    // inusitta/assistencia/registro
 
     public function indexArteaAssistenciaRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'assistencia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Assistencia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -678,18 +915,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/assistencia/procedimento
+    // inusitta/assistencia/procedimento
 
     public function indexArteaAssistenciaProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'assistencia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Assistencia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -699,18 +949,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/almoxarifado/instrucao
+    // inusitta/almoxarifado/instrucao
 
     public function indexArteaAssistenciaInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'assistencia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Assistencia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -720,18 +983,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/compras/formulario
+    // inusitta/compras/formulario
 
     public function indexArteaComprasFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'compras');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Compras')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -741,18 +1017,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/compras/registro
+    // inusitta/compras/registro
 
     public function indexArteaComprasRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'compras');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Compras')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -762,18 +1051,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/compras/procedimento
+    // inusitta/compras/procedimento
 
     public function indexArteaComprasProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'compras');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Compras')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -783,18 +1085,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/compras/instrucao
+    // inusitta/compras/instrucao
 
     public function indexArteaComprasInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'compras');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Compras')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -804,18 +1119,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/contabilidade/formulario
+    // inusitta/contabilidade/formulario
 
     public function indexArteaContabilidadeFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contabilidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Contabilidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -825,18 +1153,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/contabilidade/registro
+    // inusitta/contabilidade/registro
 
     public function indexArteaContabilidadeRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contabilidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Contabilidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -846,18 +1187,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/contabilidade/procedimento
+    // inusitta/contabilidade/procedimento
 
     public function indexArteaContabilidadeProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contabilidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Contabilidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -867,18 +1221,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/contabilidade/procedimento
+    // inusitta/contabilidade/procedimento
 
     public function indexArteaContabilidadeInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contabilidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Contabilidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -888,18 +1255,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/contas a pagar/formulario
+    // inusitta/contas a pagar/formulario
 
     public function indexArteaContasPagarFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a pagar');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a pagar')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulário');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -909,18 +1289,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/contas a pagar/registro
+    // inusitta/contas a pagar/registro
 
     public function indexArteaContasPagarRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a pagar');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a pagar')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'resgistro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -930,18 +1323,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/contas a pagar/procedimento
+    // inusitta/contas a pagar/procedimento
 
     public function indexArteaContasPagarProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a pagar');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a pagar')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -951,18 +1357,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/contas a pagar/registro
+    // inusitta/contas a pagar/registro
 
     public function indexArteaContasPagarInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a pagar');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a pagar')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -972,18 +1391,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/contas a receber/formulario
+    // inusitta/contas a receber/formulario
 
     public function indexArteaContasReceberFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a receber');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a receber')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -993,18 +1425,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/contas a receber/registro
+    // inusitta/contas a receber/registro
 
     public function indexArteaContasReceberRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a receber');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a receber')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1014,18 +1459,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/contas a receber/procedimento
+    // inusitta/contas a receber/procedimento
 
     public function indexArteaContasReceberProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a receber');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a receber')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1035,18 +1493,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/contas a receber/instrucao
+    // inusitta/contas a receber/instrucao
 
     public function indexArteaContasReceberInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a receber');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a receber')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1056,18 +1527,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/custo/formulario
+    // inusitta/custo/formulario
 
     public function indexArteaCustoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'custo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Custo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1077,18 +1561,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/custo/registro
+    // inusitta/custo/registro
 
     public function indexArteaCustoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'custo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Custo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1098,18 +1595,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/custo/procedimento
+    // inusitta/custo/procedimento
 
     public function indexArteaCustoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'custo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Custo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1119,18 +1629,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/custo/instrucao
+    // inusitta/custo/instrucao
 
     public function indexArteaCustoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'custo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Custo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1140,18 +1663,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/design/formulario
+    // inusitta/design/formulario
 
     public function indexArteaDesignFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'design');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Design')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1161,18 +1697,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/design/registro
+    // inusitta/design/registro
 
     public function indexArteaDesignRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'design');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Design')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1182,18 +1731,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/design/procedimento
+    // inusitta/design/procedimento
 
     public function indexArteaDesignProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'design');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Design')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1203,18 +1765,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/design/instrucao
+    // inusitta/design/instrucao
 
     public function indexArteaDesignInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'design');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Design')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1222,20 +1797,38 @@ class ArteaController extends Controller
     }
 
     //=========================================
+    
+    
+    //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
 
     //=========================================
-    // artea/diretoria administrativa/formulario
+    // inusitta/diretoria administrativa/formulario
 
     public function indexArteaDiretoriaAdministrativaFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria administrativa');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria administrativa')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1245,18 +1838,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/diretoria administrativa/registro
+    // inusitta/diretoria administrativa/registro
 
     public function indexArteaDiretoriaAdministrativaRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria administrativa');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Administrativa')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1266,18 +1872,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/diretoria administrativa/procedimento
+    // inusitta/diretoria administrativa/procedimento
 
     public function indexArteaDiretoriaAdministrativaProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria administrativa');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Administrativa')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1287,18 +1906,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/diretoria administrativa/instrucao
+    // inusitta/diretoria administrativa/instrucao
 
     public function indexArteaDiretoriaAdministrativaInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria administrativa');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Administrativa')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1308,18 +1940,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/diretoria comercial/ formulario
+    // inusitta/diretoria comercial/ formulario
 
     public function indexArteaDiretoriaComercialFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1329,18 +1974,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/diretoria comercial/ registro
+    // inusitta/diretoria comercial/ registro
 
     public function indexArteaDiretoriaComercialRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1350,18 +2008,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/diretoria comercial/ procedimento
+    // inusitta/diretoria comercial/ procedimento
 
     public function indexArteaDiretoriaComercialProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1371,18 +2042,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/diretoria comercial/ instrucao
+    // inusitta/diretoria comercial/ instrucao
 
     public function indexArteaDiretoriaComercialInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1392,18 +2076,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/diretoria industrial/ formulario
+    // inusitta/diretoria industrial/ formulario
 
     public function indexArteaDiretoriaIndustrialFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria industrial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Industrial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1413,18 +2110,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/diretoria industrial/ registro
+    // inusitta/diretoria industrial/ registro
 
     public function indexArteaDiretoriaIndustrialRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria industrial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Industrial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1434,18 +2144,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/diretoria industrial/ procedimento
+    // inusitta/diretoria industrial/ procedimento
 
     public function indexArteaDiretoriaIndustrialProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria industrial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Industrial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1455,18 +2178,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/diretoria industrial/ instrucao
+    // inusitta/diretoria industrial/ instrucao
 
     public function indexArteaDiretoriaIndustrialInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria industrial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Industrial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1476,18 +2212,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/ecommerce/ formulario
+    // inusitta/ecommerce/ formulario
 
     public function indexArteaEcommerceFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ecommerce');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ecommerce')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1497,18 +2246,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/ecommerce/ registro
+    // inusitta/ecommerce/ registro
 
     public function indexArteaEcommerceRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ecommerce');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ecommerce')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1518,18 +2280,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/ecommerce/ procedimento
+    // inusitta/ecommerce/ procedimento
 
     public function indexArteaEcommerceProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ecommerce');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ecommerce')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1539,18 +2314,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/ecommerce/ instrucao
+    // inusitta/ecommerce/ instrucao
 
     public function indexArteaEcommerceInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ecommerce');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ecommerce')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1560,18 +2348,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/engenharia/ formulario
+    // inusitta/engenharia/ formulario
 
     public function indexArteaEngenhariaFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'engenharia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Engenharia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1581,18 +2382,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/engenharia/ registro
+    // inusitta/engenharia/ registro
 
     public function indexArteaEngenhariaRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'engenharia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Engenharia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1602,18 +2416,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/engenharia/ procedimento
+    // inusitta/engenharia/ procedimento
 
     public function indexArteaEngenhariaProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'engenharia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Engenharia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1623,18 +2450,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/engenharia/ instrucao
+    // inusitta/engenharia/ instrucao
 
     public function indexArteaEngenhariaInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'engenharia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Engenharia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1644,18 +2484,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/expedicao/ formulario
+    // inusitta/expedicao/ formulario
 
     public function indexArteaExpedicaoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'expedicao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Expedicao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1665,18 +2518,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/expedicao/ registro
+    // inusitta/expedicao/ registro
 
     public function indexArteaExpedicaoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'expedicao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Expedicao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1686,18 +2552,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/expedicao/ procedimento
+    // inusitta/expedicao/ procedimento
 
     public function indexArteaExpedicaoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'expedicao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Expedicao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1707,18 +2586,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/expedicao/ instrucao
+    // inusitta/expedicao/ instrucao
 
     public function indexArteaExpedicaoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'expedicao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Expedicao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1728,18 +2620,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/exportacao/ formulario
+    // inusitta/exportacao/ formulario
 
     public function indexArteaExportacaoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'exportacao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Exportacao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1749,18 +2654,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/exportacao/ registro
+    // inusitta/exportacao/ registro
 
     public function indexArteaExportacaoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'exportacao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Exportacao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1770,18 +2688,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/exportacao/ procedimento
+    // inusitta/exportacao/ procedimento
 
     public function indexArteaExportacaoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'exportacao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Exportacao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1791,18 +2722,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/exportacao/ instrucao
+    // inusitta/exportacao/ instrucao
 
     public function indexArteaExportacaoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'exportacao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Exportacao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1812,18 +2756,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/faturamento/ formulario
+    // inusitta/faturamento/ formulario
 
     public function indexArteaFaturamentoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'faturamento');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Faturamento')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1833,18 +2790,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/faturamento/ registro
+    // inusitta/faturamento/ registro
 
     public function indexArteaFaturamentoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'faturamento');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Faturamento')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1854,18 +2824,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/faturamento/ procedimento
+    // inusitta/faturamento/ procedimento
 
     public function indexArteaFaturamentoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'faturamento');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Faturamento')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1875,18 +2858,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/faturamento/ instrucao
+    // inusitta/faturamento/ instrucao
 
     public function indexArteaFaturamentoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'faturamento');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Faturamento')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1896,18 +2892,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/manutencao/ formulario
+    // inusitta/manutencao/ formulario
 
     public function indexArteaManutencaoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'manutencao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Manutencao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1917,18 +2926,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/manutencao/ registro
+    // inusitta/manutencao/ registro
 
     public function indexArteaManutencaoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'manutencao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Manutencao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1938,18 +2960,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/manutencao/ procedimento
+    // inusitta/manutencao/ procedimento
 
     public function indexArteaManutencaoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'manutencao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Manutencao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1959,18 +2994,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/manutencao/ instrucao
+    // inusitta/manutencao/ instrucao
 
     public function indexArteaManutencaoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'manutencao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Manutencao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1980,18 +3028,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/ped/ formulario
+    // inusitta/ped/ formulario
 
     public function indexArteaPedFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'p&d');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'P&d')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2001,18 +3062,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/ped/ registro
+    // inusitta/ped/ registro
 
     public function indexArteaPedRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'p&d');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'P&d')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2022,18 +3096,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/ped/ procedimento
+    // inusitta/ped/ procedimento
 
     public function indexArteaPedProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'p&d');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'P&d')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2043,18 +3130,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/ped/ instrucao
+    // inusitta/ped/ instrucao
 
     public function indexArteaPedInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'p&d');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'P&d')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2064,18 +3164,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/pmo/ formulario
+    // inusitta/pmo/ formulario
 
     public function indexArteaPmoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'pmo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Pmo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2085,18 +3198,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/pmo/ registro
+    // inusitta/pmo/ registro
 
     public function indexArteaPmoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'pmo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Pmo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2106,18 +3232,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/pmo/ procedimento
+    // inusitta/pmo/ procedimento
 
     public function indexArteaPmoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'pmo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Pmo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2127,18 +3266,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/pmo/ instrucao
+    // inusitta/pmo/ instrucao
 
     public function indexArteaPmoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'pmo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Pmo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2148,18 +3300,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/ppcp/ formulario
+    // inusitta/ppcp/ formulario
 
     public function indexArteaPpcpFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ppcp');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ppcp')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2169,18 +3334,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/ppcp/ registro
+    // inusitta/ppcp/ registro
 
     public function indexArteaPpcpRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ppcp');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ppcp')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2190,18 +3368,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/ppcp/ procedimento
+    // inusitta/ppcp/ procedimento
 
     public function indexArteaPpcpProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ppcp');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ppcp')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2211,18 +3402,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/ppcp/ instrucao
+    // inusitta/ppcp/ instrucao
 
     public function indexArteaPpcpInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ppcp');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ppcp')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2232,18 +3436,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/qualidade/ formulario
+    // inusitta/qualidade/ formulario
 
     public function indexArteaQualidadeFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'qualidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Qualidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2253,18 +3470,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/qualidade/ registro
+    // inusitta/qualidade/ registro
 
     public function indexArteaQualidadeRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'qualidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Qualidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2274,18 +3504,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/qualidade/ procedimento
+    // inusitta/qualidade/ procedimento
 
     public function indexArteaQualidadeProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'qualidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Qualidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2295,18 +3538,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/qualidade/ instrucao
+    // inusitta/qualidade/ instrucao
 
     public function indexArteaQualidadeInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'qualidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Qualidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2316,18 +3572,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/recepcao/ formulario
+    // inusitta/recepcao/ formulario
 
     public function indexArteaRecepcaoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'recepcao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Recepcao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2337,18 +3606,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/recepcao/ registro
+    // inusitta/recepcao/ registro
 
     public function indexArteaRecepcaoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'recepcao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Recepcao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2358,18 +3640,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/recepcao/ procedimento
+    // inusitta/recepcao/ procedimento
 
     public function indexArteaRecepcaoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'recepcao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Recepcao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2379,18 +3674,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/recepcao/ instrucao
+    // inusitta/recepcao/ instrucao
 
     public function indexArteaRecepcaoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'recepcao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Recepcao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2400,18 +3708,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/restaurante/ formulario
+    // inusitta/restaurante/ formulario
 
     public function indexArteaRestauranteFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'restaurante');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Restaurante')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2421,18 +3742,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/restaurante/ registro
+    // inusitta/restaurante/ registro
 
     public function indexArteaRestauranteRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'restaurante');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Restaurante')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2442,18 +3776,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/restaurante/ procedimento
+    // inusitta/restaurante/ procedimento
 
     public function indexArteaRestauranteProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'restaurante');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Restaurante')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2463,18 +3810,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/restaurante/ instrucao
+    // inusitta/restaurante/ instrucao
 
     public function indexArteaRestauranteInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'restaurante');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Restaurante')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2484,18 +3844,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/rh/ formulario
+    // inusitta/rh/ formulario
 
     public function indexArteaRhFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'rh');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Rh')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2505,18 +3878,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/rh/ registro
+    // inusitta/rh/ registro
 
     public function indexArteaRhRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'rh');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Rh')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2526,18 +3912,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/rh/ procedimento
+    // inusitta/rh/ procedimento
 
     public function indexArteaRhProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'rh');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Rh')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2547,18 +3946,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/rh/ instrucao
+    // inusitta/rh/ instrucao
 
     public function indexArteaRhInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'rh');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Rh')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2568,18 +3980,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/sac/ formulario
+    // inusitta/sac/ formulario
 
     public function indexArteaSacFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sac');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sac')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2589,18 +4014,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/sac/ registro
+    // inusitta/sac/ registro
 
     public function indexArteaSacRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sac');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sac')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2610,18 +4048,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/sac/ procedimento
+    // inusitta/sac/ procedimento
 
     public function indexArteaSacProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sac');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sac')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2631,18 +4082,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/sac/ instrucao
+    // inusitta/sac/ instrucao
 
     public function indexArteaSacInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sac');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sac')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2652,18 +4116,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/sesmt/ formulario
+    // inusitta/sesmt/ formulario
 
     public function indexArteaSesmtFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sesmt');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sesmt')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2673,18 +4150,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/sesmt/ registro
+    // inusitta/sesmt/ registro
 
     public function indexArteaSesmtRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sesmt');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sesmt')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2694,18 +4184,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/sesmt/ procedimento
+    // inusitta/sesmt/ procedimento
 
     public function indexArteaSesmtProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sesmt');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sesmt')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2715,18 +4218,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/sesmt/ instrucao
+    // inusitta/sesmt/ instrucao
 
     public function indexArteaSesmtInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sesmt');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sesmt')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2736,18 +4252,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/projetos/ formulario
+    // inusitta/projetos/ formulario
 
     public function indexArteaProjetosFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'projetos');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Projetos')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2757,18 +4286,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/projetos/ registro
+    // inusitta/projetos/ registro
 
     public function indexArteaProjetosRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'projetos');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Projetos')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2778,18 +4320,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/projetos/ procedimento
+    // inusitta/projetos/ procedimento
 
     public function indexArteaProjetosProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'projetos');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Projetos')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2799,18 +4354,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/projetos/ instrucao
+    // inusitta/projetos/ instrucao
 
     public function indexArteaProjetosInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'projetos');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Projetos')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2820,18 +4388,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/transporte/ formulario
+    // inusitta/transporte/ formulario
 
     public function indexArteaTransporteFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'transporte');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Transporte')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2841,18 +4422,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/transporte/ registro
+    // inusitta/transporte/ registro
 
     public function indexArteaTransporteRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'transporte');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Transporte')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2862,18 +4456,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/transporte/ procedimento
+    // inusitta/transporte/ procedimento
 
     public function indexArteaTransporteProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'transporte');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Transporte')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2883,18 +4490,31 @@ class ArteaController extends Controller
     //=========================================
 
     //=========================================
-    // artea/transporte/ instrucao
+    // inusitta/transporte/ instrucao
 
     public function indexArteaTransporteInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Artea');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Artea')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'transporte');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Transporte')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 

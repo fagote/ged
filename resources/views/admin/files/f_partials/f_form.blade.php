@@ -37,21 +37,24 @@
 
 <!--=======================================================-->
 
-<label for="id_empresa">Selecione a Empresa</label><br>
-<select name="id_empresa" id="id_empresa" class="select2">
-    @foreach ($companies as $company)
-        <option value="{{ $company->id_empresa }}" 
-            {{ (isset($file) && $file->id_empresa == $company->id_empresa) || old('id_empresa') == $company->id_empresa ? 'selected' : '' }}>
-            {{ $company->name_empresa }}
-        </option>
-    @endforeach
-</select>
+<label for="empresas">Selecione as Empresas</label><br>
+@foreach ($companies as $company)
+    <div>
+        <input type="checkbox" 
+            name="id_empresa[]" 
+            id="empresa_{{ $company->id_empresa }}" 
+            value="{{ (int) $company->id_empresa }}"
+            {{ isset($file) && in_array($company->id_empresa, (array) [$file->id_empresa1, $file->id_empresa2, $file->id_empresa3, $file->id_empresa4]) ? 'checked' : '' }}
+            {{ in_array($company->id_empresa, old('empresas', [])) ? 'checked' : '' }}>
+        <label for="empresa_{{ $company->id_empresa }}">{{ $company->name_empresa }}</label>
+</div>
+@endforeach
  <br>
 <br>
 
 <!--=======================================================-->
 
-<label for="id_setor">Selecione o Setor</label><br>
+{{-- <label for="id_setor">Selecione o Setor</label><br>
 <select name="id_setor" id="id_setor" class="select2">
     @foreach ($sectors as $sector)
         <option value="{{ $sector->id_setor }}" 
@@ -59,7 +62,35 @@
             {{ $sector->name_setor }}
         </option>
     @endforeach
-</select>
+</select> --}}
+
+<br>
+<label for="setores">Selecione os Setores</label><br>
+@foreach ($sectors as $sector)
+    <div>
+        <input type="checkbox"  
+            name="id_setor[]" 
+            id="setor_{{ $sector->id_setor }}" 
+            value="{{(int) $sector->id_setor }}"
+            {{-- Marca os setores que já estão relacionados ao usuário --}}
+            {{ isset($file) && in_array($sector->id_setor, (array) [
+                $file->id_setor1, $file->id_setor2, $file->id_setor3, $file->id_setor4,
+                $file->id_setor5, $file->id_setor6, $file->id_setor7, $file->id_setor8,
+                $file->id_setor9, $file->id_setor10, $file->id_setor11, $file->id_setor12,
+                $file->id_setor13, $file->id_setor14, $file->id_setor15, $file->id_setor16,
+                $file->id_setor17, $file->id_setor18, $file->id_setor19, $file->id_setor20,
+                $file->id_setor21, $file->id_setor22, $file->id_setor23, $file->id_setor24,
+                $file->id_setor25, $file->id_setor26, $file->id_setor27, $file->id_setor28,
+                $file->id_setor29, $file->id_setor30, $file->id_setor31, $file->id_setor32
+            ]) ? 'checked' : '' }}
+
+            {{-- Marca os setores que foram selecionados no formulário (valores antigos) --}}
+            {{ in_array($sector->id_setor, old('id_setor', [])) ? 'checked' : '' }}>
+        
+        <label for="setor_{{ $sector->id_setor }}">{{ $sector->name_setor }}</label>
+    </div>
+@endforeach
+
 <br>
 <br>
 
