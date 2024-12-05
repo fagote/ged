@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('codigo');
             
             $table->foreignId('id_macro')->constrained('macros','id_macro')->onDelete('cascade');
-            $table->foreignId('id_setor')->constrained('sectors','id_setor')->onDelete('cascade');
-            $table->foreignId('id_empresa')->constrained('companies','id_empresa')->onDelete('cascade');
+            //$table->foreignId('id_setor')->constrained('sectors','id_setor')->onDelete('cascade');
+            //$table->foreignId('id_empresa')->constrained('companies','id_empresa')->onDelete('cascade');
             
             $table->timestamps();
         });

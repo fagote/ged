@@ -335,15 +335,28 @@ class UserController extends Controller
     //=========================================
     // Função Para Mostrar os arquivos da macro Instrução
 
-    public function indexInusittaTiInstrucao(){
+    public function indexInusittaTiInstrucao()
+    {
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Tecnologia da Informação');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Tecnologia da Informação')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
+        
+        ->whereHas('macro', function ($query) {
             $query->where('name_macro', 'instrução');
         })
         ->paginate(10);
@@ -359,14 +372,27 @@ class UserController extends Controller
     public function indexInusittaTiProcedimento(){
 
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Tecnologia da Informação');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Tecnologia da Informação')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'Procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'procedimento');
         })
         ->paginate(10);
 
@@ -381,14 +407,27 @@ class UserController extends Controller
     public function indexInusittaTiRegistro(){
 
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Tecnologia da Informação');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Tecnologia da Informação')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'Registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'registro');
         })
         ->paginate(10);
 
@@ -403,14 +442,27 @@ class UserController extends Controller
     public function indexInusittaTiFormulario(){
 
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Tecnologia da Informação');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Tecnologia da Informação')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'Formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'formulario');
         })
         ->paginate(10);
 
@@ -425,14 +477,27 @@ class UserController extends Controller
 
     public function indexInusittaMarketingInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Marketing');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Marketing')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'instrução');
         })
         ->paginate(10);
 
@@ -446,15 +511,29 @@ class UserController extends Controller
 
     public function indexInusittaMarketingProcedimento(){
 
-        $files = File::whereHas('company', function($query){
-            $query->where('name_empresa','Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor','Marketing');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Marketing')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query){
-            $query->where('name_macro','procedimento');
-        }) -> paginate(10);
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'procedimento');
+        })
+        -> paginate(10);
 
         return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
@@ -466,15 +545,28 @@ class UserController extends Controller
 
     public function indexInusittaMarketingRegistro(){
 
-        $files = File::whereHas('company', function($query){
-            $query->where('name_empresa','Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor','Marketing');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Marketing')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query){
-            $query->where('name_macro','registro');
-        }) -> paginate(10);
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'registro');
+        })-> paginate(10);
 
         return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
@@ -486,15 +578,28 @@ class UserController extends Controller
 
     public function indexInusittaMarketingFormulario(){
 
-        $files = File::whereHas('company', function($query){
-            $query->where('name_empresa','Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor','Marketing');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Marketing')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query){
-            $query->where('name_macro','formulario');
-        }) -> paginate(10);
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'formulário');
+        })-> paginate(10);
 
         return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
@@ -506,14 +611,27 @@ class UserController extends Controller
 
     public function indexInusittaComercialInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -527,14 +645,27 @@ class UserController extends Controller
 
     public function indexInusittaComercialProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -548,14 +679,27 @@ class UserController extends Controller
 
     public function indexInusittaComercialRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -569,14 +713,27 @@ class UserController extends Controller
 
     public function indexInusittaComercialFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'Comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -590,14 +747,27 @@ class UserController extends Controller
 
     public function indexInusittaAlmoxarifadoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'almoxarifado');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Almoxarifado')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -611,14 +781,27 @@ class UserController extends Controller
 
     public function indexInusittaAlmoxarifadoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'almoxarifado');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Almoxarifado')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -632,14 +815,27 @@ class UserController extends Controller
 
     public function indexInusittaAlmoxarifadoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'almoxarifado');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Almoxarifado')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -653,14 +849,27 @@ class UserController extends Controller
 
     public function indexInusittaAlmoxarifadoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'almoxarifado');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Almoxarifado')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -674,14 +883,27 @@ class UserController extends Controller
 
     public function indexInusittaAssistenciaFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'assistenca');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Assistencia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -695,14 +917,27 @@ class UserController extends Controller
 
     public function indexInusittaAssistenciaRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'assistencia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Assistencia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -716,14 +951,27 @@ class UserController extends Controller
 
     public function indexInusittaAssistenciaProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'assistencia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Assistencia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -737,14 +985,27 @@ class UserController extends Controller
 
     public function indexInusittaAssistenciaInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'assistencia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Assistencia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -758,14 +1019,27 @@ class UserController extends Controller
 
     public function indexInusittaComprasFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'compras');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Compras')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -779,14 +1053,27 @@ class UserController extends Controller
 
     public function indexInusittaComprasRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'compras');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Compras')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -800,14 +1087,27 @@ class UserController extends Controller
 
     public function indexInusittaComprasProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'compras');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Compras')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -821,14 +1121,27 @@ class UserController extends Controller
 
     public function indexInusittaComprasInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'compras');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Compras')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -842,14 +1155,27 @@ class UserController extends Controller
 
     public function indexInusittaContabilidadeFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contabilidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Contabilidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -863,14 +1189,27 @@ class UserController extends Controller
 
     public function indexInusittaContabilidadeRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contabilidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Contabilidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -884,14 +1223,27 @@ class UserController extends Controller
 
     public function indexInusittaContabilidadeProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contabilidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Contabilidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -905,14 +1257,27 @@ class UserController extends Controller
 
     public function indexInusittaContabilidadeInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contabilidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Contabilidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -926,14 +1291,27 @@ class UserController extends Controller
 
     public function indexInusittaContasPagarFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a pagar');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a pagar')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulário');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -947,14 +1325,27 @@ class UserController extends Controller
 
     public function indexInusittaContasPagarRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a pagar');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a pagar')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'resgistro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -968,14 +1359,27 @@ class UserController extends Controller
 
     public function indexInusittaContasPagarProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a pagar');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a pagar')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -989,14 +1393,27 @@ class UserController extends Controller
 
     public function indexInusittaContasPagarInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a pagar');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a pagar')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1010,14 +1427,27 @@ class UserController extends Controller
 
     public function indexInusittaContasReceberFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a receber');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a receber')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1031,14 +1461,27 @@ class UserController extends Controller
 
     public function indexInusittaContasReceberRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a receber');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a receber')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1052,14 +1495,27 @@ class UserController extends Controller
 
     public function indexInusittaContasReceberProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a receber');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a receber')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1073,14 +1529,27 @@ class UserController extends Controller
 
     public function indexInusittaContasReceberInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'contas a receber');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'contas a receber')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1094,14 +1563,27 @@ class UserController extends Controller
 
     public function indexInusittaCustoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'custo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Custo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1115,14 +1597,27 @@ class UserController extends Controller
 
     public function indexInusittaCustoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'custo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Custo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1136,14 +1631,27 @@ class UserController extends Controller
 
     public function indexInusittaCustoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'custo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Custo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1157,14 +1665,27 @@ class UserController extends Controller
 
     public function indexInusittaCustoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'custo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Custo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1178,14 +1699,27 @@ class UserController extends Controller
 
     public function indexInusittaDesignFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'design');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Design')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1199,14 +1733,27 @@ class UserController extends Controller
 
     public function indexInusittaDesignRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'design');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Design')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1220,14 +1767,27 @@ class UserController extends Controller
 
     public function indexInusittaDesignProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'design');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Design')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1241,14 +1801,27 @@ class UserController extends Controller
 
     public function indexInusittaDesignInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'design');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Design')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1256,20 +1829,38 @@ class UserController extends Controller
     }
 
     //=========================================
+    
+    
+    //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
 
     //=========================================
     // inusitta/diretoria administrativa/formulario
 
     public function indexInusittaDiretoriaAdministrativaFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria administrativa');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria administrativa')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1283,14 +1874,27 @@ class UserController extends Controller
 
     public function indexInusittaDiretoriaAdministrativaRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria administrativa');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Administrativa')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1304,14 +1908,27 @@ class UserController extends Controller
 
     public function indexInusittaDiretoriaAdministrativaProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria administrativa');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Administrativa')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1325,14 +1942,27 @@ class UserController extends Controller
 
     public function indexInusittaDiretoriaAdministrativaInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria administrativa');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Administrativa')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1346,14 +1976,27 @@ class UserController extends Controller
 
     public function indexInusittaDiretoriaComercialFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1367,14 +2010,27 @@ class UserController extends Controller
 
     public function indexInusittaDiretoriaComercialRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1388,14 +2044,27 @@ class UserController extends Controller
 
     public function indexInusittaDiretoriaComercialProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1409,14 +2078,27 @@ class UserController extends Controller
 
     public function indexInusittaDiretoriaComercialInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria comercial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Comercial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1430,14 +2112,27 @@ class UserController extends Controller
 
     public function indexInusittaDiretoriaIndustrialFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria industrial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Industrial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1451,14 +2146,27 @@ class UserController extends Controller
 
     public function indexInusittaDiretoriaIndustrialRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria industrial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Industrial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1472,14 +2180,27 @@ class UserController extends Controller
 
     public function indexInusittaDiretoriaIndustrialProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria industrial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Industrial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1493,14 +2214,27 @@ class UserController extends Controller
 
     public function indexInusittaDiretoriaIndustrialInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'diretoria industrial');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Diretoria Industrial')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1514,14 +2248,27 @@ class UserController extends Controller
 
     public function indexInusittaEcommerceFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ecommerce');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ecommerce')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1535,14 +2282,27 @@ class UserController extends Controller
 
     public function indexInusittaEcommerceRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ecommerce');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ecommerce')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1556,14 +2316,27 @@ class UserController extends Controller
 
     public function indexInusittaEcommerceProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ecommerce');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ecommerce')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1577,14 +2350,27 @@ class UserController extends Controller
 
     public function indexInusittaEcommerceInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ecommerce');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ecommerce')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1598,14 +2384,27 @@ class UserController extends Controller
 
     public function indexInusittaEngenhariaFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'engenharia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Engenharia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1619,14 +2418,27 @@ class UserController extends Controller
 
     public function indexInusittaEngenhariaRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'engenharia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Engenharia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1640,14 +2452,27 @@ class UserController extends Controller
 
     public function indexInusittaEngenhariaProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'engenharia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Engenharia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1661,14 +2486,27 @@ class UserController extends Controller
 
     public function indexInusittaEngenhariaInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'engenharia');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Engenharia')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1682,14 +2520,27 @@ class UserController extends Controller
 
     public function indexInusittaExpedicaoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'expedicao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Expedicao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1703,14 +2554,27 @@ class UserController extends Controller
 
     public function indexInusittaExpedicaoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'expedicao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Expedicao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1724,14 +2588,27 @@ class UserController extends Controller
 
     public function indexInusittaExpedicaoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'expedicao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Expedicao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1745,14 +2622,27 @@ class UserController extends Controller
 
     public function indexInusittaExpedicaoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'expedicao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Expedicao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1766,14 +2656,27 @@ class UserController extends Controller
 
     public function indexInusittaExportacaoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'exportacao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Exportacao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1787,14 +2690,27 @@ class UserController extends Controller
 
     public function indexInusittaExportacaoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'exportacao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Exportacao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1808,14 +2724,27 @@ class UserController extends Controller
 
     public function indexInusittaExportacaoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'exportacao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Exportacao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1829,14 +2758,27 @@ class UserController extends Controller
 
     public function indexInusittaExportacaoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'exportacao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Exportacao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1850,14 +2792,27 @@ class UserController extends Controller
 
     public function indexInusittaFaturamentoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'faturamento');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Faturamento')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1871,14 +2826,27 @@ class UserController extends Controller
 
     public function indexInusittaFaturamentoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'faturamento');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Faturamento')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1892,14 +2860,27 @@ class UserController extends Controller
 
     public function indexInusittaFaturamentoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'faturamento');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Faturamento')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1913,14 +2894,27 @@ class UserController extends Controller
 
     public function indexInusittaFaturamentoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'faturamento');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Faturamento')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -1934,14 +2928,27 @@ class UserController extends Controller
 
     public function indexInusittaManutencaoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'manutencao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Manutencao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -1955,14 +2962,27 @@ class UserController extends Controller
 
     public function indexInusittaManutencaoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'manutencao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Manutencao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -1976,14 +2996,27 @@ class UserController extends Controller
 
     public function indexInusittaManutencaoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'manutencao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Manutencao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -1997,14 +3030,27 @@ class UserController extends Controller
 
     public function indexInusittaManutencaoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'manutencao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Manutencao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2018,14 +3064,27 @@ class UserController extends Controller
 
     public function indexInusittaPedFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'p&d');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'P&d')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2039,14 +3098,27 @@ class UserController extends Controller
 
     public function indexInusittaPedRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'p&d');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'P&d')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2060,14 +3132,27 @@ class UserController extends Controller
 
     public function indexInusittaPedProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'p&d');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'P&d')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2081,14 +3166,27 @@ class UserController extends Controller
 
     public function indexInusittaPedInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'p&d');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'P&d')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2102,14 +3200,27 @@ class UserController extends Controller
 
     public function indexInusittaPmoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'pmo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Pmo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2123,14 +3234,27 @@ class UserController extends Controller
 
     public function indexInusittaPmoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'pmo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Pmo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2144,14 +3268,27 @@ class UserController extends Controller
 
     public function indexInusittaPmoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'pmo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Pmo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2165,14 +3302,27 @@ class UserController extends Controller
 
     public function indexInusittaPmoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'pmo');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Pmo')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2186,14 +3336,27 @@ class UserController extends Controller
 
     public function indexInusittaPpcpFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ppcp');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ppcp')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2207,14 +3370,27 @@ class UserController extends Controller
 
     public function indexInusittaPpcpRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ppcp');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ppcp')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2228,14 +3404,27 @@ class UserController extends Controller
 
     public function indexInusittaPpcpProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ppcp');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ppcp')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2249,14 +3438,27 @@ class UserController extends Controller
 
     public function indexInusittaPpcpInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'ppcp');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Ppcp')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2270,14 +3472,27 @@ class UserController extends Controller
 
     public function indexInusittaQualidadeFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'qualidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Qualidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2291,14 +3506,27 @@ class UserController extends Controller
 
     public function indexInusittaQualidadeRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'qualidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Qualidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2312,14 +3540,27 @@ class UserController extends Controller
 
     public function indexInusittaQualidadeProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'qualidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Qualidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2333,14 +3574,27 @@ class UserController extends Controller
 
     public function indexInusittaQualidadeInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'qualidade');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Qualidade')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2354,14 +3608,27 @@ class UserController extends Controller
 
     public function indexInusittaRecepcaoFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'recepcao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Recepcao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2375,14 +3642,27 @@ class UserController extends Controller
 
     public function indexInusittaRecepcaoRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'recepcao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Recepcao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2396,14 +3676,27 @@ class UserController extends Controller
 
     public function indexInusittaRecepcaoProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'recepcao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Recepcao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2417,14 +3710,27 @@ class UserController extends Controller
 
     public function indexInusittaRecepcaoInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'recepcao');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Recepcao')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2438,14 +3744,27 @@ class UserController extends Controller
 
     public function indexInusittaRestauranteFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'restaurante');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Restaurante')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2459,14 +3778,27 @@ class UserController extends Controller
 
     public function indexInusittaRestauranteRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'restaurante');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Restaurante')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2480,14 +3812,27 @@ class UserController extends Controller
 
     public function indexInusittaRestauranteProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'restaurante');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Restaurante')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2501,14 +3846,27 @@ class UserController extends Controller
 
     public function indexInusittaRestauranteInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'restaurante');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Restaurante')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2522,14 +3880,27 @@ class UserController extends Controller
 
     public function indexInusittaRhFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'rh');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Rh')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2543,14 +3914,27 @@ class UserController extends Controller
 
     public function indexInusittaRhRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'rh');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Rh')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2564,14 +3948,27 @@ class UserController extends Controller
 
     public function indexInusittaRhProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'rh');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Rh')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2585,14 +3982,27 @@ class UserController extends Controller
 
     public function indexInusittaRhInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'rh');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Rh')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2606,14 +4016,27 @@ class UserController extends Controller
 
     public function indexInusittaSacFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sac');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sac')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2627,14 +4050,27 @@ class UserController extends Controller
 
     public function indexInusittaSacRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sac');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sac')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2648,14 +4084,27 @@ class UserController extends Controller
 
     public function indexInusittaSacProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sac');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sac')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2669,14 +4118,27 @@ class UserController extends Controller
 
     public function indexInusittaSacInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sac');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sac')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2690,14 +4152,27 @@ class UserController extends Controller
 
     public function indexInusittaSesmtFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sesmt');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sesmt')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2711,14 +4186,27 @@ class UserController extends Controller
 
     public function indexInusittaSesmtRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sesmt');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sesmt')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2732,14 +4220,27 @@ class UserController extends Controller
 
     public function indexInusittaSesmtProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sesmt');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sesmt')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2753,14 +4254,27 @@ class UserController extends Controller
 
     public function indexInusittaSesmtInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'sesmt');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Sesmt')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2774,14 +4288,27 @@ class UserController extends Controller
 
     public function indexInusittaProjetosFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'projetos');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Projetos')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2795,14 +4322,27 @@ class UserController extends Controller
 
     public function indexInusittaProjetosRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'projetos');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Projetos')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2816,14 +4356,27 @@ class UserController extends Controller
 
     public function indexInusittaProjetosProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'projetos');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Projetos')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2837,14 +4390,27 @@ class UserController extends Controller
 
     public function indexInusittaProjetosInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'projetos');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Projetos')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2858,14 +4424,27 @@ class UserController extends Controller
 
     public function indexInusittaTransporteFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'transporte');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Transporte')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2879,14 +4458,27 @@ class UserController extends Controller
 
     public function indexInusittaTransporteRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'transporte');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Transporte')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2900,14 +4492,27 @@ class UserController extends Controller
 
     public function indexInusittaTransporteProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'transporte');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Transporte')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -2921,14 +4526,27 @@ class UserController extends Controller
 
     public function indexInusittaTransporteInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'transporte');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Transporte')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 
@@ -2942,14 +4560,27 @@ class UserController extends Controller
 
     public function indexInusittaAtelieFormulario(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'atelie');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Atelie')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'formulario');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
         })
         ->paginate(10);
 
@@ -2963,14 +4594,27 @@ class UserController extends Controller
 
     public function indexInusittaAtelieRegistro(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'atelie');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Atelie')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'registro');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
         })
         ->paginate(10);
 
@@ -2984,14 +4628,27 @@ class UserController extends Controller
 
     public function indexInusittaAtelieProcedimento(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'atelie');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Atelie')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'procedimento');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
         })
         ->paginate(10);
 
@@ -3005,14 +4662,27 @@ class UserController extends Controller
 
     public function indexInusittaAtelieInstrucao(){
 
-        $files = File::whereHas('company', function($query) {
-            $query->where('name_empresa', 'Inusitta');
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
         })
-        ->whereHas('sector', function($query) {
-            $query->where('name_setor', 'atelie');
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Atelie')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 32; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
         })
-        ->whereHas('macro', function($query) {
-            $query->where('name_macro', 'instrucao');
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
         })
         ->paginate(10);
 

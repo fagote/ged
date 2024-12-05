@@ -82,9 +82,27 @@
 
             <tr>
                 <td>{{$user->name}}</td>
-                <td>{{$user->email}}</td>
-                <td>{{$user->company?->name_empresa ?? 'Empresa não definida'}}</td>
-                <td>{{$user->sector?->name_setor ?? 'Setor não definido'}}</td>
+                <td>{{$user->email}}</td> 
+                <td>
+                    @php
+                        $empresaIds = [$user->id_empresa1, $user->id_empresa2, $user->id_empresa3, $user->id_empresa4];
+                        $nomesEmpresas = collect($empresaIds)
+                            ->filter() // Remove IDs nulos
+                            ->map(fn($id) => \App\Models\Company::find($id)?->name_empresa ?? 'Empresa não encontrada')
+                            ->join(', '); // Junta os nomes com vírgulas
+                    @endphp
+                    {{$nomesEmpresas ?: 'Nenhuma empresa definida'}}
+                </td>
+                <td>
+                    @php
+                        $setoresIds = [$user->id_setor1, $user->id_setor2, $user->id_setor3, $user->id_setor4, $user->id_setor5, $user->id_setor6,$user->id_setor7,$user->id_setor8,$user->id_setor9,$user->id_setor10,$user->id_setor11,$user->id_setor12,$user->id_setor13,$user->id_setor14,$user->id_setor15,$user->id_setor16,$user->id_setor17,$user->id_setor18,$user->id_setor19,$user->id_setor20,$user->id_setor21,$user->id_setor22,$user->id_setor23,$user->id_setor24,$user->id_setor25,$user->id_setor26,$user->id_setor27,$user->id_setor28,$user->id_setor29,$user->id_setor30,$user->id_setor31,$user->id_setor32];
+                        $nomesSetores = collect($setoresIds)
+                            ->filter() // Remove IDs nulos
+                            ->map(fn($id) => \App\Models\Sector::find($id)?->name_setor ?? 'Setor não encontrado')
+                            ->join(', '); // Junta os nomes com vírgulas
+                    @endphp
+                    {{$nomesSetores ?: 'Nenhum setor definido'}}
+                </td>
 
                 @if(Auth::check() && Auth::user()->id_permission == 1)
                     <td>{{$user->permission?->descricao ?? 'Permissão não definida'}}</td>
