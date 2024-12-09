@@ -355,16 +355,17 @@ class FileController extends Controller
       
     
         // Realiza a busca de arquivos com o filtro de empresa, setor e código
-        $files = File::whereIn('id_empresa', [$empresaId1, $empresaId2,$empresaId3,$empresaId4])
-                     ->whereIn('id_setor', [$setorId1,$setorId2,$setorId3,$setorId4,$setorId5,
-                                                            $setorId6,$setorId7,$setorId8,$setorId9,$setorId10,$setorId11,
-                                                            $setorId12,$setorId13,$setorId14,$setorId15,$setorId16,$setorId17,$setorId18,
-                                                            $setorId19,$setorId20,$setorId21,$setorId22,$setorId23,$setorId24,$setorId25,
-                                                            $setorId26,$setorId27,$setorId28,$setorId29,$setorId30,$setorId31,$setorId32])
-                     ->where('ativo',$file->ativo = 1)
-                     ->where('aprovacao', $file->aprovacao = 2)
-                     ->where('codigo', 'like', '%' . $request->search . '%')
-                     ->paginate(10);
+        // Realiza a busca de arquivos com o filtro de empresa, setor e código
+        $files = File::whereIn('id_empresa1', [$empresaId1, $empresaId2, $empresaId3, $empresaId4])
+            ->orWhereIn('id_empresa2', [$empresaId1, $empresaId2, $empresaId3, $empresaId4])
+            ->orWhereIn('id_empresa3', [$empresaId1, $empresaId2, $empresaId3, $empresaId4])
+            ->orWhereIn('id_empresa4', [$empresaId1, $empresaId2, $empresaId3, $empresaId4])
+            ->whereIn('id_setor1', [$setorId1, $setorId2, $setorId3, $setorId4, $setorId5, $setorId6, $setorId7, $setorId8, $setorId9, $setorId10, $setorId11, $setorId12, $setorId13, $setorId14, $setorId15, $setorId16, $setorId17, $setorId18, $setorId19, $setorId20, $setorId21, $setorId22, $setorId23, $setorId24, $setorId25, $setorId26, $setorId27, $setorId28, $setorId29, $setorId30, $setorId31, $setorId32])
+            ->where('ativo', 1)
+            ->where('aprovacao', 2)
+            ->where('codigo', 'like', '%' . $request->search . '%')
+            ->paginate(10);
+
     
         return view('admin.files.f_index', compact('files'));
     }

@@ -24,6 +24,14 @@ return new class extends Migration
 
     public function down(): void
     {
+
+        // Primeiro remova a chave estrangeira em `users`, se ela existir
+        Schema::table('users', function (Blueprint $table) {
+            if (Schema::hasColumn('users', 'id_empresa')) {
+                $table->dropForeign(['id_empresa']); // Remove a chave estrangeira
+            }
+        });
+
         Schema::dropIfExists('companies');
     }
 };

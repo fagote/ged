@@ -4705,15 +4705,6 @@ class UserController extends Controller
         return view('admin.users.create', compact('sectors', 'companies', 'permissions'));
     }
 
-    /*
-    public function store(StoreUserRequest $request)
-    {
-
-        User::create($request->validated());
-        return redirect()
-            ->route('users.index')
-            ->with('success', 'Usuário criado com sucesso');
-    }*/
 
     public function store(StoreUserRequest $request)
     {

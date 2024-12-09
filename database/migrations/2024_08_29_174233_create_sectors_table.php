@@ -23,6 +23,14 @@ return new class extends Migration
      */
     public function down(): void
     {
+        // Primeiro remova a chave estrangeira em `users`, se existir
+        Schema::table('users', function (Blueprint $table) {
+            if (Schema::hasColumn('users', 'id_setor')) {
+                $table->dropForeign(['id_setor']); // Remove a FK
+            }
+        });
+
+        // Agora exclua a tabela `sectors`
         Schema::dropIfExists('sectors');
     }
 };
