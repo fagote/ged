@@ -5,7 +5,7 @@
 @section('content')
 <br>
 
-<a id="button1" href="{{ route('permissions.create') }}">Adicionar Permissões</a>
+<a class="button" href="{{ route('permissions.create') }}">Adicionar Permissões</a><br>
 
 <br>
 
@@ -30,8 +30,8 @@
                 <td>{{$permission->id_permissao}}</td>
                 <td>{{$permission->descricao}}</td>
                 <td>
-                    <a id="button1" href="{{ route('permissions.edit', $permission->id_permissao) }}">Edit</a>
-                    <a id="button1" href="{{ route('permissions.show', $permission->id_permissao) }}">Detalhes</a>
+                    <a class="button" href="{{ route('permissions.edit', $permission->id_permissao) }}">Edit</a>
+                    <a id="button_excluir" href="{{ route('permissions.show', $permission->id_permissao) }}">Detalhes</a>
                 </td>
             </tr>
             @empty
@@ -129,6 +129,42 @@
     #adicionar-usuario {
         animation: pulse 2s infinite; /* Aplica a animação de pulsação */
     }
+
+    #button_excluir{
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #e54646; 
+        color: white; 
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px; 
+        border: none; 
+        cursor: pointer; 
+        font-size: 16px; 
+        margin-bottom: 5px; 
+    }
+    #button_excluir:hover{
+        background-color: #bb3c3c;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #4F46E5; /* Cor de fundo do botão */
+        color: white; /* Cor do texto */
+        text-align: center;
+        text-decoration: none; /* Remove o sublinhado do link */
+        border-radius: 5px; /* Bordas arredondadas */
+        border: none; /* Remove borda */
+        cursor: pointer; /* Mostra o ponteiro do mouse */
+        font-size: 16px; /* Tamanho da fonte */
+        margin-bottom: 5px; 
+    }
+
+    .button:hover {
+        background-color: #423cbb; /* Cor ao passar o mouse */
+    }
+
 </style>
 
 
