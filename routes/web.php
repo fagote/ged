@@ -11,6 +11,8 @@ use App\Http\Controllers\Admin\ArteaController;
 use App\Http\Controllers\Admin\LavorattoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\CheckIfIsAdmin;
+use App\Http\Middleware\checkPermission;
+use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')
@@ -23,7 +25,7 @@ Route::middleware('auth')
         // ROTAS PARA USUÁRIOS  
 
         Route::get('/users/search', [UserController::class, 'search'])->name('users.search');
-        Route::delete('/users/{user}/destroy', [UserController::class, 'destroy'])->name('users.destroy')->middleware(CheckIfIsAdmin::class);
+        Route::delete('/users/{user}/destroy', [UserController::class, 'destroy'])->name('users.destroy');
         Route::post('/users/{id}/upload', [UserController::class, 'upload'])->name('users.upload');
         Route::get('/users/create',[UserController::class, 'create'])->name('users.create');
         Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
@@ -229,6 +231,42 @@ Route::middleware('auth')
         Route::get('inusitta/atelie/registro', [UserController::class, 'indexInusittaAtelieRegistro'])->name('inusittaAtelieRegistro.index');
         Route::get('inusitta/atelie/formulario', [UserController::class, 'indexInusittaAtelieFormulario'])->name('inusittaAtelieFormulario.index');
 
+        Route::get('inusitta/corte', [UserController::class, 'indexInusittaCorte'])->name('inusittaCorte.index');
+        Route::get('inusitta/corte/instrucao', [UserController::class, 'indexInusittaCorteInstrucao'])->name('inusittaCorteInstrucao.index');
+        Route::get('inusitta/corte/procedimento',[UserController::class, 'indexInusittaCorteProcedimento'])->name('inusittaCorteProcedimento.index');
+        Route::get('inusitta/corte/registro', [UserController::class, 'indexInusittaCorteRegistro'])->name('inusittaCorteRegistro.index');
+        Route::get('inusitta/corte/formulario', [UserController::class, 'indexInusittaCorteFormulario'])->name('inusittaCorteFormulario.index');
+
+        Route::get('inusitta/coladeira', [UserController::class, 'indexInusittaColadeira'])->name('inusittaColadeira.index');
+        Route::get('inusitta/coladeira/instrucao', [UserController::class, 'indexInusittaColadeiraInstrucao'])->name('inusittaColadeiraInstrucao.index');
+        Route::get('inusitta/coladeira/procedimento',[UserController::class, 'indexInusittaColadeiraProcedimento'])->name('inusittaColadeiraProcedimento.index');
+        Route::get('inusitta/coladeira/registro', [UserController::class, 'indexInusittaColadeiraRegistro'])->name('inusittaColadeiraRegistro.index');
+        Route::get('inusitta/coladeira/formulario', [UserController::class, 'indexInusittaColadeiraFormulario'])->name('inusittaColadeiraFormulario.index');
+
+        Route::get('inusitta/furadeira', [UserController::class, 'indexInusittaFuradeira'])->name('inusittaFuradeira.index');
+        Route::get('inusitta/furadeira/instrucao', [UserController::class, 'indexInusittaFuradeiraInstrucao'])->name('inusittaFuradeiraInstrucao.index');
+        Route::get('inusitta/furadeira/procedimento',[UserController::class, 'indexInusittaFuradeiraProcedimento'])->name('inusittaFuradeiraProcedimento.index');
+        Route::get('inusitta/furadeira/registro', [UserController::class, 'indexInusittaFuradeiraRegistro'])->name('inusittaFuradeiraRegistro.index');
+        Route::get('inusitta/furadeira/formulario', [UserController::class, 'indexInusittaFuradeiraFormulario'])->name('inusittaFuradeiraFormulario.index');
+
+        Route::get('inusitta/acabamento', [UserController::class, 'indexInusittaAcabamento'])->name('inusittaAcabamento.index');
+        Route::get('inusitta/acabamento/instrucao', [UserController::class, 'indexInusittaAcabamentoInstrucao'])->name('inusittaAcabamentoInstrucao.index');
+        Route::get('inusitta/acabamento/procedimento',[UserController::class, 'indexInusittaAcabamentoProcedimento'])->name('inusittaAcabamentoProcedimento.index');
+        Route::get('inusitta/acabamento/registro', [UserController::class, 'indexInusittaAcabamentoRegistro'])->name('inusittaAcabamentoRegistro.index');
+        Route::get('inusitta/acabamento/formulario', [UserController::class, 'indexInusittaAcabamentoFormulario'])->name('inusittaAcabamentoFormulario.index');
+
+        Route::get('inusitta/embalagem', [UserController::class, 'indexInusittaEmbalagem'])->name('inusittaEmbalagem.index');
+        Route::get('inusitta/embalagem/instrucao', [UserController::class, 'indexInusittaEmbalagemInstrucao'])->name('inusittaEmbalagemInstrucao.index');
+        Route::get('inusitta/embalagem/procedimento',[UserController::class, 'indexInusittaEmbalagemProcedimento'])->name('inusittaEmbalagemProcedimento.index');
+        Route::get('inusitta/embalagem/registro', [UserController::class, 'indexInusittaEmbalagemRegistro'])->name('inusittaEmbalagemRegistro.index');
+        Route::get('inusitta/embalagem/formulario', [UserController::class, 'indexInusittaEmbalagemFormulario'])->name('inusittaEmbalagemFormulario.index');
+
+        Route::get('inusitta/pintura', [UserController::class, 'indexInusittaPintura'])->name('inusittaPintura.index');
+        Route::get('inusitta/pintura/instrucao', [UserController::class, 'indexInusittaPinturaInstrucao'])->name('inusittaPinturaInstrucao.index');
+        Route::get('inusitta/pintura/procedimento',[UserController::class, 'indexInusittaPinturaProcedimento'])->name('inusittaPinturaProcedimento.index');
+        Route::get('inusitta/pintura/registro', [UserController::class, 'indexInusittaPinturaRegistro'])->name('inusittaPinturaRegistro.index');
+        Route::get('inusitta/pintura/formulario', [UserController::class, 'indexInusittaPinturaFormulario'])->name('inusittaPinturaFormulario.index');
+
         //======================================================
 
         // ROTAS PARA EMPRESA HAOS
@@ -421,6 +459,48 @@ Route::middleware('auth')
         Route::get('haos/transporte/procedimento',[HaosController::class, 'indexHaosTransporteProcedimento'])->name('haosTransporteProcedimento.index');
         Route::get('haos/transporte/registro', [HaosController::class, 'indexHaosTransporteRegistro'])->name('haosTransporteRegistro.index');
         Route::get('haos/transporte/formulario', [HaosController::class, 'indexHaosTransporteFormulario'])->name('haosTransporteFormulario.index');
+
+        Route::get('haos/atelie', [HaosController::class, 'indexHaosAtelie'])->name('haosAtelie.index');
+        Route::get('haos/atelie/instrucao', [HaosController::class, 'indexHaosAtelieInstrucao'])->name('haosAtelieInstrucao.index');
+        Route::get('haos/atelie/procedimento',[HaosController::class, 'indexHaosAtelieProcedimento'])->name('haosAtelieProcedimento.index');
+        Route::get('haos/atelie/registro', [HaosController::class, 'indexHaosAtelieRegistro'])->name('haosAtelieRegistro.index');
+        Route::get('haos/atelie/formulario', [HaosController::class, 'indexHaosAtelieFormulario'])->name('haosAtelieFormulario.index');
+
+        Route::get('haos/corte', [HaosController::class, 'indexHaosCorte'])->name('haosCorte.index');
+        Route::get('haos/corte/instrucao', [HaosController::class, 'indexHaosCorteInstrucao'])->name('haosCorteInstrucao.index');
+        Route::get('haos/corte/procedimento',[HaosController::class, 'indexHaosCorteProcedimento'])->name('haosCorteProcedimento.index');
+        Route::get('haos/corte/registro', [HaosController::class, 'indexHaosCorteRegistro'])->name('haosCorteRegistro.index');
+        Route::get('haos/corte/formulario', [HaosController::class, 'indexHaosCorteFormulario'])->name('haosCorteFormulario.index');
+
+        Route::get('haos/coladeira', [HaosController::class, 'indexHaosColadeira'])->name('haosColadeira.index');
+        Route::get('haos/coladeira/instrucao', [HaosController::class, 'indexHaosColadeiraInstrucao'])->name('haosColadeiraInstrucao.index');
+        Route::get('haos/coladeira/procedimento',[HaosController::class, 'indexHaosColadeiraProcedimento'])->name('haosColadeiraProcedimento.index');
+        Route::get('haos/coladeira/registro', [HaosController::class, 'indexHaosColadeiraRegistro'])->name('haosColadeiraRegistro.index');
+        Route::get('haos/coladeira/formulario', [HaosController::class, 'indexHaosColadeiraFormulario'])->name('haosColadeiraFormulario.index');
+
+        Route::get('haos/furadeira', [HaosController::class, 'indexHaosFuradeira'])->name('haosFuradeira.index');
+        Route::get('haos/furadeira/instrucao', [HaosController::class, 'indexHaosFuradeiraInstrucao'])->name('haosFuradeiraInstrucao.index');
+        Route::get('haos/furadeira/procedimento',[HaosController::class, 'indexHaosFuradeiraProcedimento'])->name('haosFuradeiraProcedimento.index');
+        Route::get('haos/furadeira/registro', [HaosController::class, 'indexHaosFuradeiraRegistro'])->name('haosFuradeiraRegistro.index');
+        Route::get('haos/furadeira/formulario', [HaosController::class, 'indexHaosFuradeiraFormulario'])->name('haosFuradeiraFormulario.index');
+
+        Route::get('haos/acabamento', [HaosController::class, 'indexHaosAcabamento'])->name('haosAcabamento.index');
+        Route::get('haos/acabamento/instrucao', [HaosController::class, 'indexHaosAcabamentoInstrucao'])->name('haosAcabamentoInstrucao.index');
+        Route::get('haos/acabamento/procedimento',[HaosController::class, 'indexHaosAcabamentoProcedimento'])->name('haosAcabamentoProcedimento.index');
+        Route::get('haos/acabamento/registro', [HaosController::class, 'indexHaosAcabamentoRegistro'])->name('haosAcabamentoRegistro.index');
+        Route::get('haos/acabamento/formulario', [HaosController::class, 'indexHaosAcabamentoFormulario'])->name('haosAcabamentoFormulario.index');
+
+        Route::get('haos/embalagem', [HaosController::class, 'indexHaosEmbalagem'])->name('haosEmbalagem.index');
+        Route::get('haos/embalagem/instrucao', [HaosController::class, 'indexHaosEmbalagemInstrucao'])->name('haosEmbalagemInstrucao.index');
+        Route::get('haos/embalagem/procedimento',[HaosController::class, 'indexHaosEmbalagemProcedimento'])->name('haosEmbalagemProcedimento.index');
+        Route::get('haos/embalagem/registro', [HaosController::class, 'indexHaosEmbalagemRegistro'])->name('haosEmbalagemRegistro.index');
+        Route::get('haos/embalagem/formulario', [HaosController::class, 'indexHaosEmbalagemFormulario'])->name('haosEmbalagemFormulario.index');
+
+        Route::get('haos/pintura', [HaosController::class, 'indexHaosPintura'])->name('haosPintura.index');
+        Route::get('haos/pintura/instrucao', [HaosController::class, 'indexHaosPinturaInstrucao'])->name('haosPinturaInstrucao.index');
+        Route::get('haos/pintura/procedimento',[HaosController::class, 'indexHaosPinturaProcedimento'])->name('haosPinturaProcedimento.index');
+        Route::get('haos/pintura/registro', [HaosController::class, 'indexHaosPinturaRegistro'])->name('haosPinturaRegistro.index');
+        Route::get('haos/pintura/formulario', [HaosController::class, 'indexHaosPinturaFormulario'])->name('haosPinturaFormulario.index');
 
         //==============================================================
 
@@ -617,6 +697,48 @@ Route::middleware('auth')
         Route::get('artea/transporte/registro', [ArteaController::class, 'indexArteaTransporteRegistro'])->name('arteaTransporteRegistro.index');
         Route::get('artea/transporte/formulario', [ArteaController::class, 'indexArteaTransporteFormulario'])->name('arteaTransporteFormulario.index');
 
+        Route::get('artea/atelie', [ArteaController::class, 'indexArteaAtelie'])->name('arteaAtelie.index');
+        Route::get('artea/atelie/instrucao', [ArteaController::class, 'indexArteaAtelieInstrucao'])->name('arteaAtelieInstrucao.index');
+        Route::get('artea/atelie/procedimento',[ArteaController::class, 'indexArteaAtelieProcedimento'])->name('arteaAtelieProcedimento.index');
+        Route::get('artea/atelie/registro', [ArteaController::class, 'indexArteaAtelieRegistro'])->name('arteaAtelieRegistro.index');
+        Route::get('artea/atelie/formulario', [ArteaController::class, 'indexArteaAtelieFormulario'])->name('arteaAtelieFormulario.index');
+
+
+        Route::get('artea/corte', [ArteaController::class, 'indexArteaCorte'])->name('arteaCorte.index');
+        Route::get('artea/corte/instrucao', [ArteaController::class, 'indexArteaCorteInstrucao'])->name('arteaCorteInstrucao.index');
+        Route::get('artea/corte/procedimento',[ArteaController::class, 'indexArteaCorteProcedimento'])->name('arteaCorteProcedimento.index');
+        Route::get('artea/corte/registro', [ArteaController::class, 'indexArteaCorteRegistro'])->name('arteaCorteRegistro.index');
+        Route::get('artea/corte/formulario', [ArteaController::class, 'indexArteaCorteFormulario'])->name('arteaCorteFormulario.index');
+
+        Route::get('artea/coladeira', [ArteaController::class, 'indexArteaColadeira'])->name('arteaColadeira.index');
+        Route::get('artea/coladeira/instrucao', [ArteaController::class, 'indexArteaColadeiraInstrucao'])->name('arteaColadeiraInstrucao.index');
+        Route::get('artea/coladeira/procedimento',[ArteaController::class, 'indexArteaColadeiraProcedimento'])->name('arteaColadeiraProcedimento.index');
+        Route::get('artea/coladeira/registro', [ArteaController::class, 'indexArteaColadeiraRegistro'])->name('arteaColadeiraRegistro.index');
+        Route::get('artea/coladeira/formulario', [ArteaController::class, 'indexArteaColadeiraFormulario'])->name('arteaColadeiraFormulario.index');
+
+        Route::get('artea/furadeira', [ArteaController::class, 'indexArteaFuradeira'])->name('arteaFuradeira.index');
+        Route::get('artea/furadeira/instrucao', [ArteaController::class, 'indexArteaFuradeiraInstrucao'])->name('arteaFuradeiraInstrucao.index');
+        Route::get('artea/furadeira/procedimento',[ArteaController::class, 'indexArteaFuradeiraProcedimento'])->name('arteaFuradeiraProcedimento.index');
+        Route::get('artea/furadeira/registro', [ArteaController::class, 'indexArteaFuradeiraRegistro'])->name('arteaFuradeiraRegistro.index');
+        Route::get('artea/furadeira/formulario', [ArteaController::class, 'indexArteaFuradeiraFormulario'])->name('arteaFuradeiraFormulario.index');
+
+        Route::get('artea/acabamento', [ArteaController::class, 'indexArteaAcabamento'])->name('arteaAcabamento.index');
+        Route::get('artea/acabamento/instrucao', [ArteaController::class, 'indexArteaAcabamentoInstrucao'])->name('arteaAcabamentoInstrucao.index');
+        Route::get('artea/acabamento/procedimento',[ArteaController::class, 'indexArteaAcabamentoProcedimento'])->name('arteaAcabamentoProcedimento.index');
+        Route::get('artea/acabamento/registro', [ArteaController::class, 'indexArteaAcabamentoRegistro'])->name('arteaAcabamentoRegistro.index');
+        Route::get('artea/acabamento/formulario', [ArteaController::class, 'indexArteaAcabamentoFormulario'])->name('arteaAcabamentoFormulario.index');
+
+        Route::get('artea/embalagem', [ArteaController::class, 'indexArteaEmbalagem'])->name('arteaEmbalagem.index');
+        Route::get('artea/embalagem/instrucao', [ArteaController::class, 'indexArteaEmbalagemInstrucao'])->name('arteaEmbalagemInstrucao.index');
+        Route::get('artea/embalagem/procedimento',[ArteaController::class, 'indexArteaEmbalagemProcedimento'])->name('arteaEmbalagemProcedimento.index');
+        Route::get('artea/embalagem/registro', [ArteaController::class, 'indexArteaEmbalagemRegistro'])->name('arteaEmbalagemRegistro.index');
+        Route::get('artea/embalagem/formulario', [ArteaController::class, 'indexArteaEmbalagemFormulario'])->name('arteaEmbalagemFormulario.index');
+
+        Route::get('artea/pintura', [ArteaController::class, 'indexArteaPintura'])->name('arteaPintura.index');
+        Route::get('artea/pintura/instrucao', [ArteaController::class, 'indexArteaPinturaInstrucao'])->name('arteaPinturaInstrucao.index');
+        Route::get('artea/pintura/procedimento',[ArteaController::class, 'indexArteaPinturaProcedimento'])->name('arteaPinturaProcedimento.index');
+        Route::get('artea/pintura/registro', [ArteaController::class, 'indexArteaPinturaRegistro'])->name('arteaPinturaRegistro.index');
+        Route::get('artea/pintura/formulario', [ArteaController::class, 'indexArteaPinturaFormulario'])->name('arteaPinturaFormulario.index');
 
         //======================================================
 
@@ -811,6 +933,49 @@ Route::middleware('auth')
         Route::get('lavoratto/transporte/registro', [LavorattoController::class, 'indexLavorattoTransporteRegistro'])->name('lavorattoTransporteRegistro.index');
         Route::get('lavoratto/transporte/formulario', [LavorattoController::class, 'indexLavorattoTransporteFormulario'])->name('lavorattoTransporteFormulario.index');
 
+        Route::get('lavoratto/atelie', [LavorattoController::class, 'indexLavorattoAtelie'])->name('lavorattoAtelie.index');
+        Route::get('lavoratto/atelie/instrucao', [LavorattoController::class, 'indexLavorattoAtelieInstrucao'])->name('lavorattoAtelieInstrucao.index');
+        Route::get('lavoratto/atelie/procedimento',[LavorattoController::class, 'indexLavorattoAtelieProcedimento'])->name('lavorattoAtelieProcedimento.index');
+        Route::get('lavoratto/atelie/registro', [LavorattoController::class, 'indexLavorattoAtelieRegistro'])->name('lavorattoAtelieRegistro.index');
+        Route::get('lavoratto/atelie/formulario', [LavorattoController::class, 'indexLavorattoAtelieFormulario'])->name('lavorattoAtelieFormulario.index');
+
+        Route::get('lavoratto/corte', [LavorattoController::class, 'indexLavorattoCorte'])->name('lavorattoCorte.index');
+        Route::get('lavoratto/corte/instrucao', [LavorattoController::class, 'indexLavorattoCorteInstrucao'])->name('lavorattoCorteInstrucao.index');
+        Route::get('lavoratto/corte/procedimento',[LavorattoController::class, 'indexLavorattoCorteProcedimento'])->name('lavorattoCorteProcedimento.index');
+        Route::get('lavoratto/corte/registro', [LavorattoController::class, 'indexLavorattoCorteRegistro'])->name('lavorattoCorteRegistro.index');
+        Route::get('lavoratto/corte/formulario', [LavorattoController::class, 'indexLavorattoCorteFormulario'])->name('lavorattoCorteFormulario.index');
+
+        Route::get('lavoratto/coladeira', [LavorattoController::class, 'indexLavorattoColadeira'])->name('lavorattoColadeira.index');
+        Route::get('lavoratto/coladeira/instrucao', [LavorattoController::class, 'indexLavorattoColadeiraInstrucao'])->name('lavorattoColadeiraInstrucao.index');
+        Route::get('lavoratto/coladeira/procedimento',[LavorattoController::class, 'indexLavorattoColadeiraProcedimento'])->name('lavorattoColadeiraProcedimento.index');
+        Route::get('lavoratto/coladeira/registro', [LavorattoController::class, 'indexLavorattoColadeiraRegistro'])->name('lavorattoColadeiraRegistro.index');
+        Route::get('lavoratto/coladeira/formulario', [LavorattoController::class, 'indexLavorattoColadeiraFormulario'])->name('lavorattoColadeiraFormulario.index');
+
+        Route::get('lavoratto/furadeira', [LavorattoController::class, 'indexLavorattoFuradeira'])->name('lavorattoFuradeira.index');
+        Route::get('lavoratto/furadeira/instrucao', [LavorattoController::class, 'indexLavorattoFuradeiraInstrucao'])->name('lavorattoFuradeiraInstrucao.index');
+        Route::get('lavoratto/furadeira/procedimento',[LavorattoController::class, 'indexLavorattoFuradeiraProcedimento'])->name('lavorattoFuradeiraProcedimento.index');
+        Route::get('lavoratto/furadeira/registro', [LavorattoController::class, 'indexLavorattoFuradeiraRegistro'])->name('lavorattoFuradeiraRegistro.index');
+        Route::get('lavoratto/furadeira/formulario', [LavorattoController::class, 'indexLavorattoFuradeiraFormulario'])->name('lavorattoFuradeiraFormulario.index');
+
+        Route::get('lavoratto/acabamento', [LavorattoController::class, 'indexLavorattoAcabamento'])->name('lavorattoAcabamento.index');
+        Route::get('lavoratto/acabamento/instrucao', [LavorattoController::class, 'indexLavorattoAcabamentoInstrucao'])->name('lavorattoAcabamentoInstrucao.index');
+        Route::get('lavoratto/acabamento/procedimento',[LavorattoController::class, 'indexLavorattoAcabamentoProcedimento'])->name('lavorattoAcabamentoProcedimento.index');
+        Route::get('lavoratto/acabamento/registro', [LavorattoController::class, 'indexLavorattoAcabamentoRegistro'])->name('lavorattoAcabamentoRegistro.index');
+        Route::get('lavoratto/acabamento/formulario', [LavorattoController::class, 'indexLavorattoAcabamentoFormulario'])->name('lavorattoAcabamentoFormulario.index');
+
+        Route::get('lavoratto/embalagem', [LavorattoController::class, 'indexLavorattoEmbalagem'])->name('lavorattoEmbalagem.index');
+        Route::get('lavoratto/embalagem/instrucao', [LavorattoController::class, 'indexLavorattoEmbalagemInstrucao'])->name('lavorattoEmbalagemInstrucao.index');
+        Route::get('lavoratto/embalagem/procedimento',[LavorattoController::class, 'indexLavorattoEmbalagemProcedimento'])->name('lavorattoEmbalagemProcedimento.index');
+        Route::get('lavoratto/embalagem/registro', [LavorattoController::class, 'indexLavorattoEmbalagemRegistro'])->name('lavorattoEmbalagemRegistro.index');
+        Route::get('lavoratto/embalagem/formulario', [LavorattoController::class, 'indexLavorattoEmbalagemFormulario'])->name('lavorattoEmbalagemFormulario.index');
+
+        Route::get('lavoratto/pintura', [LavorattoController::class, 'indexLavorattoPintura'])->name('lavorattoPintura.index');
+        Route::get('lavoratto/pintura/instrucao', [LavorattoController::class, 'indexLavorattoPinturaInstrucao'])->name('lavorattoPinturaInstrucao.index');
+        Route::get('lavoratto/pintura/procedimento',[LavorattoController::class, 'indexLavorattoPinturaProcedimento'])->name('lavorattoPinturaProcedimento.index');
+        Route::get('lavoratto/pintura/registro', [LavorattoController::class, 'indexLavorattoPinturaRegistro'])->name('lavorattoPinturaRegistro.index');
+        Route::get('lavoratto/pintura/formulario', [LavorattoController::class, 'indexLavorattoPinturaFormulario'])->name('lavorattoPinturaFormulario.index');
+
+
     });
     
 
@@ -830,15 +995,15 @@ Route::get('/files/arquivosinativos', [FileController::class, 'arquivosInativos'
 Route::get('/files/aguardandoaprovacao', [FileController::class, 'aguardandoAprovacao'])->name('aguardandoAprovacao.index');
 Route::get('/files/search', [FileController::class, 'search'])->name('files.search');
 Route::get('/files/searchCommonUser', [FileController::class, 'searchCommonUser'])->name('filesCommonUser.search');
-Route::delete('/files/{file}/destroy', [FileController::class, 'destroy'])->name('files.destroy')->middleware(CheckIfIsAdmin::class);
+Route::delete('/files/{file}/destroy', [FileController::class, 'destroy'])->name('files.destroy');
 Route::post('/files/{id}/upload', [FileController::class, 'upload'])->name('files.upload');
 Route::get('/files/create',[FileController::class, 'create'])->name('files.create');
 Route::get('/files/{file}', [FileController::class, 'show'])->name('files.show');
 Route::put('/files/{file}',[FileController::class, 'update'])->name('files.update');
 Route::get('/files/{file}/edit', [FileController::class, 'edit'])->name('files.edit');
 Route::post('/files',[FileController::class, 'store'])->name('files.store');
-Route::get('/files',[FileController::class, 'index'])->name('files.index');
-Route::get('/files/view/{id}', [FileController::class, 'view'])->name('files.view');
+Route::get('/files',[FileController::class, 'index'])->name('files.index')->middleware(checkPermission::class);
+Route::get('/files/view/{id}', [FileController::class, 'view'])->name('files.view')->middleware('auth')->middleware(checkPermission::class);
 
 //==============================================================
 
@@ -846,7 +1011,7 @@ Route::get('/files/view/{id}', [FileController::class, 'view'])->name('files.vie
 //==============================================================
 // ROTAS PARA EMPRESAS
 
-Route::delete('/companies/{company}/destroy', [CompanyController::class, 'destroy'])->name('companies.destroy')->middleware(CheckIfIsAdmin::class);
+Route::delete('/companies/{company}/destroy', [CompanyController::class, 'destroy'])->name('companies.destroy');
 Route::get('/companies/create', [CompanyController::class, 'create'])->name('companies.create');
 Route::get('/companies/{company}', [CompanyController::class, 'show'])->name('companies.show');
 Route::put('/companies/{company}',[CompanyController::class, 'update'])->name('companies.update');
@@ -860,7 +1025,7 @@ Route::get('/companies',[CompanyController::class, 'index'])->name('companies.in
 //==============================================================
 // ROTAS PARA SETORES
 
-Route::delete('/sectors/{sector}/destroy', [SectorController::class, 'destroy'])->name('sectors.destroy')->middleware(CheckIfIsAdmin::class);
+Route::delete('/sectors/{sector}/destroy', [SectorController::class, 'destroy'])->name('sectors.destroy');
 Route::get('/sectors/create', [SectorController::class, 'create'])->name('sectors.create');
 Route::get('/sectors/{sector}', [SectorController::class, 'show'])->name('sectors.show');
 Route::put('/sectors/{sector}',[SectorController::class, 'update'])->name('sectors.update');
@@ -879,7 +1044,7 @@ Route::middleware('auth')
         
         Route::get('/macros/search', [MacroController::class, 'search'])->name('macros.search');
 
-        Route::delete('/macros/{macro}/destroy', [MacroController::class, 'destroy'])->name('macros.destroy')->middleware(CheckIfIsAdmin::class);
+        Route::delete('/macros/{macro}/destroy', [MacroController::class, 'destroy'])->name('macros.destroy');
         Route::post('/macros/{id}/upload', [MacroController::class, 'upload'])->name('macros.upload');
         Route::get('/macros/create',[MacroController::class, 'create'])->name('macros.create');
         Route::get('/macros/{macro}', [MacroController::class, 'show'])->name('macros.show');
@@ -896,7 +1061,7 @@ Route::middleware('auth')
 //==============================================================
 // ROTAS PARA PERMISSÕES
 
-Route::delete('/permissions/{permission}/destroy', [PermissionController::class, 'destroy'])->name('permissions.destroy')->middleware(CheckIfIsAdmin::class);
+Route::delete('/permissions/{permission}/destroy', [PermissionController::class, 'destroy'])->name('permissions.destroy');
 Route::get('/permissions/create', [PermissionController::class, 'create'])->name('permissions.create');
 Route::get('/permissions/{permission}', [PermissionController::class, 'show'])->name('permissions.show');
 Route::put('/permissions/{permission}',[PermissionController::class, 'update'])->name('permissions.update');

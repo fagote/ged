@@ -61,6 +61,12 @@ class StoreUserRequest extends FormRequest
             'id_setor30' => 'nullable|integer|min:1',
             'id_setor31' => 'nullable|integer|min:1',
             'id_setor32' => 'nullable|integer|min:1',
+            'id_setor33' => 'nullable|integer|min:1',
+            'id_setor34' => 'nullable|integer|min:1',
+            'id_setor35' => 'nullable|integer|min:1',
+            'id_setor36' => 'nullable|integer|min:1',
+            'id_setor37' => 'nullable|integer|min:1',
+            'id_setor38' => 'nullable|integer|min:1',
 
             'email' => [
                 'required',

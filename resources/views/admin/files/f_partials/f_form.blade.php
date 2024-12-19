@@ -49,8 +49,7 @@
         <label for="empresa_{{ $company->id_empresa }}">{{ $company->name_empresa }}</label>
 </div>
 @endforeach
- <br>
-<br>
+ 
 
 <!--=======================================================-->
 
@@ -81,7 +80,9 @@
                 $file->id_setor17, $file->id_setor18, $file->id_setor19, $file->id_setor20,
                 $file->id_setor21, $file->id_setor22, $file->id_setor23, $file->id_setor24,
                 $file->id_setor25, $file->id_setor26, $file->id_setor27, $file->id_setor28,
-                $file->id_setor29, $file->id_setor30, $file->id_setor31, $file->id_setor32
+                $file->id_setor29, $file->id_setor30, $file->id_setor31, $file->id_setor32,
+                $file->id_setor33, $file->id_setor34, $file->id_setor35, $file->id_setor36,
+                $file->id_setor37, $file->id_setor38
             ]) ? 'checked' : '' }}
 
             {{-- Marca os setores que foram selecionados no formulário (valores antigos) --}}

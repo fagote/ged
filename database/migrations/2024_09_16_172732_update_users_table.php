@@ -18,7 +18,7 @@ return new class extends Migration
             }
 
             // Setores
-            for ($i = 1; $i <= 32; $i++) {
+            for ($i = 1; $i <= 38; $i++) {
                 $table->foreignId("id_setor{$i}")->nullable()->constrained('sectors', 'id_setor')->onDelete('cascade');
             }
 
@@ -45,7 +45,7 @@ return new class extends Migration
             }
 
             // Remove as chaves estrangeiras dos setores
-            for ($i = 1; $i <= 32; $i++) {
+            for ($i = 1; $i <= 38; $i++) {
                 if (Schema::hasColumn('users', "id_setor{$i}")) {
                     $table->dropForeign(["id_setor{$i}"]);
                     $table->dropColumn("id_setor{$i}");

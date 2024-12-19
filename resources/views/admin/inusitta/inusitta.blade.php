@@ -1,5 +1,5 @@
 <x-icon></x-icon>
-
+<title>File Manager</title>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
@@ -22,48 +22,29 @@
                      
 
                     <ul class="file-system">
-                        @if(Auth::check() && Auth::user()->id_setor1 == 1 || Auth::user()->id_setor2 == 1 || Auth::user()->id_setor3 == 1 || 
-                            Auth::user()->id_setor4 == 1 || Auth::user()->id_setor5 == 1 || Auth::user()->id_setor6 == 1 || 
-                            Auth::user()->id_setor7 == 1 || Auth::user()->id_setor8 == 1 || Auth::user()->id_setor9 == 1 || 
-                            Auth::user()->id_setor10 == 1 || Auth::user()->id_setor11 == 1 || Auth::user()->id_setor12 == 1 || 
-                            Auth::user()->id_setor13 == 1 || Auth::user()->id_setor14 == 1 || Auth::user()->id_setor15 == 1 || 
-                            Auth::user()->id_setor16 == 1 || Auth::user()->id_setor17 == 1 || Auth::user()->id_setor18 == 1 || 
-                            Auth::user()->id_setor19 == 1 || Auth::user()->id_setor20 == 1 || Auth::user()->id_setor21 == 1 || 
-                            Auth::user()->id_setor22 == 1 || Auth::user()->id_setor23 == 1 || Auth::user()->id_setor24 == 1 || 
-                            Auth::user()->id_setor25 == 1 || Auth::user()->id_setor26 == 1 || Auth::user()->id_setor27 == 1 || 
-                            Auth::user()->id_setor28 == 1 || Auth::user()->id_setor29 == 1 || Auth::user()->id_setor30 == 1 || 
-                            Auth::user()->id_setor31 == 1 || Auth::user()->id_setor32 == 1 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
-                            <li class="folder">
-                                <a href="{{ route('inusittaTi.index') }}" class="folder-link">
-                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
-                                    TECNOLOGIA DA INFORMAÇÃO
-                                </a>
-                            </li>
-                        @endif
-                        
-                        @if(Auth::check() && Auth::user()->id_setor1 == 12 || Auth::user()->id_setor2 == 12 || Auth::user()->id_setor3 == 12 || 
-                            Auth::user()->id_setor4 == 12 || Auth::user()->id_setor5 == 12 || Auth::user()->id_setor6 == 12 || 
-                            Auth::user()->id_setor7 == 12 || Auth::user()->id_setor8 == 12 || Auth::user()->id_setor9 == 12 || 
-                            Auth::user()->id_setor10 == 12 || Auth::user()->id_setor11 == 12 || Auth::user()->id_setor12 == 12 || 
-                            Auth::user()->id_setor13 == 12 || Auth::user()->id_setor14 == 12 || Auth::user()->id_setor15 == 12 || 
-                            Auth::user()->id_setor16 == 12 || Auth::user()->id_setor17 == 12 || Auth::user()->id_setor18 == 12 || 
-                            Auth::user()->id_setor19 == 12 || Auth::user()->id_setor20 == 12 || Auth::user()->id_setor21 == 12 || 
-                            Auth::user()->id_setor22 == 12 || Auth::user()->id_setor23 == 12 || Auth::user()->id_setor24 == 12 || 
-                            Auth::user()->id_setor25 == 12 || Auth::user()->id_setor26 == 12 || Auth::user()->id_setor27 == 12 || 
-                            Auth::user()->id_setor28 == 12 || Auth::user()->id_setor29 == 12 || Auth::user()->id_setor30 == 12 || 
-                            Auth::user()->id_setor31 == 12 || Auth::user()->id_setor32 == 12 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
-                            <li class="folder">
-                                <a href="{{ route('inusittaMarketing.index') }}" class="folder-link">
-                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
-                                    MARKETING</a>
-                            </li>
-                        @endif
-
-                        
 
                         <!--=======================-->
+
+                        @if(Auth::check() && Auth::user()->id_setor1 == 36 || Auth::user()->id_setor2 == 36 || Auth::user()->id_setor3 == 36 || 
+                            Auth::user()->id_setor4 == 36 || Auth::user()->id_setor5 == 36 || Auth::user()->id_setor6 == 36 || 
+                            Auth::user()->id_setor7 == 36 || Auth::user()->id_setor8 == 36 || Auth::user()->id_setor9 == 36 || 
+                            Auth::user()->id_setor10 == 36 || Auth::user()->id_setor11 == 36 || Auth::user()->id_setor12 == 36 || 
+                            Auth::user()->id_setor13 == 36 || Auth::user()->id_setor14 == 36 || Auth::user()->id_setor15 == 36 || 
+                            Auth::user()->id_setor16 == 36 || Auth::user()->id_setor17 == 36 || Auth::user()->id_setor18 == 36 || 
+                            Auth::user()->id_setor19 == 36 || Auth::user()->id_setor20 == 36 || Auth::user()->id_setor21 == 36 || 
+                            Auth::user()->id_setor22 == 36 || Auth::user()->id_setor23 == 36 || Auth::user()->id_setor24 == 36 || 
+                            Auth::user()->id_setor25 == 36 || Auth::user()->id_setor26 == 36 || Auth::user()->id_setor27 == 36 || 
+                            Auth::user()->id_setor28 == 36 || Auth::user()->id_setor29 == 36 || Auth::user()->id_setor30 == 36 || 
+                            Auth::user()->id_setor31 == 36 || Auth::user()->id_setor32 == 36 || Auth::user()->id_setor33 == 36 || 
+                            Auth::user()->id_setor34 == 36 || Auth::user()->id_setor35 == 36 || Auth::user()->id_setor36 == 36 || 
+                            Auth::user()->id_setor37 == 36 || Auth::user()->id_setor38 == 36 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2)
+                            <li class="folder">
+                                <a href="{{route('inusittaAcabamento.index')}}" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    ACABAMENTO</a>
+                            </li>
+                        @endif
 
                         @if(Auth::check() && Auth::user()->id_setor1 == 5 || Auth::user()->id_setor2 == 5 || Auth::user()->id_setor3 == 5 || 
                             Auth::user()->id_setor4 == 5 || Auth::user()->id_setor5 == 5 || Auth::user()->id_setor6 == 5 || 
@@ -75,7 +56,9 @@
                             Auth::user()->id_setor22 == 5 || Auth::user()->id_setor23 == 5 || Auth::user()->id_setor24 == 5 || 
                             Auth::user()->id_setor25 == 5 || Auth::user()->id_setor26 == 5 || Auth::user()->id_setor27 == 5 || 
                             Auth::user()->id_setor28 == 5 || Auth::user()->id_setor29 == 5 || Auth::user()->id_setor30 == 5 || 
-                            Auth::user()->id_setor31 == 5 || Auth::user()->id_setor32 == 5 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 5 || Auth::user()->id_setor32 == 5 || Auth::user()->id_setor33 == 5 || 
+                            Auth::user()->id_setor34 == 5 || Auth::user()->id_setor35 == 5 || Auth::user()->id_setor36 == 5 || 
+                            Auth::user()->id_setor37 == 5 || Auth::user()->id_setor38 == 5 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaAlmoxarifado.index')}}" class="folder-link">
@@ -94,7 +77,9 @@
                             Auth::user()->id_setor22 == 24 || Auth::user()->id_setor23 == 24 || Auth::user()->id_setor24 == 24 || 
                             Auth::user()->id_setor25 == 24 || Auth::user()->id_setor26 == 24 || Auth::user()->id_setor27 == 24 || 
                             Auth::user()->id_setor28 == 24 || Auth::user()->id_setor29 == 24 || Auth::user()->id_setor30 == 24 || 
-                            Auth::user()->id_setor31 == 24 || Auth::user()->id_setor32 == 24 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 24 || Auth::user()->id_setor32 == 24 || Auth::user()->id_setor33 == 24 || 
+                            Auth::user()->id_setor34 == 24 || Auth::user()->id_setor35 == 24 || Auth::user()->id_setor36 == 24 || 
+                            Auth::user()->id_setor37 == 24 || Auth::user()->id_setor38 == 24 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaAssistencia.index')}}" class="folder-link">
@@ -114,12 +99,36 @@
                             Auth::user()->id_setor22 == 32 || Auth::user()->id_setor23 == 32 || Auth::user()->id_setor24 == 32 || 
                             Auth::user()->id_setor25 == 32 || Auth::user()->id_setor26 == 32 || Auth::user()->id_setor27 == 32 || 
                             Auth::user()->id_setor28 == 32 || Auth::user()->id_setor29 == 32 || Auth::user()->id_setor30 == 32 || 
-                            Auth::user()->id_setor31 == 32 || Auth::user()->id_setor32 == 32 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 32 || Auth::user()->id_setor32 == 32 || Auth::user()->id_setor33 == 32 || 
+                            Auth::user()->id_setor34 == 32 || Auth::user()->id_setor35 == 32 || Auth::user()->id_setor36 == 32 || 
+                            Auth::user()->id_setor37 == 32 || Auth::user()->id_setor38 == 32 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaAtelie.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     ATELIÊ
+                                </a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor1 == 34 || Auth::user()->id_setor2 == 34 || Auth::user()->id_setor3 == 34 || 
+                            Auth::user()->id_setor4 == 34 || Auth::user()->id_setor5 == 34 || Auth::user()->id_setor6 == 34 || 
+                            Auth::user()->id_setor7 == 34 || Auth::user()->id_setor8 == 34 || Auth::user()->id_setor9 == 34 || 
+                            Auth::user()->id_setor10 == 34 || Auth::user()->id_setor11 == 34 || Auth::user()->id_setor12 == 34 || 
+                            Auth::user()->id_setor13 == 34 || Auth::user()->id_setor14 == 34 || Auth::user()->id_setor15 == 34 || 
+                            Auth::user()->id_setor16 == 34 || Auth::user()->id_setor17 == 34 || Auth::user()->id_setor18 == 34 || 
+                            Auth::user()->id_setor19 == 34 || Auth::user()->id_setor20 == 34 || Auth::user()->id_setor21 == 34 || 
+                            Auth::user()->id_setor22 == 34 || Auth::user()->id_setor23 == 34 || Auth::user()->id_setor24 == 34 || 
+                            Auth::user()->id_setor25 == 34 || Auth::user()->id_setor26 == 34 || Auth::user()->id_setor27 == 34 || 
+                            Auth::user()->id_setor28 == 34 || Auth::user()->id_setor29 == 34 || Auth::user()->id_setor30 == 34 || 
+                            Auth::user()->id_setor31 == 34 || Auth::user()->id_setor34 == 34 || Auth::user()->id_setor33 == 34 || 
+                            Auth::user()->id_setor34 == 34 || Auth::user()->id_setor35 == 34 || Auth::user()->id_setor36 == 34 || 
+                            Auth::user()->id_setor37 == 34 || Auth::user()->id_setor38 == 34 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2)
+                            <li class="folder">
+                                <a href="{{route('inusittaColadeira.index')}}" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    COLADEIRA
                                 </a>
                             </li>
                         @endif
@@ -134,7 +143,9 @@
                             Auth::user()->id_setor22 == 21 || Auth::user()->id_setor23 == 21 || Auth::user()->id_setor24 == 21 || 
                             Auth::user()->id_setor25 == 21 || Auth::user()->id_setor26 == 21 || Auth::user()->id_setor27 == 21 || 
                             Auth::user()->id_setor28 == 21 || Auth::user()->id_setor29 == 21 || Auth::user()->id_setor30 == 21 || 
-                            Auth::user()->id_setor31 == 21 || Auth::user()->id_setor32 == 21 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 21 || Auth::user()->id_setor21 == 21 || Auth::user()->id_setor33 == 21 || 
+                            Auth::user()->id_setor21 == 21 || Auth::user()->id_setor35 == 21 || Auth::user()->id_setor36 == 21 || 
+                            Auth::user()->id_setor37 == 21 || Auth::user()->id_setor38 == 21 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaComercial.index')}}" class="folder-link">
@@ -153,7 +164,9 @@
                             Auth::user()->id_setor22 == 25 || Auth::user()->id_setor23 == 25 || Auth::user()->id_setor24 == 25 || 
                             Auth::user()->id_setor25 == 25 || Auth::user()->id_setor26 == 25 || Auth::user()->id_setor27 == 25 || 
                             Auth::user()->id_setor28 == 25 || Auth::user()->id_setor29 == 25 || Auth::user()->id_setor30 == 25 || 
-                            Auth::user()->id_setor31 == 25 || Auth::user()->id_setor32 == 25 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 25 || Auth::user()->id_setor34 == 25 || Auth::user()->id_setor33 == 25 || 
+                            Auth::user()->id_setor34 == 25 || Auth::user()->id_setor35 == 25 || Auth::user()->id_setor36 == 25 || 
+                            Auth::user()->id_setor37 == 25 || Auth::user()->id_setor38 == 25 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaCompras.index')}}" class="folder-link">
@@ -172,7 +185,9 @@
                             Auth::user()->id_setor22 == 26 || Auth::user()->id_setor23 == 26 || Auth::user()->id_setor24 == 26 || 
                             Auth::user()->id_setor25 == 26 || Auth::user()->id_setor26 == 26 || Auth::user()->id_setor27 == 26 || 
                             Auth::user()->id_setor28 == 26 || Auth::user()->id_setor29 == 26 || Auth::user()->id_setor30 == 26 || 
-                            Auth::user()->id_setor31 == 26 || Auth::user()->id_setor32 == 26 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 26 || Auth::user()->id_setor34 == 26 || Auth::user()->id_setor33 == 26 || 
+                            Auth::user()->id_setor34 == 26 || Auth::user()->id_setor35 == 26 || Auth::user()->id_setor36 == 26 || 
+                            Auth::user()->id_setor37 == 26 || Auth::user()->id_setor38 == 26 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaContabilidade.index')}}" class="folder-link">
@@ -191,7 +206,9 @@
                             Auth::user()->id_setor22 == 27 || Auth::user()->id_setor23 == 27 || Auth::user()->id_setor24 == 27 || 
                             Auth::user()->id_setor25 == 27 || Auth::user()->id_setor26 == 27 || Auth::user()->id_setor27 == 27 || 
                             Auth::user()->id_setor28 == 27 || Auth::user()->id_setor29 == 27 || Auth::user()->id_setor30 == 27 || 
-                            Auth::user()->id_setor31 == 27 || Auth::user()->id_setor32 == 27 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 27 || Auth::user()->id_setor34 == 27 || Auth::user()->id_setor33 == 27 || 
+                            Auth::user()->id_setor34 == 27 || Auth::user()->id_setor35 == 27 || Auth::user()->id_setor36 == 27 || 
+                            Auth::user()->id_setor37 == 27 || Auth::user()->id_setor38 == 27 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaContasPagar.index')}}" class="folder-link">
@@ -210,12 +227,35 @@
                             Auth::user()->id_setor22 == 28 || Auth::user()->id_setor23 == 28 || Auth::user()->id_setor24 == 28 || 
                             Auth::user()->id_setor25 == 28 || Auth::user()->id_setor26 == 28 || Auth::user()->id_setor27 == 28 || 
                             Auth::user()->id_setor28 == 28 || Auth::user()->id_setor29 == 28 || Auth::user()->id_setor30 == 28 || 
-                            Auth::user()->id_setor31 == 28 || Auth::user()->id_setor32 == 28 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 28 || Auth::user()->id_setor34 == 28 || Auth::user()->id_setor33 == 28 || 
+                            Auth::user()->id_setor34 == 28 || Auth::user()->id_setor35 == 28 || Auth::user()->id_setor36 == 28 || 
+                            Auth::user()->id_setor37 == 28 || Auth::user()->id_setor38 == 28 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaContasReceber.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     CONTAS A RECEBER</a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor1 == 33 || Auth::user()->id_setor2 == 33 || Auth::user()->id_setor3 == 33 || 
+                            Auth::user()->id_setor4 == 33 || Auth::user()->id_setor5 == 33 || Auth::user()->id_setor6 == 33 || 
+                            Auth::user()->id_setor7 == 33 || Auth::user()->id_setor8 == 33 || Auth::user()->id_setor9 == 33 || 
+                            Auth::user()->id_setor10 == 33 || Auth::user()->id_setor11 == 33 || Auth::user()->id_setor12 == 33 || 
+                            Auth::user()->id_setor13 == 33 || Auth::user()->id_setor14 == 33 || Auth::user()->id_setor15 == 33 || 
+                            Auth::user()->id_setor16 == 33 || Auth::user()->id_setor17 == 33 || Auth::user()->id_setor18 == 33 || 
+                            Auth::user()->id_setor19 == 33 || Auth::user()->id_setor20 == 33 || Auth::user()->id_setor21 == 33 || 
+                            Auth::user()->id_setor22 == 33 || Auth::user()->id_setor23 == 33 || Auth::user()->id_setor24 == 33 || 
+                            Auth::user()->id_setor25 == 33 || Auth::user()->id_setor26 == 33 || Auth::user()->id_setor27 == 33 || 
+                            Auth::user()->id_setor28 == 33 || Auth::user()->id_setor29 == 33 || Auth::user()->id_setor30 == 33 || 
+                            Auth::user()->id_setor31 == 33 || Auth::user()->id_setor34 == 33 || Auth::user()->id_setor33 == 33 || 
+                            Auth::user()->id_setor34 == 33 || Auth::user()->id_setor35 == 33 || Auth::user()->id_setor36 == 33 || 
+                            Auth::user()->id_setor37 == 33 || Auth::user()->id_setor38 == 33 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2)
+                            <li class="folder">
+                                <a href="{{route('inusittaCorte.index')}}" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    CORTE</a>
                             </li>
                         @endif
                         
@@ -229,7 +269,9 @@
                             Auth::user()->id_setor22 == 3 || Auth::user()->id_setor23 == 3 || Auth::user()->id_setor24 == 3 || 
                             Auth::user()->id_setor25 == 3 || Auth::user()->id_setor26 == 3 || Auth::user()->id_setor27 == 3 || 
                             Auth::user()->id_setor28 == 3 || Auth::user()->id_setor29 == 3 || Auth::user()->id_setor30 == 3 || 
-                            Auth::user()->id_setor31 == 3 || Auth::user()->id_setor32 == 3 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 3 || Auth::user()->id_setor34 == 3 || Auth::user()->id_setor33 == 3 || 
+                            Auth::user()->id_setor34 == 3 || Auth::user()->id_setor35 == 3 || Auth::user()->id_setor36 == 3 || 
+                            Auth::user()->id_setor37 == 3 || Auth::user()->id_setor38 == 3 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaCusto.index')}}" class="folder-link">
@@ -248,7 +290,9 @@
                             Auth::user()->id_setor22 == 29 || Auth::user()->id_setor23 == 29 || Auth::user()->id_setor24 == 29 || 
                             Auth::user()->id_setor25 == 29 || Auth::user()->id_setor26 == 29 || Auth::user()->id_setor27 == 29 || 
                             Auth::user()->id_setor28 == 29 || Auth::user()->id_setor29 == 29 || Auth::user()->id_setor30 == 29 || 
-                            Auth::user()->id_setor31 == 29 || Auth::user()->id_setor32 == 29 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 29 || Auth::user()->id_setor34 == 29 || Auth::user()->id_setor33 == 29 || 
+                            Auth::user()->id_setor34 == 29 || Auth::user()->id_setor35 == 29 || Auth::user()->id_setor36 == 29 || 
+                            Auth::user()->id_setor37 == 29 || Auth::user()->id_setor38 == 29 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaDesign.index')}}" class="folder-link">
@@ -267,7 +311,9 @@
                             Auth::user()->id_setor22 == 7 || Auth::user()->id_setor23 == 7 || Auth::user()->id_setor24 == 7 || 
                             Auth::user()->id_setor25 == 7 || Auth::user()->id_setor26 == 7 || Auth::user()->id_setor27 == 7 || 
                             Auth::user()->id_setor28 == 7 || Auth::user()->id_setor29 == 7 || Auth::user()->id_setor30 == 7 || 
-                            Auth::user()->id_setor31 == 7 || Auth::user()->id_setor32 == 7 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 7 || Auth::user()->id_setor34 == 7 || Auth::user()->id_setor33 == 7 || 
+                            Auth::user()->id_setor34 == 7 || Auth::user()->id_setor35 == 7 || Auth::user()->id_setor36 == 7 || 
+                            Auth::user()->id_setor37 == 7 || Auth::user()->id_setor38 == 7 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaDiretoriaAdministrativa.index')}}" class="folder-link">
@@ -286,7 +332,9 @@
                             Auth::user()->id_setor22 == 30 || Auth::user()->id_setor23 == 30 || Auth::user()->id_setor24 == 30 || 
                             Auth::user()->id_setor25 == 30 || Auth::user()->id_setor26 == 30 || Auth::user()->id_setor27 == 30 || 
                             Auth::user()->id_setor28 == 30 || Auth::user()->id_setor29 == 30 || Auth::user()->id_setor30 == 30 || 
-                            Auth::user()->id_setor31 == 30 || Auth::user()->id_setor32 == 30 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 30 || Auth::user()->id_setor34 == 30 || Auth::user()->id_setor33 == 30 || 
+                            Auth::user()->id_setor34 == 30 || Auth::user()->id_setor35 == 30 || Auth::user()->id_setor36 == 30 || 
+                            Auth::user()->id_setor37 == 30 || Auth::user()->id_setor38 == 30 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaDiretoriaComercial.index')}}" class="folder-link">
@@ -295,17 +343,19 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 4  || Auth::user()->id_setor2 == 4  || Auth::user()->id_setor3 == 4  || 
-                            Auth::user()->id_setor4 == 4  || Auth::user()->id_setor5 == 4  || Auth::user()->id_setor6 == 4  || 
-                            Auth::user()->id_setor7 == 4  || Auth::user()->id_setor8 == 4  || Auth::user()->id_setor9 == 4  || 
-                            Auth::user()->id_setor10 == 4  || Auth::user()->id_setor11 == 4  || Auth::user()->id_setor12 == 4  || 
-                            Auth::user()->id_setor13 == 4  || Auth::user()->id_setor14 == 4  || Auth::user()->id_setor15 == 4  || 
-                            Auth::user()->id_setor16 == 4  || Auth::user()->id_setor17 == 4  || Auth::user()->id_setor18 == 4  || 
-                            Auth::user()->id_setor19 == 4  || Auth::user()->id_setor20 == 4  || Auth::user()->id_setor21 == 4  || 
-                            Auth::user()->id_setor22 == 4  || Auth::user()->id_setor23 == 4  || Auth::user()->id_setor24 == 4  || 
-                            Auth::user()->id_setor25 == 4  || Auth::user()->id_setor26 == 4  || Auth::user()->id_setor27 == 4  || 
-                            Auth::user()->id_setor28 == 4  || Auth::user()->id_setor29 == 4  || Auth::user()->id_setor30 == 4  || 
-                            Auth::user()->id_setor31 == 4  || Auth::user()->id_setor32 == 4  || Auth::user()->id_permission == 1 || 
+                        @if(Auth::check() && Auth::user()->id_setor1 == 4 || Auth::user()->id_setor2 == 4 || Auth::user()->id_setor3 == 4 || 
+                            Auth::user()->id_setor4 == 4 || Auth::user()->id_setor5 == 4 || Auth::user()->id_setor6 == 4 || 
+                            Auth::user()->id_setor7 == 4 || Auth::user()->id_setor8 == 4 || Auth::user()->id_setor9 == 4 || 
+                            Auth::user()->id_setor10 == 4 || Auth::user()->id_setor11 == 4 || Auth::user()->id_setor12 == 4 || 
+                            Auth::user()->id_setor13 == 4 || Auth::user()->id_setor14 == 4 || Auth::user()->id_setor15 == 4 || 
+                            Auth::user()->id_setor16 == 4 || Auth::user()->id_setor17 == 4 || Auth::user()->id_setor18 == 4 || 
+                            Auth::user()->id_setor19 == 4 || Auth::user()->id_setor20 == 4 || Auth::user()->id_setor21 == 4 || 
+                            Auth::user()->id_setor22 == 4 || Auth::user()->id_setor23 == 4 || Auth::user()->id_setor24 == 4 || 
+                            Auth::user()->id_setor25 == 4 || Auth::user()->id_setor26 == 4 || Auth::user()->id_setor27 == 4 || 
+                            Auth::user()->id_setor28 == 4 || Auth::user()->id_setor29 == 4 || Auth::user()->id_setor30 == 4 || 
+                            Auth::user()->id_setor31 == 4 || Auth::user()->id_setor34 == 4 || Auth::user()->id_setor33 == 4 || 
+                            Auth::user()->id_setor34 == 4 || Auth::user()->id_setor35 == 4 || Auth::user()->id_setor36 == 4 || 
+                            Auth::user()->id_setor37 == 4 || Auth::user()->id_setor38 == 4 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaDiretoriaIndustrial.index')}}" class="folder-link">
@@ -324,12 +374,35 @@
                             Auth::user()->id_setor22 == 6 || Auth::user()->id_setor23 == 6 || Auth::user()->id_setor24 == 6 || 
                             Auth::user()->id_setor25 == 6 || Auth::user()->id_setor26 == 6 || Auth::user()->id_setor27 == 6 || 
                             Auth::user()->id_setor28 == 6 || Auth::user()->id_setor29 == 6 || Auth::user()->id_setor30 == 6 || 
-                            Auth::user()->id_setor31 == 6 || Auth::user()->id_setor32 == 6 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 6 || Auth::user()->id_setor34 == 6 || Auth::user()->id_setor33 == 6 || 
+                            Auth::user()->id_setor34 == 6 || Auth::user()->id_setor35 == 6 || Auth::user()->id_setor36 == 6 || 
+                            Auth::user()->id_setor37 == 6 || Auth::user()->id_setor38 == 6 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaEcommerce.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     E-COMMERCE</a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor1 == 37 || Auth::user()->id_setor2 == 37 || Auth::user()->id_setor3 == 37 || 
+                            Auth::user()->id_setor4 == 37 || Auth::user()->id_setor5 == 37 || Auth::user()->id_setor6 == 37 || 
+                            Auth::user()->id_setor7 == 37 || Auth::user()->id_setor8 == 37 || Auth::user()->id_setor9 == 37 || 
+                            Auth::user()->id_setor10 == 37 || Auth::user()->id_setor11 == 37 || Auth::user()->id_setor12 == 37 || 
+                            Auth::user()->id_setor13 == 37 || Auth::user()->id_setor14 == 37 || Auth::user()->id_setor15 == 37 || 
+                            Auth::user()->id_setor16 == 37 || Auth::user()->id_setor17 == 37 || Auth::user()->id_setor18 == 37 || 
+                            Auth::user()->id_setor19 == 37 || Auth::user()->id_setor20 == 37 || Auth::user()->id_setor21 == 37 || 
+                            Auth::user()->id_setor22 == 37 || Auth::user()->id_setor23 == 37 || Auth::user()->id_setor24 == 37 || 
+                            Auth::user()->id_setor25 == 37 || Auth::user()->id_setor26 == 37 || Auth::user()->id_setor27 == 37 || 
+                            Auth::user()->id_setor28 == 37 || Auth::user()->id_setor29 == 37 || Auth::user()->id_setor30 == 37 || 
+                            Auth::user()->id_setor31 == 37 || Auth::user()->id_setor34 == 37 || Auth::user()->id_setor33 == 37 || 
+                            Auth::user()->id_setor34 == 37 || Auth::user()->id_setor35 == 37 || Auth::user()->id_setor36 == 37 || 
+                            Auth::user()->id_setor37 == 37 || Auth::user()->id_setor38 == 37 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2)
+                            <li class="folder">
+                                <a href="{{route('inusittaEmbalagem.index')}}" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    EMBALAGEM</a>
                             </li>
                         @endif
                         
@@ -343,7 +416,9 @@
                             Auth::user()->id_setor22 == 2 || Auth::user()->id_setor23 == 2 || Auth::user()->id_setor24 == 2 || 
                             Auth::user()->id_setor25 == 2 || Auth::user()->id_setor26 == 2 || Auth::user()->id_setor27 == 2 || 
                             Auth::user()->id_setor28 == 2 || Auth::user()->id_setor29 == 2 || Auth::user()->id_setor30 == 2 || 
-                            Auth::user()->id_setor31 == 2 || Auth::user()->id_setor32 == 2 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 2 || Auth::user()->id_setor34 == 2 || Auth::user()->id_setor33 == 2 || 
+                            Auth::user()->id_setor34 == 2 || Auth::user()->id_setor35 == 2 || Auth::user()->id_setor36 == 2 || 
+                            Auth::user()->id_setor37 == 2 || Auth::user()->id_setor38 == 2 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaEngenharia.index')}}" class="folder-link">
@@ -362,7 +437,9 @@
                             Auth::user()->id_setor22 == 8 || Auth::user()->id_setor23 == 8 || Auth::user()->id_setor24 == 8 || 
                             Auth::user()->id_setor25 == 8 || Auth::user()->id_setor26 == 8 || Auth::user()->id_setor27 == 8 || 
                             Auth::user()->id_setor28 == 8 || Auth::user()->id_setor29 == 8 || Auth::user()->id_setor30 == 8 || 
-                            Auth::user()->id_setor31 == 8 || Auth::user()->id_setor32 == 8 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 8 || Auth::user()->id_setor34 == 8 || Auth::user()->id_setor33 == 8 || 
+                            Auth::user()->id_setor34 == 8 || Auth::user()->id_setor35 == 8 || Auth::user()->id_setor36 == 8 || 
+                            Auth::user()->id_setor37 == 8 || Auth::user()->id_setor38 == 8 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaExpedicao.index')}}" class="folder-link">
@@ -381,7 +458,9 @@
                             Auth::user()->id_setor22 == 9 || Auth::user()->id_setor23 == 9 || Auth::user()->id_setor24 == 9 || 
                             Auth::user()->id_setor25 == 9 || Auth::user()->id_setor26 == 9 || Auth::user()->id_setor27 == 9 || 
                             Auth::user()->id_setor28 == 9 || Auth::user()->id_setor29 == 9 || Auth::user()->id_setor30 == 9 || 
-                            Auth::user()->id_setor31 == 9 || Auth::user()->id_setor32 == 9 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 9 || Auth::user()->id_setor34 == 9 || Auth::user()->id_setor33 == 9 || 
+                            Auth::user()->id_setor34 == 9 || Auth::user()->id_setor35 == 9 || Auth::user()->id_setor36 == 9 || 
+                            Auth::user()->id_setor37 == 9 || Auth::user()->id_setor38 == 9 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaExportacao.index')}}" class="folder-link">
@@ -400,12 +479,35 @@
                             Auth::user()->id_setor22 == 31 || Auth::user()->id_setor23 == 31 || Auth::user()->id_setor24 == 31 || 
                             Auth::user()->id_setor25 == 31 || Auth::user()->id_setor26 == 31 || Auth::user()->id_setor27 == 31 || 
                             Auth::user()->id_setor28 == 31 || Auth::user()->id_setor29 == 31 || Auth::user()->id_setor30 == 31 || 
-                            Auth::user()->id_setor31 == 31 || Auth::user()->id_setor32 == 31 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 31 || Auth::user()->id_setor34 == 31 || Auth::user()->id_setor33 == 31 || 
+                            Auth::user()->id_setor34 == 31 || Auth::user()->id_setor35 == 31 || Auth::user()->id_setor36 == 31 || 
+                            Auth::user()->id_setor37 == 31 || Auth::user()->id_setor38 == 31 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaFaturamento.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     FATURAMENTO</a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor1 == 35 || Auth::user()->id_setor2 == 35 || Auth::user()->id_setor3 == 35 || 
+                            Auth::user()->id_setor4 == 35 || Auth::user()->id_setor5 == 35 || Auth::user()->id_setor6 == 35 || 
+                            Auth::user()->id_setor7 == 35 || Auth::user()->id_setor8 == 35 || Auth::user()->id_setor9 == 35 || 
+                            Auth::user()->id_setor10 == 35 || Auth::user()->id_setor11 == 35 || Auth::user()->id_setor12 == 35 || 
+                            Auth::user()->id_setor13 == 35 || Auth::user()->id_setor14 == 35 || Auth::user()->id_setor15 == 35 || 
+                            Auth::user()->id_setor16 == 35 || Auth::user()->id_setor17 == 35 || Auth::user()->id_setor18 == 35 || 
+                            Auth::user()->id_setor19 == 35 || Auth::user()->id_setor20 == 35 || Auth::user()->id_setor21 == 35 || 
+                            Auth::user()->id_setor22 == 35 || Auth::user()->id_setor23 == 35 || Auth::user()->id_setor24 == 35 || 
+                            Auth::user()->id_setor25 == 35 || Auth::user()->id_setor26 == 35 || Auth::user()->id_setor27 == 35 || 
+                            Auth::user()->id_setor28 == 35 || Auth::user()->id_setor29 == 35 || Auth::user()->id_setor30 == 35 || 
+                            Auth::user()->id_setor31 == 35 || Auth::user()->id_setor34 == 35 || Auth::user()->id_setor33 == 35 || 
+                            Auth::user()->id_setor34 == 35 || Auth::user()->id_setor35 == 35 || Auth::user()->id_setor36 == 35 || 
+                            Auth::user()->id_setor37 == 35 || Auth::user()->id_setor38 == 35 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2)
+                            <li class="folder">
+                                <a href="{{route('inusittaFuradeira.index')}}" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    FURADEIRA</a>
                             </li>
                         @endif
 
@@ -419,12 +521,35 @@
                             Auth::user()->id_setor22 == 10 || Auth::user()->id_setor23 == 10 || Auth::user()->id_setor24 == 10 || 
                             Auth::user()->id_setor25 == 10 || Auth::user()->id_setor26 == 10 || Auth::user()->id_setor27 == 10 || 
                             Auth::user()->id_setor28 == 10 || Auth::user()->id_setor29 == 10 || Auth::user()->id_setor30 == 10 || 
-                            Auth::user()->id_setor31 == 10 || Auth::user()->id_setor32 == 10 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 10 || Auth::user()->id_setor34 == 10 || Auth::user()->id_setor33 == 10 || 
+                            Auth::user()->id_setor34 == 10 || Auth::user()->id_setor35 == 10 || Auth::user()->id_setor36 == 10 || 
+                            Auth::user()->id_setor37 == 10 || Auth::user()->id_setor38 == 10 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaManutencao.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     MANUTENÇÃO</a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor1 == 12 || Auth::user()->id_setor2 == 12 || Auth::user()->id_setor3 == 12 || 
+                            Auth::user()->id_setor4 == 12 || Auth::user()->id_setor5 == 12 || Auth::user()->id_setor6 == 12 || 
+                            Auth::user()->id_setor7 == 12 || Auth::user()->id_setor8 == 12 || Auth::user()->id_setor9 == 12 || 
+                            Auth::user()->id_setor10 == 12 || Auth::user()->id_setor11 == 12 || Auth::user()->id_setor12 == 12 || 
+                            Auth::user()->id_setor13 == 12 || Auth::user()->id_setor14 == 12 || Auth::user()->id_setor15 == 12 || 
+                            Auth::user()->id_setor16 == 12 || Auth::user()->id_setor17 == 12 || Auth::user()->id_setor18 == 12 || 
+                            Auth::user()->id_setor19 == 12 || Auth::user()->id_setor20 == 12 || Auth::user()->id_setor21 == 12 || 
+                            Auth::user()->id_setor22 == 12 || Auth::user()->id_setor23 == 12 || Auth::user()->id_setor24 == 12 || 
+                            Auth::user()->id_setor25 == 12 || Auth::user()->id_setor26 == 12 || Auth::user()->id_setor27 == 12 || 
+                            Auth::user()->id_setor28 == 12 || Auth::user()->id_setor29 == 12 || Auth::user()->id_setor30 == 12 || 
+                            Auth::user()->id_setor31 == 12 || Auth::user()->id_setor34 == 12 || Auth::user()->id_setor33 == 12 || 
+                            Auth::user()->id_setor34 == 12 || Auth::user()->id_setor35 == 12 || Auth::user()->id_setor36 == 12 || 
+                            Auth::user()->id_setor37 == 12 || Auth::user()->id_setor38 == 12 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2)
+                            <li class="folder">
+                                <a href="{{ route('inusittaMarketing.index') }}" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    MARKETING</a>
                             </li>
                         @endif
 
@@ -438,12 +563,35 @@
                             Auth::user()->id_setor22 == 11 || Auth::user()->id_setor23 == 11 || Auth::user()->id_setor24 == 11 || 
                             Auth::user()->id_setor25 == 11 || Auth::user()->id_setor26 == 11 || Auth::user()->id_setor27 == 11 || 
                             Auth::user()->id_setor28 == 11 || Auth::user()->id_setor29 == 11 || Auth::user()->id_setor30 == 11 || 
-                            Auth::user()->id_setor31 == 11 || Auth::user()->id_setor32 == 11 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 11 || Auth::user()->id_setor34 == 11 || Auth::user()->id_setor33 == 11 || 
+                            Auth::user()->id_setor34 == 11 || Auth::user()->id_setor35 == 11 || Auth::user()->id_setor36 == 11 || 
+                            Auth::user()->id_setor37 == 11 || Auth::user()->id_setor38 == 11 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaPed.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     P&D</a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor1 == 38 || Auth::user()->id_setor2 == 38 || Auth::user()->id_setor3 == 38 || 
+                            Auth::user()->id_setor4 == 38 || Auth::user()->id_setor5 == 38 || Auth::user()->id_setor6 == 38 || 
+                            Auth::user()->id_setor7 == 38 || Auth::user()->id_setor8 == 38 || Auth::user()->id_setor9 == 38 || 
+                            Auth::user()->id_setor10 == 38 || Auth::user()->id_setor11 == 38 || Auth::user()->id_setor12 == 38 || 
+                            Auth::user()->id_setor13 == 38 || Auth::user()->id_setor14 == 38 || Auth::user()->id_setor15 == 38 || 
+                            Auth::user()->id_setor16 == 38 || Auth::user()->id_setor17 == 38 || Auth::user()->id_setor18 == 38 || 
+                            Auth::user()->id_setor19 == 38 || Auth::user()->id_setor20 == 38 || Auth::user()->id_setor21 == 38 || 
+                            Auth::user()->id_setor22 == 38 || Auth::user()->id_setor23 == 38 || Auth::user()->id_setor24 == 38 || 
+                            Auth::user()->id_setor25 == 38 || Auth::user()->id_setor26 == 38 || Auth::user()->id_setor27 == 38 || 
+                            Auth::user()->id_setor28 == 38 || Auth::user()->id_setor29 == 38 || Auth::user()->id_setor30 == 38 || 
+                            Auth::user()->id_setor31 == 38 || Auth::user()->id_setor34 == 38 || Auth::user()->id_setor33 == 38 || 
+                            Auth::user()->id_setor34 == 38 || Auth::user()->id_setor35 == 38 || Auth::user()->id_setor36 == 38 || 
+                            Auth::user()->id_setor37 == 38 || Auth::user()->id_setor38 == 38 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2)
+                            <li class="folder">
+                                <a href="{{route('inusittaPintura.index')}}" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    PINTURA</a>
                             </li>
                         @endif
 
@@ -457,7 +605,9 @@
                             Auth::user()->id_setor22 == 13 || Auth::user()->id_setor23 == 13 || Auth::user()->id_setor24 == 13 || 
                             Auth::user()->id_setor25 == 13 || Auth::user()->id_setor26 == 13 || Auth::user()->id_setor27 == 13 || 
                             Auth::user()->id_setor28 == 13 || Auth::user()->id_setor29 == 13 || Auth::user()->id_setor30 == 13 || 
-                            Auth::user()->id_setor31 == 13 || Auth::user()->id_setor32 == 13 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 13 || Auth::user()->id_setor34 == 13 || Auth::user()->id_setor33 == 13 || 
+                            Auth::user()->id_setor34 == 13 || Auth::user()->id_setor35 == 13 || Auth::user()->id_setor36 == 13 || 
+                            Auth::user()->id_setor37 == 13 || Auth::user()->id_setor38 == 13 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaPmo.index')}}" class="folder-link">
@@ -476,7 +626,9 @@
                             Auth::user()->id_setor22 == 14 || Auth::user()->id_setor23 == 14 || Auth::user()->id_setor24 == 14 || 
                             Auth::user()->id_setor25 == 14 || Auth::user()->id_setor26 == 14 || Auth::user()->id_setor27 == 14 || 
                             Auth::user()->id_setor28 == 14 || Auth::user()->id_setor29 == 14 || Auth::user()->id_setor30 == 14 || 
-                            Auth::user()->id_setor31 == 14 || Auth::user()->id_setor32 == 14 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 14 || Auth::user()->id_setor34 == 14 || Auth::user()->id_setor33 == 14 || 
+                            Auth::user()->id_setor34 == 14 || Auth::user()->id_setor35 == 14 || Auth::user()->id_setor36 == 14 || 
+                            Auth::user()->id_setor37 == 14 || Auth::user()->id_setor38 == 14 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaPpcp.index')}}" class="folder-link">
@@ -495,7 +647,9 @@
                             Auth::user()->id_setor22 == 15 || Auth::user()->id_setor23 == 15 || Auth::user()->id_setor24 == 15 || 
                             Auth::user()->id_setor25 == 15 || Auth::user()->id_setor26 == 15 || Auth::user()->id_setor27 == 15 || 
                             Auth::user()->id_setor28 == 15 || Auth::user()->id_setor29 == 15 || Auth::user()->id_setor30 == 15 || 
-                            Auth::user()->id_setor31 == 15 || Auth::user()->id_setor32 == 15 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 15 || Auth::user()->id_setor34 == 15 || Auth::user()->id_setor33 == 15 || 
+                            Auth::user()->id_setor34 == 15 || Auth::user()->id_setor35 == 15 || Auth::user()->id_setor36 == 15 || 
+                            Auth::user()->id_setor37 == 15 || Auth::user()->id_setor38 == 15 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaQualidade.index')}}" class="folder-link">
@@ -514,7 +668,9 @@
                             Auth::user()->id_setor22 == 16 || Auth::user()->id_setor23 == 16 || Auth::user()->id_setor24 == 16 || 
                             Auth::user()->id_setor25 == 16 || Auth::user()->id_setor26 == 16 || Auth::user()->id_setor27 == 16 || 
                             Auth::user()->id_setor28 == 16 || Auth::user()->id_setor29 == 16 || Auth::user()->id_setor30 == 16 || 
-                            Auth::user()->id_setor31 == 16 || Auth::user()->id_setor32 == 16 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 16 || Auth::user()->id_setor34 == 16 || Auth::user()->id_setor33 == 16 || 
+                            Auth::user()->id_setor34 == 16 || Auth::user()->id_setor35 == 16 || Auth::user()->id_setor36 == 16 || 
+                            Auth::user()->id_setor37 == 16 || Auth::user()->id_setor38 == 16 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaRecepcao.index')}}" class="folder-link">
@@ -533,7 +689,9 @@
                             Auth::user()->id_setor22 == 17 || Auth::user()->id_setor23 == 17 || Auth::user()->id_setor24 == 17 || 
                             Auth::user()->id_setor25 == 17 || Auth::user()->id_setor26 == 17 || Auth::user()->id_setor27 == 17 || 
                             Auth::user()->id_setor28 == 17 || Auth::user()->id_setor29 == 17 || Auth::user()->id_setor30 == 17 || 
-                            Auth::user()->id_setor31 == 17 || Auth::user()->id_setor32 == 17 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 17 || Auth::user()->id_setor34 == 17 || Auth::user()->id_setor33 == 17 || 
+                            Auth::user()->id_setor34 == 17 || Auth::user()->id_setor35 == 17 || Auth::user()->id_setor36 == 17 || 
+                            Auth::user()->id_setor37 == 17 || Auth::user()->id_setor38 == 17 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaRestaurante.index')}}" class="folder-link">
@@ -552,7 +710,9 @@
                             Auth::user()->id_setor22 == 18 || Auth::user()->id_setor23 == 18 || Auth::user()->id_setor24 == 18 || 
                             Auth::user()->id_setor25 == 18 || Auth::user()->id_setor26 == 18 || Auth::user()->id_setor27 == 18 || 
                             Auth::user()->id_setor28 == 18 || Auth::user()->id_setor29 == 18 || Auth::user()->id_setor30 == 18 || 
-                            Auth::user()->id_setor31 == 18 || Auth::user()->id_setor32 == 18 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 18 || Auth::user()->id_setor34 == 18 || Auth::user()->id_setor33 == 18 || 
+                            Auth::user()->id_setor34 == 18 || Auth::user()->id_setor35 == 18 || Auth::user()->id_setor36 == 18 || 
+                            Auth::user()->id_setor37 == 18 || Auth::user()->id_setor38 == 18 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaRh.index')}}" class="folder-link">
@@ -571,7 +731,9 @@
                             Auth::user()->id_setor22 == 19 || Auth::user()->id_setor23 == 19 || Auth::user()->id_setor24 == 19 || 
                             Auth::user()->id_setor25 == 19 || Auth::user()->id_setor26 == 19 || Auth::user()->id_setor27 == 19 || 
                             Auth::user()->id_setor28 == 19 || Auth::user()->id_setor29 == 19 || Auth::user()->id_setor30 == 19 || 
-                            Auth::user()->id_setor31 == 19 || Auth::user()->id_setor32 == 19 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 19 || Auth::user()->id_setor34 == 19 || Auth::user()->id_setor33 == 19 || 
+                            Auth::user()->id_setor34 == 19 || Auth::user()->id_setor35 == 19 || Auth::user()->id_setor36 == 19 || 
+                            Auth::user()->id_setor37 == 19 || Auth::user()->id_setor38 == 19 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaSac.index')}}" class="folder-link">
@@ -590,7 +752,9 @@
                             Auth::user()->id_setor22 == 20 || Auth::user()->id_setor23 == 20 || Auth::user()->id_setor24 == 20 || 
                             Auth::user()->id_setor25 == 20 || Auth::user()->id_setor26 == 20 || Auth::user()->id_setor27 == 20 || 
                             Auth::user()->id_setor28 == 20 || Auth::user()->id_setor29 == 20 || Auth::user()->id_setor30 == 20 || 
-                            Auth::user()->id_setor31 == 20 || Auth::user()->id_setor32 == 20 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 20 || Auth::user()->id_setor34 == 20 || Auth::user()->id_setor33 == 20 || 
+                            Auth::user()->id_setor34 == 20 || Auth::user()->id_setor35 == 20 || Auth::user()->id_setor36 == 20 || 
+                            Auth::user()->id_setor37 == 20 || Auth::user()->id_setor38 == 20 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaSesmt.index')}}" class="folder-link">
@@ -609,12 +773,36 @@
                             Auth::user()->id_setor22 == 22 || Auth::user()->id_setor23 == 22 || Auth::user()->id_setor24 == 22 || 
                             Auth::user()->id_setor25 == 22 || Auth::user()->id_setor26 == 22 || Auth::user()->id_setor27 == 22 || 
                             Auth::user()->id_setor28 == 22 || Auth::user()->id_setor29 == 22 || Auth::user()->id_setor30 == 22 || 
-                            Auth::user()->id_setor31 == 22 || Auth::user()->id_setor32 == 22 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 22 || Auth::user()->id_setor34 == 22 || Auth::user()->id_setor33 == 22 || 
+                            Auth::user()->id_setor34 == 22 || Auth::user()->id_setor35 == 22 || Auth::user()->id_setor36 == 22 || 
+                            Auth::user()->id_setor37 == 22 || Auth::user()->id_setor38 == 22 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaProjetos.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
                                     PROJETOS</a>
+                            </li>
+                        @endif
+
+                        @if(Auth::check() && Auth::user()->id_setor1 == 1 || Auth::user()->id_setor2 == 1 || Auth::user()->id_setor3 == 1 || 
+                            Auth::user()->id_setor4 == 1 || Auth::user()->id_setor5 == 1 || Auth::user()->id_setor6 == 1 || 
+                            Auth::user()->id_setor7 == 1 || Auth::user()->id_setor8 == 1 || Auth::user()->id_setor9 == 1 || 
+                            Auth::user()->id_setor10 == 1 || Auth::user()->id_setor11 == 1 || Auth::user()->id_setor12 == 1 || 
+                            Auth::user()->id_setor13 == 1 || Auth::user()->id_setor14 == 1 || Auth::user()->id_setor15 == 1 || 
+                            Auth::user()->id_setor16 == 1 || Auth::user()->id_setor17 == 1 || Auth::user()->id_setor18 == 1 || 
+                            Auth::user()->id_setor19 == 1 || Auth::user()->id_setor20 == 1 || Auth::user()->id_setor21 == 1 || 
+                            Auth::user()->id_setor22 == 1 || Auth::user()->id_setor23 == 1 || Auth::user()->id_setor24 == 1 || 
+                            Auth::user()->id_setor25 == 1 || Auth::user()->id_setor26 == 1 || Auth::user()->id_setor27 == 1 || 
+                            Auth::user()->id_setor28 == 1 || Auth::user()->id_setor29 == 1 || Auth::user()->id_setor30 == 1 || 
+                            Auth::user()->id_setor31 == 1 || Auth::user()->id_setor34 == 1 || Auth::user()->id_setor33 == 1 || 
+                            Auth::user()->id_setor34 == 1 || Auth::user()->id_setor35 == 1 || Auth::user()->id_setor36 == 1 || 
+                            Auth::user()->id_setor37 == 1 || Auth::user()->id_setor38 == 1 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2)
+                            <li class="folder">
+                                <a href="{{ route('inusittaTi.index') }}" class="folder-link">
+                                    <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
+                                    TECNOLOGIA DA INFORMAÇÃO
+                                </a>
                             </li>
                         @endif
 
@@ -628,7 +816,9 @@
                             Auth::user()->id_setor22 == 23 || Auth::user()->id_setor23 == 23 || Auth::user()->id_setor24 == 23 || 
                             Auth::user()->id_setor25 == 23 || Auth::user()->id_setor26 == 23 || Auth::user()->id_setor27 == 23 || 
                             Auth::user()->id_setor28 == 23 || Auth::user()->id_setor29 == 23 || Auth::user()->id_setor30 == 23 || 
-                            Auth::user()->id_setor31 == 23 || Auth::user()->id_setor32 == 23 || Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_setor31 == 23 || Auth::user()->id_setor34 == 23 || Auth::user()->id_setor33 == 23 || 
+                            Auth::user()->id_setor34 == 23 || Auth::user()->id_setor35 == 23 || Auth::user()->id_setor36 == 23 || 
+                            Auth::user()->id_setor37 == 23 || Auth::user()->id_setor38 == 23 || Auth::user()->id_permission == 1 || 
                             Auth::user()->id_permission == 2)
                             <li class="folder">
                                 <a href="{{route('inusittaTransporte.index')}}" class="folder-link">
