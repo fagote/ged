@@ -57,6 +57,12 @@ class User extends Authenticatable
         'id_setor30',
         'id_setor31',
         'id_setor32',
+        'id_setor33',
+        'id_setor34',
+        'id_setor35',
+        'id_setor36',
+        'id_setor37',
+        'id_setor38',
         'id_permission',
     ];
 

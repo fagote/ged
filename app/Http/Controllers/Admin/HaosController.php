@@ -300,6 +300,69 @@ class HaosController extends Controller
     //=========================================
 
     //=========================================
+    // Pasta haos/atelie
+
+    public function indexHaosAtelie(){
+        return view('admin.haos.setores.atelie.atelie');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/corte
+
+    public function indexHaosCorte(){
+        return view('admin.haos.setores.corte.corte');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/coladeira
+
+    public function indexHaosColadeira(){
+        return view('admin.haos.setores.coladeira.coladeira');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/furadeira
+
+    public function indexHaosFuradeira(){
+        return view('admin.haos.setores.furadeira.furadeira');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/acabamento
+
+    public function indexHaosAcabamento(){
+        return view('admin.haos.setores.acabamento.acabamento');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/embalagem
+    public function indexHaosEmbalagem(){
+        return view('admin.haos.setores.embalagem.embalagem');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/pintura
+
+    public function indexHaosPintura(){
+        return view('admin.haos.setores.pintura.pintura');
+    }
+
+    //=========================================
+
+
+    //=========================================
     // Função Para Mostrar os arquivos da macro Instrução
 
     public function indexHaosTiInstrucao()
@@ -317,7 +380,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Tecnologia da Informação')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -352,7 +415,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Tecnologia da Informação')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -387,7 +450,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Tecnologia da Informação')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -422,7 +485,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Tecnologia da Informação')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -457,7 +520,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Marketing')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -491,7 +554,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Marketing')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -525,7 +588,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Marketing')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -558,7 +621,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Marketing')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -591,7 +654,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Comercial')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -625,7 +688,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Comercial')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -659,7 +722,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Comercial')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -693,7 +756,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Comercial')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -727,7 +790,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Almoxarifado')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -761,7 +824,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Almoxarifado')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -795,7 +858,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Almoxarifado')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -829,7 +892,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Almoxarifado')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -863,7 +926,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Assistencia')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -897,7 +960,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Assistencia')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -931,7 +994,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Assistencia')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -965,7 +1028,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Assistencia')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -999,7 +1062,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Compras')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1033,7 +1096,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Compras')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1067,7 +1130,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Compras')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1101,7 +1164,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Compras')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1135,7 +1198,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Contabilidade')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1169,7 +1232,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Contabilidade')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1203,7 +1266,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Contabilidade')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1237,7 +1300,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Contabilidade')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1271,7 +1334,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'contas a pagar')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1305,7 +1368,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'contas a pagar')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1339,7 +1402,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'contas a pagar')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1373,7 +1436,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'contas a pagar')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1407,7 +1470,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'contas a receber')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1441,7 +1504,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'contas a receber')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1475,7 +1538,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'contas a receber')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1509,7 +1572,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'contas a receber')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1543,7 +1606,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Custo')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1577,7 +1640,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Custo')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1611,7 +1674,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Custo')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1645,7 +1708,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Custo')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1679,7 +1742,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Design')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1713,7 +1776,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Design')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1747,7 +1810,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Design')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1781,7 +1844,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Design')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1820,7 +1883,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Diretoria administrativa')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1854,7 +1917,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Diretoria Administrativa')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1888,7 +1951,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Diretoria Administrativa')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1922,7 +1985,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Diretoria Administrativa')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1956,7 +2019,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Diretoria Comercial')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1990,7 +2053,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Diretoria Comercial')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2024,7 +2087,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Diretoria Comercial')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2058,7 +2121,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Diretoria Comercial')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2092,7 +2155,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Diretoria Industrial')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2126,7 +2189,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Diretoria Industrial')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2160,7 +2223,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Diretoria Industrial')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2194,7 +2257,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Diretoria Industrial')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2228,7 +2291,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Ecommerce')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2262,7 +2325,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Ecommerce')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2296,7 +2359,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Ecommerce')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2330,7 +2393,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Ecommerce')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2364,7 +2427,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Engenharia')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2398,7 +2461,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Engenharia')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2432,7 +2495,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Engenharia')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2466,7 +2529,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Engenharia')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2500,7 +2563,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Expedicao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2534,7 +2597,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Expedicao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2568,7 +2631,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Expedicao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2602,7 +2665,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Expedicao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2636,7 +2699,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Exportacao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2670,7 +2733,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Exportacao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2704,7 +2767,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Exportacao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2738,7 +2801,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Exportacao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2772,7 +2835,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Faturamento')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2806,7 +2869,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Faturamento')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2840,7 +2903,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Faturamento')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2874,7 +2937,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Faturamento')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2908,7 +2971,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Manutencao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2942,7 +3005,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Manutencao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2976,7 +3039,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Manutencao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3010,7 +3073,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Manutencao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3044,7 +3107,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'P&d')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3078,7 +3141,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'P&d')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3112,7 +3175,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'P&d')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3146,7 +3209,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'P&d')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3180,7 +3243,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Pmo')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3214,7 +3277,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Pmo')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3248,7 +3311,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Pmo')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3282,7 +3345,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Pmo')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3316,7 +3379,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Ppcp')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3350,7 +3413,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Ppcp')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3384,7 +3447,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Ppcp')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3418,7 +3481,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Ppcp')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3452,7 +3515,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Qualidade')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3486,7 +3549,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Qualidade')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3520,7 +3583,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Qualidade')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3554,7 +3617,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Qualidade')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3588,7 +3651,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Recepcao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3622,7 +3685,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Recepcao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3656,7 +3719,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Recepcao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3690,7 +3753,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Recepcao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3724,7 +3787,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Restaurante')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3758,7 +3821,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Restaurante')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3792,7 +3855,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Restaurante')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3826,7 +3889,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Restaurante')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3860,7 +3923,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Rh')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3894,7 +3957,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Rh')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3928,7 +3991,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Rh')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3962,7 +4025,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Rh')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3996,7 +4059,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Sac')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4030,7 +4093,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Sac')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4064,7 +4127,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Sac')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4098,7 +4161,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Sac')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4132,7 +4195,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Sesmt')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4166,7 +4229,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Sesmt')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4200,7 +4263,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Sesmt')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4234,7 +4297,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Sesmt')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4268,7 +4331,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Projetos')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4302,7 +4365,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Projetos')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4336,7 +4399,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Projetos')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4370,7 +4433,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Projetos')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4404,7 +4467,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Transporte')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4438,7 +4501,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Transporte')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4472,7 +4535,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Transporte')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4506,7 +4569,7 @@ class HaosController extends Controller
             $setorId = Sector::where('name_setor', 'Transporte')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4519,5 +4582,959 @@ class HaosController extends Controller
 
         return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
     }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/atelie/ formulario
+
+    public function indexHaosAtelieFormulario(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Atelie')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/atelie/ registro
+
+    public function indexHaosAtelieRegistro(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Atelie')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ procedimento
+
+    public function indexHaosAtelieProcedimento(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Atelie')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ instrucao
+
+    public function indexHaosAtelieInstrucao(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Atelie')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/Corte/ formulario
+
+    public function indexHaosCorteFormulario(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Corte')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/Corte/ registro
+
+    public function indexHaosCorteRegistro(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Corte')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ procedimento
+
+    public function indexHaosCorteProcedimento(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Corte')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ instrucao
+
+    public function indexHaosCorteInstrucao(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Corte')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/Coladeira/ formulario
+
+    public function indexHaosColadeiraFormulario(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Coladeira')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/Coladeira/ registro
+
+    public function indexHaosColadeiraRegistro(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Coladeira')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ procedimento
+
+    public function indexHaosColadeiraProcedimento(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Coladeira')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ instrucao
+
+    public function indexHaosColadeiraInstrucao(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Coladeira')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/Furadeira/ formulario
+
+    public function indexHaosFuradeiraFormulario(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Furadeira')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/Furadeira/ registro
+
+    public function indexHaosFuradeiraRegistro(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Furadeira')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ procedimento
+
+    public function indexHaosFuradeiraProcedimento(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Furadeira')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ instrucao
+
+    public function indexHaosFuradeiraInstrucao(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Furadeira')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/Acabamento/ formulario
+
+    public function indexHaosAcabamentoFormulario(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Acabamento')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/Acabamento/ registro
+
+    public function indexHaosAcabamentoRegistro(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Acabamento')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ procedimento
+
+    public function indexHaosAcabamentoProcedimento(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Acabamento')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ instrucao
+
+    public function indexHaosAcabamentoInstrucao(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Acabamento')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/Embalagem/ formulario
+
+    public function indexHaosEmbalagemFormulario(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Embalagem')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/Embalagem/ registro
+
+    public function indexHaosEmbalagemRegistro(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Embalagem')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ procedimento
+
+    public function indexHaosEmbalagemProcedimento(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Embalagem')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ instrucao
+
+    public function indexHaosEmbalagemInstrucao(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Embalagem')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/Pintura/ formulario
+
+    public function indexHaosPinturaFormulario(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Pintura')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/Pintura/ registro
+
+    public function indexHaosPinturaRegistro(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Pintura')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ procedimento
+
+    public function indexHaosPinturaProcedimento(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Pintura')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ instrucao
+
+    public function indexHaosPinturaInstrucao(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Haos')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Pintura')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
+        })
+        ->paginate(10);
+
+        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
     
 }

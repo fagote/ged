@@ -1,5 +1,6 @@
 <x-guest-layout>
     <!-- Session Status -->
+     <title>File Manager</title>
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
     <form method="POST" action="{{ route('login') }}">

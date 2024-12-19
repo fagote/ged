@@ -95,7 +95,7 @@
                 </td>
                 <td>
                     @php
-                        $setoresIds = [$user->id_setor1, $user->id_setor2, $user->id_setor3, $user->id_setor4, $user->id_setor5, $user->id_setor6,$user->id_setor7,$user->id_setor8,$user->id_setor9,$user->id_setor10,$user->id_setor11,$user->id_setor12,$user->id_setor13,$user->id_setor14,$user->id_setor15,$user->id_setor16,$user->id_setor17,$user->id_setor18,$user->id_setor19,$user->id_setor20,$user->id_setor21,$user->id_setor22,$user->id_setor23,$user->id_setor24,$user->id_setor25,$user->id_setor26,$user->id_setor27,$user->id_setor28,$user->id_setor29,$user->id_setor30,$user->id_setor31,$user->id_setor32];
+                        $setoresIds = [$user->id_setor1, $user->id_setor2, $user->id_setor3, $user->id_setor4, $user->id_setor5, $user->id_setor6,$user->id_setor7,$user->id_setor8,$user->id_setor9,$user->id_setor10,$user->id_setor11,$user->id_setor12,$user->id_setor13,$user->id_setor14,$user->id_setor15,$user->id_setor16,$user->id_setor17,$user->id_setor18,$user->id_setor19,$user->id_setor20,$user->id_setor21,$user->id_setor22,$user->id_setor23,$user->id_setor24,$user->id_setor25,$user->id_setor26,$user->id_setor27,$user->id_setor28,$user->id_setor29,$user->id_setor30,$user->id_setor31,$user->id_setor32,$user->id_setor33,$user->id_setor34,$user->id_setor35,$user->id_setor36,$user->id_setor37,$user->id_setor38];
                         $nomesSetores = collect($setoresIds)
                             ->filter() // Remove IDs nulos
                             ->map(fn($id) => \App\Models\Sector::find($id)?->name_setor ?? 'Setor não encontrado')

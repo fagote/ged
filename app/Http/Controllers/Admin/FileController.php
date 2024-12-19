@@ -160,7 +160,7 @@ class FileController extends Controller
 
     // Verifica os campos de setores (id_setor[])
     $setores = $request->input('id_setor', []); // Pega o array de setores ou vazio se não selecionado
-    for ($i = 1; $i <= 32; $i++) {
+    for ($i = 1; $i <= 38; $i++) {
         $data["id_setor{$i}"] = isset($setores[$i - 1]) ? $setores[$i - 1] : null;
     }   
       
@@ -213,7 +213,7 @@ class FileController extends Controller
         // Verifica os campos de setores (id_setor[])
         $setores = $request->input('id_setor', []);  // Vai pegar o array de setores ou um array vazio se não houver seleção
         // Adiciona os setores no array de dados
-        for ($i = 1; $i <= 32; $i++) {
+        for ($i = 1; $i <= 38; $i++) {
             $data["id_setor{$i}"] = isset($setores[$i - 1]) ? $setores[$i - 1] : null;
         }   
 
@@ -276,15 +276,26 @@ class FileController extends Controller
     
     public function view($id)
     {
-        $file = File::findOrFail($id); // Procura o arquivo pelo ID ou retorna um 404
 
-        $filePath = storage_path('app/public/' . $file->file_path); // Caminho completo do arquivo
 
-        if (file_exists($filePath)) {
-            return response()->file($filePath); // Retorna o arquivo para visualização no navegador
+        // Verifica se o usuário está autenticado
+        if (!Auth::check()) {
+            return redirect()->route('login')->with('error', 'Você precisa estar logado para visualizar este arquivo.');
         }
 
-        return redirect()->back()->with('error', 'Arquivo não encontrado.');
+        // Recupera o arquivo do banco de dados
+        $file = File::find($id);
+
+        // Verifica se o arquivo existe
+        if (!$file) {
+            return abort(404, 'Arquivo não encontrado.');
+        }
+
+        // Retorna o arquivo como uma resposta
+        return response()->file(storage_path('app/public/' . $file->file_path));
+
+
+        
     }
     
     //=========================================
@@ -352,6 +363,12 @@ class FileController extends Controller
         $setorId30 = $user->id_setor30;  
         $setorId31 = $user->id_setor31;  
         $setorId32 = $user->id_setor32; 
+        $setorId33 = $user->id_setor33; 
+        $setorId34 = $user->id_setor34; 
+        $setorId35 = $user->id_setor35; 
+        $setorId36 = $user->id_setor36;  
+        $setorId37 = $user->id_setor37;  
+        $setorId38 = $user->id_setor38;
       
     
         // Realiza a busca de arquivos com o filtro de empresa, setor e código

@@ -57,14 +57,16 @@
             value="{{(int) $sector->id_setor }}"
             {{-- Marca os setores que já estão relacionados ao usuário --}}
             {{ isset($user) && in_array($sector->id_setor, (array) [
-                $user->id_setor1, $user->id_setor2, $user->id_setor3, $user->id_setor4,
-                $user->id_setor5, $user->id_setor6, $user->id_setor7, $user->id_setor8,
-                $user->id_setor9, $user->id_setor10, $user->id_setor11, $user->id_setor12,
-                $user->id_setor13, $user->id_setor14, $user->id_setor15, $user->id_setor16,
-                $user->id_setor17, $user->id_setor18, $user->id_setor19, $user->id_setor20,
-                $user->id_setor21, $user->id_setor22, $user->id_setor23, $user->id_setor24,
-                $user->id_setor25, $user->id_setor26, $user->id_setor27, $user->id_setor28,
-                $user->id_setor29, $user->id_setor30, $user->id_setor31, $user->id_setor32
+                $file->id_setor1, $file->id_setor2, $file->id_setor3, $file->id_setor4,
+                $file->id_setor5, $file->id_setor6, $file->id_setor7, $file->id_setor8,
+                $file->id_setor9, $file->id_setor10, $file->id_setor11, $file->id_setor12,
+                $file->id_setor13, $file->id_setor14, $file->id_setor15, $file->id_setor16,
+                $file->id_setor17, $file->id_setor18, $file->id_setor19, $file->id_setor20,
+                $file->id_setor21, $file->id_setor22, $file->id_setor23, $file->id_setor24,
+                $file->id_setor25, $file->id_setor26, $file->id_setor27, $file->id_setor28,
+                $file->id_setor29, $file->id_setor30, $file->id_setor31, $file->id_setor32,
+                $file->id_setor33, $file->id_setor34, $file->id_setor35, $file->id_setor36,
+                $file->id_setor37, $file->id_setor38
             ]) ? 'checked' : '' }}
 
             {{-- Marca os setores que foram selecionados no formulário (valores antigos) --}}

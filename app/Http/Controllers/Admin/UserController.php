@@ -333,6 +333,60 @@ class UserController extends Controller
     //=========================================
 
     //=========================================
+    // Pasta inusitta/corte
+
+    public function indexInusittaCorte(){
+        return view('admin.inusitta.setores.corte.corte');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/coladeira
+
+    public function indexInusittaColadeira(){
+        return view('admin.inusitta.setores.coladeira.coladeira');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/furadeira
+
+    public function indexInusittaFuradeira(){
+        return view('admin.inusitta.setores.furadeira.furadeira');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/acabamento
+
+    public function indexInusittaAcabamento(){
+        return view('admin.inusitta.setores.acabamento.acabamento');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/embalagem
+    public function indexInusittaEmbalagem(){
+        return view('admin.inusitta.setores.embalagem.embalagem');
+    }
+
+    //=========================================
+
+    //=========================================
+    // Pasta inusitta/pintura
+
+    public function indexInusittaPintura(){
+        return view('admin.inusitta.setores.pintura.pintura');
+    }
+
+    //=========================================
+    
+
+    //=========================================
     // Função Para Mostrar os arquivos da macro Instrução
 
     public function indexInusittaTiInstrucao()
@@ -350,7 +404,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Tecnologia da Informação')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -385,7 +439,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Tecnologia da Informação')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -420,7 +474,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Tecnologia da Informação')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -455,7 +509,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Tecnologia da Informação')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -490,7 +544,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Marketing')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -524,7 +578,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Marketing')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -558,7 +612,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Marketing')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -591,7 +645,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Marketing')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -624,7 +678,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Comercial')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -658,7 +712,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Comercial')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -692,7 +746,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Comercial')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -726,7 +780,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Comercial')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -760,7 +814,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Almoxarifado')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -794,7 +848,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Almoxarifado')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -828,7 +882,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Almoxarifado')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -862,7 +916,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Almoxarifado')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -896,7 +950,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Assistencia')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -930,7 +984,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Assistencia')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -964,7 +1018,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Assistencia')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -998,7 +1052,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Assistencia')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1032,7 +1086,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Compras')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1066,7 +1120,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Compras')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1100,7 +1154,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Compras')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1134,7 +1188,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Compras')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1168,7 +1222,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Contabilidade')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1202,7 +1256,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Contabilidade')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1236,7 +1290,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Contabilidade')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1270,7 +1324,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Contabilidade')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1304,7 +1358,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'contas a pagar')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1338,7 +1392,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'contas a pagar')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1372,7 +1426,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'contas a pagar')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1406,7 +1460,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'contas a pagar')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1440,7 +1494,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'contas a receber')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1474,7 +1528,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'contas a receber')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1508,7 +1562,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'contas a receber')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1542,7 +1596,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'contas a receber')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1576,7 +1630,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Custo')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1610,7 +1664,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Custo')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1644,7 +1698,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Custo')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1678,7 +1732,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Custo')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1712,7 +1766,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Design')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1746,7 +1800,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Design')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1780,7 +1834,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Design')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1814,7 +1868,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Design')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1853,7 +1907,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Diretoria administrativa')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1887,7 +1941,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Diretoria Administrativa')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1921,7 +1975,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Diretoria Administrativa')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1955,7 +2009,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Diretoria Administrativa')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -1989,7 +2043,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Diretoria Comercial')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2023,7 +2077,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Diretoria Comercial')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2057,7 +2111,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Diretoria Comercial')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2091,7 +2145,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Diretoria Comercial')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2125,7 +2179,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Diretoria Industrial')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2159,7 +2213,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Diretoria Industrial')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2193,7 +2247,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Diretoria Industrial')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2227,7 +2281,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Diretoria Industrial')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2261,7 +2315,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Ecommerce')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2295,7 +2349,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Ecommerce')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2329,7 +2383,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Ecommerce')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2363,7 +2417,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Ecommerce')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2397,7 +2451,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Engenharia')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2431,7 +2485,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Engenharia')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2465,7 +2519,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Engenharia')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2499,7 +2553,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Engenharia')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2533,7 +2587,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Expedicao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2567,7 +2621,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Expedicao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2601,7 +2655,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Expedicao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2635,7 +2689,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Expedicao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2669,7 +2723,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Exportacao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2703,7 +2757,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Exportacao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2737,7 +2791,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Exportacao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2771,7 +2825,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Exportacao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2805,7 +2859,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Faturamento')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2839,7 +2893,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Faturamento')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2873,7 +2927,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Faturamento')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2907,7 +2961,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Faturamento')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2941,7 +2995,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Manutencao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -2975,7 +3029,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Manutencao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3009,7 +3063,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Manutencao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3043,7 +3097,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Manutencao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3077,7 +3131,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'P&d')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3111,7 +3165,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'P&d')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3145,7 +3199,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'P&d')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3179,7 +3233,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'P&d')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3213,7 +3267,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Pmo')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3247,7 +3301,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Pmo')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3281,7 +3335,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Pmo')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3315,7 +3369,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Pmo')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3349,7 +3403,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Ppcp')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3383,7 +3437,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Ppcp')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3417,7 +3471,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Ppcp')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3451,7 +3505,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Ppcp')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3485,7 +3539,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Qualidade')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3519,7 +3573,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Qualidade')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3553,7 +3607,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Qualidade')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3587,7 +3641,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Qualidade')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3621,7 +3675,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Recepcao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3655,7 +3709,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Recepcao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3689,7 +3743,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Recepcao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3723,7 +3777,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Recepcao')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3757,7 +3811,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Restaurante')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3791,7 +3845,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Restaurante')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3825,7 +3879,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Restaurante')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3859,7 +3913,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Restaurante')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3893,7 +3947,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Rh')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3927,7 +3981,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Rh')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3961,7 +4015,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Rh')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -3995,7 +4049,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Rh')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4029,7 +4083,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Sac')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4063,7 +4117,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Sac')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4097,7 +4151,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Sac')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4131,7 +4185,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Sac')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4165,7 +4219,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Sesmt')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4199,7 +4253,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Sesmt')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4233,7 +4287,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Sesmt')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4267,7 +4321,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Sesmt')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4301,7 +4355,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Projetos')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4335,7 +4389,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Projetos')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4369,7 +4423,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Projetos')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4403,7 +4457,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Projetos')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4437,7 +4491,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Transporte')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4471,7 +4525,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Transporte')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4505,7 +4559,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Transporte')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4539,7 +4593,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Transporte')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4573,7 +4627,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Atelie')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4607,7 +4661,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Atelie')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4641,7 +4695,7 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Atelie')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4675,7 +4729,823 @@ class UserController extends Controller
             $setorId = Sector::where('name_setor', 'Atelie')->value('id_setor');
             
             $query->where(function ($subQuery) use ($setorId) {
-                for ($i = 1; $i <= 32; $i++) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/Corte/ formulario
+
+    public function indexInusittaCorteFormulario(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Corte')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/Corte/ registro
+
+    public function indexInusittaCorteRegistro(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Corte')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ procedimento
+
+    public function indexInusittaCorteProcedimento(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Corte')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ instrucao
+
+    public function indexInusittaCorteInstrucao(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Corte')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/Coladeira/ formulario
+
+    public function indexInusittaColadeiraFormulario(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Coladeira')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/Coladeira/ registro
+
+    public function indexInusittaColadeiraRegistro(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Coladeira')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ procedimento
+
+    public function indexInusittaColadeiraProcedimento(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Coladeira')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ instrucao
+
+    public function indexInusittaColadeiraInstrucao(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Coladeira')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/Furadeira/ formulario
+
+    public function indexInusittaFuradeiraFormulario(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Furadeira')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/Furadeira/ registro
+
+    public function indexInusittaFuradeiraRegistro(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Furadeira')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ procedimento
+
+    public function indexInusittaFuradeiraProcedimento(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Furadeira')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ instrucao
+
+    public function indexInusittaFuradeiraInstrucao(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Furadeira')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/Acabamento/ formulario
+
+    public function indexInusittaAcabamentoFormulario(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Acabamento')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/Acabamento/ registro
+
+    public function indexInusittaAcabamentoRegistro(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Acabamento')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ procedimento
+
+    public function indexInusittaAcabamentoProcedimento(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Acabamento')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ instrucao
+
+    public function indexInusittaAcabamentoInstrucao(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Acabamento')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/Embalagem/ formulario
+
+    public function indexInusittaEmbalagemFormulario(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Embalagem')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/Embalagem/ registro
+
+    public function indexInusittaEmbalagemRegistro(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Embalagem')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ procedimento
+
+    public function indexInusittaEmbalagemProcedimento(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Embalagem')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ instrucao
+
+    public function indexInusittaEmbalagemInstrucao(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Embalagem')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Instrucao');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/Pintura/ formulario
+
+    public function indexInusittaPinturaFormulario(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Pintura')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Formulario');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/Pintura/ registro
+
+    public function indexInusittaPinturaRegistro(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Pintura')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Registro');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ procedimento
+
+    public function indexInusittaPinturaProcedimento(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Pintura')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
+                    $subQuery->orWhere("id_setor{$i}", $setorId);
+                }
+            });
+        })
+        
+        ->whereHas('macro', function ($query) {
+            $query->where('name_macro', 'Procedimento');
+        })
+        ->paginate(10);
+
+        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+    }
+    
+    //=========================================
+
+    //=========================================
+    // inusitta/transporte/ instrucao
+
+    public function indexInusittaPinturaInstrucao(){
+
+        $files = File::where(function ($query) {
+            $empresaId = Company::where('name_empresa', 'Inusitta')->value('id_empresa');
+
+            $query->where(function ($subQuery) use ( $empresaId ) {
+                for ($i = 1; $i <= 4; $i++) {
+                    $subQuery->orWhere("id_empresa{$i}", $empresaId);
+                }
+            });
+        })
+        ->where(function ($query) {
+            $setorId = Sector::where('name_setor', 'Pintura')->value('id_setor');
+            
+            $query->where(function ($subQuery) use ($setorId) {
+                for ($i = 1; $i <= 38; $i++) {
                     $subQuery->orWhere("id_setor{$i}", $setorId);
                 }
             });
@@ -4719,7 +5589,7 @@ class UserController extends Controller
 
         // Verifica os campos de setores (id_setor[])
         $setores = $request->input('id_setor', []); // Pega o array de setores ou vazio se não selecionado
-        for ($i = 1; $i <= 32; $i++) {
+        for ($i = 1; $i <= 38; $i++) {
             $data["id_setor{$i}"] = isset($setores[$i - 1]) ? $setores[$i - 1] : null;
         }
 
@@ -4771,7 +5641,7 @@ class UserController extends Controller
     // Verifica os campos de setores (id_setor[])
     $setores = $request->input('id_setor', []);  // Vai pegar o array de setores ou um array vazio se não houver seleção
     // Adiciona os setores no array de dados
-    for ($i = 1; $i <= 32; $i++) {
+    for ($i = 1; $i <= 38; $i++) {
         $data["id_setor{$i}"] = isset($setores[$i - 1]) ? $setores[$i - 1] : null;
     }
 

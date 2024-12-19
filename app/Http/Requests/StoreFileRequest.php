@@ -64,6 +64,12 @@ class StoreFileRequest extends FormRequest
             'id_setor30' => 'nullable|integer|min:1',
             'id_setor31' => 'nullable|integer|min:1',
             'id_setor32' => 'nullable|integer|min:1',
+            'id_setor33' => 'nullable|integer|min:1',
+            'id_setor34' => 'nullable|integer|min:1',
+            'id_setor35' => 'nullable|integer|min:1',
+            'id_setor36' => 'nullable|integer|min:1',
+            'id_setor37' => 'nullable|integer|min:1',
+            'id_setor38' => 'nullable|integer|min:1',
             'file_path' => 'required|file|max:10240',
             'motivoReprovacao' => 'nullable|string|min:3|max:255',
 
