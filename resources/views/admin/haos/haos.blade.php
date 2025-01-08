@@ -25,7 +25,7 @@
 
                         <!--=======================-->
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 36 || Auth::user()->id_setor2 == 36 || Auth::user()->id_setor3 == 36 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 36 || Auth::user()->id_setor2 == 36 || Auth::user()->id_setor3 == 36 || 
                             Auth::user()->id_setor4 == 36 || Auth::user()->id_setor5 == 36 || Auth::user()->id_setor6 == 36 || 
                             Auth::user()->id_setor7 == 36 || Auth::user()->id_setor8 == 36 || Auth::user()->id_setor9 == 36 || 
                             Auth::user()->id_setor10 == 36 || Auth::user()->id_setor11 == 36 || Auth::user()->id_setor12 == 36 || 
@@ -37,8 +37,8 @@
                             Auth::user()->id_setor28 == 36 || Auth::user()->id_setor29 == 36 || Auth::user()->id_setor30 == 36 || 
                             Auth::user()->id_setor31 == 36 || Auth::user()->id_setor32 == 36 || Auth::user()->id_setor33 == 36 || 
                             Auth::user()->id_setor34 == 36 || Auth::user()->id_setor35 == 36 || Auth::user()->id_setor36 == 36 || 
-                            Auth::user()->id_setor37 == 36 || Auth::user()->id_setor38 == 36 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 36 || Auth::user()->id_setor38 == 36)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosAcabamento.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -46,7 +46,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 5 || Auth::user()->id_setor2 == 5 || Auth::user()->id_setor3 == 5 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 5 || Auth::user()->id_setor2 == 5 || Auth::user()->id_setor3 == 5 || 
                             Auth::user()->id_setor4 == 5 || Auth::user()->id_setor5 == 5 || Auth::user()->id_setor6 == 5 || 
                             Auth::user()->id_setor7 == 5 || Auth::user()->id_setor8 == 5 || Auth::user()->id_setor9 == 5 || 
                             Auth::user()->id_setor10 == 5 || Auth::user()->id_setor11 == 5 || Auth::user()->id_setor12 == 5 || 
@@ -58,8 +58,8 @@
                             Auth::user()->id_setor28 == 5 || Auth::user()->id_setor29 == 5 || Auth::user()->id_setor30 == 5 || 
                             Auth::user()->id_setor31 == 5 || Auth::user()->id_setor32 == 5 || Auth::user()->id_setor33 == 5 || 
                             Auth::user()->id_setor34 == 5 || Auth::user()->id_setor35 == 5 || Auth::user()->id_setor36 == 5 || 
-                            Auth::user()->id_setor37 == 5 || Auth::user()->id_setor38 == 5 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 5 || Auth::user()->id_setor38 == 5 ))|| (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosAlmoxarifado.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -67,7 +67,7 @@
                             </li>
                         @endif
                         
-                        @if(Auth::check() && Auth::user()->id_setor1 == 24 || Auth::user()->id_setor2 == 24 || Auth::user()->id_setor3 == 24 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 24 || Auth::user()->id_setor2 == 24 || Auth::user()->id_setor3 == 24 || 
                             Auth::user()->id_setor4 == 24 || Auth::user()->id_setor5 == 24 || Auth::user()->id_setor6 == 24 || 
                             Auth::user()->id_setor7 == 24 || Auth::user()->id_setor8 == 24 || Auth::user()->id_setor9 == 24 || 
                             Auth::user()->id_setor10 == 24 || Auth::user()->id_setor11 == 24 || Auth::user()->id_setor12 == 24 || 
@@ -79,8 +79,8 @@
                             Auth::user()->id_setor28 == 24 || Auth::user()->id_setor29 == 24 || Auth::user()->id_setor30 == 24 || 
                             Auth::user()->id_setor31 == 24 || Auth::user()->id_setor32 == 24 || Auth::user()->id_setor33 == 24 || 
                             Auth::user()->id_setor34 == 24 || Auth::user()->id_setor35 == 24 || Auth::user()->id_setor36 == 24 || 
-                            Auth::user()->id_setor37 == 24 || Auth::user()->id_setor38 == 24 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 24 || Auth::user()->id_setor38 == 24)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosAssistencia.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -89,7 +89,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 32 || Auth::user()->id_setor2 == 32 || Auth::user()->id_setor3 == 32 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 32 || Auth::user()->id_setor2 == 32 || Auth::user()->id_setor3 == 32 || 
                             Auth::user()->id_setor4 == 32 || Auth::user()->id_setor5 == 32 || Auth::user()->id_setor6 == 32 || 
                             Auth::user()->id_setor7 == 32 || Auth::user()->id_setor8 == 32 || Auth::user()->id_setor9 == 32 || 
                             Auth::user()->id_setor10 == 32 || Auth::user()->id_setor11 == 32 || Auth::user()->id_setor12 == 32 || 
@@ -101,8 +101,8 @@
                             Auth::user()->id_setor28 == 32 || Auth::user()->id_setor29 == 32 || Auth::user()->id_setor30 == 32 || 
                             Auth::user()->id_setor31 == 32 || Auth::user()->id_setor32 == 32 || Auth::user()->id_setor33 == 32 || 
                             Auth::user()->id_setor34 == 32 || Auth::user()->id_setor35 == 32 || Auth::user()->id_setor36 == 32 || 
-                            Auth::user()->id_setor37 == 32 || Auth::user()->id_setor38 == 32 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 32 || Auth::user()->id_setor38 == 32)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosAtelie.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -111,7 +111,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 34 || Auth::user()->id_setor2 == 34 || Auth::user()->id_setor3 == 34 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 34 || Auth::user()->id_setor2 == 34 || Auth::user()->id_setor3 == 34 || 
                             Auth::user()->id_setor4 == 34 || Auth::user()->id_setor5 == 34 || Auth::user()->id_setor6 == 34 || 
                             Auth::user()->id_setor7 == 34 || Auth::user()->id_setor8 == 34 || Auth::user()->id_setor9 == 34 || 
                             Auth::user()->id_setor10 == 34 || Auth::user()->id_setor11 == 34 || Auth::user()->id_setor12 == 34 || 
@@ -123,8 +123,8 @@
                             Auth::user()->id_setor28 == 34 || Auth::user()->id_setor29 == 34 || Auth::user()->id_setor30 == 34 || 
                             Auth::user()->id_setor31 == 34 || Auth::user()->id_setor34 == 34 || Auth::user()->id_setor33 == 34 || 
                             Auth::user()->id_setor34 == 34 || Auth::user()->id_setor35 == 34 || Auth::user()->id_setor36 == 34 || 
-                            Auth::user()->id_setor37 == 34 || Auth::user()->id_setor38 == 34 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 34 || Auth::user()->id_setor38 == 34)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosColadeira.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -133,7 +133,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 21 || Auth::user()->id_setor2 == 21 || Auth::user()->id_setor3 == 21 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 21 || Auth::user()->id_setor2 == 21 || Auth::user()->id_setor3 == 21 || 
                             Auth::user()->id_setor4 == 21 || Auth::user()->id_setor5 == 21 || Auth::user()->id_setor6 == 21 || 
                             Auth::user()->id_setor7 == 21 || Auth::user()->id_setor8 == 21 || Auth::user()->id_setor9 == 21 || 
                             Auth::user()->id_setor10 == 21 || Auth::user()->id_setor11 == 21 || Auth::user()->id_setor12 == 21 || 
@@ -145,8 +145,8 @@
                             Auth::user()->id_setor28 == 21 || Auth::user()->id_setor29 == 21 || Auth::user()->id_setor30 == 21 || 
                             Auth::user()->id_setor31 == 21 || Auth::user()->id_setor21 == 21 || Auth::user()->id_setor33 == 21 || 
                             Auth::user()->id_setor21 == 21 || Auth::user()->id_setor35 == 21 || Auth::user()->id_setor36 == 21 || 
-                            Auth::user()->id_setor37 == 21 || Auth::user()->id_setor38 == 21 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 21 || Auth::user()->id_setor38 == 21)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosComercial.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -154,7 +154,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 25 || Auth::user()->id_setor2 == 25 || Auth::user()->id_setor3 == 25 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 25 || Auth::user()->id_setor2 == 25 || Auth::user()->id_setor3 == 25 || 
                             Auth::user()->id_setor4 == 25 || Auth::user()->id_setor5 == 25 || Auth::user()->id_setor6 == 25 || 
                             Auth::user()->id_setor7 == 25 || Auth::user()->id_setor8 == 25 || Auth::user()->id_setor9 == 25 || 
                             Auth::user()->id_setor10 == 25 || Auth::user()->id_setor11 == 25 || Auth::user()->id_setor12 == 25 || 
@@ -166,8 +166,8 @@
                             Auth::user()->id_setor28 == 25 || Auth::user()->id_setor29 == 25 || Auth::user()->id_setor30 == 25 || 
                             Auth::user()->id_setor31 == 25 || Auth::user()->id_setor34 == 25 || Auth::user()->id_setor33 == 25 || 
                             Auth::user()->id_setor34 == 25 || Auth::user()->id_setor35 == 25 || Auth::user()->id_setor36 == 25 || 
-                            Auth::user()->id_setor37 == 25 || Auth::user()->id_setor38 == 25 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 25 || Auth::user()->id_setor38 == 25)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosCompras.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -175,7 +175,7 @@
                             </li>
                         @endif
                         
-                        @if(Auth::check() && Auth::user()->id_setor1 == 26 || Auth::user()->id_setor2 == 26 || Auth::user()->id_setor3 == 26 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 26 || Auth::user()->id_setor2 == 26 || Auth::user()->id_setor3 == 26 || 
                             Auth::user()->id_setor4 == 26 || Auth::user()->id_setor5 == 26 || Auth::user()->id_setor6 == 26 || 
                             Auth::user()->id_setor7 == 26 || Auth::user()->id_setor8 == 26 || Auth::user()->id_setor9 == 26 || 
                             Auth::user()->id_setor10 == 26 || Auth::user()->id_setor11 == 26 || Auth::user()->id_setor12 == 26 || 
@@ -187,8 +187,8 @@
                             Auth::user()->id_setor28 == 26 || Auth::user()->id_setor29 == 26 || Auth::user()->id_setor30 == 26 || 
                             Auth::user()->id_setor31 == 26 || Auth::user()->id_setor34 == 26 || Auth::user()->id_setor33 == 26 || 
                             Auth::user()->id_setor34 == 26 || Auth::user()->id_setor35 == 26 || Auth::user()->id_setor36 == 26 || 
-                            Auth::user()->id_setor37 == 26 || Auth::user()->id_setor38 == 26 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 26 || Auth::user()->id_setor38 == 26)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosContabilidade.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -196,7 +196,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 27 || Auth::user()->id_setor2 == 27 || Auth::user()->id_setor3 == 27 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 27 || Auth::user()->id_setor2 == 27 || Auth::user()->id_setor3 == 27 || 
                             Auth::user()->id_setor4 == 27 || Auth::user()->id_setor5 == 27 || Auth::user()->id_setor6 == 27 || 
                             Auth::user()->id_setor7 == 27 || Auth::user()->id_setor8 == 27 || Auth::user()->id_setor9 == 27 || 
                             Auth::user()->id_setor10 == 27 || Auth::user()->id_setor11 == 27 || Auth::user()->id_setor12 == 27 || 
@@ -208,8 +208,8 @@
                             Auth::user()->id_setor28 == 27 || Auth::user()->id_setor29 == 27 || Auth::user()->id_setor30 == 27 || 
                             Auth::user()->id_setor31 == 27 || Auth::user()->id_setor34 == 27 || Auth::user()->id_setor33 == 27 || 
                             Auth::user()->id_setor34 == 27 || Auth::user()->id_setor35 == 27 || Auth::user()->id_setor36 == 27 || 
-                            Auth::user()->id_setor37 == 27 || Auth::user()->id_setor38 == 27 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 27 || Auth::user()->id_setor38 == 27)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosContasPagar.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -217,7 +217,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 28 || Auth::user()->id_setor2 == 28 || Auth::user()->id_setor3 == 28 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 28 || Auth::user()->id_setor2 == 28 || Auth::user()->id_setor3 == 28 || 
                             Auth::user()->id_setor4 == 28 || Auth::user()->id_setor5 == 28 || Auth::user()->id_setor6 == 28 || 
                             Auth::user()->id_setor7 == 28 || Auth::user()->id_setor8 == 28 || Auth::user()->id_setor9 == 28 || 
                             Auth::user()->id_setor10 == 28 || Auth::user()->id_setor11 == 28 || Auth::user()->id_setor12 == 28 || 
@@ -229,8 +229,8 @@
                             Auth::user()->id_setor28 == 28 || Auth::user()->id_setor29 == 28 || Auth::user()->id_setor30 == 28 || 
                             Auth::user()->id_setor31 == 28 || Auth::user()->id_setor34 == 28 || Auth::user()->id_setor33 == 28 || 
                             Auth::user()->id_setor34 == 28 || Auth::user()->id_setor35 == 28 || Auth::user()->id_setor36 == 28 || 
-                            Auth::user()->id_setor37 == 28 || Auth::user()->id_setor38 == 28 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 28 || Auth::user()->id_setor38 == 28)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosContasReceber.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -238,7 +238,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 33 || Auth::user()->id_setor2 == 33 || Auth::user()->id_setor3 == 33 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 33 || Auth::user()->id_setor2 == 33 || Auth::user()->id_setor3 == 33 || 
                             Auth::user()->id_setor4 == 33 || Auth::user()->id_setor5 == 33 || Auth::user()->id_setor6 == 33 || 
                             Auth::user()->id_setor7 == 33 || Auth::user()->id_setor8 == 33 || Auth::user()->id_setor9 == 33 || 
                             Auth::user()->id_setor10 == 33 || Auth::user()->id_setor11 == 33 || Auth::user()->id_setor12 == 33 || 
@@ -250,8 +250,8 @@
                             Auth::user()->id_setor28 == 33 || Auth::user()->id_setor29 == 33 || Auth::user()->id_setor30 == 33 || 
                             Auth::user()->id_setor31 == 33 || Auth::user()->id_setor34 == 33 || Auth::user()->id_setor33 == 33 || 
                             Auth::user()->id_setor34 == 33 || Auth::user()->id_setor35 == 33 || Auth::user()->id_setor36 == 33 || 
-                            Auth::user()->id_setor37 == 33 || Auth::user()->id_setor38 == 33 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 33 || Auth::user()->id_setor38 == 33)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosCorte.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -259,7 +259,7 @@
                             </li>
                         @endif
                         
-                        @if(Auth::check() && Auth::user()->id_setor1 == 3 || Auth::user()->id_setor2 == 3 || Auth::user()->id_setor3 == 3 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 3 || Auth::user()->id_setor2 == 3 || Auth::user()->id_setor3 == 3 || 
                             Auth::user()->id_setor4 == 3 || Auth::user()->id_setor5 == 3 || Auth::user()->id_setor6 == 3 || 
                             Auth::user()->id_setor7 == 3 || Auth::user()->id_setor8 == 3 || Auth::user()->id_setor9 == 3 || 
                             Auth::user()->id_setor10 == 3 || Auth::user()->id_setor11 == 3 || Auth::user()->id_setor12 == 3 || 
@@ -271,8 +271,8 @@
                             Auth::user()->id_setor28 == 3 || Auth::user()->id_setor29 == 3 || Auth::user()->id_setor30 == 3 || 
                             Auth::user()->id_setor31 == 3 || Auth::user()->id_setor34 == 3 || Auth::user()->id_setor33 == 3 || 
                             Auth::user()->id_setor34 == 3 || Auth::user()->id_setor35 == 3 || Auth::user()->id_setor36 == 3 || 
-                            Auth::user()->id_setor37 == 3 || Auth::user()->id_setor38 == 3 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 3 || Auth::user()->id_setor38 == 3 ))|| (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosCusto.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -280,7 +280,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 29 || Auth::user()->id_setor2 == 29 || Auth::user()->id_setor3 == 29 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 29 || Auth::user()->id_setor2 == 29 || Auth::user()->id_setor3 == 29 || 
                             Auth::user()->id_setor4 == 29 || Auth::user()->id_setor5 == 29 || Auth::user()->id_setor6 == 29 || 
                             Auth::user()->id_setor7 == 29 || Auth::user()->id_setor8 == 29 || Auth::user()->id_setor9 == 29 || 
                             Auth::user()->id_setor10 == 29 || Auth::user()->id_setor11 == 29 || Auth::user()->id_setor12 == 29 || 
@@ -292,8 +292,8 @@
                             Auth::user()->id_setor28 == 29 || Auth::user()->id_setor29 == 29 || Auth::user()->id_setor30 == 29 || 
                             Auth::user()->id_setor31 == 29 || Auth::user()->id_setor34 == 29 || Auth::user()->id_setor33 == 29 || 
                             Auth::user()->id_setor34 == 29 || Auth::user()->id_setor35 == 29 || Auth::user()->id_setor36 == 29 || 
-                            Auth::user()->id_setor37 == 29 || Auth::user()->id_setor38 == 29 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 29 || Auth::user()->id_setor38 == 29)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosDesign.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -301,7 +301,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 7 || Auth::user()->id_setor2 == 7 || Auth::user()->id_setor3 == 7 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 7 || Auth::user()->id_setor2 == 7 || Auth::user()->id_setor3 == 7 || 
                             Auth::user()->id_setor4 == 7 || Auth::user()->id_setor5 == 7 || Auth::user()->id_setor6 == 7 || 
                             Auth::user()->id_setor7 == 7 || Auth::user()->id_setor8 == 7 || Auth::user()->id_setor9 == 7 || 
                             Auth::user()->id_setor10 == 7 || Auth::user()->id_setor11 == 7 || Auth::user()->id_setor12 == 7 || 
@@ -313,8 +313,8 @@
                             Auth::user()->id_setor28 == 7 || Auth::user()->id_setor29 == 7 || Auth::user()->id_setor30 == 7 || 
                             Auth::user()->id_setor31 == 7 || Auth::user()->id_setor34 == 7 || Auth::user()->id_setor33 == 7 || 
                             Auth::user()->id_setor34 == 7 || Auth::user()->id_setor35 == 7 || Auth::user()->id_setor36 == 7 || 
-                            Auth::user()->id_setor37 == 7 || Auth::user()->id_setor38 == 7 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 7 || Auth::user()->id_setor38 == 7 ))|| (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosDiretoriaAdministrativa.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -322,7 +322,7 @@
                             </li>
                         @endif
                         
-                        @if(Auth::check() && Auth::user()->id_setor1 == 30 || Auth::user()->id_setor2 == 30 || Auth::user()->id_setor3 == 30 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 30 || Auth::user()->id_setor2 == 30 || Auth::user()->id_setor3 == 30 || 
                             Auth::user()->id_setor4 == 30 || Auth::user()->id_setor5 == 30 || Auth::user()->id_setor6 == 30 || 
                             Auth::user()->id_setor7 == 30 || Auth::user()->id_setor8 == 30 || Auth::user()->id_setor9 == 30 || 
                             Auth::user()->id_setor10 == 30 || Auth::user()->id_setor11 == 30 || Auth::user()->id_setor12 == 30 || 
@@ -334,8 +334,8 @@
                             Auth::user()->id_setor28 == 30 || Auth::user()->id_setor29 == 30 || Auth::user()->id_setor30 == 30 || 
                             Auth::user()->id_setor31 == 30 || Auth::user()->id_setor34 == 30 || Auth::user()->id_setor33 == 30 || 
                             Auth::user()->id_setor34 == 30 || Auth::user()->id_setor35 == 30 || Auth::user()->id_setor36 == 30 || 
-                            Auth::user()->id_setor37 == 30 || Auth::user()->id_setor38 == 30 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 30 || Auth::user()->id_setor38 == 30)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosDiretoriaComercial.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -343,7 +343,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 4 || Auth::user()->id_setor2 == 4 || Auth::user()->id_setor3 == 4 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 4 || Auth::user()->id_setor2 == 4 || Auth::user()->id_setor3 == 4 || 
                             Auth::user()->id_setor4 == 4 || Auth::user()->id_setor5 == 4 || Auth::user()->id_setor6 == 4 || 
                             Auth::user()->id_setor7 == 4 || Auth::user()->id_setor8 == 4 || Auth::user()->id_setor9 == 4 || 
                             Auth::user()->id_setor10 == 4 || Auth::user()->id_setor11 == 4 || Auth::user()->id_setor12 == 4 || 
@@ -355,8 +355,8 @@
                             Auth::user()->id_setor28 == 4 || Auth::user()->id_setor29 == 4 || Auth::user()->id_setor30 == 4 || 
                             Auth::user()->id_setor31 == 4 || Auth::user()->id_setor34 == 4 || Auth::user()->id_setor33 == 4 || 
                             Auth::user()->id_setor34 == 4 || Auth::user()->id_setor35 == 4 || Auth::user()->id_setor36 == 4 || 
-                            Auth::user()->id_setor37 == 4 || Auth::user()->id_setor38 == 4 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 4 || Auth::user()->id_setor38 == 4 ))|| (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosDiretoriaIndustrial.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -364,7 +364,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 6 || Auth::user()->id_setor2 == 6 || Auth::user()->id_setor3 == 6 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 6 || Auth::user()->id_setor2 == 6 || Auth::user()->id_setor3 == 6 || 
                             Auth::user()->id_setor4 == 6 || Auth::user()->id_setor5 == 6 || Auth::user()->id_setor6 == 6 || 
                             Auth::user()->id_setor7 == 6 || Auth::user()->id_setor8 == 6 || Auth::user()->id_setor9 == 6 || 
                             Auth::user()->id_setor10 == 6 || Auth::user()->id_setor11 == 6 || Auth::user()->id_setor12 == 6 || 
@@ -376,8 +376,8 @@
                             Auth::user()->id_setor28 == 6 || Auth::user()->id_setor29 == 6 || Auth::user()->id_setor30 == 6 || 
                             Auth::user()->id_setor31 == 6 || Auth::user()->id_setor34 == 6 || Auth::user()->id_setor33 == 6 || 
                             Auth::user()->id_setor34 == 6 || Auth::user()->id_setor35 == 6 || Auth::user()->id_setor36 == 6 || 
-                            Auth::user()->id_setor37 == 6 || Auth::user()->id_setor38 == 6 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 6 || Auth::user()->id_setor38 == 6 ))|| (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosEcommerce.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -385,7 +385,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 37 || Auth::user()->id_setor2 == 37 || Auth::user()->id_setor3 == 37 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 37 || Auth::user()->id_setor2 == 37 || Auth::user()->id_setor3 == 37 || 
                             Auth::user()->id_setor4 == 37 || Auth::user()->id_setor5 == 37 || Auth::user()->id_setor6 == 37 || 
                             Auth::user()->id_setor7 == 37 || Auth::user()->id_setor8 == 37 || Auth::user()->id_setor9 == 37 || 
                             Auth::user()->id_setor10 == 37 || Auth::user()->id_setor11 == 37 || Auth::user()->id_setor12 == 37 || 
@@ -397,8 +397,8 @@
                             Auth::user()->id_setor28 == 37 || Auth::user()->id_setor29 == 37 || Auth::user()->id_setor30 == 37 || 
                             Auth::user()->id_setor31 == 37 || Auth::user()->id_setor34 == 37 || Auth::user()->id_setor33 == 37 || 
                             Auth::user()->id_setor34 == 37 || Auth::user()->id_setor35 == 37 || Auth::user()->id_setor36 == 37 || 
-                            Auth::user()->id_setor37 == 37 || Auth::user()->id_setor38 == 37 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 37 || Auth::user()->id_setor38 == 37)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosEmbalagem.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -406,7 +406,7 @@
                             </li>
                         @endif
                         
-                        @if(Auth::check() && Auth::user()->id_setor1 == 2 || Auth::user()->id_setor2 == 2 || Auth::user()->id_setor3 == 2 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 2 || Auth::user()->id_setor2 == 2 || Auth::user()->id_setor3 == 2 || 
                             Auth::user()->id_setor4 == 2 || Auth::user()->id_setor5 == 2 || Auth::user()->id_setor6 == 2 || 
                             Auth::user()->id_setor7 == 2 || Auth::user()->id_setor8 == 2 || Auth::user()->id_setor9 == 2 || 
                             Auth::user()->id_setor10 == 2 || Auth::user()->id_setor11 == 2 || Auth::user()->id_setor12 == 2 || 
@@ -418,8 +418,8 @@
                             Auth::user()->id_setor28 == 2 || Auth::user()->id_setor29 == 2 || Auth::user()->id_setor30 == 2 || 
                             Auth::user()->id_setor31 == 2 || Auth::user()->id_setor34 == 2 || Auth::user()->id_setor33 == 2 || 
                             Auth::user()->id_setor34 == 2 || Auth::user()->id_setor35 == 2 || Auth::user()->id_setor36 == 2 || 
-                            Auth::user()->id_setor37 == 2 || Auth::user()->id_setor38 == 2 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 2 || Auth::user()->id_setor38 == 2)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosEngenharia.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -427,7 +427,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 8 || Auth::user()->id_setor2 == 8 || Auth::user()->id_setor3 == 8 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 8 || Auth::user()->id_setor2 == 8 || Auth::user()->id_setor3 == 8 || 
                             Auth::user()->id_setor4 == 8 || Auth::user()->id_setor5 == 8 || Auth::user()->id_setor6 == 8 || 
                             Auth::user()->id_setor7 == 8 || Auth::user()->id_setor8 == 8 || Auth::user()->id_setor9 == 8 || 
                             Auth::user()->id_setor10 == 8 || Auth::user()->id_setor11 == 8 || Auth::user()->id_setor12 == 8 || 
@@ -439,8 +439,8 @@
                             Auth::user()->id_setor28 == 8 || Auth::user()->id_setor29 == 8 || Auth::user()->id_setor30 == 8 || 
                             Auth::user()->id_setor31 == 8 || Auth::user()->id_setor34 == 8 || Auth::user()->id_setor33 == 8 || 
                             Auth::user()->id_setor34 == 8 || Auth::user()->id_setor35 == 8 || Auth::user()->id_setor36 == 8 || 
-                            Auth::user()->id_setor37 == 8 || Auth::user()->id_setor38 == 8 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 8 || Auth::user()->id_setor38 == 8)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosExpedicao.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -448,7 +448,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 9 || Auth::user()->id_setor2 == 9 || Auth::user()->id_setor3 == 9 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 9 || Auth::user()->id_setor2 == 9 || Auth::user()->id_setor3 == 9 || 
                             Auth::user()->id_setor4 == 9 || Auth::user()->id_setor5 == 9 || Auth::user()->id_setor6 == 9 || 
                             Auth::user()->id_setor7 == 9 || Auth::user()->id_setor8 == 9 || Auth::user()->id_setor9 == 9 || 
                             Auth::user()->id_setor10 == 9 || Auth::user()->id_setor11 == 9 || Auth::user()->id_setor12 == 9 || 
@@ -460,8 +460,8 @@
                             Auth::user()->id_setor28 == 9 || Auth::user()->id_setor29 == 9 || Auth::user()->id_setor30 == 9 || 
                             Auth::user()->id_setor31 == 9 || Auth::user()->id_setor34 == 9 || Auth::user()->id_setor33 == 9 || 
                             Auth::user()->id_setor34 == 9 || Auth::user()->id_setor35 == 9 || Auth::user()->id_setor36 == 9 || 
-                            Auth::user()->id_setor37 == 9 || Auth::user()->id_setor38 == 9 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 9 || Auth::user()->id_setor38 == 9)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosExportacao.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -469,7 +469,7 @@
                             </li>
                         @endif
                         
-                        @if(Auth::check() && Auth::user()->id_setor1 == 31 || Auth::user()->id_setor2 == 31 || Auth::user()->id_setor3 == 31 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 31 || Auth::user()->id_setor2 == 31 || Auth::user()->id_setor3 == 31 || 
                             Auth::user()->id_setor4 == 31 || Auth::user()->id_setor5 == 31 || Auth::user()->id_setor6 == 31 || 
                             Auth::user()->id_setor7 == 31 || Auth::user()->id_setor8 == 31 || Auth::user()->id_setor9 == 31 || 
                             Auth::user()->id_setor10 == 31 || Auth::user()->id_setor11 == 31 || Auth::user()->id_setor12 == 31 || 
@@ -481,8 +481,8 @@
                             Auth::user()->id_setor28 == 31 || Auth::user()->id_setor29 == 31 || Auth::user()->id_setor30 == 31 || 
                             Auth::user()->id_setor31 == 31 || Auth::user()->id_setor34 == 31 || Auth::user()->id_setor33 == 31 || 
                             Auth::user()->id_setor34 == 31 || Auth::user()->id_setor35 == 31 || Auth::user()->id_setor36 == 31 || 
-                            Auth::user()->id_setor37 == 31 || Auth::user()->id_setor38 == 31 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 31 || Auth::user()->id_setor38 == 31)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosFaturamento.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -490,7 +490,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 35 || Auth::user()->id_setor2 == 35 || Auth::user()->id_setor3 == 35 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 35 || Auth::user()->id_setor2 == 35 || Auth::user()->id_setor3 == 35 || 
                             Auth::user()->id_setor4 == 35 || Auth::user()->id_setor5 == 35 || Auth::user()->id_setor6 == 35 || 
                             Auth::user()->id_setor7 == 35 || Auth::user()->id_setor8 == 35 || Auth::user()->id_setor9 == 35 || 
                             Auth::user()->id_setor10 == 35 || Auth::user()->id_setor11 == 35 || Auth::user()->id_setor12 == 35 || 
@@ -502,8 +502,8 @@
                             Auth::user()->id_setor28 == 35 || Auth::user()->id_setor29 == 35 || Auth::user()->id_setor30 == 35 || 
                             Auth::user()->id_setor31 == 35 || Auth::user()->id_setor34 == 35 || Auth::user()->id_setor33 == 35 || 
                             Auth::user()->id_setor34 == 35 || Auth::user()->id_setor35 == 35 || Auth::user()->id_setor36 == 35 || 
-                            Auth::user()->id_setor37 == 35 || Auth::user()->id_setor38 == 35 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 35 || Auth::user()->id_setor38 == 35)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosFuradeira.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -511,7 +511,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 10 || Auth::user()->id_setor2 == 10 || Auth::user()->id_setor3 == 10 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 10 || Auth::user()->id_setor2 == 10 || Auth::user()->id_setor3 == 10 || 
                             Auth::user()->id_setor4 == 10 || Auth::user()->id_setor5 == 10 || Auth::user()->id_setor6 == 10 || 
                             Auth::user()->id_setor7 == 10 || Auth::user()->id_setor8 == 10 || Auth::user()->id_setor9 == 10 || 
                             Auth::user()->id_setor10 == 10 || Auth::user()->id_setor11 == 10 || Auth::user()->id_setor12 == 10 || 
@@ -523,8 +523,8 @@
                             Auth::user()->id_setor28 == 10 || Auth::user()->id_setor29 == 10 || Auth::user()->id_setor30 == 10 || 
                             Auth::user()->id_setor31 == 10 || Auth::user()->id_setor34 == 10 || Auth::user()->id_setor33 == 10 || 
                             Auth::user()->id_setor34 == 10 || Auth::user()->id_setor35 == 10 || Auth::user()->id_setor36 == 10 || 
-                            Auth::user()->id_setor37 == 10 || Auth::user()->id_setor38 == 10 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 10 || Auth::user()->id_setor38 == 10)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosManutencao.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -532,7 +532,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 12 || Auth::user()->id_setor2 == 12 || Auth::user()->id_setor3 == 12 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 12 || Auth::user()->id_setor2 == 12 || Auth::user()->id_setor3 == 12 || 
                             Auth::user()->id_setor4 == 12 || Auth::user()->id_setor5 == 12 || Auth::user()->id_setor6 == 12 || 
                             Auth::user()->id_setor7 == 12 || Auth::user()->id_setor8 == 12 || Auth::user()->id_setor9 == 12 || 
                             Auth::user()->id_setor10 == 12 || Auth::user()->id_setor11 == 12 || Auth::user()->id_setor12 == 12 || 
@@ -544,8 +544,8 @@
                             Auth::user()->id_setor28 == 12 || Auth::user()->id_setor29 == 12 || Auth::user()->id_setor30 == 12 || 
                             Auth::user()->id_setor31 == 12 || Auth::user()->id_setor34 == 12 || Auth::user()->id_setor33 == 12 || 
                             Auth::user()->id_setor34 == 12 || Auth::user()->id_setor35 == 12 || Auth::user()->id_setor36 == 12 || 
-                            Auth::user()->id_setor37 == 12 || Auth::user()->id_setor38 == 12 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 12 || Auth::user()->id_setor38 == 12)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{ route('haosMarketing.index') }}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -553,7 +553,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 11 || Auth::user()->id_setor2 == 11 || Auth::user()->id_setor3 == 11 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 11 || Auth::user()->id_setor2 == 11 || Auth::user()->id_setor3 == 11 || 
                             Auth::user()->id_setor4 == 11 || Auth::user()->id_setor5 == 11 || Auth::user()->id_setor6 == 11 || 
                             Auth::user()->id_setor7 == 11 || Auth::user()->id_setor8 == 11 || Auth::user()->id_setor9 == 11 || 
                             Auth::user()->id_setor10 == 11 || Auth::user()->id_setor11 == 11 || Auth::user()->id_setor12 == 11 || 
@@ -565,8 +565,8 @@
                             Auth::user()->id_setor28 == 11 || Auth::user()->id_setor29 == 11 || Auth::user()->id_setor30 == 11 || 
                             Auth::user()->id_setor31 == 11 || Auth::user()->id_setor34 == 11 || Auth::user()->id_setor33 == 11 || 
                             Auth::user()->id_setor34 == 11 || Auth::user()->id_setor35 == 11 || Auth::user()->id_setor36 == 11 || 
-                            Auth::user()->id_setor37 == 11 || Auth::user()->id_setor38 == 11 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 11 || Auth::user()->id_setor38 == 11)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosPed.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -574,7 +574,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 38 || Auth::user()->id_setor2 == 38 || Auth::user()->id_setor3 == 38 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 38 || Auth::user()->id_setor2 == 38 || Auth::user()->id_setor3 == 38 || 
                             Auth::user()->id_setor4 == 38 || Auth::user()->id_setor5 == 38 || Auth::user()->id_setor6 == 38 || 
                             Auth::user()->id_setor7 == 38 || Auth::user()->id_setor8 == 38 || Auth::user()->id_setor9 == 38 || 
                             Auth::user()->id_setor10 == 38 || Auth::user()->id_setor11 == 38 || Auth::user()->id_setor12 == 38 || 
@@ -586,8 +586,8 @@
                             Auth::user()->id_setor28 == 38 || Auth::user()->id_setor29 == 38 || Auth::user()->id_setor30 == 38 || 
                             Auth::user()->id_setor31 == 38 || Auth::user()->id_setor34 == 38 || Auth::user()->id_setor33 == 38 || 
                             Auth::user()->id_setor34 == 38 || Auth::user()->id_setor35 == 38 || Auth::user()->id_setor36 == 38 || 
-                            Auth::user()->id_setor37 == 38 || Auth::user()->id_setor38 == 38 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 38 || Auth::user()->id_setor38 == 38)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosPintura.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -595,7 +595,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 13 || Auth::user()->id_setor2 == 13 || Auth::user()->id_setor3 == 13 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 13 || Auth::user()->id_setor2 == 13 || Auth::user()->id_setor3 == 13 || 
                             Auth::user()->id_setor4 == 13 || Auth::user()->id_setor5 == 13 || Auth::user()->id_setor6 == 13 || 
                             Auth::user()->id_setor7 == 13 || Auth::user()->id_setor8 == 13 || Auth::user()->id_setor9 == 13 || 
                             Auth::user()->id_setor10 == 13 || Auth::user()->id_setor11 == 13 || Auth::user()->id_setor12 == 13 || 
@@ -607,8 +607,8 @@
                             Auth::user()->id_setor28 == 13 || Auth::user()->id_setor29 == 13 || Auth::user()->id_setor30 == 13 || 
                             Auth::user()->id_setor31 == 13 || Auth::user()->id_setor34 == 13 || Auth::user()->id_setor33 == 13 || 
                             Auth::user()->id_setor34 == 13 || Auth::user()->id_setor35 == 13 || Auth::user()->id_setor36 == 13 || 
-                            Auth::user()->id_setor37 == 13 || Auth::user()->id_setor38 == 13 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 13 || Auth::user()->id_setor38 == 13)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosPmo.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -616,7 +616,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 14 || Auth::user()->id_setor2 == 14 || Auth::user()->id_setor3 == 14 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 14 || Auth::user()->id_setor2 == 14 || Auth::user()->id_setor3 == 14 || 
                             Auth::user()->id_setor4 == 14 || Auth::user()->id_setor5 == 14 || Auth::user()->id_setor6 == 14 || 
                             Auth::user()->id_setor7 == 14 || Auth::user()->id_setor8 == 14 || Auth::user()->id_setor9 == 14 || 
                             Auth::user()->id_setor10 == 14 || Auth::user()->id_setor11 == 14 || Auth::user()->id_setor12 == 14 || 
@@ -628,8 +628,8 @@
                             Auth::user()->id_setor28 == 14 || Auth::user()->id_setor29 == 14 || Auth::user()->id_setor30 == 14 || 
                             Auth::user()->id_setor31 == 14 || Auth::user()->id_setor34 == 14 || Auth::user()->id_setor33 == 14 || 
                             Auth::user()->id_setor34 == 14 || Auth::user()->id_setor35 == 14 || Auth::user()->id_setor36 == 14 || 
-                            Auth::user()->id_setor37 == 14 || Auth::user()->id_setor38 == 14 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 14 || Auth::user()->id_setor38 == 14)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosPpcp.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -637,7 +637,7 @@
                             </li>
                         @endif
                         
-                        @if(Auth::check() && Auth::user()->id_setor1 == 15 || Auth::user()->id_setor2 == 15 || Auth::user()->id_setor3 == 15 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 15 || Auth::user()->id_setor2 == 15 || Auth::user()->id_setor3 == 15 || 
                             Auth::user()->id_setor4 == 15 || Auth::user()->id_setor5 == 15 || Auth::user()->id_setor6 == 15 || 
                             Auth::user()->id_setor7 == 15 || Auth::user()->id_setor8 == 15 || Auth::user()->id_setor9 == 15 || 
                             Auth::user()->id_setor10 == 15 || Auth::user()->id_setor11 == 15 || Auth::user()->id_setor12 == 15 || 
@@ -649,8 +649,8 @@
                             Auth::user()->id_setor28 == 15 || Auth::user()->id_setor29 == 15 || Auth::user()->id_setor30 == 15 || 
                             Auth::user()->id_setor31 == 15 || Auth::user()->id_setor34 == 15 || Auth::user()->id_setor33 == 15 || 
                             Auth::user()->id_setor34 == 15 || Auth::user()->id_setor35 == 15 || Auth::user()->id_setor36 == 15 || 
-                            Auth::user()->id_setor37 == 15 || Auth::user()->id_setor38 == 15 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 15 || Auth::user()->id_setor38 == 15)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosQualidade.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -658,7 +658,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 16 || Auth::user()->id_setor2 == 16 || Auth::user()->id_setor3 == 16 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 16 || Auth::user()->id_setor2 == 16 || Auth::user()->id_setor3 == 16 || 
                             Auth::user()->id_setor4 == 16 || Auth::user()->id_setor5 == 16 || Auth::user()->id_setor6 == 16 || 
                             Auth::user()->id_setor7 == 16 || Auth::user()->id_setor8 == 16 || Auth::user()->id_setor9 == 16 || 
                             Auth::user()->id_setor10 == 16 || Auth::user()->id_setor11 == 16 || Auth::user()->id_setor12 == 16 || 
@@ -670,8 +670,8 @@
                             Auth::user()->id_setor28 == 16 || Auth::user()->id_setor29 == 16 || Auth::user()->id_setor30 == 16 || 
                             Auth::user()->id_setor31 == 16 || Auth::user()->id_setor34 == 16 || Auth::user()->id_setor33 == 16 || 
                             Auth::user()->id_setor34 == 16 || Auth::user()->id_setor35 == 16 || Auth::user()->id_setor36 == 16 || 
-                            Auth::user()->id_setor37 == 16 || Auth::user()->id_setor38 == 16 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 16 || Auth::user()->id_setor38 == 16)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosRecepcao.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -679,7 +679,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 17 || Auth::user()->id_setor2 == 17 || Auth::user()->id_setor3 == 17 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 17 || Auth::user()->id_setor2 == 17 || Auth::user()->id_setor3 == 17 || 
                             Auth::user()->id_setor4 == 17 || Auth::user()->id_setor5 == 17 || Auth::user()->id_setor6 == 17 || 
                             Auth::user()->id_setor7 == 17 || Auth::user()->id_setor8 == 17 || Auth::user()->id_setor9 == 17 || 
                             Auth::user()->id_setor10 == 17 || Auth::user()->id_setor11 == 17 || Auth::user()->id_setor12 == 17 || 
@@ -691,8 +691,8 @@
                             Auth::user()->id_setor28 == 17 || Auth::user()->id_setor29 == 17 || Auth::user()->id_setor30 == 17 || 
                             Auth::user()->id_setor31 == 17 || Auth::user()->id_setor34 == 17 || Auth::user()->id_setor33 == 17 || 
                             Auth::user()->id_setor34 == 17 || Auth::user()->id_setor35 == 17 || Auth::user()->id_setor36 == 17 || 
-                            Auth::user()->id_setor37 == 17 || Auth::user()->id_setor38 == 17 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 17 || Auth::user()->id_setor38 == 17)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosRestaurante.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -700,7 +700,7 @@
                             </li>
                         @endif
                         
-                        @if(Auth::check() && Auth::user()->id_setor1 == 18 || Auth::user()->id_setor2 == 18 || Auth::user()->id_setor3 == 18 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 18 || Auth::user()->id_setor2 == 18 || Auth::user()->id_setor3 == 18 || 
                             Auth::user()->id_setor4 == 18 || Auth::user()->id_setor5 == 18 || Auth::user()->id_setor6 == 18 || 
                             Auth::user()->id_setor7 == 18 || Auth::user()->id_setor8 == 18 || Auth::user()->id_setor9 == 18 || 
                             Auth::user()->id_setor10 == 18 || Auth::user()->id_setor11 == 18 || Auth::user()->id_setor12 == 18 || 
@@ -712,8 +712,8 @@
                             Auth::user()->id_setor28 == 18 || Auth::user()->id_setor29 == 18 || Auth::user()->id_setor30 == 18 || 
                             Auth::user()->id_setor31 == 18 || Auth::user()->id_setor34 == 18 || Auth::user()->id_setor33 == 18 || 
                             Auth::user()->id_setor34 == 18 || Auth::user()->id_setor35 == 18 || Auth::user()->id_setor36 == 18 || 
-                            Auth::user()->id_setor37 == 18 || Auth::user()->id_setor38 == 18 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 18 || Auth::user()->id_setor38 == 18)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosRh.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -721,7 +721,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 19 || Auth::user()->id_setor2 == 19 || Auth::user()->id_setor3 == 19 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 19 || Auth::user()->id_setor2 == 19 || Auth::user()->id_setor3 == 19 || 
                             Auth::user()->id_setor4 == 19 || Auth::user()->id_setor5 == 19 || Auth::user()->id_setor6 == 19 || 
                             Auth::user()->id_setor7 == 19 || Auth::user()->id_setor8 == 19 || Auth::user()->id_setor9 == 19 || 
                             Auth::user()->id_setor10 == 19 || Auth::user()->id_setor11 == 19 || Auth::user()->id_setor12 == 19 || 
@@ -733,8 +733,8 @@
                             Auth::user()->id_setor28 == 19 || Auth::user()->id_setor29 == 19 || Auth::user()->id_setor30 == 19 || 
                             Auth::user()->id_setor31 == 19 || Auth::user()->id_setor34 == 19 || Auth::user()->id_setor33 == 19 || 
                             Auth::user()->id_setor34 == 19 || Auth::user()->id_setor35 == 19 || Auth::user()->id_setor36 == 19 || 
-                            Auth::user()->id_setor37 == 19 || Auth::user()->id_setor38 == 19 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 19 || Auth::user()->id_setor38 == 19)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosSac.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -742,7 +742,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 20 || Auth::user()->id_setor2 == 20 || Auth::user()->id_setor3 == 20 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 20 || Auth::user()->id_setor2 == 20 || Auth::user()->id_setor3 == 20 || 
                             Auth::user()->id_setor4 == 20 || Auth::user()->id_setor5 == 20 || Auth::user()->id_setor6 == 20 || 
                             Auth::user()->id_setor7 == 20 || Auth::user()->id_setor8 == 20 || Auth::user()->id_setor9 == 20 || 
                             Auth::user()->id_setor10 == 20 || Auth::user()->id_setor11 == 20 || Auth::user()->id_setor12 == 20 || 
@@ -754,8 +754,8 @@
                             Auth::user()->id_setor28 == 20 || Auth::user()->id_setor29 == 20 || Auth::user()->id_setor30 == 20 || 
                             Auth::user()->id_setor31 == 20 || Auth::user()->id_setor34 == 20 || Auth::user()->id_setor33 == 20 || 
                             Auth::user()->id_setor34 == 20 || Auth::user()->id_setor35 == 20 || Auth::user()->id_setor36 == 20 || 
-                            Auth::user()->id_setor37 == 20 || Auth::user()->id_setor38 == 20 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 20 || Auth::user()->id_setor38 == 20)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosSesmt.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -763,7 +763,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 22 || Auth::user()->id_setor2 == 22 || Auth::user()->id_setor3 == 22 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 22 || Auth::user()->id_setor2 == 22 || Auth::user()->id_setor3 == 22 || 
                             Auth::user()->id_setor4 == 22 || Auth::user()->id_setor5 == 22 || Auth::user()->id_setor6 == 22 || 
                             Auth::user()->id_setor7 == 22 || Auth::user()->id_setor8 == 22 || Auth::user()->id_setor9 == 22 || 
                             Auth::user()->id_setor10 == 22 || Auth::user()->id_setor11 == 22 || Auth::user()->id_setor12 == 22 || 
@@ -775,8 +775,8 @@
                             Auth::user()->id_setor28 == 22 || Auth::user()->id_setor29 == 22 || Auth::user()->id_setor30 == 22 || 
                             Auth::user()->id_setor31 == 22 || Auth::user()->id_setor34 == 22 || Auth::user()->id_setor33 == 22 || 
                             Auth::user()->id_setor34 == 22 || Auth::user()->id_setor35 == 22 || Auth::user()->id_setor36 == 22 || 
-                            Auth::user()->id_setor37 == 22 || Auth::user()->id_setor38 == 22 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 22 || Auth::user()->id_setor38 == 22)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosProjetos.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -784,7 +784,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 1 || Auth::user()->id_setor2 == 1 || Auth::user()->id_setor3 == 1 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 1 || Auth::user()->id_setor2 == 1 || Auth::user()->id_setor3 == 1 || 
                             Auth::user()->id_setor4 == 1 || Auth::user()->id_setor5 == 1 || Auth::user()->id_setor6 == 1 || 
                             Auth::user()->id_setor7 == 1 || Auth::user()->id_setor8 == 1 || Auth::user()->id_setor9 == 1 || 
                             Auth::user()->id_setor10 == 1 || Auth::user()->id_setor11 == 1 || Auth::user()->id_setor12 == 1 || 
@@ -796,8 +796,8 @@
                             Auth::user()->id_setor28 == 1 || Auth::user()->id_setor29 == 1 || Auth::user()->id_setor30 == 1 || 
                             Auth::user()->id_setor31 == 1 || Auth::user()->id_setor34 == 1 || Auth::user()->id_setor33 == 1 || 
                             Auth::user()->id_setor34 == 1 || Auth::user()->id_setor35 == 1 || Auth::user()->id_setor36 == 1 || 
-                            Auth::user()->id_setor37 == 1 || Auth::user()->id_setor38 == 1 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 1 || Auth::user()->id_setor38 == 1)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{ route('haosTi.index') }}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">
@@ -806,7 +806,7 @@
                             </li>
                         @endif
 
-                        @if(Auth::check() && Auth::user()->id_setor1 == 23 || Auth::user()->id_setor2 == 23 || Auth::user()->id_setor3 == 23 || 
+                        @if(Auth::check() && ((Auth::user()->id_empresa1 == 22 || Auth::user()->id_empresa2 == 22 || Auth::user()->id_empresa3 == 22 || Auth::user()->id_empresa4 == 22) && (Auth::user()->id_setor1 == 23 || Auth::user()->id_setor2 == 23 || Auth::user()->id_setor3 == 23 || 
                             Auth::user()->id_setor4 == 23 || Auth::user()->id_setor5 == 23 || Auth::user()->id_setor6 == 23 || 
                             Auth::user()->id_setor7 == 23 || Auth::user()->id_setor8 == 23 || Auth::user()->id_setor9 == 23 || 
                             Auth::user()->id_setor10 == 23 || Auth::user()->id_setor11 == 23 || Auth::user()->id_setor12 == 23 || 
@@ -818,8 +818,8 @@
                             Auth::user()->id_setor28 == 23 || Auth::user()->id_setor29 == 23 || Auth::user()->id_setor30 == 23 || 
                             Auth::user()->id_setor31 == 23 || Auth::user()->id_setor34 == 23 || Auth::user()->id_setor33 == 23 || 
                             Auth::user()->id_setor34 == 23 || Auth::user()->id_setor35 == 23 || Auth::user()->id_setor36 == 23 || 
-                            Auth::user()->id_setor37 == 23 || Auth::user()->id_setor38 == 23 || Auth::user()->id_permission == 1 || 
-                            Auth::user()->id_permission == 2)
+                            Auth::user()->id_setor37 == 23 || Auth::user()->id_setor38 == 23)) || (Auth::user()->id_permission == 1 || 
+                            Auth::user()->id_permission == 2))
                             <li class="folder">
                                 <a href="{{route('haosTransporte.index')}}" class="folder-link">
                                     <img src="{{ asset('images/icone_pasta.png') }}" alt="icone pasta" style="width:20px; height:20px; margin-right: 10px">

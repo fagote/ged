@@ -16,9 +16,27 @@
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 text-gray-900 dark:text-gray-100">
                 <div class="uploaded-files">
+
+                @if(Auth::check() && ((Auth::user()->id_empresa1 == 5 || Auth::user()->id_empresa2 == 5 || Auth::user()->id_empresa3 == 5 || Auth::user()->id_empresa4 == 5) && (Auth::user()->id_setor1 == 36 || Auth::user()->id_setor2 == 36 || Auth::user()->id_setor3 == 36 || 
+                    Auth::user()->id_setor4 == 36 || Auth::user()->id_setor5 == 36 || Auth::user()->id_setor6 == 36 || 
+                    Auth::user()->id_setor7 == 36 || Auth::user()->id_setor8 == 36 || Auth::user()->id_setor9 == 36 || 
+                    Auth::user()->id_setor10 == 36 || Auth::user()->id_setor11 == 36 || Auth::user()->id_setor12 == 36 || 
+                    Auth::user()->id_setor13 == 36 || Auth::user()->id_setor14 == 36 || Auth::user()->id_setor15 == 36 || 
+                    Auth::user()->id_setor16 == 36 || Auth::user()->id_setor17 == 36 || Auth::user()->id_setor18 == 36 || 
+                    Auth::user()->id_setor19 == 36 || Auth::user()->id_setor20 == 36 || Auth::user()->id_setor21 == 36 || 
+                    Auth::user()->id_setor22 == 36 || Auth::user()->id_setor23 == 36 || Auth::user()->id_setor24 == 36 || 
+                    Auth::user()->id_setor25 == 36 || Auth::user()->id_setor26 == 36 || Auth::user()->id_setor27 == 36 || 
+                    Auth::user()->id_setor28 == 36 || Auth::user()->id_setor29 == 36 || Auth::user()->id_setor30 == 36 || 
+                    Auth::user()->id_setor31 == 36 || Auth::user()->id_setor32 == 36 || Auth::user()->id_setor33 == 36 || 
+                    Auth::user()->id_setor34 == 36 || Auth::user()->id_setor35 == 36 || Auth::user()->id_setor36 == 36 || 
+                    Auth::user()->id_setor37 == 36 || Auth::user()->id_setor38 == 36)) || (Auth::user()->id_permission == 1 || 
+                    Auth::user()->id_permission == 2))
+
+                    
+
                     <h2> ARQUIVOS: </h2><br>
-
-
+    
+    
                     <table>
                         <thead>
                             <tr>
@@ -37,13 +55,13 @@
                         </thead>
                         <tbody>
                             @forelse ($files as $file)
-
+    
                             @if(Auth::check() && Auth::user()->id_permission == 3 || Auth::user()->permission == NULL)
                                 @if($file->ativo == 0 || $file->aprovacao == 0 || $file->aprovacao == 1)
                                     @continue
                                 @endif
                             @endif
-
+    
                             <tr>
                                 <td>{{ $file->codigo }}</td>
                                 <td>{{ $file->versao }}</td>
@@ -90,6 +108,12 @@
                         </tbody>
                     </table>
                     {{ $files->links() }}
+
+                @else
+                    <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                        Você não possui acesso a esta pasta!
+                    </h2>
+                @endif
                    
 
             </div>
