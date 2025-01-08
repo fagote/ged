@@ -1,5 +1,5 @@
 <x-icon></x-icon>
-
+<title>File Manager</title>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
@@ -16,11 +16,29 @@
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 text-gray-900 dark:text-gray-100">
                 <div class="uploaded-files">
+
+                @if(Auth::check() && ((Auth::user()->id_empresa1 == 5 || Auth::user()->id_empresa2 == 5 || Auth::user()->id_empresa3 == 5 || Auth::user()->id_empresa4 == 5) && (Auth::user()->id_setor1 == 7 || Auth::user()->id_setor2 == 7 || Auth::user()->id_setor3 == 7 || 
+                    Auth::user()->id_setor4 == 7 || Auth::user()->id_setor5 == 7 || Auth::user()->id_setor6 == 7 || 
+                    Auth::user()->id_setor7 == 7 || Auth::user()->id_setor8 == 7 || Auth::user()->id_setor9 == 7 || 
+                    Auth::user()->id_setor10 == 7 || Auth::user()->id_setor11 == 7 || Auth::user()->id_setor12 == 7 || 
+                    Auth::user()->id_setor13 == 7 || Auth::user()->id_setor14 == 7 || Auth::user()->id_setor15 == 7 || 
+                    Auth::user()->id_setor16 == 7 || Auth::user()->id_setor17 == 7 || Auth::user()->id_setor18 == 7 || 
+                    Auth::user()->id_setor19 == 7 || Auth::user()->id_setor20 == 7 || Auth::user()->id_setor21 == 7 || 
+                    Auth::user()->id_setor22 == 7 || Auth::user()->id_setor23 == 7 || Auth::user()->id_setor24 == 7 || 
+                    Auth::user()->id_setor25 == 7 || Auth::user()->id_setor26 == 7 || Auth::user()->id_setor27 == 7 || 
+                    Auth::user()->id_setor28 == 7 || Auth::user()->id_setor29 == 7 || Auth::user()->id_setor30 == 7 || 
+                    Auth::user()->id_setor31 == 7 || Auth::user()->id_setor32 == 7 || Auth::user()->id_setor33 == 7 || 
+                    Auth::user()->id_setor34 == 7 || Auth::user()->id_setor35 == 7 || Auth::user()->id_setor36 == 7 || 
+                    Auth::user()->id_setor37 == 7 || Auth::user()->id_setor38 == 7)) || (Auth::user()->id_permission == 1 || 
+                    Auth::user()->id_permission == 2))
+
+                                    
+
                     <h2> INUSITTÁ > DIRETORIA ADMINISTRATIVA </h2><br>
-
-
+    
+    
                     <ul class="file-system">
-
+    
                         <li class="folder">
                             <a href="{{route('inusittaDiretoriaAdministrativaFormulario.index')}}" class="folder-link">
                                 <img src="{{asset('images/icone_pasta.png')}}" alt="icone pasta" style="width: 20px; height: 20px; margin-right: 10px">
@@ -38,13 +56,18 @@
                                 <img src="{{asset('images/icone_pasta.png')}}" alt="icone pasta" style="width: 20px; height: 20px; margin-right: 10px">
                                 PROCEDIMENTO</a>
                         </li>
-
+    
                         <li class="folder">
                             <a href="{{route('inusittaDiretoriaAdministrativaInstrucao.index')}}" class="folder-link">
                                 <img src="{{asset('images/icone_pasta.png')}}" alt="icone pasta" style="width: 20px; height: 20px; margin-right: 10px">
                                 INSTRUCAO</a>
                         </li>
                     </ul>
+                @else
+                    <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                        Você não possui acesso a esta pasta!
+                    </h2>
+                @endif
                    
 
             </div>

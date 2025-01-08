@@ -5250,7 +5250,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.acabamento.show_arq', compact('files'));
     }
     
     //=========================================
@@ -5284,7 +5284,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.acabamento.show_arq', compact('files'));
     }
     
     //=========================================

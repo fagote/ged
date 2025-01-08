@@ -1,5 +1,5 @@
 <x-icon></x-icon>
-
+<title>File Manager</title>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
@@ -16,11 +16,29 @@
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 text-gray-900 dark:text-gray-100">
                 <div class="uploaded-files">
+
+                @if(Auth::check() && ((Auth::user()->id_empresa1 == 1 || Auth::user()->id_empresa2 == 1 || Auth::user()->id_empresa3 == 1 || Auth::user()->id_empresa4 == 1) && (Auth::user()->id_setor1 == 38 || Auth::user()->id_setor2 == 38 || Auth::user()->id_setor3 == 38 || 
+                    Auth::user()->id_setor4 == 38 || Auth::user()->id_setor5 == 38 || Auth::user()->id_setor6 == 38 || 
+                    Auth::user()->id_setor7 == 38 || Auth::user()->id_setor8 == 38 || Auth::user()->id_setor9 == 38 || 
+                    Auth::user()->id_setor10 == 38 || Auth::user()->id_setor11 == 38 || Auth::user()->id_setor12 == 38 || 
+                    Auth::user()->id_setor13 == 38 || Auth::user()->id_setor14 == 38 || Auth::user()->id_setor15 == 38 || 
+                    Auth::user()->id_setor16 == 38 || Auth::user()->id_setor17 == 38 || Auth::user()->id_setor18 == 38 || 
+                    Auth::user()->id_setor19 == 38 || Auth::user()->id_setor20 == 38 || Auth::user()->id_setor21 == 38 || 
+                    Auth::user()->id_setor22 == 38 || Auth::user()->id_setor23 == 38 || Auth::user()->id_setor24 == 38 || 
+                    Auth::user()->id_setor25 == 38 || Auth::user()->id_setor26 == 38 || Auth::user()->id_setor27 == 38 || 
+                    Auth::user()->id_setor28 == 38 || Auth::user()->id_setor29 == 38 || Auth::user()->id_setor30 == 38 || 
+                    Auth::user()->id_setor31 == 38 || Auth::user()->id_setor32 == 38 || Auth::user()->id_setor33 == 38 || 
+                    Auth::user()->id_setor34 == 38 || Auth::user()->id_setor35 == 38 || Auth::user()->id_setor36 == 38 || 
+                    Auth::user()->id_setor37 == 38 || Auth::user()->id_setor38 == 38)) || (Auth::user()->id_permission == 1 || 
+                    Auth::user()->id_permission == 2))
+
+                                    
+
                     <h2> LAVORATTO > PINTURA </h2><br>
-
-
+    
+    
                     <ul class="file-system">
-
+    
                         <li class="folder">
                             <a href="{{route('lavorattoPinturaFormulario.index')}}" class="folder-link">
                                 <img src="{{asset('images/icone_pasta.png')}}" alt="icone pasta" style="width: 20px; height: 20px; margin-right: 10px">
@@ -38,13 +56,18 @@
                                 <img src="{{asset('images/icone_pasta.png')}}" alt="icone pasta" style="width: 20px; height: 20px; margin-right: 10px">
                                 PROCEDIMENTO</a>
                         </li>
-
+    
                         <li class="folder">
                             <a href="{{route('lavorattoPinturaInstrucao.index')}}" class="folder-link">
                                 <img src="{{asset('images/icone_pasta.png')}}" alt="icone pasta" style="width: 20px; height: 20px; margin-right: 10px">
                                 INSTRUCAO</a>
                         </li>
                     </ul>
+                @else
+                    <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                        Você não possui acesso a esta pasta!
+                    </h2>
+                @endif
                    
 
             </div>

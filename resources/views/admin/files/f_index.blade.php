@@ -2,6 +2,7 @@
 @extends('admin.layouts.app')
 
 
+
 @section('title', 'Listagem dos Arquivos')
 @section('content')
 
@@ -139,7 +140,7 @@
 
 @endsection
 
-<!-- CSS -->
+
 
 <style>
     /* Estilos gerais aplicados a ambos os temas */
@@ -281,6 +282,7 @@
     }
 </style>
 <!--==================================================-->
+
 
 
 

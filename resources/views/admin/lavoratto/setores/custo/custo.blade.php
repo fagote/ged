@@ -1,5 +1,5 @@
 <x-icon></x-icon>
-
+<title>File Manager</title>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
@@ -8,27 +8,6 @@
                 Você possui perfil administrador!
             @endcan
         </h2>
-
-        {{-- <!--==================================================-->
-        <!-- Formulário de Busca -->
-        <div class="busca">
-            <form id="form_search" action="{{ route('files.search') }}" method="GET">
-                <input id="input_search" type="text" name="search" placeholder="Buscar arquivo pelo código..." value="{{ request('search') }}" required>
-                <button id="button_search" type="submit">Buscar</button>
-            </form>
-
-            <!-- Mostrando os Usuários Encontrados -->
-            @if(request('search') && isset($files) && $files->count())
-                <ul>
-                    @foreach($files as $file)
-                        <!--<li>{{ $file->codigo }}</li>--> 
-                    @endforeach
-                </ul>
-                
-            @endif
-        </div>
-
-<!--==================================================--> --}}
     </x-slot>
 
     
@@ -37,11 +16,29 @@
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 text-gray-900 dark:text-gray-100">
                 <div class="uploaded-files">
+
+                @if(Auth::check() && ((Auth::user()->id_empresa1 == 1 || Auth::user()->id_empresa2 == 1 || Auth::user()->id_empresa3 == 1 || Auth::user()->id_empresa4 == 1) && (Auth::user()->id_setor1 == 3 || Auth::user()->id_setor2 == 3 || Auth::user()->id_setor3 == 3 || 
+                    Auth::user()->id_setor4 == 3 || Auth::user()->id_setor5 == 3 || Auth::user()->id_setor6 == 3 || 
+                    Auth::user()->id_setor7 == 3 || Auth::user()->id_setor8 == 3 || Auth::user()->id_setor9 == 3 || 
+                    Auth::user()->id_setor10 == 3 || Auth::user()->id_setor11 == 3 || Auth::user()->id_setor12 == 3 || 
+                    Auth::user()->id_setor13 == 3 || Auth::user()->id_setor14 == 3 || Auth::user()->id_setor15 == 3 || 
+                    Auth::user()->id_setor16 == 3 || Auth::user()->id_setor17 == 3 || Auth::user()->id_setor18 == 3 || 
+                    Auth::user()->id_setor19 == 3 || Auth::user()->id_setor20 == 3 || Auth::user()->id_setor21 == 3 || 
+                    Auth::user()->id_setor22 == 3 || Auth::user()->id_setor23 == 3 || Auth::user()->id_setor24 == 3 || 
+                    Auth::user()->id_setor25 == 3 || Auth::user()->id_setor26 == 3 || Auth::user()->id_setor27 == 3 || 
+                    Auth::user()->id_setor28 == 3 || Auth::user()->id_setor29 == 3 || Auth::user()->id_setor30 == 3 || 
+                    Auth::user()->id_setor31 == 3 || Auth::user()->id_setor32 == 3 || Auth::user()->id_setor33 == 3 || 
+                    Auth::user()->id_setor34 == 3 || Auth::user()->id_setor35 == 3 || Auth::user()->id_setor36 == 3 || 
+                    Auth::user()->id_setor37 == 3 || Auth::user()->id_setor38 == 3)) || (Auth::user()->id_permission == 1 || 
+                    Auth::user()->id_permission == 2))
+
+                                    
+
                     <h2> LAVORATTO > CUSTO </h2><br>
-
-
+    
+    
                     <ul class="file-system">
-
+    
                         <li class="folder">
                             <a href="{{route('lavorattoCustoFormulario.index')}}" class="folder-link">
                                 <img src="{{asset('images/icone_pasta.png')}}" alt="icone pasta" style="width: 20px; height: 20px; margin-right: 10px">
@@ -59,13 +56,18 @@
                                 <img src="{{asset('images/icone_pasta.png')}}" alt="icone pasta" style="width: 20px; height: 20px; margin-right: 10px">
                                 PROCEDIMENTO</a>
                         </li>
-
+    
                         <li class="folder">
                             <a href="{{route('lavorattoCustoInstrucao.index')}}" class="folder-link">
                                 <img src="{{asset('images/icone_pasta.png')}}" alt="icone pasta" style="width: 20px; height: 20px; margin-right: 10px">
                                 INSTRUCAO</a>
                         </li>
                     </ul>
+                @else
+                    <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                        Você não possui acesso a esta pasta!
+                    </h2>
+                @endif
                    
 
             </div>
@@ -171,47 +173,4 @@
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
-
 </style>
-
-<!--==================================================-->
-<!-- CSS - CAMPO DE BUSCA -->
-<style>
-    /* Estilos para centralizar o conteúdo */
-    .busca {
-        display: flex;
-        justify-content: center; /* Centraliza horizontalmente */
-       /* align-items: center;  Centraliza verticalmente */
-        height: 10vh; /* Usa toda a altura da tela */
-    }
-
-    #form_search {
-            display: flex;
-            justify-content: center; /* Centraliza horizontalmente */
-            align-items: center; /* Alinha verticalmente */
-            margin: 20px; /* Margem ao redor do formulário */
-        }
-
-        #input_search {
-            padding: 10px;
-            margin-right: 5px; /* Espaço entre o input e o botão */
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            width: 300px; /* Largura do campo de texto */
-            color: black;
-        }
-
-        #button_search {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            background-color: #4F46E5;
-            color: white;
-            cursor: pointer;
-        }
-
-    #button_search:hover {
-        background-color: #423cbb;
-    }
-</style>
-<!--==================================================-->

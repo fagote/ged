@@ -1003,7 +1003,7 @@ Route::put('/files/{file}',[FileController::class, 'update'])->name('files.updat
 Route::get('/files/{file}/edit', [FileController::class, 'edit'])->name('files.edit');
 Route::post('/files',[FileController::class, 'store'])->name('files.store');
 Route::get('/files',[FileController::class, 'index'])->name('files.index')->middleware(checkPermission::class);
-Route::get('/files/view/{id}', [FileController::class, 'view'])->name('files.view')->middleware('auth')->middleware(checkPermission::class);
+Route::get('/files/view/{id}', [FileController::class, 'view'])->name('files.view')->middleware('auth');
 
 //==============================================================
 
