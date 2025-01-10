@@ -93,7 +93,22 @@
                                     <td>{{ $file->aprovacao == 0 ? 'Reprovado' : ($file->aprovacao == 1 ? 'Aguardando' : 'Aprovado') }}</td>
                                 @endif
                                 <td>
-                                    <a href="{{ route('files.view', $file->id) }}" target="_blank" class="button">Visualizar</a>
+                                <a href="javascript:void(0)" onclick="openFilePopup('{{ route('files.view', $file->id) }}')" class="button">Visualizar</a>
+
+                                <script>
+                                    function openFilePopup(url) {
+                                        // Cria uma nova janela pop-up
+                                        var popup = window.open('', 'filePopup', 'width=800,height=600,scrollbars=yes,resizable=yes');
+
+                                        // Adiciona um iframe dentro da janela pop-up
+                                        popup.document.write('<html><head><title>Visualizar Arquivo</title></head><body>');
+                                        popup.document.write('<iframe src="' + url + '" width="100%" height="100%" frameborder="0"></iframe>');
+                                        popup.document.write('</body></html>');
+
+                                        // Fecha a escrita para carregar o conteúdo
+                                        popup.document.close();
+                                    }
+                                </script>
                                     @if(Auth::check() && Auth::user()->id_permission == 1 || Auth::user()->id_permission == 2)
                                         <a href="{{ route('files.edit', $file->id) }}" class="button">Edit</a>
                                         <a id="button_excluir" href="{{ route('files.show', $file->id) }}">Excluir</a>

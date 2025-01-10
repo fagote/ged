@@ -362,7 +362,7 @@ class HaosController extends Controller
     //=========================================
 
 
-    //=========================================
+    //========================================= 
     // Função Para Mostrar os arquivos da macro Instrução
 
     public function indexHaosTiInstrucao()
@@ -391,7 +391,7 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.tecnologia-informacao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -426,7 +426,7 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.tecnologia-informacao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -461,7 +461,7 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.tecnologia-informacao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -496,7 +496,7 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.tecnologia-informacao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -531,7 +531,7 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.marketing.show_arq', compact('files'));
     }
 
     //=========================================
@@ -565,7 +565,7 @@ class HaosController extends Controller
         })
         -> paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.marketing.show_arq', compact('files'));
     }
 
     //=========================================
@@ -598,7 +598,7 @@ class HaosController extends Controller
             $query->where('name_macro', 'registro');
         })-> paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.marketing.show_arq', compact('files'));
     }
 
     //=========================================
@@ -631,13 +631,13 @@ class HaosController extends Controller
             $query->where('name_macro', 'formulário');
         })-> paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.marketing.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/comercial/instrucao
+    // haos/comercial/instrucao
 
     public function indexHaosComercialInstrucao(){
 
@@ -665,13 +665,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.comercial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/comercial/procedimento
+    // haos/comercial/procedimento
 
     public function indexHaosComercialProcedimento(){
 
@@ -699,13 +699,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.comercial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/comercial/registro
+    // haos/comercial/registro
 
     public function indexHaosComercialRegistro(){
 
@@ -733,13 +733,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.comercial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/comercial/registro
+    // haos/comercial/registro
 
     public function indexHaosComercialFormulario(){
 
@@ -767,13 +767,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.comercial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/almoxarifado/instrucao
+    // haos/almoxarifado/instrucao
 
     public function indexHaosAlmoxarifadoInstrucao(){
 
@@ -801,13 +801,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.almoxarifado.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/almoxarifado/procedimento
+    // haos/almoxarifado/procedimento
 
     public function indexHaosAlmoxarifadoProcedimento(){
 
@@ -835,13 +835,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.almoxarifado.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/almoxarifado/registro
+    // haos/almoxarifado/registro
 
     public function indexHaosAlmoxarifadoRegistro(){
 
@@ -869,13 +869,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.almoxarifado.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/almoxarifado/fomulario
+    // haos/almoxarifado/fomulario
 
     public function indexHaosAlmoxarifadoFormulario(){
 
@@ -903,13 +903,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.almoxarifado.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/assistencia/fomulario
+    // haos/assistencia/fomulario
 
     public function indexHaosAssistenciaFormulario(){
 
@@ -937,13 +937,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.assistencia.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/assistencia/registro
+    // haos/assistencia/registro
 
     public function indexHaosAssistenciaRegistro(){
 
@@ -971,13 +971,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.assistencia.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/assistencia/procedimento
+    // haos/assistencia/procedimento
 
     public function indexHaosAssistenciaProcedimento(){
 
@@ -1005,13 +1005,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.assistencia.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/almoxarifado/instrucao
+    // haos/almoxarifado/instrucao
 
     public function indexHaosAssistenciaInstrucao(){
 
@@ -1039,13 +1039,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.assistencia.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/compras/formulario
+    // haos/compras/formulario
 
     public function indexHaosComprasFormulario(){
 
@@ -1073,13 +1073,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.compras.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/compras/registro
+    // haos/compras/registro
 
     public function indexHaosComprasRegistro(){
 
@@ -1107,13 +1107,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.compras.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/compras/procedimento
+    // haos/compras/procedimento
 
     public function indexHaosComprasProcedimento(){
 
@@ -1141,13 +1141,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.compras.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/compras/instrucao
+    // haos/compras/instrucao
 
     public function indexHaosComprasInstrucao(){
 
@@ -1175,13 +1175,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.compras.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contabilidade/formulario
+    // haos/contabilidade/formulario
 
     public function indexHaosContabilidadeFormulario(){
 
@@ -1209,13 +1209,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.contabilidade.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contabilidade/registro
+    // haos/contabilidade/registro
 
     public function indexHaosContabilidadeRegistro(){
 
@@ -1243,13 +1243,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.contabilidade.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contabilidade/procedimento
+    // haos/contabilidade/procedimento
 
     public function indexHaosContabilidadeProcedimento(){
 
@@ -1277,13 +1277,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.contabilidade.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contabilidade/procedimento
+    // haos/contabilidade/procedimento
 
     public function indexHaosContabilidadeInstrucao(){
 
@@ -1311,13 +1311,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.contabilidade.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contas a pagar/formulario
+    // haos/contas a pagar/formulario
 
     public function indexHaosContasPagarFormulario(){
 
@@ -1345,13 +1345,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.contaspagar.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contas a pagar/registro
+    // haos/contas a pagar/registro
 
     public function indexHaosContasPagarRegistro(){
 
@@ -1379,13 +1379,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.contaspagar.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contas a pagar/procedimento
+    // haos/contas a pagar/procedimento
 
     public function indexHaosContasPagarProcedimento(){
 
@@ -1413,13 +1413,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.contaspagar.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contas a pagar/registro
+    // haos/contas a pagar/registro
 
     public function indexHaosContasPagarInstrucao(){
 
@@ -1447,13 +1447,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.contaspagar.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contas a receber/formulario
+    // haos/contas a receber/formulario
 
     public function indexHaosContasReceberFormulario(){
 
@@ -1481,13 +1481,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.contasreceber.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contas a receber/registro
+    // haos/contas a receber/registro
 
     public function indexHaosContasReceberRegistro(){
 
@@ -1515,13 +1515,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.contasreceber.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contas a receber/procedimento
+    // haos/contas a receber/procedimento
 
     public function indexHaosContasReceberProcedimento(){
 
@@ -1549,13 +1549,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.contasreceber.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contas a receber/instrucao
+    // haos/contas a receber/instrucao
 
     public function indexHaosContasReceberInstrucao(){
 
@@ -1583,13 +1583,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.contasreceber.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/custo/formulario
+    // haos/custo/formulario
 
     public function indexHaosCustoFormulario(){
 
@@ -1617,13 +1617,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.custo.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/custo/registro
+    // haos/custo/registro
 
     public function indexHaosCustoRegistro(){
 
@@ -1651,13 +1651,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.custo.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/custo/procedimento
+    // haos/custo/procedimento
 
     public function indexHaosCustoProcedimento(){
 
@@ -1685,13 +1685,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.custo.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/custo/instrucao
+    // haos/custo/instrucao
 
     public function indexHaosCustoInstrucao(){
 
@@ -1719,13 +1719,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.custo.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/design/formulario
+    // haos/design/formulario
 
     public function indexHaosDesignFormulario(){
 
@@ -1753,13 +1753,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.designn.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/design/registro
+    // haos/design/registro
 
     public function indexHaosDesignRegistro(){
 
@@ -1787,13 +1787,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.designn.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/design/procedimento
+    // haos/design/procedimento
 
     public function indexHaosDesignProcedimento(){
 
@@ -1821,13 +1821,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.designn.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/design/instrucao
+    // haos/design/instrucao
 
     public function indexHaosDesignInstrucao(){
 
@@ -1855,7 +1855,7 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.designn.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1866,7 +1866,7 @@ class HaosController extends Controller
 
 
     //=========================================
-    // inusitta/diretoria administrativa/formulario
+    // haos/diretoria administrativa/formulario
 
     public function indexHaosDiretoriaAdministrativaFormulario(){
 
@@ -1894,13 +1894,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.diretoriaadministrativa.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria administrativa/registro
+    // haos/diretoria administrativa/registro
 
     public function indexHaosDiretoriaAdministrativaRegistro(){
 
@@ -1928,13 +1928,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.diretoriaadministrativa.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria administrativa/procedimento
+    // haos/diretoria administrativa/procedimento
 
     public function indexHaosDiretoriaAdministrativaProcedimento(){
 
@@ -1962,13 +1962,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.diretoriaadministrativa.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria administrativa/instrucao
+    // haos/diretoria administrativa/instrucao
 
     public function indexHaosDiretoriaAdministrativaInstrucao(){
 
@@ -1996,13 +1996,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.diretoriaadministrativa.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria comercial/ formulario
+    // haos/diretoria comercial/ formulario
 
     public function indexHaosDiretoriaComercialFormulario(){
 
@@ -2030,13 +2030,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.diretoriacomercial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria comercial/ registro
+    // haos/diretoria comercial/ registro
 
     public function indexHaosDiretoriaComercialRegistro(){
 
@@ -2064,13 +2064,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.diretoriacomercial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria comercial/ procedimento
+    // haos/diretoria comercial/ procedimento
 
     public function indexHaosDiretoriaComercialProcedimento(){
 
@@ -2098,13 +2098,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.diretoriacomercial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria comercial/ instrucao
+    // haos/diretoria comercial/ instrucao
 
     public function indexHaosDiretoriaComercialInstrucao(){
 
@@ -2132,13 +2132,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.diretoriacomercial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria industrial/ formulario
+    // haos/diretoria industrial/ formulario
 
     public function indexHaosDiretoriaIndustrialFormulario(){
 
@@ -2166,13 +2166,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.diretoriaindustrial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria industrial/ registro
+    // haos/diretoria industrial/ registro
 
     public function indexHaosDiretoriaIndustrialRegistro(){
 
@@ -2200,13 +2200,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.diretoriaindustrial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria industrial/ procedimento
+    // haos/diretoria industrial/ procedimento
 
     public function indexHaosDiretoriaIndustrialProcedimento(){
 
@@ -2234,13 +2234,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.diretoriaindustrial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria industrial/ instrucao
+    // haos/diretoria industrial/ instrucao
 
     public function indexHaosDiretoriaIndustrialInstrucao(){
 
@@ -2268,13 +2268,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.diretoriaindustrial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ecommerce/ formulario
+    // haos/ecommerce/ formulario
 
     public function indexHaosEcommerceFormulario(){
 
@@ -2302,13 +2302,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.ecommerce.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ecommerce/ registro
+    // haos/ecommerce/ registro
 
     public function indexHaosEcommerceRegistro(){
 
@@ -2336,13 +2336,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.ecommerce.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ecommerce/ procedimento
+    // haos/ecommerce/ procedimento
 
     public function indexHaosEcommerceProcedimento(){
 
@@ -2370,13 +2370,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.ecommerce.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ecommerce/ instrucao
+    // haos/ecommerce/ instrucao
 
     public function indexHaosEcommerceInstrucao(){
 
@@ -2404,13 +2404,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.ecommerce.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/engenharia/ formulario
+    // haos/engenharia/ formulario
 
     public function indexHaosEngenhariaFormulario(){
 
@@ -2438,13 +2438,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.engenharia.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/engenharia/ registro
+    // haos/engenharia/ registro
 
     public function indexHaosEngenhariaRegistro(){
 
@@ -2472,13 +2472,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.engenharia.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/engenharia/ procedimento
+    // haos/engenharia/ procedimento
 
     public function indexHaosEngenhariaProcedimento(){
 
@@ -2506,13 +2506,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.engenharia.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/engenharia/ instrucao
+    // haos/engenharia/ instrucao
 
     public function indexHaosEngenhariaInstrucao(){
 
@@ -2540,13 +2540,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.engenharia.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/expedicao/ formulario
+    // haos/expedicao/ formulario
 
     public function indexHaosExpedicaoFormulario(){
 
@@ -2574,13 +2574,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.expedicao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/expedicao/ registro
+    // haos/expedicao/ registro
 
     public function indexHaosExpedicaoRegistro(){
 
@@ -2608,13 +2608,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.expedicao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/expedicao/ procedimento
+    // haos/expedicao/ procedimento
 
     public function indexHaosExpedicaoProcedimento(){
 
@@ -2642,13 +2642,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.expedicao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/expedicao/ instrucao
+    // haos/expedicao/ instrucao
 
     public function indexHaosExpedicaoInstrucao(){
 
@@ -2676,13 +2676,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.expedicao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/exportacao/ formulario
+    // haos/exportacao/ formulario
 
     public function indexHaosExportacaoFormulario(){
 
@@ -2710,13 +2710,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.exportacao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/exportacao/ registro
+    // haos/exportacao/ registro
 
     public function indexHaosExportacaoRegistro(){
 
@@ -2744,13 +2744,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.exportacao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/exportacao/ procedimento
+    // haos/exportacao/ procedimento
 
     public function indexHaosExportacaoProcedimento(){
 
@@ -2778,13 +2778,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.exportacao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/exportacao/ instrucao
+    // haos/exportacao/ instrucao
 
     public function indexHaosExportacaoInstrucao(){
 
@@ -2812,13 +2812,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.exportacao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/faturamento/ formulario
+    // haos/faturamento/ formulario
 
     public function indexHaosFaturamentoFormulario(){
 
@@ -2846,13 +2846,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.faturamento.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/faturamento/ registro
+    // haos/faturamento/ registro
 
     public function indexHaosFaturamentoRegistro(){
 
@@ -2880,13 +2880,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.faturamento.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/faturamento/ procedimento
+    // haos/faturamento/ procedimento
 
     public function indexHaosFaturamentoProcedimento(){
 
@@ -2914,13 +2914,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.faturamento.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/faturamento/ instrucao
+    // haos/faturamento/ instrucao
 
     public function indexHaosFaturamentoInstrucao(){
 
@@ -2948,13 +2948,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.faturamento.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/manutencao/ formulario
+    // haos/manutencao/ formulario
 
     public function indexHaosManutencaoFormulario(){
 
@@ -2982,13 +2982,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.manutencao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/manutencao/ registro
+    // haos/manutencao/ registro
 
     public function indexHaosManutencaoRegistro(){
 
@@ -3016,13 +3016,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.manutencao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/manutencao/ procedimento
+    // haos/manutencao/ procedimento
 
     public function indexHaosManutencaoProcedimento(){
 
@@ -3050,13 +3050,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.manutencao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/manutencao/ instrucao
+    // haos/manutencao/ instrucao
 
     public function indexHaosManutencaoInstrucao(){
 
@@ -3084,13 +3084,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.manutencao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ped/ formulario
+    // haos/ped/ formulario
 
     public function indexHaosPedFormulario(){
 
@@ -3118,13 +3118,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.ped.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ped/ registro
+    // haos/ped/ registro
 
     public function indexHaosPedRegistro(){
 
@@ -3152,13 +3152,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.ped.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ped/ procedimento
+    // haos/ped/ procedimento
 
     public function indexHaosPedProcedimento(){
 
@@ -3186,13 +3186,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.ped.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ped/ instrucao
+    // haos/ped/ instrucao
 
     public function indexHaosPedInstrucao(){
 
@@ -3220,13 +3220,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.ped.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/pmo/ formulario
+    // haos/pmo/ formulario
 
     public function indexHaosPmoFormulario(){
 
@@ -3254,13 +3254,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.pmo.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/pmo/ registro
+    // haos/pmo/ registro
 
     public function indexHaosPmoRegistro(){
 
@@ -3288,13 +3288,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.pmo.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/pmo/ procedimento
+    // haos/pmo/ procedimento
 
     public function indexHaosPmoProcedimento(){
 
@@ -3322,13 +3322,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.pmo.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/pmo/ instrucao
+    // haos/pmo/ instrucao
 
     public function indexHaosPmoInstrucao(){
 
@@ -3356,13 +3356,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.pmo.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ppcp/ formulario
+    // haos/ppcp/ formulario
 
     public function indexHaosPpcpFormulario(){
 
@@ -3390,13 +3390,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.ppcp.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ppcp/ registro
+    // haos/ppcp/ registro
 
     public function indexHaosPpcpRegistro(){
 
@@ -3424,13 +3424,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.ppcp.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ppcp/ procedimento
+    // haos/ppcp/ procedimento
 
     public function indexHaosPpcpProcedimento(){
 
@@ -3458,13 +3458,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.ppcp.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ppcp/ instrucao
+    // haos/ppcp/ instrucao
 
     public function indexHaosPpcpInstrucao(){
 
@@ -3492,13 +3492,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.ppcp.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/qualidade/ formulario
+    // haos/qualidade/ formulario
 
     public function indexHaosQualidadeFormulario(){
 
@@ -3526,13 +3526,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.qualidade.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/qualidade/ registro
+    // haos/qualidade/ registro
 
     public function indexHaosQualidadeRegistro(){
 
@@ -3560,13 +3560,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.qualidade.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/qualidade/ procedimento
+    // haos/qualidade/ procedimento
 
     public function indexHaosQualidadeProcedimento(){
 
@@ -3594,13 +3594,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.qualidade.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/qualidade/ instrucao
+    // haos/qualidade/ instrucao
 
     public function indexHaosQualidadeInstrucao(){
 
@@ -3628,13 +3628,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.qualidade.show_arq', compact('files'));
     }
     // QUALIDADE
     //=========================================
 
     //=========================================
-    // inusitta/recepcao/ formulario
+    // haos/recepcao/ formulario
 
     public function indexHaosRecepcaoFormulario(){
 
@@ -3662,13 +3662,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.recepcao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/recepcao/ registro
+    // haos/recepcao/ registro
 
     public function indexHaosRecepcaoRegistro(){
 
@@ -3696,13 +3696,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.recepcao.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/recepcao/ procedimento
+    // haos/recepcao/ procedimento
 
     public function indexHaosRecepcaoProcedimento(){
 
@@ -3730,13 +3730,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.recepcao.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/recepcao/ instrucao
+    // haos/recepcao/ instrucao
 
     public function indexHaosRecepcaoInstrucao(){
 
@@ -3764,13 +3764,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.recepcao.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/restaurante/ formulario
+    // haos/restaurante/ formulario
 
     public function indexHaosRestauranteFormulario(){
 
@@ -3798,13 +3798,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.restaurante.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/restaurante/ registro
+    // haos/restaurante/ registro
 
     public function indexHaosRestauranteRegistro(){
 
@@ -3832,13 +3832,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.restaurante.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/restaurante/ procedimento
+    // haos/restaurante/ procedimento
 
     public function indexHaosRestauranteProcedimento(){
 
@@ -3866,13 +3866,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.restaurante.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/restaurante/ instrucao
+    // haos/restaurante/ instrucao
 
     public function indexHaosRestauranteInstrucao(){
 
@@ -3900,13 +3900,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.restaurante.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/rh/ formulario
+    // haos/rh/ formulario
 
     public function indexHaosRhFormulario(){
 
@@ -3934,13 +3934,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.rh.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/rh/ registro
+    // haos/rh/ registro
 
     public function indexHaosRhRegistro(){
 
@@ -3968,13 +3968,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.rh.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/rh/ procedimento
+    // haos/rh/ procedimento
 
     public function indexHaosRhProcedimento(){
 
@@ -4002,13 +4002,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.rh.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/rh/ instrucao
+    // haos/rh/ instrucao
 
     public function indexHaosRhInstrucao(){
 
@@ -4036,13 +4036,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.rh.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/sac/ formulario
+    // haos/sac/ formulario
 
     public function indexHaosSacFormulario(){
 
@@ -4070,13 +4070,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.sac.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/sac/ registro
+    // haos/sac/ registro
 
     public function indexHaosSacRegistro(){
 
@@ -4104,13 +4104,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.sac.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/sac/ procedimento
+    // haos/sac/ procedimento
 
     public function indexHaosSacProcedimento(){
 
@@ -4138,13 +4138,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.sac.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/sac/ instrucao
+    // haos/sac/ instrucao
 
     public function indexHaosSacInstrucao(){
 
@@ -4172,13 +4172,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.sac.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/sesmt/ formulario
+    // haos/sesmt/ formulario
 
     public function indexHaosSesmtFormulario(){
 
@@ -4206,13 +4206,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.sesmt.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/sesmt/ registro
+    // haos/sesmt/ registro
 
     public function indexHaosSesmtRegistro(){
 
@@ -4240,13 +4240,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.sesmt.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/sesmt/ procedimento
+    // haos/sesmt/ procedimento
 
     public function indexHaosSesmtProcedimento(){
 
@@ -4274,13 +4274,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.sesmt.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/sesmt/ instrucao
+    // haos/sesmt/ instrucao
 
     public function indexHaosSesmtInstrucao(){
 
@@ -4308,13 +4308,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.sesmt.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/projetos/ formulario
+    // haos/projetos/ formulario
 
     public function indexHaosProjetosFormulario(){
 
@@ -4342,13 +4342,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.projetos.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/projetos/ registro
+    // haos/projetos/ registro
 
     public function indexHaosProjetosRegistro(){
 
@@ -4376,13 +4376,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.projetos.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/projetos/ procedimento
+    // haos/projetos/ procedimento
 
     public function indexHaosProjetosProcedimento(){
 
@@ -4410,13 +4410,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.projetos.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/projetos/ instrucao
+    // haos/projetos/ instrucao
 
     public function indexHaosProjetosInstrucao(){
 
@@ -4444,13 +4444,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.projetos.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ formulario
+    // haos/transporte/ formulario
 
     public function indexHaosTransporteFormulario(){
 
@@ -4478,13 +4478,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.transporte.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ registro
+    // haos/transporte/ registro
 
     public function indexHaosTransporteRegistro(){
 
@@ -4512,13 +4512,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.transporte.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ procedimento
+    // haos/transporte/ procedimento
 
     public function indexHaosTransporteProcedimento(){
 
@@ -4546,13 +4546,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.transporte.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ instrucao
+    // haos/transporte/ instrucao
 
     public function indexHaosTransporteInstrucao(){
 
@@ -4580,13 +4580,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.transporte.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/atelie/ formulario
+    // haos/atelie/ formulario
 
     public function indexHaosAtelieFormulario(){
 
@@ -4614,13 +4614,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.atelie.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/atelie/ registro
+    // haos/atelie/ registro
 
     public function indexHaosAtelieRegistro(){
 
@@ -4648,13 +4648,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.atelie.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ procedimento
+    // haos/transporte/ procedimento
 
     public function indexHaosAtelieProcedimento(){
 
@@ -4682,13 +4682,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.atelie.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ instrucao
+    // haos/transporte/ instrucao
 
     public function indexHaosAtelieInstrucao(){
 
@@ -4716,13 +4716,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.atelie.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Corte/ formulario
+    // haos/Corte/ formulario
 
     public function indexHaosCorteFormulario(){
 
@@ -4750,13 +4750,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.corte.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Corte/ registro
+    // haos/Corte/ registro
 
     public function indexHaosCorteRegistro(){
 
@@ -4784,13 +4784,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.corte.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ procedimento
+    // haos/transporte/ procedimento
 
     public function indexHaosCorteProcedimento(){
 
@@ -4818,13 +4818,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.corte.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ instrucao
+    // haos/transporte/ instrucao
 
     public function indexHaosCorteInstrucao(){
 
@@ -4852,13 +4852,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.corte.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Coladeira/ formulario
+    // haos/Coladeira/ formulario
 
     public function indexHaosColadeiraFormulario(){
 
@@ -4886,13 +4886,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.coladeira.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Coladeira/ registro
+    // haos/Coladeira/ registro
 
     public function indexHaosColadeiraRegistro(){
 
@@ -4920,13 +4920,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.coladeira.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ procedimento
+    // haos/transporte/ procedimento
 
     public function indexHaosColadeiraProcedimento(){
 
@@ -4954,13 +4954,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.coladeira.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ instrucao
+    // haos/transporte/ instrucao
 
     public function indexHaosColadeiraInstrucao(){
 
@@ -4988,13 +4988,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.coladeira.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Furadeira/ formulario
+    // haos/Furadeira/ formulario
 
     public function indexHaosFuradeiraFormulario(){
 
@@ -5022,13 +5022,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.furadeira.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Furadeira/ registro
+    // haos/Furadeira/ registro
 
     public function indexHaosFuradeiraRegistro(){
 
@@ -5056,13 +5056,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.furadeira.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ procedimento
+    // haos/transporte/ procedimento
 
     public function indexHaosFuradeiraProcedimento(){
 
@@ -5090,13 +5090,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.furadeira.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ instrucao
+    // haos/transporte/ instrucao
 
     public function indexHaosFuradeiraInstrucao(){
 
@@ -5124,13 +5124,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.furadeira.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Acabamento/ formulario
+    // haos/Acabamento/ formulario
 
     public function indexHaosAcabamentoFormulario(){
 
@@ -5158,13 +5158,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.acabamento.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Acabamento/ registro
+    // haos/Acabamento/ registro
 
     public function indexHaosAcabamentoRegistro(){
 
@@ -5192,13 +5192,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.acabamento.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ procedimento
+    // haos/transporte/ procedimento
 
     public function indexHaosAcabamentoProcedimento(){
 
@@ -5226,13 +5226,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.acabamento.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ instrucao
+    // haos/transporte/ instrucao
 
     public function indexHaosAcabamentoInstrucao(){
 
@@ -5260,13 +5260,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.acabamento.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Embalagem/ formulario
+    // haos/Embalagem/ formulario
 
     public function indexHaosEmbalagemFormulario(){
 
@@ -5294,13 +5294,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.embalagem.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Embalagem/ registro
+    // haos/Embalagem/ registro
 
     public function indexHaosEmbalagemRegistro(){
 
@@ -5328,13 +5328,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.embalagem.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ procedimento
+    // haos/transporte/ procedimento
 
     public function indexHaosEmbalagemProcedimento(){
 
@@ -5362,13 +5362,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.embalagem.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ instrucao
+    // haos/transporte/ instrucao
 
     public function indexHaosEmbalagemInstrucao(){
 
@@ -5396,13 +5396,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.embalagem.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Pintura/ formulario
+    // haos/Pintura/ formulario
 
     public function indexHaosPinturaFormulario(){
 
@@ -5430,13 +5430,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.pintura.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Pintura/ registro
+    // haos/Pintura/ registro
 
     public function indexHaosPinturaRegistro(){
 
@@ -5464,13 +5464,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.pintura.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ procedimento
+    // haos/transporte/ procedimento
 
     public function indexHaosPinturaProcedimento(){
 
@@ -5498,13 +5498,13 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.pintura.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ instrucao
+    // haos/transporte/ instrucao
 
     public function indexHaosPinturaInstrucao(){
 
@@ -5532,7 +5532,7 @@ class HaosController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.haos.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.haos.setores.pintura.show_arq', compact('files'));
     }
     
     //=========================================

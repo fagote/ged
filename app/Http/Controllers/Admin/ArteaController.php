@@ -362,7 +362,7 @@ class ArteaController extends Controller
 
     //=========================================
 
-    //=========================================
+    //========================================= 
     // Função Para Mostrar os arquivos da macro Instrução
 
     public function indexArteaTiInstrucao()
@@ -391,7 +391,7 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.tecnologia-informacao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -426,7 +426,7 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.tecnologia-informacao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -461,7 +461,7 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.tecnologia-informacao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -496,7 +496,7 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.tecnologia-informacao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -531,7 +531,7 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.marketing.show_arq', compact('files'));
     }
 
     //=========================================
@@ -565,7 +565,7 @@ class ArteaController extends Controller
         })
         -> paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.marketing.show_arq', compact('files'));
     }
 
     //=========================================
@@ -598,7 +598,7 @@ class ArteaController extends Controller
             $query->where('name_macro', 'registro');
         })-> paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.marketing.show_arq', compact('files'));
     }
 
     //=========================================
@@ -631,13 +631,13 @@ class ArteaController extends Controller
             $query->where('name_macro', 'formulário');
         })-> paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.marketing.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/comercial/instrucao
+    // artea/comercial/instrucao
 
     public function indexArteaComercialInstrucao(){
 
@@ -665,13 +665,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.comercial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/comercial/procedimento
+    // artea/comercial/procedimento
 
     public function indexArteaComercialProcedimento(){
 
@@ -699,13 +699,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.comercial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/comercial/registro
+    // artea/comercial/registro
 
     public function indexArteaComercialRegistro(){
 
@@ -733,13 +733,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.comercial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/comercial/registro
+    // artea/comercial/registro
 
     public function indexArteaComercialFormulario(){
 
@@ -767,13 +767,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.comercial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/almoxarifado/instrucao
+    // artea/almoxarifado/instrucao
 
     public function indexArteaAlmoxarifadoInstrucao(){
 
@@ -801,13 +801,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.almoxarifado.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/almoxarifado/procedimento
+    // artea/almoxarifado/procedimento
 
     public function indexArteaAlmoxarifadoProcedimento(){
 
@@ -835,13 +835,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.almoxarifado.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/almoxarifado/registro
+    // artea/almoxarifado/registro
 
     public function indexArteaAlmoxarifadoRegistro(){
 
@@ -869,13 +869,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.almoxarifado.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/almoxarifado/fomulario
+    // artea/almoxarifado/fomulario
 
     public function indexArteaAlmoxarifadoFormulario(){
 
@@ -903,13 +903,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.almoxarifado.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/assistencia/fomulario
+    // artea/assistencia/fomulario
 
     public function indexArteaAssistenciaFormulario(){
 
@@ -937,13 +937,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.assistencia.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/assistencia/registro
+    // artea/assistencia/registro
 
     public function indexArteaAssistenciaRegistro(){
 
@@ -971,13 +971,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.assistencia.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/assistencia/procedimento
+    // artea/assistencia/procedimento
 
     public function indexArteaAssistenciaProcedimento(){
 
@@ -1005,13 +1005,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.assistencia.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/almoxarifado/instrucao
+    // artea/almoxarifado/instrucao
 
     public function indexArteaAssistenciaInstrucao(){
 
@@ -1039,13 +1039,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.assistencia.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/compras/formulario
+    // artea/compras/formulario
 
     public function indexArteaComprasFormulario(){
 
@@ -1073,13 +1073,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.compras.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/compras/registro
+    // artea/compras/registro
 
     public function indexArteaComprasRegistro(){
 
@@ -1107,13 +1107,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.compras.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/compras/procedimento
+    // artea/compras/procedimento
 
     public function indexArteaComprasProcedimento(){
 
@@ -1141,13 +1141,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.compras.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/compras/instrucao
+    // artea/compras/instrucao
 
     public function indexArteaComprasInstrucao(){
 
@@ -1175,13 +1175,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.compras.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contabilidade/formulario
+    // artea/contabilidade/formulario
 
     public function indexArteaContabilidadeFormulario(){
 
@@ -1209,13 +1209,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.contabilidade.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contabilidade/registro
+    // artea/contabilidade/registro
 
     public function indexArteaContabilidadeRegistro(){
 
@@ -1243,13 +1243,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.contabilidade.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contabilidade/procedimento
+    // artea/contabilidade/procedimento
 
     public function indexArteaContabilidadeProcedimento(){
 
@@ -1277,13 +1277,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.contabilidade.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contabilidade/procedimento
+    // artea/contabilidade/procedimento
 
     public function indexArteaContabilidadeInstrucao(){
 
@@ -1311,13 +1311,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.contabilidade.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contas a pagar/formulario
+    // artea/contas a pagar/formulario
 
     public function indexArteaContasPagarFormulario(){
 
@@ -1345,13 +1345,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.contaspagar.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contas a pagar/registro
+    // artea/contas a pagar/registro
 
     public function indexArteaContasPagarRegistro(){
 
@@ -1379,13 +1379,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.contaspagar.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contas a pagar/procedimento
+    // artea/contas a pagar/procedimento
 
     public function indexArteaContasPagarProcedimento(){
 
@@ -1413,13 +1413,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.contaspagar.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contas a pagar/registro
+    // artea/contas a pagar/registro
 
     public function indexArteaContasPagarInstrucao(){
 
@@ -1447,13 +1447,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.contaspagar.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contas a receber/formulario
+    // artea/contas a receber/formulario
 
     public function indexArteaContasReceberFormulario(){
 
@@ -1481,13 +1481,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.contasreceber.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contas a receber/registro
+    // artea/contas a receber/registro
 
     public function indexArteaContasReceberRegistro(){
 
@@ -1515,13 +1515,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.contasreceber.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contas a receber/procedimento
+    // artea/contas a receber/procedimento
 
     public function indexArteaContasReceberProcedimento(){
 
@@ -1549,13 +1549,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.contasreceber.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contas a receber/instrucao
+    // artea/contas a receber/instrucao
 
     public function indexArteaContasReceberInstrucao(){
 
@@ -1583,13 +1583,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.contasreceber.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/custo/formulario
+    // artea/custo/formulario
 
     public function indexArteaCustoFormulario(){
 
@@ -1617,13 +1617,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.custo.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/custo/registro
+    // artea/custo/registro
 
     public function indexArteaCustoRegistro(){
 
@@ -1651,13 +1651,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.custo.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/custo/procedimento
+    // artea/custo/procedimento
 
     public function indexArteaCustoProcedimento(){
 
@@ -1685,13 +1685,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.custo.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/custo/instrucao
+    // artea/custo/instrucao
 
     public function indexArteaCustoInstrucao(){
 
@@ -1719,13 +1719,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.custo.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/design/formulario
+    // artea/design/formulario
 
     public function indexArteaDesignFormulario(){
 
@@ -1753,13 +1753,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.designn.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/design/registro
+    // artea/design/registro
 
     public function indexArteaDesignRegistro(){
 
@@ -1787,13 +1787,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.designn.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/design/procedimento
+    // artea/design/procedimento
 
     public function indexArteaDesignProcedimento(){
 
@@ -1821,13 +1821,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.designn.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/design/instrucao
+    // artea/design/instrucao
 
     public function indexArteaDesignInstrucao(){
 
@@ -1855,7 +1855,7 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.designn.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1866,7 +1866,7 @@ class ArteaController extends Controller
 
 
     //=========================================
-    // inusitta/diretoria administrativa/formulario
+    // artea/diretoria administrativa/formulario
 
     public function indexArteaDiretoriaAdministrativaFormulario(){
 
@@ -1894,13 +1894,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.diretoriaadministrativa.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria administrativa/registro
+    // artea/diretoria administrativa/registro
 
     public function indexArteaDiretoriaAdministrativaRegistro(){
 
@@ -1928,13 +1928,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.diretoriaadministrativa.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria administrativa/procedimento
+    // artea/diretoria administrativa/procedimento
 
     public function indexArteaDiretoriaAdministrativaProcedimento(){
 
@@ -1962,13 +1962,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.diretoriaadministrativa.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria administrativa/instrucao
+    // artea/diretoria administrativa/instrucao
 
     public function indexArteaDiretoriaAdministrativaInstrucao(){
 
@@ -1996,13 +1996,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.diretoriaadministrativa.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria comercial/ formulario
+    // artea/diretoria comercial/ formulario
 
     public function indexArteaDiretoriaComercialFormulario(){
 
@@ -2030,13 +2030,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.diretoriacomercial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria comercial/ registro
+    // artea/diretoria comercial/ registro
 
     public function indexArteaDiretoriaComercialRegistro(){
 
@@ -2064,13 +2064,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.diretoriacomercial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria comercial/ procedimento
+    // artea/diretoria comercial/ procedimento
 
     public function indexArteaDiretoriaComercialProcedimento(){
 
@@ -2098,13 +2098,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.diretoriacomercial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria comercial/ instrucao
+    // artea/diretoria comercial/ instrucao
 
     public function indexArteaDiretoriaComercialInstrucao(){
 
@@ -2132,13 +2132,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.diretoriacomercial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria industrial/ formulario
+    // artea/diretoria industrial/ formulario
 
     public function indexArteaDiretoriaIndustrialFormulario(){
 
@@ -2166,13 +2166,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.diretoriaindustrial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria industrial/ registro
+    // artea/diretoria industrial/ registro
 
     public function indexArteaDiretoriaIndustrialRegistro(){
 
@@ -2200,13 +2200,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.diretoriaindustrial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria industrial/ procedimento
+    // artea/diretoria industrial/ procedimento
 
     public function indexArteaDiretoriaIndustrialProcedimento(){
 
@@ -2234,13 +2234,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.diretoriaindustrial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria industrial/ instrucao
+    // artea/diretoria industrial/ instrucao
 
     public function indexArteaDiretoriaIndustrialInstrucao(){
 
@@ -2268,13 +2268,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.diretoriaindustrial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ecommerce/ formulario
+    // artea/ecommerce/ formulario
 
     public function indexArteaEcommerceFormulario(){
 
@@ -2302,13 +2302,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.ecommerce.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ecommerce/ registro
+    // artea/ecommerce/ registro
 
     public function indexArteaEcommerceRegistro(){
 
@@ -2336,13 +2336,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.ecommerce.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ecommerce/ procedimento
+    // artea/ecommerce/ procedimento
 
     public function indexArteaEcommerceProcedimento(){
 
@@ -2370,13 +2370,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.ecommerce.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ecommerce/ instrucao
+    // artea/ecommerce/ instrucao
 
     public function indexArteaEcommerceInstrucao(){
 
@@ -2404,13 +2404,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.ecommerce.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/engenharia/ formulario
+    // artea/engenharia/ formulario
 
     public function indexArteaEngenhariaFormulario(){
 
@@ -2438,13 +2438,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.engenharia.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/engenharia/ registro
+    // artea/engenharia/ registro
 
     public function indexArteaEngenhariaRegistro(){
 
@@ -2472,13 +2472,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.engenharia.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/engenharia/ procedimento
+    // artea/engenharia/ procedimento
 
     public function indexArteaEngenhariaProcedimento(){
 
@@ -2506,13 +2506,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.engenharia.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/engenharia/ instrucao
+    // artea/engenharia/ instrucao
 
     public function indexArteaEngenhariaInstrucao(){
 
@@ -2540,13 +2540,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.engenharia.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/expedicao/ formulario
+    // artea/expedicao/ formulario
 
     public function indexArteaExpedicaoFormulario(){
 
@@ -2574,13 +2574,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.expedicao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/expedicao/ registro
+    // artea/expedicao/ registro
 
     public function indexArteaExpedicaoRegistro(){
 
@@ -2608,13 +2608,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.expedicao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/expedicao/ procedimento
+    // artea/expedicao/ procedimento
 
     public function indexArteaExpedicaoProcedimento(){
 
@@ -2642,13 +2642,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.expedicao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/expedicao/ instrucao
+    // artea/expedicao/ instrucao
 
     public function indexArteaExpedicaoInstrucao(){
 
@@ -2676,13 +2676,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.expedicao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/exportacao/ formulario
+    // artea/exportacao/ formulario
 
     public function indexArteaExportacaoFormulario(){
 
@@ -2710,13 +2710,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.exportacao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/exportacao/ registro
+    // artea/exportacao/ registro
 
     public function indexArteaExportacaoRegistro(){
 
@@ -2744,13 +2744,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.exportacao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/exportacao/ procedimento
+    // artea/exportacao/ procedimento
 
     public function indexArteaExportacaoProcedimento(){
 
@@ -2778,13 +2778,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.exportacao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/exportacao/ instrucao
+    // artea/exportacao/ instrucao
 
     public function indexArteaExportacaoInstrucao(){
 
@@ -2812,13 +2812,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.exportacao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/faturamento/ formulario
+    // artea/faturamento/ formulario
 
     public function indexArteaFaturamentoFormulario(){
 
@@ -2846,13 +2846,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.faturamento.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/faturamento/ registro
+    // artea/faturamento/ registro
 
     public function indexArteaFaturamentoRegistro(){
 
@@ -2880,13 +2880,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.faturamento.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/faturamento/ procedimento
+    // artea/faturamento/ procedimento
 
     public function indexArteaFaturamentoProcedimento(){
 
@@ -2914,13 +2914,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.faturamento.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/faturamento/ instrucao
+    // artea/faturamento/ instrucao
 
     public function indexArteaFaturamentoInstrucao(){
 
@@ -2948,13 +2948,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.faturamento.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/manutencao/ formulario
+    // artea/manutencao/ formulario
 
     public function indexArteaManutencaoFormulario(){
 
@@ -2982,13 +2982,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.manutencao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/manutencao/ registro
+    // artea/manutencao/ registro
 
     public function indexArteaManutencaoRegistro(){
 
@@ -3016,13 +3016,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.manutencao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/manutencao/ procedimento
+    // artea/manutencao/ procedimento
 
     public function indexArteaManutencaoProcedimento(){
 
@@ -3050,13 +3050,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.manutencao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/manutencao/ instrucao
+    // artea/manutencao/ instrucao
 
     public function indexArteaManutencaoInstrucao(){
 
@@ -3084,13 +3084,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.manutencao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ped/ formulario
+    // artea/ped/ formulario
 
     public function indexArteaPedFormulario(){
 
@@ -3118,13 +3118,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.ped.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ped/ registro
+    // artea/ped/ registro
 
     public function indexArteaPedRegistro(){
 
@@ -3152,13 +3152,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.ped.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ped/ procedimento
+    // artea/ped/ procedimento
 
     public function indexArteaPedProcedimento(){
 
@@ -3186,13 +3186,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.ped.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ped/ instrucao
+    // artea/ped/ instrucao
 
     public function indexArteaPedInstrucao(){
 
@@ -3220,13 +3220,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.ped.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/pmo/ formulario
+    // artea/pmo/ formulario
 
     public function indexArteaPmoFormulario(){
 
@@ -3254,13 +3254,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.pmo.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/pmo/ registro
+    // artea/pmo/ registro
 
     public function indexArteaPmoRegistro(){
 
@@ -3288,13 +3288,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.pmo.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/pmo/ procedimento
+    // artea/pmo/ procedimento
 
     public function indexArteaPmoProcedimento(){
 
@@ -3322,13 +3322,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.pmo.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/pmo/ instrucao
+    // artea/pmo/ instrucao
 
     public function indexArteaPmoInstrucao(){
 
@@ -3356,13 +3356,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.pmo.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ppcp/ formulario
+    // artea/ppcp/ formulario
 
     public function indexArteaPpcpFormulario(){
 
@@ -3390,13 +3390,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.ppcp.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ppcp/ registro
+    // artea/ppcp/ registro
 
     public function indexArteaPpcpRegistro(){
 
@@ -3424,13 +3424,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.ppcp.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ppcp/ procedimento
+    // artea/ppcp/ procedimento
 
     public function indexArteaPpcpProcedimento(){
 
@@ -3458,13 +3458,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.ppcp.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ppcp/ instrucao
+    // artea/ppcp/ instrucao
 
     public function indexArteaPpcpInstrucao(){
 
@@ -3492,13 +3492,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.ppcp.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/qualidade/ formulario
+    // artea/qualidade/ formulario
 
     public function indexArteaQualidadeFormulario(){
 
@@ -3526,13 +3526,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.qualidade.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/qualidade/ registro
+    // artea/qualidade/ registro
 
     public function indexArteaQualidadeRegistro(){
 
@@ -3560,13 +3560,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.qualidade.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/qualidade/ procedimento
+    // artea/qualidade/ procedimento
 
     public function indexArteaQualidadeProcedimento(){
 
@@ -3594,13 +3594,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.qualidade.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/qualidade/ instrucao
+    // artea/qualidade/ instrucao
 
     public function indexArteaQualidadeInstrucao(){
 
@@ -3628,13 +3628,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.qualidade.show_arq', compact('files'));
     }
     // QUALIDADE
     //=========================================
 
     //=========================================
-    // inusitta/recepcao/ formulario
+    // artea/recepcao/ formulario
 
     public function indexArteaRecepcaoFormulario(){
 
@@ -3662,13 +3662,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.recepcao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/recepcao/ registro
+    // artea/recepcao/ registro
 
     public function indexArteaRecepcaoRegistro(){
 
@@ -3696,13 +3696,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.recepcao.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/recepcao/ procedimento
+    // artea/recepcao/ procedimento
 
     public function indexArteaRecepcaoProcedimento(){
 
@@ -3730,13 +3730,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.recepcao.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/recepcao/ instrucao
+    // artea/recepcao/ instrucao
 
     public function indexArteaRecepcaoInstrucao(){
 
@@ -3764,13 +3764,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.recepcao.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/restaurante/ formulario
+    // artea/restaurante/ formulario
 
     public function indexArteaRestauranteFormulario(){
 
@@ -3798,13 +3798,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.restaurante.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/restaurante/ registro
+    // artea/restaurante/ registro
 
     public function indexArteaRestauranteRegistro(){
 
@@ -3832,13 +3832,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.restaurante.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/restaurante/ procedimento
+    // artea/restaurante/ procedimento
 
     public function indexArteaRestauranteProcedimento(){
 
@@ -3866,13 +3866,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.restaurante.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/restaurante/ instrucao
+    // artea/restaurante/ instrucao
 
     public function indexArteaRestauranteInstrucao(){
 
@@ -3900,13 +3900,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.restaurante.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/rh/ formulario
+    // artea/rh/ formulario
 
     public function indexArteaRhFormulario(){
 
@@ -3934,13 +3934,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.rh.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/rh/ registro
+    // artea/rh/ registro
 
     public function indexArteaRhRegistro(){
 
@@ -3968,13 +3968,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.rh.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/rh/ procedimento
+    // artea/rh/ procedimento
 
     public function indexArteaRhProcedimento(){
 
@@ -4002,13 +4002,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.rh.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/rh/ instrucao
+    // artea/rh/ instrucao
 
     public function indexArteaRhInstrucao(){
 
@@ -4036,13 +4036,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.rh.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/sac/ formulario
+    // artea/sac/ formulario
 
     public function indexArteaSacFormulario(){
 
@@ -4070,13 +4070,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.sac.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/sac/ registro
+    // artea/sac/ registro
 
     public function indexArteaSacRegistro(){
 
@@ -4104,13 +4104,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.sac.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/sac/ procedimento
+    // artea/sac/ procedimento
 
     public function indexArteaSacProcedimento(){
 
@@ -4138,13 +4138,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.sac.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/sac/ instrucao
+    // artea/sac/ instrucao
 
     public function indexArteaSacInstrucao(){
 
@@ -4172,13 +4172,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.sac.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/sesmt/ formulario
+    // artea/sesmt/ formulario
 
     public function indexArteaSesmtFormulario(){
 
@@ -4206,13 +4206,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.sesmt.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/sesmt/ registro
+    // artea/sesmt/ registro
 
     public function indexArteaSesmtRegistro(){
 
@@ -4240,13 +4240,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.sesmt.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/sesmt/ procedimento
+    // artea/sesmt/ procedimento
 
     public function indexArteaSesmtProcedimento(){
 
@@ -4274,13 +4274,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.sesmt.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/sesmt/ instrucao
+    // artea/sesmt/ instrucao
 
     public function indexArteaSesmtInstrucao(){
 
@@ -4308,13 +4308,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.sesmt.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/projetos/ formulario
+    // artea/projetos/ formulario
 
     public function indexArteaProjetosFormulario(){
 
@@ -4342,13 +4342,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.projetos.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/projetos/ registro
+    // artea/projetos/ registro
 
     public function indexArteaProjetosRegistro(){
 
@@ -4376,13 +4376,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.projetos.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/projetos/ procedimento
+    // artea/projetos/ procedimento
 
     public function indexArteaProjetosProcedimento(){
 
@@ -4410,13 +4410,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.projetos.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/projetos/ instrucao
+    // artea/projetos/ instrucao
 
     public function indexArteaProjetosInstrucao(){
 
@@ -4444,13 +4444,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.projetos.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ formulario
+    // artea/transporte/ formulario
 
     public function indexArteaTransporteFormulario(){
 
@@ -4478,13 +4478,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.transporte.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ registro
+    // artea/transporte/ registro
 
     public function indexArteaTransporteRegistro(){
 
@@ -4512,13 +4512,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.transporte.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ procedimento
+    // artea/transporte/ procedimento
 
     public function indexArteaTransporteProcedimento(){
 
@@ -4546,13 +4546,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.transporte.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ instrucao
+    // artea/transporte/ instrucao
 
     public function indexArteaTransporteInstrucao(){
 
@@ -4580,13 +4580,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.transporte.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/atelie/ formulario
+    // artea/atelie/ formulario
 
     public function indexArteaAtelieFormulario(){
 
@@ -4614,13 +4614,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.atelie.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/atelie/ registro
+    // artea/atelie/ registro
 
     public function indexArteaAtelieRegistro(){
 
@@ -4648,13 +4648,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.atelie.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ procedimento
+    // artea/transporte/ procedimento
 
     public function indexArteaAtelieProcedimento(){
 
@@ -4682,13 +4682,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.atelie.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ instrucao
+    // artea/transporte/ instrucao
 
     public function indexArteaAtelieInstrucao(){
 
@@ -4716,13 +4716,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.atelie.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Corte/ formulario
+    // artea/Corte/ formulario
 
     public function indexArteaCorteFormulario(){
 
@@ -4750,13 +4750,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.corte.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Corte/ registro
+    // artea/Corte/ registro
 
     public function indexArteaCorteRegistro(){
 
@@ -4784,13 +4784,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.corte.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ procedimento
+    // artea/transporte/ procedimento
 
     public function indexArteaCorteProcedimento(){
 
@@ -4818,13 +4818,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.corte.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ instrucao
+    // artea/transporte/ instrucao
 
     public function indexArteaCorteInstrucao(){
 
@@ -4852,13 +4852,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.corte.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Coladeira/ formulario
+    // artea/Coladeira/ formulario
 
     public function indexArteaColadeiraFormulario(){
 
@@ -4886,13 +4886,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.coladeira.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Coladeira/ registro
+    // artea/Coladeira/ registro
 
     public function indexArteaColadeiraRegistro(){
 
@@ -4920,13 +4920,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.coladeira.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ procedimento
+    // artea/transporte/ procedimento
 
     public function indexArteaColadeiraProcedimento(){
 
@@ -4954,13 +4954,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.coladeira.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ instrucao
+    // artea/transporte/ instrucao
 
     public function indexArteaColadeiraInstrucao(){
 
@@ -4988,13 +4988,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.coladeira.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Furadeira/ formulario
+    // artea/Furadeira/ formulario
 
     public function indexArteaFuradeiraFormulario(){
 
@@ -5022,13 +5022,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.furadeira.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Furadeira/ registro
+    // artea/Furadeira/ registro
 
     public function indexArteaFuradeiraRegistro(){
 
@@ -5056,13 +5056,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.furadeira.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ procedimento
+    // artea/transporte/ procedimento
 
     public function indexArteaFuradeiraProcedimento(){
 
@@ -5090,13 +5090,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.furadeira.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ instrucao
+    // artea/transporte/ instrucao
 
     public function indexArteaFuradeiraInstrucao(){
 
@@ -5124,13 +5124,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.furadeira.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Acabamento/ formulario
+    // artea/Acabamento/ formulario
 
     public function indexArteaAcabamentoFormulario(){
 
@@ -5158,13 +5158,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.acabamento.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Acabamento/ registro
+    // artea/Acabamento/ registro
 
     public function indexArteaAcabamentoRegistro(){
 
@@ -5192,13 +5192,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.acabamento.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ procedimento
+    // artea/transporte/ procedimento
 
     public function indexArteaAcabamentoProcedimento(){
 
@@ -5226,13 +5226,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.acabamento.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ instrucao
+    // artea/transporte/ instrucao
 
     public function indexArteaAcabamentoInstrucao(){
 
@@ -5260,13 +5260,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.acabamento.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Embalagem/ formulario
+    // artea/Embalagem/ formulario
 
     public function indexArteaEmbalagemFormulario(){
 
@@ -5294,13 +5294,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.embalagem.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Embalagem/ registro
+    // artea/Embalagem/ registro
 
     public function indexArteaEmbalagemRegistro(){
 
@@ -5328,13 +5328,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.embalagem.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ procedimento
+    // artea/transporte/ procedimento
 
     public function indexArteaEmbalagemProcedimento(){
 
@@ -5362,13 +5362,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.embalagem.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ instrucao
+    // artea/transporte/ instrucao
 
     public function indexArteaEmbalagemInstrucao(){
 
@@ -5396,13 +5396,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.embalagem.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Pintura/ formulario
+    // artea/Pintura/ formulario
 
     public function indexArteaPinturaFormulario(){
 
@@ -5430,13 +5430,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.pintura.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Pintura/ registro
+    // artea/Pintura/ registro
 
     public function indexArteaPinturaRegistro(){
 
@@ -5464,13 +5464,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.pintura.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ procedimento
+    // artea/transporte/ procedimento
 
     public function indexArteaPinturaProcedimento(){
 
@@ -5498,13 +5498,13 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.pintura.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ instrucao
+    // artea/transporte/ instrucao
 
     public function indexArteaPinturaInstrucao(){
 
@@ -5532,7 +5532,7 @@ class ArteaController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.artea.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.artea.setores.pintura.show_arq', compact('files'));
     }
     
     //=========================================
