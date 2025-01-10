@@ -386,7 +386,7 @@ class UserController extends Controller
     //=========================================
     
 
-    //=========================================
+    //========================================= 
     // Função Para Mostrar os arquivos da macro Instrução
 
     public function indexInusittaTiInstrucao()
@@ -415,7 +415,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.tecnologia-informacao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -450,7 +450,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.tecnologia-informacao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -485,7 +485,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.tecnologia-informacao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -520,7 +520,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.tecnologia-informacao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -555,7 +555,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.marketing.show_arq', compact('files'));
     }
 
     //=========================================
@@ -589,7 +589,7 @@ class UserController extends Controller
         })
         -> paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.marketing.show_arq', compact('files'));
     }
 
     //=========================================
@@ -622,7 +622,7 @@ class UserController extends Controller
             $query->where('name_macro', 'registro');
         })-> paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.marketing.show_arq', compact('files'));
     }
 
     //=========================================
@@ -655,7 +655,7 @@ class UserController extends Controller
             $query->where('name_macro', 'formulário');
         })-> paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.marketing.show_arq', compact('files'));
     }
 
     //=========================================
@@ -689,7 +689,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.comercial.show_arq', compact('files'));
     }
 
     //=========================================
@@ -723,7 +723,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.comercial.show_arq', compact('files'));
     }
 
     //=========================================
@@ -757,7 +757,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.comercial.show_arq', compact('files'));
     }
 
     //=========================================
@@ -791,7 +791,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.comercial.show_arq', compact('files'));
     }
 
     //=========================================
@@ -825,7 +825,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.almoxarifado.show_arq', compact('files'));
     }
 
     //=========================================
@@ -859,7 +859,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.almoxarifado.show_arq', compact('files'));
     }
 
     //=========================================
@@ -893,7 +893,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.almoxarifado.show_arq', compact('files'));
     }
 
     //=========================================
@@ -927,7 +927,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.almoxarifado.show_arq', compact('files'));
     }
 
     //=========================================
@@ -961,7 +961,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.assistencia.show_arq', compact('files'));
     }
 
     //=========================================
@@ -995,7 +995,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.assistencia.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1029,7 +1029,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.assistencia.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1063,7 +1063,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.assistencia.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1097,7 +1097,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.compras.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1131,7 +1131,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.compras.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1165,7 +1165,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.compras.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1199,7 +1199,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.compras.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1233,7 +1233,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.contabilidade.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1267,7 +1267,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.contabilidade.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1301,7 +1301,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.contabilidade.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1335,7 +1335,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.contabilidade.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1369,7 +1369,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.contaspagar.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1403,7 +1403,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.contaspagar.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1437,7 +1437,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.contaspagar.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1471,7 +1471,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.contaspagar.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1505,7 +1505,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.contasreceber.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1539,7 +1539,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.contasreceber.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1573,7 +1573,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.contasreceber.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1607,7 +1607,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.contasreceber.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1641,7 +1641,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.custo.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1675,7 +1675,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.custo.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1709,7 +1709,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.custo.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1743,7 +1743,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.custo.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1777,7 +1777,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.designn.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1811,7 +1811,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.designn.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1845,7 +1845,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.designn.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1879,7 +1879,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.designn.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1918,7 +1918,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.diretoriaadministrativa.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1952,7 +1952,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.diretoriaadministrativa.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1986,7 +1986,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.diretoriaadministrativa.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2020,7 +2020,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.diretoriaadministrativa.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2054,7 +2054,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.diretoriacomercial.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2088,7 +2088,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.diretoriacomercial.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2122,7 +2122,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.diretoriacomercial.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2156,7 +2156,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.diretoriacomercial.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2190,7 +2190,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.diretoriaindustrial.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2224,7 +2224,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.diretoriaindustrial.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2258,7 +2258,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.diretoriaindustrial.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2292,7 +2292,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.diretoriaindustrial.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2326,7 +2326,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.ecommerce.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2360,7 +2360,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.ecommerce.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2394,7 +2394,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.ecommerce.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2428,7 +2428,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.ecommerce.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2462,7 +2462,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.engenharia.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2496,7 +2496,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.engenharia.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2530,7 +2530,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.engenharia.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2564,7 +2564,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.engenharia.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2598,7 +2598,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.expedicao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2632,7 +2632,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.expedicao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2666,7 +2666,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.expedicao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2700,7 +2700,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.expedicao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2734,7 +2734,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.exportacao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2768,7 +2768,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.exportacao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2802,7 +2802,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.exportacao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2836,7 +2836,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.exportacao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2870,7 +2870,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.faturamento.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2904,7 +2904,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.faturamento.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2938,7 +2938,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.faturamento.show_arq', compact('files'));
     }
 
     //=========================================
@@ -2972,7 +2972,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.faturamento.show_arq', compact('files'));
     }
 
     //=========================================
@@ -3006,7 +3006,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.manutencao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -3040,7 +3040,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.manutencao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -3074,7 +3074,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.manutencao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -3108,7 +3108,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.manutencao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -3142,7 +3142,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.ped.show_arq', compact('files'));
     }
 
     //=========================================
@@ -3176,7 +3176,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.ped.show_arq', compact('files'));
     }
 
     //=========================================
@@ -3210,7 +3210,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.ped.show_arq', compact('files'));
     }
 
     //=========================================
@@ -3244,7 +3244,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.ped.show_arq', compact('files'));
     }
 
     //=========================================
@@ -3278,7 +3278,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.pmo.show_arq', compact('files'));
     }
 
     //=========================================
@@ -3312,7 +3312,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.pmo.show_arq', compact('files'));
     }
 
     //=========================================
@@ -3346,7 +3346,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.pmo.show_arq', compact('files'));
     }
 
     //=========================================
@@ -3380,7 +3380,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.pmo.show_arq', compact('files'));
     }
 
     //=========================================
@@ -3414,7 +3414,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.ppcp.show_arq', compact('files'));
     }
 
     //=========================================
@@ -3448,7 +3448,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.ppcp.show_arq', compact('files'));
     }
 
     //=========================================
@@ -3482,7 +3482,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.ppcp.show_arq', compact('files'));
     }
 
     //=========================================
@@ -3516,7 +3516,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.ppcp.show_arq', compact('files'));
     }
 
     //=========================================
@@ -3550,7 +3550,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.qualidade.show_arq', compact('files'));
     }
 
     //=========================================
@@ -3584,7 +3584,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.qualidade.show_arq', compact('files'));
     }
 
     //=========================================
@@ -3618,7 +3618,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.qualidade.show_arq', compact('files'));
     }
 
     //=========================================
@@ -3652,7 +3652,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.qualidade.show_arq', compact('files'));
     }
     // QUALIDADE
     //=========================================
@@ -3686,7 +3686,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.recepcao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -3720,7 +3720,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.recepcao.show_arq', compact('files'));
     }
     
     //=========================================
@@ -3754,7 +3754,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.recepcao.show_arq', compact('files'));
     }
     
     //=========================================
@@ -3788,7 +3788,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.recepcao.show_arq', compact('files'));
     }
     
     //=========================================
@@ -3822,7 +3822,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.restaurante.show_arq', compact('files'));
     }
     
     //=========================================
@@ -3856,7 +3856,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.restaurante.show_arq', compact('files'));
     }
     
     //=========================================
@@ -3890,7 +3890,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.restaurante.show_arq', compact('files'));
     }
     
     //=========================================
@@ -3924,7 +3924,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.restaurante.show_arq', compact('files'));
     }
     
     //=========================================
@@ -3958,7 +3958,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.rh.show_arq', compact('files'));
     }
     
     //=========================================
@@ -3992,7 +3992,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.rh.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4026,7 +4026,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.rh.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4060,7 +4060,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.rh.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4094,7 +4094,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.sac.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4128,7 +4128,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.sac.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4162,7 +4162,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.sac.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4196,7 +4196,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.sac.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4230,7 +4230,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.sesmt.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4264,7 +4264,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.sesmt.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4298,7 +4298,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.sesmt.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4332,7 +4332,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.sesmt.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4366,7 +4366,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.projetos.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4400,7 +4400,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.projetos.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4434,7 +4434,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.projetos.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4468,7 +4468,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.projetos.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4502,7 +4502,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.transporte.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4536,7 +4536,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.transporte.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4570,7 +4570,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.transporte.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4604,7 +4604,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.transporte.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4638,7 +4638,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.atelie.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4672,7 +4672,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.atelie.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4706,7 +4706,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.atelie.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4740,7 +4740,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.atelie.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4774,7 +4774,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.corte.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4808,7 +4808,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.corte.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4842,7 +4842,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.corte.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4876,7 +4876,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.corte.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4910,7 +4910,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.coladeira.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4944,7 +4944,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.coladeira.show_arq', compact('files'));
     }
     
     //=========================================
@@ -4978,7 +4978,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.coladeira.show_arq', compact('files'));
     }
     
     //=========================================
@@ -5012,7 +5012,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.coladeira.show_arq', compact('files'));
     }
     
     //=========================================
@@ -5046,7 +5046,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.furadeira.show_arq', compact('files'));
     }
     
     //=========================================
@@ -5080,7 +5080,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.furadeira.show_arq', compact('files'));
     }
     
     //=========================================
@@ -5114,7 +5114,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.furadeira.show_arq', compact('files'));
     }
     
     //=========================================
@@ -5148,7 +5148,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.furadeira.show_arq', compact('files'));
     }
     
     //=========================================
@@ -5182,7 +5182,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.acabamento.show_arq', compact('files'));
     }
     
     //=========================================
@@ -5216,7 +5216,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.acabamento.show_arq', compact('files'));
     }
     
     //=========================================
@@ -5318,7 +5318,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.embalagem.show_arq', compact('files'));
     }
     
     //=========================================
@@ -5352,7 +5352,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.embalagem.show_arq', compact('files'));
     }
     
     //=========================================
@@ -5386,7 +5386,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.embalagem.show_arq', compact('files'));
     }
     
     //=========================================
@@ -5420,7 +5420,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.embalagem.show_arq', compact('files'));
     }
     
     //=========================================
@@ -5454,7 +5454,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.pintura.show_arq', compact('files'));
     }
     
     //=========================================
@@ -5488,7 +5488,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.pintura.show_arq', compact('files'));
     }
     
     //=========================================
@@ -5522,7 +5522,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.pintura.show_arq', compact('files'));
     }
     
     //=========================================
@@ -5556,7 +5556,7 @@ class UserController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.inusitta.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.inusitta.setores.pintura.show_arq', compact('files'));
     }
     
     //=========================================

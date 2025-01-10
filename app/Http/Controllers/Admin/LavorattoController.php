@@ -9,7 +9,7 @@ use App\Models\Company;
 use App\Models\Sector;
 
 class LavorattoController extends Controller
-{
+{ 
     
     
     //=========================================
@@ -363,7 +363,7 @@ class LavorattoController extends Controller
 
     //=========================================
 
-    //=========================================
+    //========================================= 
     // Função Para Mostrar os arquivos da macro Instrução
 
     public function indexLavorattoTiInstrucao()
@@ -392,7 +392,7 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.tecnologia-informacao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -427,7 +427,7 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.tecnologia-informacao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -462,7 +462,7 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.tecnologia-informacao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -497,7 +497,7 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.tecnologia-informacao.show_arq', compact('files'));
     }
 
     //=========================================
@@ -532,7 +532,7 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.marketing.show_arq', compact('files'));
     }
 
     //=========================================
@@ -566,7 +566,7 @@ class LavorattoController extends Controller
         })
         -> paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.marketing.show_arq', compact('files'));
     }
 
     //=========================================
@@ -599,7 +599,7 @@ class LavorattoController extends Controller
             $query->where('name_macro', 'registro');
         })-> paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.marketing.show_arq', compact('files'));
     }
 
     //=========================================
@@ -632,13 +632,13 @@ class LavorattoController extends Controller
             $query->where('name_macro', 'formulário');
         })-> paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.marketing.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/comercial/instrucao
+    // lavoratto/comercial/instrucao
 
     public function indexLavorattoComercialInstrucao(){
 
@@ -666,13 +666,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.comercial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/comercial/procedimento
+    // lavoratto/comercial/procedimento
 
     public function indexLavorattoComercialProcedimento(){
 
@@ -700,13 +700,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.comercial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/comercial/registro
+    // lavoratto/comercial/registro
 
     public function indexLavorattoComercialRegistro(){
 
@@ -734,13 +734,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.comercial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/comercial/registro
+    // lavoratto/comercial/registro
 
     public function indexLavorattoComercialFormulario(){
 
@@ -768,13 +768,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.comercial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/almoxarifado/instrucao
+    // lavoratto/almoxarifado/instrucao
 
     public function indexLavorattoAlmoxarifadoInstrucao(){
 
@@ -802,13 +802,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.almoxarifado.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/almoxarifado/procedimento
+    // lavoratto/almoxarifado/procedimento
 
     public function indexLavorattoAlmoxarifadoProcedimento(){
 
@@ -836,13 +836,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.almoxarifado.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/almoxarifado/registro
+    // lavoratto/almoxarifado/registro
 
     public function indexLavorattoAlmoxarifadoRegistro(){
 
@@ -870,13 +870,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.almoxarifado.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/almoxarifado/fomulario
+    // lavoratto/almoxarifado/fomulario
 
     public function indexLavorattoAlmoxarifadoFormulario(){
 
@@ -904,13 +904,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.almoxarifado.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/assistencia/fomulario
+    // lavoratto/assistencia/fomulario
 
     public function indexLavorattoAssistenciaFormulario(){
 
@@ -938,13 +938,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.assistencia.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/assistencia/registro
+    // lavoratto/assistencia/registro
 
     public function indexLavorattoAssistenciaRegistro(){
 
@@ -972,13 +972,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.assistencia.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/assistencia/procedimento
+    // lavoratto/assistencia/procedimento
 
     public function indexLavorattoAssistenciaProcedimento(){
 
@@ -1006,13 +1006,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.assistencia.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/almoxarifado/instrucao
+    // lavoratto/almoxarifado/instrucao
 
     public function indexLavorattoAssistenciaInstrucao(){
 
@@ -1040,13 +1040,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.assistencia.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/compras/formulario
+    // lavoratto/compras/formulario
 
     public function indexLavorattoComprasFormulario(){
 
@@ -1074,13 +1074,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.compras.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/compras/registro
+    // lavoratto/compras/registro
 
     public function indexLavorattoComprasRegistro(){
 
@@ -1108,13 +1108,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.compras.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/compras/procedimento
+    // lavoratto/compras/procedimento
 
     public function indexLavorattoComprasProcedimento(){
 
@@ -1142,13 +1142,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.compras.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/compras/instrucao
+    // lavoratto/compras/instrucao
 
     public function indexLavorattoComprasInstrucao(){
 
@@ -1176,13 +1176,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.compras.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contabilidade/formulario
+    // lavoratto/contabilidade/formulario
 
     public function indexLavorattoContabilidadeFormulario(){
 
@@ -1210,13 +1210,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.contabilidade.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contabilidade/registro
+    // lavoratto/contabilidade/registro
 
     public function indexLavorattoContabilidadeRegistro(){
 
@@ -1244,13 +1244,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.contabilidade.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contabilidade/procedimento
+    // lavoratto/contabilidade/procedimento
 
     public function indexLavorattoContabilidadeProcedimento(){
 
@@ -1278,13 +1278,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.contabilidade.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contabilidade/procedimento
+    // lavoratto/contabilidade/procedimento
 
     public function indexLavorattoContabilidadeInstrucao(){
 
@@ -1312,13 +1312,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.contabilidade.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contas a pagar/formulario
+    // lavoratto/contas a pagar/formulario
 
     public function indexLavorattoContasPagarFormulario(){
 
@@ -1346,13 +1346,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.contaspagar.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contas a pagar/registro
+    // lavoratto/contas a pagar/registro
 
     public function indexLavorattoContasPagarRegistro(){
 
@@ -1380,13 +1380,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.contaspagar.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contas a pagar/procedimento
+    // lavoratto/contas a pagar/procedimento
 
     public function indexLavorattoContasPagarProcedimento(){
 
@@ -1414,13 +1414,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.contaspagar.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contas a pagar/registro
+    // lavoratto/contas a pagar/registro
 
     public function indexLavorattoContasPagarInstrucao(){
 
@@ -1448,13 +1448,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.contaspagar.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contas a receber/formulario
+    // lavoratto/contas a receber/formulario
 
     public function indexLavorattoContasReceberFormulario(){
 
@@ -1482,13 +1482,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.contasreceber.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contas a receber/registro
+    // lavoratto/contas a receber/registro
 
     public function indexLavorattoContasReceberRegistro(){
 
@@ -1516,13 +1516,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.contasreceber.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contas a receber/procedimento
+    // lavoratto/contas a receber/procedimento
 
     public function indexLavorattoContasReceberProcedimento(){
 
@@ -1550,13 +1550,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.contasreceber.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/contas a receber/instrucao
+    // lavoratto/contas a receber/instrucao
 
     public function indexLavorattoContasReceberInstrucao(){
 
@@ -1584,13 +1584,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.contasreceber.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/custo/formulario
+    // lavoratto/custo/formulario
 
     public function indexLavorattoCustoFormulario(){
 
@@ -1618,13 +1618,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.custo.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/custo/registro
+    // lavoratto/custo/registro
 
     public function indexLavorattoCustoRegistro(){
 
@@ -1652,13 +1652,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.custo.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/custo/procedimento
+    // lavoratto/custo/procedimento
 
     public function indexLavorattoCustoProcedimento(){
 
@@ -1686,13 +1686,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.custo.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/custo/instrucao
+    // lavoratto/custo/instrucao
 
     public function indexLavorattoCustoInstrucao(){
 
@@ -1720,13 +1720,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.custo.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/design/formulario
+    // lavoratto/design/formulario
 
     public function indexLavorattoDesignFormulario(){
 
@@ -1754,13 +1754,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.designn.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/design/registro
+    // lavoratto/design/registro
 
     public function indexLavorattoDesignRegistro(){
 
@@ -1788,13 +1788,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.designn.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/design/procedimento
+    // lavoratto/design/procedimento
 
     public function indexLavorattoDesignProcedimento(){
 
@@ -1822,13 +1822,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.designn.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/design/instrucao
+    // lavoratto/design/instrucao
 
     public function indexLavorattoDesignInstrucao(){
 
@@ -1856,7 +1856,7 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.designn.show_arq', compact('files'));
     }
 
     //=========================================
@@ -1867,7 +1867,7 @@ class LavorattoController extends Controller
 
 
     //=========================================
-    // inusitta/diretoria administrativa/formulario
+    // lavoratto/diretoria administrativa/formulario
 
     public function indexLavorattoDiretoriaAdministrativaFormulario(){
 
@@ -1895,13 +1895,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.diretoriaadministrativa.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria administrativa/registro
+    // lavoratto/diretoria administrativa/registro
 
     public function indexLavorattoDiretoriaAdministrativaRegistro(){
 
@@ -1929,13 +1929,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.diretoriaadministrativa.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria administrativa/procedimento
+    // lavoratto/diretoria administrativa/procedimento
 
     public function indexLavorattoDiretoriaAdministrativaProcedimento(){
 
@@ -1963,13 +1963,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.diretoriaadministrativa.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria administrativa/instrucao
+    // lavoratto/diretoria administrativa/instrucao
 
     public function indexLavorattoDiretoriaAdministrativaInstrucao(){
 
@@ -1997,13 +1997,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.diretoriaadministrativa.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria comercial/ formulario
+    // lavoratto/diretoria comercial/ formulario
 
     public function indexLavorattoDiretoriaComercialFormulario(){
 
@@ -2031,13 +2031,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.diretoriacomercial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria comercial/ registro
+    // lavoratto/diretoria comercial/ registro
 
     public function indexLavorattoDiretoriaComercialRegistro(){
 
@@ -2065,13 +2065,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.diretoriacomercial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria comercial/ procedimento
+    // lavoratto/diretoria comercial/ procedimento
 
     public function indexLavorattoDiretoriaComercialProcedimento(){
 
@@ -2099,13 +2099,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.diretoriacomercial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria comercial/ instrucao
+    // lavoratto/diretoria comercial/ instrucao
 
     public function indexLavorattoDiretoriaComercialInstrucao(){
 
@@ -2133,13 +2133,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.diretoriacomercial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria industrial/ formulario
+    // lavoratto/diretoria industrial/ formulario
 
     public function indexLavorattoDiretoriaIndustrialFormulario(){
 
@@ -2167,13 +2167,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.diretoriaindustrial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria industrial/ registro
+    // lavoratto/diretoria industrial/ registro
 
     public function indexLavorattoDiretoriaIndustrialRegistro(){
 
@@ -2201,13 +2201,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.diretoriaindustrial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria industrial/ procedimento
+    // lavoratto/diretoria industrial/ procedimento
 
     public function indexLavorattoDiretoriaIndustrialProcedimento(){
 
@@ -2235,13 +2235,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.diretoriaindustrial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/diretoria industrial/ instrucao
+    // lavoratto/diretoria industrial/ instrucao
 
     public function indexLavorattoDiretoriaIndustrialInstrucao(){
 
@@ -2269,13 +2269,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.diretoriaindustrial.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ecommerce/ formulario
+    // lavoratto/ecommerce/ formulario
 
     public function indexLavorattoEcommerceFormulario(){
 
@@ -2303,13 +2303,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.ecommerce.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ecommerce/ registro
+    // lavoratto/ecommerce/ registro
 
     public function indexLavorattoEcommerceRegistro(){
 
@@ -2337,13 +2337,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.ecommerce.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ecommerce/ procedimento
+    // lavoratto/ecommerce/ procedimento
 
     public function indexLavorattoEcommerceProcedimento(){
 
@@ -2371,13 +2371,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.ecommerce.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ecommerce/ instrucao
+    // lavoratto/ecommerce/ instrucao
 
     public function indexLavorattoEcommerceInstrucao(){
 
@@ -2405,13 +2405,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.ecommerce.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/engenharia/ formulario
+    // lavoratto/engenharia/ formulario
 
     public function indexLavorattoEngenhariaFormulario(){
 
@@ -2439,13 +2439,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.engenharia.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/engenharia/ registro
+    // lavoratto/engenharia/ registro
 
     public function indexLavorattoEngenhariaRegistro(){
 
@@ -2473,13 +2473,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.engenharia.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/engenharia/ procedimento
+    // lavoratto/engenharia/ procedimento
 
     public function indexLavorattoEngenhariaProcedimento(){
 
@@ -2507,13 +2507,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.engenharia.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/engenharia/ instrucao
+    // lavoratto/engenharia/ instrucao
 
     public function indexLavorattoEngenhariaInstrucao(){
 
@@ -2541,13 +2541,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.engenharia.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/expedicao/ formulario
+    // lavoratto/expedicao/ formulario
 
     public function indexLavorattoExpedicaoFormulario(){
 
@@ -2575,13 +2575,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.expedicao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/expedicao/ registro
+    // lavoratto/expedicao/ registro
 
     public function indexLavorattoExpedicaoRegistro(){
 
@@ -2609,13 +2609,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.expedicao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/expedicao/ procedimento
+    // lavoratto/expedicao/ procedimento
 
     public function indexLavorattoExpedicaoProcedimento(){
 
@@ -2643,13 +2643,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.expedicao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/expedicao/ instrucao
+    // lavoratto/expedicao/ instrucao
 
     public function indexLavorattoExpedicaoInstrucao(){
 
@@ -2677,13 +2677,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.expedicao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/exportacao/ formulario
+    // lavoratto/exportacao/ formulario
 
     public function indexLavorattoExportacaoFormulario(){
 
@@ -2711,13 +2711,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.exportacao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/exportacao/ registro
+    // lavoratto/exportacao/ registro
 
     public function indexLavorattoExportacaoRegistro(){
 
@@ -2745,13 +2745,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.exportacao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/exportacao/ procedimento
+    // lavoratto/exportacao/ procedimento
 
     public function indexLavorattoExportacaoProcedimento(){
 
@@ -2779,13 +2779,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.exportacao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/exportacao/ instrucao
+    // lavoratto/exportacao/ instrucao
 
     public function indexLavorattoExportacaoInstrucao(){
 
@@ -2813,13 +2813,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.exportacao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/faturamento/ formulario
+    // lavoratto/faturamento/ formulario
 
     public function indexLavorattoFaturamentoFormulario(){
 
@@ -2847,13 +2847,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.faturamento.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/faturamento/ registro
+    // lavoratto/faturamento/ registro
 
     public function indexLavorattoFaturamentoRegistro(){
 
@@ -2881,13 +2881,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.faturamento.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/faturamento/ procedimento
+    // lavoratto/faturamento/ procedimento
 
     public function indexLavorattoFaturamentoProcedimento(){
 
@@ -2915,13 +2915,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.faturamento.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/faturamento/ instrucao
+    // lavoratto/faturamento/ instrucao
 
     public function indexLavorattoFaturamentoInstrucao(){
 
@@ -2949,13 +2949,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.faturamento.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/manutencao/ formulario
+    // lavoratto/manutencao/ formulario
 
     public function indexLavorattoManutencaoFormulario(){
 
@@ -2983,13 +2983,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.manutencao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/manutencao/ registro
+    // lavoratto/manutencao/ registro
 
     public function indexLavorattoManutencaoRegistro(){
 
@@ -3017,13 +3017,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.manutencao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/manutencao/ procedimento
+    // lavoratto/manutencao/ procedimento
 
     public function indexLavorattoManutencaoProcedimento(){
 
@@ -3051,13 +3051,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.manutencao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/manutencao/ instrucao
+    // lavoratto/manutencao/ instrucao
 
     public function indexLavorattoManutencaoInstrucao(){
 
@@ -3085,13 +3085,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.manutencao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ped/ formulario
+    // lavoratto/ped/ formulario
 
     public function indexLavorattoPedFormulario(){
 
@@ -3119,13 +3119,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.ped.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ped/ registro
+    // lavoratto/ped/ registro
 
     public function indexLavorattoPedRegistro(){
 
@@ -3153,13 +3153,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.ped.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ped/ procedimento
+    // lavoratto/ped/ procedimento
 
     public function indexLavorattoPedProcedimento(){
 
@@ -3187,13 +3187,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.ped.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ped/ instrucao
+    // lavoratto/ped/ instrucao
 
     public function indexLavorattoPedInstrucao(){
 
@@ -3221,13 +3221,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.ped.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/pmo/ formulario
+    // lavoratto/pmo/ formulario
 
     public function indexLavorattoPmoFormulario(){
 
@@ -3255,13 +3255,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.pmo.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/pmo/ registro
+    // lavoratto/pmo/ registro
 
     public function indexLavorattoPmoRegistro(){
 
@@ -3289,13 +3289,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.pmo.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/pmo/ procedimento
+    // lavoratto/pmo/ procedimento
 
     public function indexLavorattoPmoProcedimento(){
 
@@ -3323,13 +3323,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.pmo.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/pmo/ instrucao
+    // lavoratto/pmo/ instrucao
 
     public function indexLavorattoPmoInstrucao(){
 
@@ -3357,13 +3357,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.pmo.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ppcp/ formulario
+    // lavoratto/ppcp/ formulario
 
     public function indexLavorattoPpcpFormulario(){
 
@@ -3391,13 +3391,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.ppcp.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ppcp/ registro
+    // lavoratto/ppcp/ registro
 
     public function indexLavorattoPpcpRegistro(){
 
@@ -3425,13 +3425,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.ppcp.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ppcp/ procedimento
+    // lavoratto/ppcp/ procedimento
 
     public function indexLavorattoPpcpProcedimento(){
 
@@ -3459,13 +3459,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.ppcp.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/ppcp/ instrucao
+    // lavoratto/ppcp/ instrucao
 
     public function indexLavorattoPpcpInstrucao(){
 
@@ -3493,13 +3493,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.ppcp.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/qualidade/ formulario
+    // lavoratto/qualidade/ formulario
 
     public function indexLavorattoQualidadeFormulario(){
 
@@ -3527,13 +3527,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.qualidade.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/qualidade/ registro
+    // lavoratto/qualidade/ registro
 
     public function indexLavorattoQualidadeRegistro(){
 
@@ -3561,13 +3561,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.qualidade.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/qualidade/ procedimento
+    // lavoratto/qualidade/ procedimento
 
     public function indexLavorattoQualidadeProcedimento(){
 
@@ -3595,13 +3595,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.qualidade.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/qualidade/ instrucao
+    // lavoratto/qualidade/ instrucao
 
     public function indexLavorattoQualidadeInstrucao(){
 
@@ -3629,13 +3629,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.qualidade.show_arq', compact('files'));
     }
     // QUALIDADE
     //=========================================
 
     //=========================================
-    // inusitta/recepcao/ formulario
+    // lavoratto/recepcao/ formulario
 
     public function indexLavorattoRecepcaoFormulario(){
 
@@ -3663,13 +3663,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.recepcao.show_arq', compact('files'));
     }
 
     //=========================================
 
     //=========================================
-    // inusitta/recepcao/ registro
+    // lavoratto/recepcao/ registro
 
     public function indexLavorattoRecepcaoRegistro(){
 
@@ -3697,13 +3697,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.recepcao.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/recepcao/ procedimento
+    // lavoratto/recepcao/ procedimento
 
     public function indexLavorattoRecepcaoProcedimento(){
 
@@ -3731,13 +3731,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.recepcao.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/recepcao/ instrucao
+    // lavoratto/recepcao/ instrucao
 
     public function indexLavorattoRecepcaoInstrucao(){
 
@@ -3765,13 +3765,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.recepcao.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/restaurante/ formulario
+    // lavoratto/restaurante/ formulario
 
     public function indexLavorattoRestauranteFormulario(){
 
@@ -3799,13 +3799,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.restaurante.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/restaurante/ registro
+    // lavoratto/restaurante/ registro
 
     public function indexLavorattoRestauranteRegistro(){
 
@@ -3833,13 +3833,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.restaurante.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/restaurante/ procedimento
+    // lavoratto/restaurante/ procedimento
 
     public function indexLavorattoRestauranteProcedimento(){
 
@@ -3867,13 +3867,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.restaurante.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/restaurante/ instrucao
+    // lavoratto/restaurante/ instrucao
 
     public function indexLavorattoRestauranteInstrucao(){
 
@@ -3901,13 +3901,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.restaurante.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/rh/ formulario
+    // lavoratto/rh/ formulario
 
     public function indexLavorattoRhFormulario(){
 
@@ -3935,13 +3935,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.rh.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/rh/ registro
+    // lavoratto/rh/ registro
 
     public function indexLavorattoRhRegistro(){
 
@@ -3969,13 +3969,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.rh.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/rh/ procedimento
+    // lavoratto/rh/ procedimento
 
     public function indexLavorattoRhProcedimento(){
 
@@ -4003,13 +4003,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.rh.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/rh/ instrucao
+    // lavoratto/rh/ instrucao
 
     public function indexLavorattoRhInstrucao(){
 
@@ -4037,13 +4037,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.rh.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/sac/ formulario
+    // lavoratto/sac/ formulario
 
     public function indexLavorattoSacFormulario(){
 
@@ -4071,13 +4071,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.sac.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/sac/ registro
+    // lavoratto/sac/ registro
 
     public function indexLavorattoSacRegistro(){
 
@@ -4105,13 +4105,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.sac.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/sac/ procedimento
+    // lavoratto/sac/ procedimento
 
     public function indexLavorattoSacProcedimento(){
 
@@ -4139,13 +4139,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.sac.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/sac/ instrucao
+    // lavoratto/sac/ instrucao
 
     public function indexLavorattoSacInstrucao(){
 
@@ -4173,13 +4173,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.sac.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/sesmt/ formulario
+    // lavoratto/sesmt/ formulario
 
     public function indexLavorattoSesmtFormulario(){
 
@@ -4207,13 +4207,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.sesmt.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/sesmt/ registro
+    // lavoratto/sesmt/ registro
 
     public function indexLavorattoSesmtRegistro(){
 
@@ -4241,13 +4241,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.sesmt.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/sesmt/ procedimento
+    // lavoratto/sesmt/ procedimento
 
     public function indexLavorattoSesmtProcedimento(){
 
@@ -4275,13 +4275,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.sesmt.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/sesmt/ instrucao
+    // lavoratto/sesmt/ instrucao
 
     public function indexLavorattoSesmtInstrucao(){
 
@@ -4309,13 +4309,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.sesmt.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/projetos/ formulario
+    // lavoratto/projetos/ formulario
 
     public function indexLavorattoProjetosFormulario(){
 
@@ -4343,13 +4343,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.projetos.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/projetos/ registro
+    // lavoratto/projetos/ registro
 
     public function indexLavorattoProjetosRegistro(){
 
@@ -4377,13 +4377,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.projetos.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/projetos/ procedimento
+    // lavoratto/projetos/ procedimento
 
     public function indexLavorattoProjetosProcedimento(){
 
@@ -4411,13 +4411,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.projetos.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/projetos/ instrucao
+    // lavoratto/projetos/ instrucao
 
     public function indexLavorattoProjetosInstrucao(){
 
@@ -4445,13 +4445,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.projetos.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ formulario
+    // lavoratto/transporte/ formulario
 
     public function indexLavorattoTransporteFormulario(){
 
@@ -4479,13 +4479,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.transporte.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ registro
+    // lavoratto/transporte/ registro
 
     public function indexLavorattoTransporteRegistro(){
 
@@ -4513,13 +4513,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.transporte.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ procedimento
+    // lavoratto/transporte/ procedimento
 
     public function indexLavorattoTransporteProcedimento(){
 
@@ -4547,13 +4547,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.transporte.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ instrucao
+    // lavoratto/transporte/ instrucao
 
     public function indexLavorattoTransporteInstrucao(){
 
@@ -4581,13 +4581,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.transporte.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/atelie/ formulario
+    // lavoratto/atelie/ formulario
 
     public function indexLavorattoAtelieFormulario(){
 
@@ -4615,13 +4615,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.atelie.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/atelie/ registro
+    // lavoratto/atelie/ registro
 
     public function indexLavorattoAtelieRegistro(){
 
@@ -4649,13 +4649,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.atelie.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ procedimento
+    // lavoratto/transporte/ procedimento
 
     public function indexLavorattoAtelieProcedimento(){
 
@@ -4683,13 +4683,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.atelie.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ instrucao
+    // lavoratto/transporte/ instrucao
 
     public function indexLavorattoAtelieInstrucao(){
 
@@ -4717,13 +4717,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.atelie.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Corte/ formulario
+    // lavoratto/Corte/ formulario
 
     public function indexLavorattoCorteFormulario(){
 
@@ -4751,13 +4751,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.corte.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Corte/ registro
+    // lavoratto/Corte/ registro
 
     public function indexLavorattoCorteRegistro(){
 
@@ -4785,13 +4785,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.corte.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ procedimento
+    // lavoratto/transporte/ procedimento
 
     public function indexLavorattoCorteProcedimento(){
 
@@ -4819,13 +4819,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.corte.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ instrucao
+    // lavoratto/transporte/ instrucao
 
     public function indexLavorattoCorteInstrucao(){
 
@@ -4853,13 +4853,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.corte.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Coladeira/ formulario
+    // lavoratto/Coladeira/ formulario
 
     public function indexLavorattoColadeiraFormulario(){
 
@@ -4887,13 +4887,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.coladeira.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Coladeira/ registro
+    // lavoratto/Coladeira/ registro
 
     public function indexLavorattoColadeiraRegistro(){
 
@@ -4921,13 +4921,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.coladeira.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ procedimento
+    // lavoratto/transporte/ procedimento
 
     public function indexLavorattoColadeiraProcedimento(){
 
@@ -4955,13 +4955,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.coladeira.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ instrucao
+    // lavoratto/transporte/ instrucao
 
     public function indexLavorattoColadeiraInstrucao(){
 
@@ -4989,13 +4989,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.coladeira.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Furadeira/ formulario
+    // lavoratto/Furadeira/ formulario
 
     public function indexLavorattoFuradeiraFormulario(){
 
@@ -5023,13 +5023,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.furadeira.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Furadeira/ registro
+    // lavoratto/Furadeira/ registro
 
     public function indexLavorattoFuradeiraRegistro(){
 
@@ -5057,13 +5057,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.furadeira.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ procedimento
+    // lavoratto/transporte/ procedimento
 
     public function indexLavorattoFuradeiraProcedimento(){
 
@@ -5091,13 +5091,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.furadeira.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ instrucao
+    // lavoratto/transporte/ instrucao
 
     public function indexLavorattoFuradeiraInstrucao(){
 
@@ -5125,13 +5125,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.furadeira.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Acabamento/ formulario
+    // lavoratto/Acabamento/ formulario
 
     public function indexLavorattoAcabamentoFormulario(){
 
@@ -5159,13 +5159,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.acabamento.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Acabamento/ registro
+    // lavoratto/Acabamento/ registro
 
     public function indexLavorattoAcabamentoRegistro(){
 
@@ -5193,13 +5193,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.acabamento.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ procedimento
+    // lavoratto/transporte/ procedimento
 
     public function indexLavorattoAcabamentoProcedimento(){
 
@@ -5227,13 +5227,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.acabamento.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ instrucao
+    // lavoratto/transporte/ instrucao
 
     public function indexLavorattoAcabamentoInstrucao(){
 
@@ -5261,13 +5261,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.acabamento.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Embalagem/ formulario
+    // lavoratto/Embalagem/ formulario
 
     public function indexLavorattoEmbalagemFormulario(){
 
@@ -5295,13 +5295,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.embalagem.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Embalagem/ registro
+    // lavoratto/Embalagem/ registro
 
     public function indexLavorattoEmbalagemRegistro(){
 
@@ -5329,13 +5329,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.embalagem.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ procedimento
+    // lavoratto/transporte/ procedimento
 
     public function indexLavorattoEmbalagemProcedimento(){
 
@@ -5363,13 +5363,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.embalagem.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ instrucao
+    // lavoratto/transporte/ instrucao
 
     public function indexLavorattoEmbalagemInstrucao(){
 
@@ -5397,13 +5397,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.embalagem.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Pintura/ formulario
+    // lavoratto/Pintura/ formulario
 
     public function indexLavorattoPinturaFormulario(){
 
@@ -5431,13 +5431,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.pintura.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/Pintura/ registro
+    // lavoratto/Pintura/ registro
 
     public function indexLavorattoPinturaRegistro(){
 
@@ -5465,13 +5465,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.pintura.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ procedimento
+    // lavoratto/transporte/ procedimento
 
     public function indexLavorattoPinturaProcedimento(){
 
@@ -5499,13 +5499,13 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.pintura.show_arq', compact('files'));
     }
     
     //=========================================
 
     //=========================================
-    // inusitta/transporte/ instrucao
+    // lavoratto/transporte/ instrucao
 
     public function indexLavorattoPinturaInstrucao(){
 
@@ -5533,7 +5533,7 @@ class LavorattoController extends Controller
         })
         ->paginate(10);
 
-        return view('admin.lavoratto.MOSTRAR-ARQUIVOS-MACRO', compact('files'));
+        return view('admin.lavoratto.setores.pintura.show_arq', compact('files'));
     }
     
     //=========================================
