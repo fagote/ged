@@ -94,7 +94,7 @@
                         @endphp
                         {{$nomesEmpresas ?: 'Nenhuma empresa definida'}}
                     </td>
-                    <td>
+                    <td> 
                         @php
                             $setoresIds = [$file->id_setor1, $file->id_setor2, $file->id_setor3, $file->id_setor4, $file->id_setor5, $file->id_setor6,$file->id_setor7,$file->id_setor8,$file->id_setor9,$file->id_setor10,$file->id_setor11,$file->id_setor12,$file->id_setor13,$file->id_setor14,$file->id_setor15,$file->id_setor16,$file->id_setor17,$file->id_setor18,$file->id_setor19,$file->id_setor20,$file->id_setor21,$file->id_setor22,$file->id_setor23,$file->id_setor24,$file->id_setor25,$file->id_setor26,$file->id_setor27,$file->id_setor28,$file->id_setor29,$file->id_setor30,$file->id_setor31,$file->id_setor32,$file->id_setor33,$file->id_setor34,$file->id_setor35,$file->id_setor36,$file->id_setor37,$file->id_setor38];
                             $nomesSetores = collect($setoresIds)

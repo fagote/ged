@@ -1,10 +1,12 @@
+
 <x-icon></x-icon>
+
 @extends('admin.layouts.app')
 
-@section('title', "Detalhes do Usuário")
+@section('title', "File Manager")
 
 @section('content')
-    <h1>Deseja realmente excluir o usuário {{$user->name}}</h1>
+    <h1 >Deseja realmente excluir o usuário {{$user->name}}</h1>
     <ul>
         <li>Nome: {{ $user->name }}</li>
         <li>Email: {{ $user->email }}</li>
@@ -26,9 +28,13 @@
 
 
     
+ 
 
 
 @endsection
+
+
+
 
 
 

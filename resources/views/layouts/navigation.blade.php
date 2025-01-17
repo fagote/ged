@@ -21,12 +21,12 @@
                             <!--==================================================-->
                             <!-- Formulário de Busca -->
                             <div class="busca">
-                                <form id="form_search" action="{{ route('filesCommonUser.search') }}" method="GET">
-                                    <input id="input_search" type="text" name="search" placeholder="Buscar arquivo pelo código..." value="{{ request('search') }}" required>
+                                <form id="form_search" action="{{ route('searchCommonUser.index') }}" method="GET">
+                                    <input id="input_search" type="text" name="search" placeholder="Buscar arquivo pelo código..." value="{{ request('searchCommonUser') }}" required>
                                     <button id="button_search" type="submit">Buscar</button> 
                                 </form>
 
-                            </div>
+                            </div> 
 
                             <!--==================================================-->
                         </x-nav-link>
@@ -245,6 +245,8 @@
         </div>
     </div>
 </nav>
+
+
 
 <!--==================================================-->
 <!-- CSS - CAMPO DE BUSCA -->

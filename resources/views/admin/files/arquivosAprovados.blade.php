@@ -88,8 +88,26 @@
                 <td>{{ $file->codigo }}</td>
                 <td>{{ $file->versao }}</td>
                 <td>{{ $file->user?->name ?? 'Usuário não definido' }}</td>
-                <td>{{ $file->company?->name_empresa ?? 'Empresa não definida' }}</td>
-                <td>{{ $file->sector?->name_setor ?? 'Setor não definido' }}</td>
+                <td>
+                        @php
+                            $empresaIds = [$file->id_empresa1, $file->id_empresa2, $file->id_empresa3, $file->id_empresa4];
+                            $nomesEmpresas = collect($empresaIds)
+                                ->filter() // Remove IDs nulos
+                                ->map(fn($id) => \App\Models\Company::find($id)?->name_empresa ?? 'Empresa não encontrada')
+                                ->join(', '); // Junta os nomes com vírgulas
+                        @endphp
+                        {{$nomesEmpresas ?: 'Nenhuma empresa definida'}}
+                    </td>
+                    <td>
+                        @php
+                            $setoresIds = [$file->id_setor1, $file->id_setor2, $file->id_setor3, $file->id_setor4, $file->id_setor5, $file->id_setor6,$file->id_setor7,$file->id_setor8,$file->id_setor9,$file->id_setor10,$file->id_setor11,$file->id_setor12,$file->id_setor13,$file->id_setor14,$file->id_setor15,$file->id_setor16,$file->id_setor17,$file->id_setor18,$file->id_setor19,$file->id_setor20,$file->id_setor21,$file->id_setor22,$file->id_setor23,$file->id_setor24,$file->id_setor25,$file->id_setor26,$file->id_setor27,$file->id_setor28,$file->id_setor29,$file->id_setor30,$file->id_setor31,$file->id_setor32,$file->id_setor33,$file->id_setor34,$file->id_setor35,$file->id_setor36,$file->id_setor37,$file->id_setor38];
+                            $nomesSetores = collect($setoresIds)
+                                ->filter() // Remove IDs nulos
+                                ->map(fn($id) => \App\Models\Sector::find($id)?->name_setor ?? 'Setor não encontrado')
+                                ->join(', '); // Junta os nomes com vírgulas
+                        @endphp
+                        {{$nomesSetores ?: 'Nenhum setor definido'}}
+                    </td>  
                 <td>{{ $file->macro?->name_macro ?? 'Macro não definida' }}</td>
                 <td>{{ $file->ativo == 1 ? 'Sim' : 'Não' }}</td>
                 <td>{{ $file->aprovacao == 0 ? 'Reprovado' : ($file->aprovacao == 1 ? 'Aguardando' : 'Aprovado') }}</td>
