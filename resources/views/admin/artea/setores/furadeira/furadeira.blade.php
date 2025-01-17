@@ -79,7 +79,7 @@
 
 
 
-
+<x-footer></x-footer>
 
 <style>
     .glow-on-hover {

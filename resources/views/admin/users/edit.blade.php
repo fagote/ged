@@ -17,6 +17,8 @@
         @include('admin.users.partials.form')
     </form>
 
+    </div>
+    <x-footer> </x-footer>
 @endsection
 
 <style>

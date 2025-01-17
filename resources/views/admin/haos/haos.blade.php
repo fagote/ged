@@ -1,3 +1,5 @@
+
+
 <x-icon></x-icon>
 <title>File Manager</title>
 <x-app-layout>
@@ -835,6 +837,7 @@
 </div>
         
 </x-app-layout>
+<x-footer></x-footer>
 
 
 

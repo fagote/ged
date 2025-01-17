@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\LavorattoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\CheckIfIsAdmin;
 use App\Http\Middleware\checkPermission;
+use App\Http\Middleware\AdminPermission;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
 
@@ -24,15 +25,15 @@ Route::middleware('auth')
         //==============================================================
         // ROTAS PARA USUÁRIOS  
 
-        Route::get('/users/search', [UserController::class, 'search'])->name('users.search')->middleware(checkpermission::class);
-        Route::delete('/users/{user}/destroy', [UserController::class, 'destroy'])->name('users.destroy')->middleware(checkpermission::class);
-        Route::post('/users/{id}/upload', [UserController::class, 'upload'])->name('users.upload')->middleware(checkpermission::class);
-        Route::get('/users/create',[UserController::class, 'create'])->name('users.create')->middleware(checkpermission::class);
-        Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show')->middleware(checkpermission::class);
-        Route::put('/users/{user}',[UserController::class, 'update'])->name('users.update')->middleware(checkpermission::class);
-        Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit')->middleware(checkpermission::class);
-        Route::post('/users',[UserController::class, 'store'])->name('users.store')->middleware(checkpermission::class);
-        Route::get('/users',[UserController::class, 'index'])->name('users.index')->middleware(checkpermission::class);
+        Route::get('/users/search', [UserController::class, 'search'])->name('users.search')->middleware(checkPermission::class);
+        Route::delete('/users/{user}/destroy', [UserController::class, 'destroy'])->name('users.destroy')->middleware(checkPermission::class);
+        Route::post('/users/{id}/upload', [UserController::class, 'upload'])->name('users.upload')->middleware(checkPermission::class);
+        Route::get('/users/create',[UserController::class, 'create'])->name('users.create')->middleware(checkPermission::class);
+        Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show')->middleware(checkPermission::class);
+        Route::put('/users/{user}',[UserController::class, 'update'])->name('users.update')->middleware(checkPermission::class);
+        Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit')->middleware(checkPermission::class);
+        Route::post('/users',[UserController::class, 'store'])->name('users.store')->middleware(checkPermission::class);
+        Route::get('/users',[UserController::class, 'index'])->name('users.index')->middleware(checkPermission::class);
 
         //======================================================
         // ROTAS PARA EMPRESA INUSITTA
@@ -982,6 +983,7 @@ Route::middleware('auth')
 
 //==============================================================
 // ROTAS PARA FILES
+Route::get('/files/searchCommonUser', [FileController::class, 'searchCommonUser'])->name('searchCommonUser.index');
 
 Route::middleware(checkPermission::class)->group(function(){
     Route::post('/files/{id}/ativar', [FileController::class, 'ativar'])->name('files.ativar');
@@ -1003,16 +1005,15 @@ Route::middleware(checkPermission::class)->group(function(){
     Route::post('/files',[FileController::class, 'store'])->name('files.store');
     Route::get('/files',[FileController::class, 'index'])->name('files.index');
 });
-Route::get('/files/searchCommonUser', [FileController::class, 'searchCommonUser'])->name('filesCommonUser.search');
-Route::get('/files/view/{id}', [FileController::class, 'view'])->name('files.view')->middleware('auth');
 
+Route::get('/files/view/{id}', [FileController::class, 'view'])->name('files.view')->middleware('auth');
 //==============================================================
 
 
 //==============================================================
 // ROTAS PARA EMPRESAS
 
-Route::middleware([checkPermission::class])->group(function(){
+Route::middleware([AdminPermission::class])->group(function(){
     Route::delete('/companies/{company}/destroy', [CompanyController::class, 'destroy'])->name('companies.destroy');
     Route::get('/companies/create', [CompanyController::class, 'create'])->name('companies.create');
     Route::get('/companies/{company}', [CompanyController::class, 'show'])->name('companies.show');
@@ -1027,7 +1028,7 @@ Route::middleware([checkPermission::class])->group(function(){
 //==============================================================
 // ROTAS PARA SETORES
 
-Route::middleware([checkPermission::class])->group(function(){
+Route::middleware([AdminPermission::class])->group(function(){
     Route::delete('/sectors/{sector}/destroy', [SectorController::class, 'destroy'])->name('sectors.destroy');
     Route::get('/sectors/create', [SectorController::class, 'create'])->name('sectors.create');
     Route::get('/sectors/{sector}', [SectorController::class, 'show'])->name('sectors.show');
@@ -1041,7 +1042,7 @@ Route::middleware([checkPermission::class])->group(function(){
 //==============================================================
 // ROTAS PARA MACROS
 
-Route::middleware(['auth', checkPermission::class])
+Route::middleware(['auth', AdminPermission::class])
     ->prefix('admin')
     ->group(function(){
         
@@ -1064,7 +1065,7 @@ Route::middleware(['auth', checkPermission::class])
 //==============================================================
 // ROTAS PARA PERMISSÕES
 
-Route::middleware([checkPermission::class])->group(function(){
+Route::middleware([AdminPermission::class])->group(function(){
     Route::delete('/permissions/{permission}/destroy', [PermissionController::class, 'destroy'])->name('permissions.destroy');
     Route::get('/permissions/create', [PermissionController::class, 'create'])->name('permissions.create');
     Route::get('/permissions/{permission}', [PermissionController::class, 'show'])->name('permissions.show');
@@ -1082,7 +1083,7 @@ Route::get('/', function () {
 })->name('home');
 
 
-Route::get('/users', [UserController::class, 'index'])->name('users.index');
+//Route::get('/users', [UserController::class, 'index'])->name('users.index');
 
 Route::get('/', function () {
     return view('welcome');
@@ -1093,7 +1094,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware(['auth', checkPermission::class])->group(function () {
+Route::middleware(['auth', AdminPermission::class])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

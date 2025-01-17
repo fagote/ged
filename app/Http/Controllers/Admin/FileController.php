@@ -332,107 +332,59 @@ class FileController extends Controller
     // Busca de arquivos para usuários comuns
 
     public function searchCommonUser(Request $request)
-    {
-        $user = auth()->user(); // Obtém o usuário logado
-        $file = File::all();
+{
+    $query = File::query();
 
-        // Identifica as permissões do usuário logado (empresa e setor)
-        $empresaId1 = $user->id_empresa1;
-        $empresaId2 = $user->id_empresa2;
-        $empresaId3 = $user->id_empresa3;
-        $empresaId4 = $user->id_empresa4;
-        $setorId1 = $user->id_setor1;
-        $setorId2 = $user->id_setor2;
-        $setorId3 = $user->id_setor3;
-        $setorId4 = $user->id_setor4;
-        $setorId5 = $user->id_setor5;
-        $setorId6 = $user->id_setor6;
-        $setorId7 = $user->id_setor7;
-        $setorId8 = $user->id_setor8;
-        $setorId9 = $user->id_setor9;
-        $setorId10 = $user->id_setor10;
-        $setorId11 = $user->id_setor11;
-        $setorId12 = $user->id_setor12;
-        $setorId13 = $user->id_setor13;
-        $setorId14 = $user->id_setor14;
-        $setorId15 = $user->id_setor15;
-        $setorId16 = $user->id_setor16;
-        $setorId17 = $user->id_setor17;
-        $setorId18 = $user->id_setor18;
-        $setorId19 = $user->id_setor19;
-        $setorId20 = $user->id_setor20;
-        $setorId21 = $user->id_setor21;
-        $setorId22 = $user->id_setor22;
-        $setorId23 = $user->id_setor23;
-        $setorId24 = $user->id_setor24;
-        $setorId25 = $user->id_setor25;
-        $setorId26 = $user->id_setor26;
-        $setorId27 = $user->id_setor27;
-        $setorId28 = $user->id_setor28;
-        $setorId29 = $user->id_setor29;
-        $setorId30 = $user->id_setor30;
-        $setorId31 = $user->id_setor31;
-        $setorId32 = $user->id_setor32;
-        $setorId33 = $user->id_setor33;
-        $setorId34 = $user->id_setor34;
-        $setorId35 = $user->id_setor35;
-        $setorId36 = $user->id_setor36;
-        $setorId37 = $user->id_setor37;
-        $setorId38 = $user->id_setor38;
+    $user = auth()->user();
 
+    $userCompanyIds = [
+        $user->id_empresa1,
+        $user->id_empresa2,
+        $user->id_empresa3,
+        $user->id_empresa4,
+    ];
 
-        // Realiza a busca de arquivos com o filtro de empresa, setor e código
-        // Realiza a busca de arquivos com o filtro de empresa, setor e código
-        $files = File::where('id_empresa1', $empresaId1)
-                    ->Where('id_empresa2', $empresaId2)
-                    ->Where('id_empresa3', $empresaId3)
-                    ->Where('id_empresa4', $empresaId4)
-                    ->where('id_setor1',  $setorId1)
-                    ->where('id_setor2',  $setorId2)
-                    ->where('id_setor3',  $setorId3)
-                    ->where('id_setor4',  $setorId4)
-                    ->where('id_setor5',  $setorId5)
-                    ->where('id_setor6',  $setorId6)
-                    ->where('id_setor7',  $setorId7)
-                    ->where('id_setor8',  $setorId8)
-                    ->where('id_setor9',  $setorId9)
-                    ->where('id_setor10', $setorId10)
-                    ->where('id_setor11', $setorId11)
-                    ->where('id_setor12', $setorId12)
-                    ->where('id_setor13', $setorId13)
-                    ->where('id_setor14', $setorId14)
-                    ->where('id_setor15', $setorId15)
-                    ->where('id_setor16', $setorId16)
-                    ->where('id_setor17', $setorId17)
-                    ->where('id_setor18', $setorId18)
-                    ->where('id_setor19', $setorId19)
-                    ->where('id_setor20', $setorId20)
-                    ->where('id_setor21', $setorId21)
-                    ->where('id_setor22', $setorId22)
-                    ->where('id_setor23', $setorId23)
-                    ->where('id_setor24', $setorId24)
-                    ->where('id_setor25', $setorId25)
-                    ->where('id_setor26', $setorId36)
-                    ->where('id_setor27', $setorId27)
-                    ->where('id_setor28', $setorId28)
-                    ->where('id_setor29', $setorId29)
-                    ->where('id_setor30', $setorId30)
-                    ->where('id_setor31', $setorId31)
-                    ->where('id_setor32', $setorId32)
-                    ->where('id_setor33', $setorId33)
-                    ->where('id_setor34', $setorId34)
-                    ->where('id_setor35', $setorId35)
-                    ->where('id_setor36', $setorId36)
-                    ->where('id_setor37', $setorId37)
-                    ->where('id_setor38', $setorId38)
-                    ->where('ativo', 1)
-                    ->where('aprovacao', 2)
-                    ->where('codigo', 'like', '%' . $request->search . '%')
-                    ->paginate(10);
-
-
-        return view('admin.files.f_index', compact('files'));
+    $userSectorIds = [];
+    for ($i = 1; $i <= 38; $i++) {
+        $sectorField = "id_setor{$i}";
+        if (!empty($user->$sectorField)) {
+            $userSectorIds[] = $user->$sectorField;
+        }
     }
+
+    $query->where(function ($subQuery) use ($userCompanyIds, $userSectorIds) {
+        $subQuery->where(function ($companyQuery) use ($userCompanyIds) {
+            foreach ($userCompanyIds as $companyId) {
+                if ($companyId) {
+                    $companyQuery->orWhere('id_empresa1', $companyId)
+                                 ->orWhere('id_empresa2', $companyId)
+                                 ->orWhere('id_empresa3', $companyId)
+                                 ->orWhere('id_empresa4', $companyId);
+                }
+            }
+        })->where(function ($sectorQuery) use ($userSectorIds) {
+            foreach ($userSectorIds as $sectorId) {
+                $sectorQuery->orWhere(function ($subSectorQuery) use ($sectorId) {
+                    for ($j = 1; $j <= 38; $j++) {
+                        $subSectorQuery->orWhere("id_setor{$j}", $sectorId);
+                    }
+                });
+            }
+        });
+    });
+
+    if ($search = $request->input('search')) {
+        $query->where('codigo', 'like', "%{$search}%");
+    }
+
+    $files = $query->paginate(10);
+
+    return view('admin.files.f_index', compact('files'));
+}
+
+
+
+
     
     //=========================================
 

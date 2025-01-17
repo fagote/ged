@@ -122,17 +122,13 @@
     </table>
     {{ $users->links() }}
     <br>
-
-</div>           
-
     
+    @endsection
     
-</div>
-
-
-@endsection
 
 <!-- CSS -->
+
+
 
 <style>
     
