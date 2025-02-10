@@ -4,7 +4,8 @@
 @section('title', 'Editar permissão')
 
 @section('content')
-    <h1 >Editar permissão </h1>
+<br>
+    <h1 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Editar a permissão "{{$permission->descricao}}"</h1>
     <br>
 
     <!-- <x-alert/> -->

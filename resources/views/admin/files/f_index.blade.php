@@ -1,4 +1,11 @@
 <x-icon></x-icon>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Bootstrap CSS -->
+
 @extends('admin.layouts.app')
 
 
@@ -67,10 +74,10 @@
                 <th>Código</th>
                 <th>Versão</th>
                 @if(Auth::check() && Auth::user()->id_permission == 1 || Auth::user()->id_permission == 2)
-                    <th>ID User</th>
-                    <th>ID Empresa</th>
-                    <th>ID Setor</th>
-                    <th>ID Macro</th>
+                    <th>Usuário</th>
+                    <th>Empresa</th>
+                    <th>Setor</th>
+                    <th>Macro</th>
                     <th>Ativo</th>
                     <th>Aprovação</th>
                 @endif
@@ -136,6 +143,8 @@
                     @if(Auth::check() && Auth::user()->id_permission == 1 || Auth::user()->id_permission == 2)
                         <a href="{{ route('files.edit', $file->id) }}" class="button">Edit</a>
                         <a id="button_excluir" href="{{ route('files.show', $file->id) }}">Excluir</a>
+
+                        
                     @endif
 
                 </td>

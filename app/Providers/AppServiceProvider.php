@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
+
+    protected $listen = [
+        \App\Events\FileApproved::class => [
+            \App\Listeners\SendEmailOnFileApproved::class,
+        ],
+    ];
     /**
      * Register any application services.
      */

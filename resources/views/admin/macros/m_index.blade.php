@@ -6,9 +6,8 @@
 @section('content')
 <br>
 
-<a class="button" href="{{ route('macros.create') }}">Adicionar Nova Macro</a>
+<a class="button" href="{{ route('macros.create') }}">Adicionar Nova Macro</a><br><br>
 
-<br>
 
 @if (session('success'))
     <div id="success-message" style="color: white; background-color: green; padding: 10px; border-radius: 5px;">

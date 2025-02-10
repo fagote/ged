@@ -4,18 +4,14 @@
 @section('title', "Detalhes da Macro")
 
 @section('content')
-    <h1>Informações da macro {{$macro->name_macro}}</h1>
-    <ul>
-        <li>Id: {{ $macro->id_macro }}</li>
+<br>
+    <h1 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Deseja realmente excluir a macro "{{$macro->name_macro}}" ?</h1><br>
+    <ul class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight" id="user-system">
+        <li>ID Macro: {{ $macro->id_macro }}</li>
         <li>Nome: {{ $macro->name_macro }}</li>
-    </ul>
+    </ul><br>
 
 
-    {{-- @can('owner', $user)
-        pode Deletar
-    @endcan --}}
-
-    @can('is-admin')
         <form action="{{ route('macros.destroy', $macro->id_macro) }}" method="post">
 
             @csrf
@@ -30,7 +26,6 @@
         </div>
     @endif
 
-    @endcan
 
 
 @endsection
@@ -66,6 +61,17 @@
 
 button[type="submit"]:hover {
     background-color: #0056b3;
+}
+
+#user-system {
+            list-style: none;
+            padding: 0;
+        }
+
+#user-system li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc; /* Linha entre pastas e arquivos */
+    width: 60%;
 }
 </style>
 

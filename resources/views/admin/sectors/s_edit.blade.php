@@ -5,7 +5,8 @@
 @section('title', 'Editar setor')
 
 @section('content')
-    <h1 >Editar o setor {{$sector->name_setor}}</h1>
+<br>
+    <h1 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Editar o setor "{{$sector->name_setor}}"</h1>
     <br>
 
     <!-- <x-alert/> -->

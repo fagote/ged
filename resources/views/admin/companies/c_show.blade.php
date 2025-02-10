@@ -4,11 +4,12 @@
 @section('title', "Detalhes da Empresa")
 
 @section('content')
-    <h1>Informações da empresa {{$company->name_empresa}}</h1>
-    <ul>
-        <li>Id: {{ $company->id_empresa }}</li>
+<br>
+    <h1 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Deseja realmente excluir a empresa "{{$company->name_empresa}}" ?</h1><br>
+    <ul class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight" id="user-system">
+        <li>Id Empresa: {{ $company->id_empresa }}</li>
         <li>Nome: {{ $company->name_empresa }}</li>
-    </ul>
+    </ul><br>
 
 
     {{-- @can('owner', $user)
@@ -62,6 +63,17 @@
 
 button[type="submit"]:hover {
     background-color: #0056b3;
+}
+
+#user-system {
+            list-style: none;
+            padding: 0;
+        }
+
+#user-system li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc; /* Linha entre pastas e arquivos */
+    width: 60%;
 }
 </style>
 

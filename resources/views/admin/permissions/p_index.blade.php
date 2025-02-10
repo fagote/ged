@@ -19,7 +19,7 @@
     <table>
         <thead>
             <tr>
-                <th>ID_Permissão</th>
+                <th>ID</th>
                 <th>Descrição</th>
                 <th>Ações</th>
             </tr>
@@ -31,7 +31,7 @@
                 <td>{{$permission->descricao}}</td>
                 <td>
                     <a class="button" href="{{ route('permissions.edit', $permission->id_permissao) }}">Edit</a>
-                    <a id="button_excluir" href="{{ route('permissions.show', $permission->id_permissao) }}">Detalhes</a>
+                    <a id="button_excluir" href="{{ route('permissions.show', $permission->id_permissao) }}">Excluir</a>
                 </td>
             </tr>
             @empty

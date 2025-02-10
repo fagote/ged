@@ -5,7 +5,8 @@
 @section('title', 'Editar Arquivo')
 
 @section('content')
-    <h1 >Editar o Arquivo {{$file->codigo}}</h1>
+<br>
+    <h1 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Editar o Arquivo "{{$file->codigo}}"</h1>
     <br>
 
     

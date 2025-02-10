@@ -13,6 +13,7 @@ class Sector extends Model
     protected $fillable = [
         'name_setor',
         'id_setor',
+        'email',
     ];
 
     /**

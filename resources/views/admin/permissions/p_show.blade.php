@@ -3,16 +3,12 @@
 @section('title', "Detalhes da Permissão")
 
 @section('content')
-    <h1>Informações da permissão </h1>
-    <ul>
+<br>
+    <h1 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Deseja reamente excluir a permissão "{{$permission->descricao}}" ?</h1><br>
+    <ul class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight" id="user-system">
         <li>Id Permissão: {{ $permission->id_permissao }}</li>
         <li>Descrição: {{ $permission->descricao }}</li>
-    </ul>
-
-
-    {{-- @can('owner', $user)
-        pode Deletar
-    @endcan --}}
+    </ul><br>
 
         <form action="{{ route('permissions.destroy', $permission->id_permissao) }}" method="post">
 
@@ -27,8 +23,6 @@
             {{ session('success') }}
         </div>
     @endif
-
-
 
 @endsection
 
@@ -63,6 +57,17 @@
 
 button[type="submit"]:hover {
     background-color: #0056b3;
+}
+
+#user-system {
+            list-style: none;
+            padding: 0;
+        }
+
+#user-system li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc; /* Linha entre pastas e arquivos */
+    width: 60%;
 }
 </style>
 

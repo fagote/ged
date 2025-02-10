@@ -28,10 +28,9 @@ class StoreSectorRequest extends FormRequest
                 'required',
                 'integer',
                 'min:1',
-                //'unique:users,email',
-                //Rule::unique('users', 'email') -> ignore($this->user, 'id')
-
-            ]
-        ];
+                
+            ],
+            'email' => 'email',
+            ];
     }
 }

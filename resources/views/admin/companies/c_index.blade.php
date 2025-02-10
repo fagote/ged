@@ -5,7 +5,7 @@
 @section('content')
 <br>
 
-<a href="{{ route('companies.create') }}" class="button">Adicionar Nova Empresa</a>
+<a href="{{ route('companies.create') }}" class="button">Adicionar Nova Empresa</a><br>
 
 <br>
 

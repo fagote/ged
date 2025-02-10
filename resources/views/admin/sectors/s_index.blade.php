@@ -6,7 +6,7 @@
 @section('content')
 <br>
 
-<a class="button" href="{{ route('sectors.create') }}">Adicionar Novo Setor</a>
+<a class="button" href="{{ route('sectors.create') }}">Adicionar Novo Setor</a><br>
 
 <br>
 
@@ -47,6 +47,7 @@
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
+                <th>Email</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -55,6 +56,7 @@
             <tr>
                 <td>{{$sector->id_setor}}</td>
                 <td>{{$sector->name_setor}}</td>
+                <td>{{$sector->email}}</td>
                 <td>
                     <a class="button" href="{{ route('sectors.edit', $sector->id_setor) }}">Edit</a>
                     <a id="button_excluir" href="{{ route('sectors.show', $sector->id_setor) }}">Excluir</a>

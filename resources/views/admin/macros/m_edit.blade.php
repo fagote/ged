@@ -5,7 +5,8 @@
 @section('title', 'Editar macro')
 
 @section('content')
-    <h1 >Editar a macro {{$macro->name_macro}}</h1>
+<br>
+    <h1 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Editar a macro "{{$macro->name_macro}}"</h1>
     <br>
 
     <!-- <x-alert/> -->

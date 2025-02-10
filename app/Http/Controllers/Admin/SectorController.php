@@ -68,7 +68,7 @@ class SectorController extends Controller
             return back()->with('message', 'Setor não encontrado');
         }
 
-        $data = $request->only('id_setor', 'name_setor');
+        $data = $request->only('id_setor', 'name_setor', 'email');
         
 
 

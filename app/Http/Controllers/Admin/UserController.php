@@ -5622,47 +5622,47 @@ class UserController extends Controller
     }
 
     public function update(UpdateUserRequest $request, string $id)
-{
-    // Verifica se o usuário existe
-    if (!$user = User::find($id)) {
-        return back()->with('message', 'Usuário não encontrado');
+    {
+        // Verifica se o usuário existe
+        if (!$user = User::find($id)) {
+            return back()->with('message', 'Usuário não encontrado');
+        }
+
+        // Obtém os dados do formulário
+        $data = $request->only('name', 'email', 'id_permission');
+
+        // Verifica os campos de empresas (id_empresa[])
+        $empresas = $request->input('id_empresa', []);  // Vai pegar o array de empresas ou um array vazio se não houver seleção
+        // Adiciona as empresas no array de dados
+        for ($i = 1; $i <= 4; $i++) {
+            $data["id_empresa{$i}"] = isset($empresas[$i - 1]) ? $empresas[$i - 1] : null;
+        }
+
+        // Verifica os campos de setores (id_setor[])
+        $setores = $request->input('id_setor', []);  // Vai pegar o array de setores ou um array vazio se não houver seleção
+        // Adiciona os setores no array de dados
+        for ($i = 1; $i <= 38; $i++) {
+            $data["id_setor{$i}"] = isset($setores[$i - 1]) ? $setores[$i - 1] : null;
+        }
+
+        // Remove o campo de permissão se o usuário for ele mesmo
+        if (auth()->user()->id === $user->id) {
+            unset($data['id_permission']); 
+        }
+
+        // Se houver alteração de senhawaq
+        if ($request->password) {
+            $data['password'] = bcrypt($request->password);
+        }
+
+        // Atualiza o usuário com os dados modificados
+        $user->update($data);
+
+        // Redireciona com sucesso
+        return redirect()
+            ->route('users.index')
+            ->with('success', 'Usuário editado com sucesso');
     }
-
-    // Obtém os dados do formulário
-    $data = $request->only('name', 'email', 'id_permission');
-
-    // Verifica os campos de empresas (id_empresa[])
-    $empresas = $request->input('id_empresa', []);  // Vai pegar o array de empresas ou um array vazio se não houver seleção
-    // Adiciona as empresas no array de dados
-    for ($i = 1; $i <= 4; $i++) {
-        $data["id_empresa{$i}"] = isset($empresas[$i - 1]) ? $empresas[$i - 1] : null;
-    }
-
-    // Verifica os campos de setores (id_setor[])
-    $setores = $request->input('id_setor', []);  // Vai pegar o array de setores ou um array vazio se não houver seleção
-    // Adiciona os setores no array de dados
-    for ($i = 1; $i <= 38; $i++) {
-        $data["id_setor{$i}"] = isset($setores[$i - 1]) ? $setores[$i - 1] : null;
-    }
-
-    // Remove o campo de permissão se o usuário for ele mesmo
-    if (auth()->user()->id === $user->id) {
-        unset($data['id_permission']); 
-    }
-
-    // Se houver alteração de senha
-    if ($request->password) {
-        $data['password'] = bcrypt($request->password);
-    }
-
-    // Atualiza o usuário com os dados modificados
-    $user->update($data);
-
-    // Redireciona com sucesso
-    return redirect()
-        ->route('users.index')
-        ->with('success', 'Usuário editado com sucesso');
-}
 
 
     public function show(string $id)

@@ -14,7 +14,9 @@ use App\Http\Requests\UpdateFileRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Crypt;
-
+use App\Events\FileApproved;
+use Illuminate\Support\Facades\DB;
+use App\Mail;
 
 class FileController extends Controller
 {
@@ -39,6 +41,37 @@ class FileController extends Controller
 
     }
 
+    /*
+    public function aprovar($id)
+    {
+        
+
+        try {
+            $file = File::find($id);
+
+            if (!$file) {
+                return redirect()->back()->with('error', 'Arquivo não encontrado.');
+            }
+
+            $file->aprovacao = 2;
+            $file->ativo = 1;
+            $file->save();
+
+            event(new FileApproved($file));
+
+            // Confirma a transação
+            DB::commit();
+
+            return redirect()->back()->with('success', 'Arquivo aprovado com sucesso.');
+        } catch (\Exception $e) {
+            // Desfaz a transação em caso de erro
+            DB::rollBack();
+            \Log::error("Erro ao aprovar arquivo ID {$id}: " . $e->getMessage());
+            return redirect()->back()->with('error', 'Erro ao aprovar o arquivo.');
+        }
+    }*/
+
+
     public function aprovar($id)
     {
 
@@ -52,9 +85,12 @@ class FileController extends Controller
         $file->ativo = 1;
         $file->save();
 
+        //Mail::to($file->setor->email);
+
         return redirect()->back()->with('success', 'Arquivo aprovado com sucesso.');
 
     }
+
 
 
     public function reprovar(Request $request, $id)
